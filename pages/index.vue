@@ -10,7 +10,7 @@
       </h2>
       <div class="links">
         <a class="button--green" href="https://nuxtjs.org/" target="_blank">
-          Documentation
+          Documentation {{ test }}
         </a>
         <a
           class="button--grey"
@@ -24,12 +24,17 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Logo from '~/components/Logo.vue'
 
 export default {
   components: {
     Logo
+  },
+  computed: {
+    test(): number {
+      return 2
+    }
   }
 }
 </script>
