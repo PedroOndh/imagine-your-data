@@ -54,8 +54,7 @@ export default {
       sans-serif;
     display: block;
     font-weight: 300;
-    font-size: 100px;
-    color: #35495e;
+    font-size: $font-size--extra-large;
     letter-spacing: 1px;
   }
 }
