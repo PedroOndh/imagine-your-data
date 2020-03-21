@@ -1,0 +1,29 @@
+@mixin animation--fade-out-in($duration: $transitions-duration, $delay: 0s) {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity $duration $delay;
+  }
+
+  &-enter,
+  &-leave-active {
+    opacity: 0;
+  }
+}
+
+@mixin animation--list($duration: $transitions-duration) {
+  &-enter-active,
+  &-leave-active,
+  &-move {
+    transition-property: opacity, transform;
+    transition-duration: $duration;
+  }
+
+  &-enter,
+  &-leave-active {
+    opacity: 0;
+  }
+
+  &-leave-active {
+    position: absolute;
+  }
+}
