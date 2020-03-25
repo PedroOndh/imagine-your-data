@@ -13,16 +13,14 @@
 <script>
 export default {
   layout: 'page',
-  async asyncData({ params, payload }) {
-    if (payload) return { blogPost: payload }
-    else
+  async asyncData({ params, error }) {
+    try {
+      const blogPost = await import(`~/content/blog/${params.slug}.md`)
       return {
-        blogPost: await require(`~/content/blog/${params.slug}.md`)
+        blogPost
       }
-  },
-  head() {
-    return {
-      title: this.post.attributes.title
+    } catch (e) {
+      error({ statusCode: 404, message: 'Not found' })
     }
   }
 }

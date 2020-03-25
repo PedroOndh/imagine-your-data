@@ -1,6 +1,4 @@
 const path = require('path');
-const glob = require('glob');
-const markdownPaths = ['blog']
 
 export default {
   mode: 'universal',
@@ -60,25 +58,11 @@ export default {
      */
     extend(config, ctx) {
       // add frontmatter-markdown-loader
-      config.module.rules.push(
-        {
-          test: /\.md$/,
-          include: path.resolve(__dirname, "content"),
-          loader: "frontmatter-markdown-loader",
-        }
-      );
+      config.module.rules.push({
+        test: /\.md$/,
+        include: path.resolve(__dirname, 'content'),
+        loader: 'frontmatter-markdown-loader',
+      })
     }
-  },
-  generate: {
-    routes: dynamicMarkdownRoutes()
-  },
-}
-
-function dynamicMarkdownRoutes() {
-  return [].concat(
-    ...markdownPaths.map(mdPath => {
-      return glob.sync(`${mdPath}/*.md`, { cwd: 'content' })
-        .map(filepath => `${mdPath}/${path.basename(filepath, '.md')}`);
-    })
-  );
+  }
 }
