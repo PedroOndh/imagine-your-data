@@ -5,27 +5,12 @@
     </h1>
     <section class="posts">
       <div v-for="post in posts" :key="post.attributes.title" class="columns">
-        <div class="column is-one-quarter">
-          <figure class="image">
-            <img :src="imgSrc(post)" :alt="post.attributes.title" />
-          </figure>
-        </div>
         <div class="column is-three-quarters">
           <p class="title is-4">
             <nuxt-link :to="post._path">
               {{ post.attributes.title }}
             </nuxt-link>
           </p>
-          <p class="subtitle is-6">
-            {{ post.attributes.tags }}
-          </p>
-          <div class="content">
-            <p>{{ post.attributes.excerpt }}</p>
-            <p>{{ post.attributes.date }}</p>
-            <nuxt-link :to="post._path">
-              Read
-            </nuxt-link>
-          </div>
         </div>
       </div>
     </section>
