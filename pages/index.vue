@@ -4,13 +4,20 @@
       Imagine your data
     </h1>
     <section class="posts">
-      <div v-for="post in posts" :key="post.attributes.title" class="columns">
+      <!-- eslint-disable-next-line -->
+      <div v-for="post in blogPosts" :key="post.attributes.title" class="columns">
         <div class="column is-three-quarters">
           <p class="title is-4">
-            <nuxt-link :to="post._path">
+            <nuxt-link :to="post.slug">
               {{ post.attributes.title }}
             </nuxt-link>
           </p>
+          <div class="content">
+            <p>{{ post.attributes.date }}</p>
+            <nuxt-link :to="post.slug">
+              Read
+            </nuxt-link>
+          </div>
         </div>
       </div>
     </section>
@@ -19,17 +26,9 @@
 
 <script>
 export default {
-  async asyncData() {
-    const context = await require.context('~/content/blog', true, /\.md$/)
-    const posts = await context.keys().map((key) => ({
-      ...context(key),
-      _path: `/${key.replace('.md', '').replace('./', '')}`
-    }))
-    return { posts: posts.reverse() }
-  },
-  methods: {
-    imgSrc(post) {
-      return require(`~/assets/media/${post.attributes.image}`)
+  computed: {
+    blogPosts() {
+      return this.$store.state.blogPosts
     }
   },
   head() {
