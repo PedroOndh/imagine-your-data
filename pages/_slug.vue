@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     imgSrc() {
-      return require(`~/assets/media/${this.post.attributes.hero}`)
+      return require(`~/assets/media/${this.post.attributes.image}`)
     }
   },
   head() {

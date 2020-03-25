@@ -1,73 +1,51 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="container__title">
-        adrianarenal
-      </h1>
-      <h2 class="subtitle">
-        My personal website with NuxtJs
-      </h2>
-      <div class="links">
-        <a class="button--green" href="https://nuxtjs.org/" target="_blank">
-          Documentation {{ test }}
-        </a>
-        <a
-          class="button--grey"
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-        >
-          GitHub
-        </a>
+    <h1 class="title">
+      Imagine your data
+    </h1>
+    <section class="posts">
+      <div v-for="post in posts" :key="post.attributes.title" class="columns">
+        <div class="column is-one-quarter">
+          <figure class="image">
+            <img :src="imgSrc(post)" :alt="post.attributes.title" />
+          </figure>
+        </div>
+        <div class="column is-three-quarters">
+          <p class="title is-4">
+            <nuxt-link :to="post._path">
+              {{ post.attributes.title }}
+            </nuxt-link>
+          </p>
+          <p class="subtitle is-6">
+            {{ post.attributes.tags }}
+          </p>
+          <div class="content">
+            <p>{{ post.attributes.excerpt }}</p>
+            <p>{{ post.attributes.date }}</p>
+            <nuxt-link :to="post._path">
+              Read
+            </nuxt-link>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
-<script lang="ts">
-import Logo from '~/components/Logo.vue'
-
+<script>
 export default {
-  components: {
-    Logo
+  async asyncData() {
+    const context = await require.context('~/content/blog', true, /\.md$/)
+    const posts = await context.keys().map((key) => ({
+      ...context(key),
+      _path: `/${key.replace('.md', '').replace('./', '')}`
+    }))
+    return { posts: posts.reverse() }
   },
-  computed: {
-    test(): number {
-      return 2
+  methods: {
+    imgSrc(post) {
+      return require(`~/assets/media/${post.attributes.image}`)
     }
   }
 }
 </script>
-
-<style lang="scss">
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  &__title {
-    font-family: 'Quicksand', 'Source Sans Pro', -apple-system,
-      BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-      sans-serif;
-    display: block;
-    font-weight: 300;
-    font-size: $font-size--extra-large;
-    letter-spacing: 1px;
-  }
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

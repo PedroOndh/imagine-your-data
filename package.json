@@ -1,8 +1,8 @@
 {
-  "name": "adrianarenal",
+  "name": "basicstructure",
   "version": "1.0.0",
   "description": "My personal website with NuxtJs",
-  "author": "Adrian Arenal",
+  "author": "Empathy",
   "private": true,
   "scripts": {
     "dev": "nuxt",

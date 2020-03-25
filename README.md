@@ -1,4 +1,4 @@
-# adrianarenal
+# basicstructure
 
 > My personal website with NuxtJs
 

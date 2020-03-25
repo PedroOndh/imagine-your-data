@@ -1,5 +1,5 @@
 <template>
-  <p>hola q tal</p>
+  <p>About imagine your data</p>
 </template>
 
 <script>
