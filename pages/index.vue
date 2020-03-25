@@ -46,6 +46,13 @@ export default {
     imgSrc(post) {
       return require(`~/assets/media/${post.attributes.image}`)
     }
+  },
+  head() {
+    return {
+      script: [
+        { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
+      ]
+    }
   }
 }
 </script>
