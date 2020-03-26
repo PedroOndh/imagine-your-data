@@ -1,4 +1,6 @@
 const path = require('path');
+const glob = require('glob');
+const markdownPaths = ['blog']
 
 export default {
   mode: 'universal',
@@ -64,5 +66,17 @@ export default {
         loader: 'frontmatter-markdown-loader',
       })
     }
+  },
+  generate: {
+    routes: dynamicMarkdownRoutes()
   }
+}
+
+function dynamicMarkdownRoutes() {
+  return [].concat(
+    ...markdownPaths.map(mdPath => {
+      return glob.sync(`${mdPath}/*.md`, { cwd: 'content' })
+        .map(filepath => `${mdPath}/${path.basename(filepath, '.md')}`)
+    })
+  )
 }
