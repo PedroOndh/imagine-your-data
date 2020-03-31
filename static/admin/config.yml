@@ -2,6 +2,9 @@ backend:
   name: git-gateway
   branch: develop
 
+# for using local backend run "npm run local" and enter in /admin
+local_backend: true
+
 media_folder: assets/media
 public_folder: assets/public_media
 
@@ -12,7 +15,7 @@ collections:
     filter: {field: "categories", value: "blog"}
     sort: "date:desc"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     editor:
       preview: true
     fields:

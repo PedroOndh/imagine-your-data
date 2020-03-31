@@ -4,6 +4,7 @@
       Imagine your data
     </h1>
     <section class="posts">
+      <!-- eslint-disable-next-line -->
       <div v-for="post in posts" :key="post.attributes.title" class="columns">
         <div class="column is-three-quarters">
           <p class="title is-4">
@@ -11,6 +12,12 @@
               {{ post.attributes.title }}
             </nuxt-link>
           </p>
+          <div class="content">
+            <p>{{ post.attributes.date }}</p>
+            <nuxt-link :to="post._path">
+              Read
+            </nuxt-link>
+          </div>
         </div>
       </div>
     </section>
@@ -26,11 +33,6 @@ export default {
       _path: `/${key.replace('.md', '').replace('./', '')}`
     }))
     return { posts: posts.reverse() }
-  },
-  methods: {
-    imgSrc(post) {
-      return require(`~/assets/media/${post.attributes.image}`)
-    }
   },
   head() {
     return {
