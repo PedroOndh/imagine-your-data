@@ -1,25 +1,23 @@
 backend:
   name: git-gateway
-  branch: develop
+  branch: master
 
-# for using local backend run "npm run local" and enter in /admin
-local_backend: true
-
-media_folder: assets/media
-public_folder: assets/public_media
+media_folder: static/img
+public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'content/blog'
     filter: {field: "categories", value: "blog"}
     sort: "date:desc"
     create: true
-    slug: "{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
-      preview: true
+      preview: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Post Category", name: "categories", widget: "hidden", default: "no-category"}
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: "Post Category", name: "categories", widget: "hidden", default: "blog"}
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
