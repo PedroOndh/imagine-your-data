@@ -29,8 +29,13 @@ async function getPostsFromSource(firstIndex, lastIndex) {
       ...context(key),
       _path: `/${key.replace('.md', '').replace('./', '')}`
     }))
+    .sort(function(a, b) {
+      return a.attributes.date > b.attributes.date ? -1 : 1
+    })
+
   return posts
 }
+
 export default {
   components: { PostFeedItem },
   async asyncData() {
@@ -43,8 +48,7 @@ export default {
     return {
       currentPostList: 1,
       availablePosts: [],
-      observer: {},
-      scroll: 0
+      observer: {}
     }
   },
   mounted() {
@@ -55,26 +59,25 @@ export default {
       const options = {
         root: null,
         rootMargin: '200px',
-        threshold: 0.7
+        threshold: 0.5
       }
 
       const observer = new IntersectionObserver(this.getPosts, options)
       this.$data.observer = observer
       this.observe(1, true)
     },
-    async getPosts() {
+    async getPosts(entry) {
       const { currentPostList, availablePosts, posts } = this.$data
       if (
         currentPostList * postsPerPage < availablePosts.length &&
-        Math.abs(document.body.getBoundingClientRect().top) !== 0
+        entry[0].isIntersecting
       ) {
-        const prevPostList = currentPostList
-        const nextPostList = prevPostList + 1
+        this.observe(currentPostList, false)
+        const nextPostList = currentPostList + 1
         const newPosts = await getPostsFromSource(
-          prevPostList * postsPerPage,
+          currentPostList * postsPerPage,
           nextPostList * postsPerPage
         )
-        this.observe(prevPostList, false)
         this.$data.currentPostList = nextPostList
         this.$data.posts = [...posts, ...newPosts]
         this.observe(nextPostList, true)
@@ -83,13 +86,18 @@ export default {
     observe(postList, observe) {
       const { observer } = this.$data
       const idToSelect = (postList * postsPerPage - 1).toString()
-      const lastPost = document.getElementById(idToSelect)
-      if (lastPost) {
-        if (observe) {
-          observer.observe(lastPost)
-        } else {
-          observer.unobserve(lastPost)
-        }
+      let lastPost = document.getElementById(idToSelect)
+
+      if (observe) {
+        const checkLastPostExist = setInterval(() => {
+          if (document.getElementById(idToSelect)) {
+            lastPost = document.getElementById(idToSelect)
+            observer.observe(lastPost)
+            clearInterval(checkLastPostExist)
+          }
+        }, 1000)
+      } else if (lastPost) {
+        observer.unobserve(lastPost)
       }
     }
   },
