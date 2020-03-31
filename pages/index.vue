@@ -15,9 +15,12 @@
 <script>
 import PostFeedItem from '../components/PostFeedItem'
 
+const postsPerPage = 10
+let availablePost
+
 async function getPostsFromSource(firstIndex, lastIndex) {
   const context = await require.context('~/content/blog', true, /\.md$/)
-  const availablePosts = context.keys()
+  availablePost = context.keys().reverse()
   const posts = await context
     .keys()
     .reverse()
@@ -26,21 +29,22 @@ async function getPostsFromSource(firstIndex, lastIndex) {
       ...context(key),
       _path: `/${key.replace('.md', '').replace('./', '')}`
     }))
-
   return posts
 }
 export default {
   components: { PostFeedItem },
   async asyncData() {
     return {
-      posts: await getPostsFromSource(0, 10)
+      posts: await getPostsFromSource(0, postsPerPage),
+      availablePosts: availablePost
     }
   },
   data() {
     return {
-      currentPostList: 0,
-      availablePosts: 0,
-      observer: ''
+      currentPostList: 1,
+      availablePosts: [],
+      observer: {},
+      scroll: 0
     }
   },
   mounted() {
@@ -56,37 +60,36 @@ export default {
 
       const observer = new IntersectionObserver(this.getPosts, options)
       this.$data.observer = observer
-      this.observe()
+      this.observe(1, true)
     },
     async getPosts() {
-      const { currentPostList, posts } = this.$data
-      const prevPostList = currentPostList
-      const nextPostList = prevPostList + 1
-      const newPosts = await getPostsFromSource(
-        prevPostList * 10,
-        nextPostList * 10
-      )
-      console.log('getPosts newPosts ', newPosts)
-      this.$data.currentPostList = nextPostList
-      this.$data.posts = [...posts, ...newPosts]
-      setTimeout(function() {
-        this.observe()
-      }, 2000)
-    },
-    observe() {
-      const { currentPostList, observer } = this.$data
-      const nextIdToSelect = (currentPostList * 10 + 9).toString()
-      const nextLastPost = document.getElementById(nextIdToSelect)
-      if (nextLastPost) {
-        observer.observe(nextLastPost)
+      const { currentPostList, availablePosts, posts } = this.$data
+      if (
+        currentPostList * postsPerPage < availablePosts.length &&
+        Math.abs(document.body.getBoundingClientRect().top) !== 0
+      ) {
+        const prevPostList = currentPostList
+        const nextPostList = prevPostList + 1
+        const newPosts = await getPostsFromSource(
+          prevPostList * postsPerPage,
+          nextPostList * postsPerPage
+        )
+        this.observe(prevPostList, false)
+        this.$data.currentPostList = nextPostList
+        this.$data.posts = [...posts, ...newPosts]
+        this.observe(nextPostList, true)
       }
     },
-    unobserve() {
-      const { currentPostList, observer } = this.$data
-      const prevIdToSelect = (currentPostList * 10 - 1).toString()
-      const prevLastPost = document.getElementById(prevIdToSelect)
-      if (prevLastPost) {
-        observer.unobserve(prevLastPost)
+    observe(postList, observe) {
+      const { observer } = this.$data
+      const idToSelect = (postList * postsPerPage - 1).toString()
+      const lastPost = document.getElementById(idToSelect)
+      if (lastPost) {
+        if (observe) {
+          observer.observe(lastPost)
+        } else {
+          observer.unobserve(lastPost)
+        }
       }
     }
   },
