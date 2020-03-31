@@ -10,8 +10,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "test": "jest",
-    "local": "npx netlify-cms-proxy-server"
+    "test": "jest"
   },
   "dependencies": {
     "nuxt": "^2.0.0"
