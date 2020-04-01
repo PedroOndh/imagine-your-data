@@ -25,12 +25,15 @@
 </template>
 
 <script>
+import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
 export default {
   async asyncData() {
     const context = await require.context('~/content/blog', true, /\.md$/)
     const posts = await context.keys().map((key) => ({
       ...context(key),
-      _path: `/${key.replace('.md', '').replace('./', '')}`
+      _path: `/blog/${turnFileNameToPath(
+        key.replace('.md', '').replace('./', '')
+      )}`
     }))
     return { posts: posts.reverse() }
   },

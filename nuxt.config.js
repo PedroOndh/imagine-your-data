@@ -1,3 +1,6 @@
+import { sortRoutes } from '@nuxt/utils'
+import turnFileNameToPath from './assets/libs/turnFileNameToPath'
+
 const path = require('path');
 const glob = require('glob');
 const markdownPaths = ['blog']
@@ -67,16 +70,37 @@ export default {
       })
     }
   },
-  generate: {
-    routes: dynamicMarkdownRoutes()
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push(...generateRoutes(resolve))
+      routes.push(...extraRoutes(resolve))
+      sortRoutes(routes)
+    }
   }
 }
 
-function dynamicMarkdownRoutes() {
+function generateRoutes(resolve) {
   return [].concat(
-    ...markdownPaths.map(mdPath => {
-      return glob.sync(`${mdPath}/*.md`, { cwd: 'content' })
-        .map(filepath => `${mdPath}/${path.basename(filepath, '.md')}`)
+    ...markdownPaths.map((mdPath) => {
+      return glob
+        .sync(`${mdPath}/*.md`, { cwd: 'content' })
+        .map(filepath => {
+        return {
+          name: `${path.basename(filepath, '.md')}`,
+          path: `/${mdPath}/${turnFileNameToPath(path.basename(filepath, '.md'))}`,
+          component: resolve(__dirname, `pages/${mdPath}/_slug.vue`)
+        }
+      })
     })
   )
+}
+
+function extraRoutes(resolve) {
+  return [
+    {
+      name: 'blog',
+      path: '/blog',
+      component: resolve(__dirname, `pages/index.vue`)
+    }
+  ]
 }

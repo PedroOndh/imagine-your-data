@@ -15,7 +15,7 @@ collections:
     filter: {field: "categories", value: "blog"}
     sort: "date:desc"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
       preview: true
     fields:
