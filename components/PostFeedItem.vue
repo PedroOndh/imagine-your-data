@@ -17,7 +17,12 @@
 <script>
 export default {
   name: 'PostFeedItem',
-  props: ['post']
+  props: {
+    post: {
+      type: Object,
+      default() {}
+    }
+  }
 }
 </script>
 

@@ -14,6 +14,7 @@
 
 <script>
 import PostFeedItem from '../components/PostFeedItem'
+import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
 
 const postsPerPage = 10
 let availablePost
@@ -27,7 +28,9 @@ async function getPostsFromSource(firstIndex, lastIndex) {
     .slice(firstIndex, lastIndex)
     .map((key) => ({
       ...context(key),
-      _path: `/${key.replace('.md', '').replace('./', '')}`
+      _path: `/blog/${turnFileNameToPath(
+        key.replace('.md', '').replace('./', '')
+      )}`
     }))
     .sort(function(a, b) {
       return a.attributes.date > b.attributes.date ? -1 : 1

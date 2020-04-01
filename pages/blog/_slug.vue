@@ -13,9 +13,9 @@
 <script>
 export default {
   layout: 'page',
-  async asyncData({ params, error }) {
+  async asyncData({ route, error }) {
     try {
-      const blogPost = await import(`~/content/blog/${params.slug}.md`)
+      const blogPost = await import(`~/content/blog/${route.name}.md`)
       return {
         blogPost
       }
