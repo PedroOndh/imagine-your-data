@@ -28,8 +28,15 @@ export default {
 
 <style scoped>
 .column {
-  border: 1px solid red;
+  background: #67ab9b;
+  color: white;
   padding: 5rem;
+  font-size: 1.5rem;
   margin: 1rem;
+}
+.column a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
 }
 </style>

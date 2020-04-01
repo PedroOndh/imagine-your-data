@@ -16,16 +16,12 @@
 import PostFeedItem from '../components/PostFeedItem'
 import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
 
-const postsPerPage = 10
-let availablePost
+const postsPerPage = 6
 
-async function getPostsFromSource(firstIndex, lastIndex) {
+async function getAvailablePosts() {
   const context = await require.context('~/content/blog', true, /\.md$/)
-  availablePost = context.keys().reverse()
-  const posts = await context
+  const availablePosts = await context
     .keys()
-    .reverse()
-    .slice(firstIndex, lastIndex)
     .map((key) => ({
       ...context(key),
       _path: `/blog/${turnFileNameToPath(
@@ -36,15 +32,16 @@ async function getPostsFromSource(firstIndex, lastIndex) {
       return a.attributes.date > b.attributes.date ? -1 : 1
     })
 
-  return posts
+  return availablePosts
 }
 
 export default {
   components: { PostFeedItem },
   async asyncData() {
+    const availablePosts = await getAvailablePosts()
     return {
-      posts: await getPostsFromSource(0, postsPerPage),
-      availablePosts: availablePost
+      posts: availablePosts.slice(0, postsPerPage),
+      availablePosts
     }
   },
   data() {
@@ -69,7 +66,7 @@ export default {
       this.$data.observer = observer
       this.observe(1, true)
     },
-    async getPosts(entry) {
+    getPosts(entry) {
       const { currentPostList, availablePosts, posts } = this.$data
       if (
         currentPostList * postsPerPage < availablePosts.length &&
@@ -77,7 +74,7 @@ export default {
       ) {
         this.observe(currentPostList, false)
         const nextPostList = currentPostList + 1
-        const newPosts = await getPostsFromSource(
+        const newPosts = availablePosts.slice(
           currentPostList * postsPerPage,
           nextPostList * postsPerPage
         )
