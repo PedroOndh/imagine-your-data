@@ -4,47 +4,101 @@
       Imagine your data
     </h1>
     <section class="posts">
-      <div v-for="post in posts" :key="post.attributes.title" class="columns">
-        <div class="column is-one-quarter">
-          <figure class="image">
-            <img :src="imgSrc(post)" :alt="post.attributes.title" />
-          </figure>
-        </div>
-        <div class="column is-three-quarters">
-          <p class="title is-4">
-            <nuxt-link :to="post._path">
-              {{ post.attributes.title }}
-            </nuxt-link>
-          </p>
-          <p class="subtitle is-6">
-            {{ post.attributes.tags }}
-          </p>
-          <div class="content">
-            <p>{{ post.attributes.excerpt }}</p>
-            <p>{{ post.attributes.date }}</p>
-            <nuxt-link :to="post._path">
-              Read
-            </nuxt-link>
-          </div>
-        </div>
+      <!-- eslint-disable-next-line -->
+      <div v-for="(post, index) in posts" :key="index" :id="index" class="columns">
+        <PostFeedItem :post="post" />
       </div>
     </section>
   </div>
 </template>
 
 <script>
-export default {
-  async asyncData() {
-    const context = await require.context('~/content/blog', true, /\.md$/)
-    const posts = await context.keys().map((key) => ({
+import PostFeedItem from '../components/PostFeedItem'
+import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
+
+const postsPerPage = 6
+
+async function getAvailablePosts() {
+  const context = await require.context('~/content/blog', true, /\.md$/)
+  const availablePosts = await context
+    .keys()
+    .map((key) => ({
       ...context(key),
-      _path: `/${key.replace('.md', '').replace('./', '')}`
+      _path: `/blog/${turnFileNameToPath(
+        key.replace('.md', '').replace('./', '')
+      )}`
     }))
-    return { posts: posts.reverse() }
+    .sort(function(a, b) {
+      return a.attributes.date > b.attributes.date ? -1 : 1
+    })
+
+  return availablePosts
+}
+
+export default {
+  components: { PostFeedItem },
+  async asyncData() {
+    const availablePosts = await getAvailablePosts()
+    return {
+      posts: availablePosts.slice(0, postsPerPage),
+      availablePosts
+    }
+  },
+  data() {
+    return {
+      currentPostList: 1,
+      availablePosts: [],
+      observer: {}
+    }
+  },
+  mounted() {
+    this.registerObserver()
   },
   methods: {
-    imgSrc(post) {
-      return require(`~/assets/media/${post.attributes.image}`)
+    registerObserver() {
+      const options = {
+        root: null,
+        rootMargin: '200px',
+        threshold: 0.5
+      }
+
+      const observer = new IntersectionObserver(this.getPosts, options)
+      this.$data.observer = observer
+      this.observe(1, true)
+    },
+    getPosts(entry) {
+      const { currentPostList, availablePosts, posts } = this.$data
+      if (
+        currentPostList * postsPerPage < availablePosts.length &&
+        entry[0].isIntersecting
+      ) {
+        this.observe(currentPostList, false)
+        const nextPostList = currentPostList + 1
+        const newPosts = availablePosts.slice(
+          currentPostList * postsPerPage,
+          nextPostList * postsPerPage
+        )
+        this.$data.currentPostList = nextPostList
+        this.$data.posts = [...posts, ...newPosts]
+        this.observe(nextPostList, true)
+      }
+    },
+    observe(postList, observe) {
+      const { observer } = this.$data
+      const idToSelect = (postList * postsPerPage - 1).toString()
+      let lastPost = document.getElementById(idToSelect)
+
+      if (observe) {
+        const checkLastPostExist = setInterval(() => {
+          if (document.getElementById(idToSelect)) {
+            lastPost = document.getElementById(idToSelect)
+            observer.observe(lastPost)
+            clearInterval(checkLastPostExist)
+          }
+        }, 1000)
+      } else if (lastPost) {
+        observer.unobserve(lastPost)
+      }
     }
   },
   head() {
