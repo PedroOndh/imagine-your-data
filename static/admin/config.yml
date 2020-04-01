@@ -12,7 +12,6 @@ collections:
   - name: "blog"
     label: "Blog"
     folder: "content/blog"
-    filter: {field: "categories", value: "blog"}
     sort: "date:desc"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -20,6 +19,17 @@ collections:
       preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Post Category", name: "categories", widget: "hidden", default: "no-category"}
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Post Category", name: "categories", widget: "relation", collection: "categories", searchFields: ["name"], valueField: "name", displayFields: ["name"], multiple: true }
+
+  - name: "categories"
+    label: "Categories"
+    folder: "content/categories"
+    sort: "date:desc"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{name}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Category name", name: "name", widget: "string" }
