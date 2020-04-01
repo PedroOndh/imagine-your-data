@@ -47,7 +47,6 @@ export default {
   data() {
     return {
       currentPostList: 1,
-      availablePosts: [],
       observer: {}
     }
   },
