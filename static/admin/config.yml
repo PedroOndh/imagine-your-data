@@ -22,9 +22,11 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Post Category", name: "categories", widget: "relation", collection: "categories", searchFields: ["name"], valueField: "name", displayFields: ["name"], multiple: true }
+    meta:
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
 
   - name: "categories"
-    label: "Categories"
+    label: "Blog Categories"
     folder: "content/categories"
     sort: "date:desc"
     create: true
@@ -33,3 +35,28 @@ collections:
       preview: false
     fields:
       - { label: "Category name", name: "name", widget: "string" }
+
+  - name: "authors"
+    label: "Authors"
+    label_singular: "Author"
+    folder: "collections/authors"
+    sort: "date:desc"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name and Last Name", name: "name", widget: "string"}
+      - {label: "Job title", name: "jobtitle", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Twitter account", name: "twitter-account", widget: "string"}
+    meta:
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
+
+  - name: "pages"
+    label: "Pages content"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "content/pages/about.md"
+        fields:
+          - {label: Title, name: title, widget: string, default: "About"}
+          - {label: Body, name: body, widget: markdown}
