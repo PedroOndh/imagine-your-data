@@ -60,3 +60,8 @@ collections:
         fields:
           - {label: Title, name: title, widget: string, default: "About"}
           - {label: Body, name: body, widget: markdown}
+      - label: "Home Page"
+        name: "home"
+        file: "content/pages/home.md"
+        fields:
+          - {label: Catchphrase, name: catchphrase, widget: string}

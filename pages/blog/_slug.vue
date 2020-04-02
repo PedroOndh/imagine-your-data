@@ -17,7 +17,7 @@ export default {
     try {
       const blogPost = await import(`~/content/blog/${route.name}.md`)
       return {
-        blogPost
+        blogPost: { ...blogPost }
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Not found' })

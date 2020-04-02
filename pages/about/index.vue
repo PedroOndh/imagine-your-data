@@ -12,7 +12,7 @@ export default {
   async asyncData() {
     const content = await import(`~/content/pages/about.md`)
     return {
-      content
+      content: { ...content }
     }
   }
 }
