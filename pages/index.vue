@@ -3,6 +3,17 @@
     <h1 class="title">
       Imagine your data
     </h1>
+    <div
+      v-for="(category, index) in categories"
+      :key="index"
+      class="category"
+      @click="filterByCategory(category)"
+    >
+      {{ category }}
+    </div>
+    <div class="category" @click="filterByCategory">
+      Stop filtering
+    </div>
     <section class="posts">
       <!-- eslint-disable-next-line -->
       <div v-for="(post, index) in posts" :key="index" :id="index" class="columns">
@@ -11,6 +22,16 @@
     </section>
   </div>
 </template>
+
+<style>
+.category {
+  background: indianred;
+  padding: 1rem;
+  margin: 1rem;
+  color: white;
+  font-weight: bold;
+}
+</style>
 
 <script>
 import PostFeedItem from '../components/PostFeedItem'
@@ -35,19 +56,29 @@ async function getAvailablePosts() {
   return availablePosts
 }
 
+async function getAvailableCategories() {
+  const context = await require.context('~/content/categories', true, /\.md$/)
+  const availableCategories = await context
+    .keys()
+    .map((key) => ({ ...context(key) }.attributes.name))
+
+  return availableCategories
+}
+
 export default {
   components: { PostFeedItem },
   async asyncData() {
     const availablePosts = await getAvailablePosts()
     return {
+      availablePosts,
+      filteredPosts: availablePosts,
       posts: availablePosts.slice(0, postsPerPage),
-      availablePosts
+      categories: await getAvailableCategories()
     }
   },
   data() {
     return {
       currentPostList: 1,
-      availablePosts: [],
       observer: {}
     }
   },
@@ -67,14 +98,14 @@ export default {
       this.observe(1, true)
     },
     getPosts(entry) {
-      const { currentPostList, availablePosts, posts } = this.$data
+      const { currentPostList, filteredPosts, posts } = this.$data
       if (
-        currentPostList * postsPerPage < availablePosts.length &&
+        currentPostList * postsPerPage < filteredPosts.length &&
         entry[0].isIntersecting
       ) {
         this.observe(currentPostList, false)
         const nextPostList = currentPostList + 1
-        const newPosts = availablePosts.slice(
+        const newPosts = filteredPosts.slice(
           currentPostList * postsPerPage,
           nextPostList * postsPerPage
         )
@@ -86,19 +117,31 @@ export default {
     observe(postList, observe) {
       const { observer } = this.$data
       const idToSelect = (postList * postsPerPage - 1).toString()
-      let lastPost = document.getElementById(idToSelect)
+      let targetPost = document.getElementById(idToSelect)
 
       if (observe) {
-        const checkLastPostExist = setInterval(() => {
-          if (document.getElementById(idToSelect)) {
-            lastPost = document.getElementById(idToSelect)
-            observer.observe(lastPost)
-            clearInterval(checkLastPostExist)
+        const checkTargetPost = setInterval(() => {
+          targetPost = document.getElementById(idToSelect)
+          if (targetPost) {
+            observer.observe(targetPost)
+            clearInterval(checkTargetPost)
           }
-        }, 1000)
-      } else if (lastPost) {
-        observer.unobserve(lastPost)
+        }, 100)
+      } else if (targetPost) {
+        observer.unobserve(targetPost)
       }
+    },
+    filterByCategory(category) {
+      const { availablePosts } = this.$data
+      const newFilteredPosts = category.length
+        ? availablePosts.filter((item) =>
+            item.attributes.categories.includes(category)
+          )
+        : availablePosts
+      this.$data.filteredPosts = newFilteredPosts
+      this.$data.posts = newFilteredPosts.slice(0, postsPerPage)
+      this.$data.currentPostList = 1
+      this.observe(1, true)
     }
   },
   head() {
