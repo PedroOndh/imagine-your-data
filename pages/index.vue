@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1 class="title">
-      Imagine your data
+      {{ content.attributes.catchphrase }}
     </h1>
     <div
       v-for="(category, index) in categories"
@@ -66,10 +66,13 @@ async function getAvailableCategories() {
 }
 
 export default {
+  layout: 'page',
   components: { PostFeedItem },
   async asyncData() {
     const availablePosts = await getAvailablePosts()
+    const content = await import('~/content/pages/home.md')
     return {
+      content: { ...content },
       availablePosts,
       filteredPosts: availablePosts,
       posts: availablePosts.slice(0, postsPerPage),

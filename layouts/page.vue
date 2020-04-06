@@ -1,13 +1,18 @@
 <template>
   <div class="page">
-    <header class="page__header">
-      head
-    </header>
+    <PageHeader />
     <nuxt class="page__content" />
-    <footer class="page__footer">
-      footer
-    </footer>
+    <PageFooter />
   </div>
 </template>
+
+<script>
+import PageHeader from '~/components/common/PageHeader'
+import PageFooter from '~/components/common/PageFooter'
+
+export default {
+  components: { PageHeader, PageFooter }
+}
+</script>
 
 <style scoped></style>
