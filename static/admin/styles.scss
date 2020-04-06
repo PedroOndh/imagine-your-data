@@ -1,0 +1,24 @@
+aside a {
+  & span {
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
+    & svg {
+      display: none !important;
+    }
+
+    &::before {
+      font-family: "empathy-icons";
+      font-size: 1rem;
+    }
+  }
+  &[href="#/collections/blog"] span::before {
+    content: '\e940';
+  }
+  &[href="#/collections/categories"] span::before {
+    content: '\e932';
+  }
+  &[href="#/collections/authors"] span::before {
+    content: '\e93c';
+  }
+}
