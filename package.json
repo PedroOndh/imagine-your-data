@@ -14,8 +14,9 @@
     "local": "npx netlify-cms-proxy-server"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
-    "@nuxt/utils": "latest"
+    "@nuxt/utils": "latest",
+    "netlify-cms": "^2.10.39",
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0",

@@ -1,8 +1,8 @@
+import path from 'path'
+import glob from 'glob'
 import { sortRoutes } from '@nuxt/utils'
 import turnFileNameToPath from './assets/libs/turnFileNameToPath'
 
-const path = require('path');
-const glob = require('glob');
 const markdownPaths = ['blog']
 
 export default {
