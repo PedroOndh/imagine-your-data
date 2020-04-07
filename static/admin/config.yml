@@ -6,7 +6,6 @@ backend:
 local_backend: true
 
 media_folder: assets/media
-public_folder: assets/public_media
 
 collections:
   - name: "blog"
@@ -40,7 +39,7 @@ collections:
   - name: "authors"
     label: "Authors"
     label_singular: "Author"
-    folder: "collections/authors"
+    folder: "content/authors"
     sort: "date:desc"
     create: true
     slug: "{{slug}}"
