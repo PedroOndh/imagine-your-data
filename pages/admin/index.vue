@@ -34,7 +34,7 @@ aside a {
 
 <script>
 if (process.client) {
-  require('netlify-cms')
+  import('netlify-cms') // eslint-disable-line
 }
 
 export default {
