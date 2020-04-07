@@ -1,6 +1,6 @@
 # basicstructure
 
-> My personal website with NuxtJs
+> Imagine Your Data architecture with NuxtJs
 
 ## Build Setup
 
