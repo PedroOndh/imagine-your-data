@@ -3,6 +3,7 @@
     <div class="footer__first-row">
       <div class="quote">
         <div class="quote__second-row">
+          <img :src="quote.attributes.image" />
           <div class="quote__quote">
             {{ quote.attributes.quote }}
           </div>
