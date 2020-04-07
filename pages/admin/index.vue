@@ -26,8 +26,11 @@ aside a {
   &[href='#/collections/authors'] span::before {
     content: '\e945';
   }
+  &[href='#/collections/quotes'] span::before {
+    content: '\e93b';
+  }
   &[href='#/collections/pages'] span::before {
-    content: '\e934';
+    content: '\e927';
   }
 }
 </style>

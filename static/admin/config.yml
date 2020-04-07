@@ -6,7 +6,6 @@ backend:
 local_backend: true
 
 media_folder: assets/media
-public_folder: assets/public_media
 
 collections:
   - name: "blog"
@@ -40,7 +39,7 @@ collections:
   - name: "authors"
     label: "Authors"
     label_singular: "Author"
-    folder: "collections/authors"
+    folder: "content/authors"
     sort: "date:desc"
     create: true
     slug: "{{slug}}"
@@ -52,8 +51,22 @@ collections:
     meta:
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
 
+  - name: "quotes"
+    label: "Quotes"
+    folder: "content/quotes"
+    sort: "date:desc"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Quote", name: "quote", widget: "string"}
+      - {label: "Name and Last Name", name: "author", widget: "string"}
+      - {label: "Occupation", name: "occupation", widget: "string"}
+      - {label: "Footer image", name: "image", widget: "image", , hint: "Footer images should have the same style and size between them, ask design team if needed"}
+    meta:
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
+
   - name: "pages"
-    label: "Pages content"
+    label: "Edit pages content"
     files:
       - label: "About Page"
         name: "about"
