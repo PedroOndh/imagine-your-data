@@ -1,19 +1,12 @@
 <template>
   <div class="container">
-    <h1 class="title">
+    <h1 class="catchphrase">
       {{ content.attributes.catchphrase }}
     </h1>
-    <div
-      v-for="(category, index) in categories"
-      :key="index"
-      class="category"
-      @click="filterByCategory(category)"
-    >
-      {{ category }}
-    </div>
-    <div class="category" @click="filterByCategory">
-      Stop filtering
-    </div>
+    <Categories
+      :categories="categories"
+      :filter-by-category="filterByCategory"
+    />
     <section class="posts">
       <!-- eslint-disable-next-line -->
       <div v-for="(post, index) in posts" :key="index" :id="index" class="columns">
@@ -23,18 +16,20 @@
   </div>
 </template>
 
-<style>
-.category {
-  background: indianred;
-  padding: 1rem;
-  margin: 1rem;
-  color: white;
-  font-weight: bold;
+<style lang="scss">
+.catchphrase {
+  font-size: rem(50px);
+  font-weight: 300;
+  line-height: 1.22;
+  text-align: center;
+  text-transform: uppercase;
+  color: $grey-dark;
 }
 </style>
 
 <script>
-import PostFeedItem from '../components/PostFeedItem'
+import Categories from '../components/home/Categories'
+import PostFeedItem from '../components/home/PostFeedItem'
 import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
 
 const postsPerPage = 6
@@ -67,7 +62,7 @@ async function getAvailableCategories() {
 
 export default {
   layout: 'page',
-  components: { PostFeedItem },
+  components: { Categories, PostFeedItem },
   async asyncData() {
     const availablePosts = await getAvailablePosts()
     const content = await import('~/content/pages/home.md')
@@ -134,7 +129,7 @@ export default {
         observer.unobserve(targetPost)
       }
     },
-    filterByCategory(category) {
+    filterByCategory(category, event) {
       const { availablePosts } = this.$data
       const newFilteredPosts = category.length
         ? availablePosts.filter((item) =>
