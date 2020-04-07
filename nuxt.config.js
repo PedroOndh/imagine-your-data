@@ -66,7 +66,7 @@ export default {
       config.module.rules.push({
         test: /\.md$/,
         include: path.resolve(__dirname, 'content'),
-        loader: 'frontmatter-markdown-loader',
+        loader: 'frontmatter-markdown-loader'
       })
     }
   },
