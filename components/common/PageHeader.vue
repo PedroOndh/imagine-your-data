@@ -1,7 +1,10 @@
 <template>
   <div class="header">
     <div>
-      <div class="header__title">Imagine Your Data</div>
+      <div class="header__title">
+        <img src="~/assets/media/internal-nuxt-image.jpg" />
+        Imagine Your Data
+      </div>
     </div>
     <div>
       <div class="header__subTitle">Visualising eCommerce Search & Browse</div>
@@ -36,9 +39,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .header {
   display: flex;
   justify-content: space-between;
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 </style>
