@@ -7,7 +7,7 @@
           {{ quote.attributes.author }}
         </span>
         <span class="quote__author-occupation">
-          {{ quote.attributes.occupation }}
+          • {{ quote.attributes.occupation }}
         </span>
       </div>
     </div>
@@ -30,8 +30,12 @@
         />
       </div>
       <div class="quote__navigation">
-        <div class="quote__arrow-left">|--</div>
-        <div class="quote__arrow-right">--|</div>
+        <div class="quote__arrow" @click="changeQuote(-1)">
+          <img src="/_media/arrow-left.png" alt="arrow left" />
+        </div>
+        <div class="quote__arrow" @click="changeQuote(1)">
+          <img src="/_media/arrow-right.png" alt="arrow right" />
+        </div>
       </div>
     </div>
   </div>
@@ -47,6 +51,10 @@ export default {
     quote: {
       type: Object,
       default() {}
+    },
+    changeQuote: {
+      type: Function,
+      default() {}
     }
   }
 }
@@ -55,16 +63,15 @@ export default {
 <style scoped lang="scss">
 .quote {
   width: 70%;
-  padding: 0 4rem;
+  padding: rem(68px) rem(79px) rem(46px);
   margin-left: 5%;
-  height: rem(292px);
   border-radius: rem(20px);
   background-color: #fff;
-  position: relative;
-  top: rem(-65px);
+  position: absolute;
+  bottom: rem(170px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   &__first-row {
   }
   &__quote {
@@ -75,21 +82,41 @@ export default {
     letter-spacing: 0.96px;
     color: $grey-dark;
   }
-  &__author,
-  &__occupation {
+  &__author {
     font-size: 16px;
     line-height: 2.88;
+    margin-bottom: rem(20px);
+    &-name {
+      font-weight: bold;
+      color: $grey-dark;
+    }
+    &-occupation {
+      font-weight: 300;
+    }
   }
   &__second-row {
     display: flex;
     justify-content: space-between;
     border-top: solid 1px $grey-light;
-    padding: 1.5rem 0 0;
+    padding: rem(22px) 0 0;
     align-items: center;
   }
-  &__social-icons,
+  &__social-icons {
+    display: flex;
+    a {
+      width: rem(42px);
+      height: rem(42px);
+      margin-right: rem(14px);
+    }
+  }
   &__navigation {
     display: flex;
+  }
+  &__arrow {
+    width: rem(36px);
+    height: rem(24px);
+    cursor: pointer;
+    margin-left: rem(26px);
   }
 }
 </style>

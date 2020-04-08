@@ -14,15 +14,16 @@
     "local": "npx netlify-cms-proxy-server"
   },
   "dependencies": {
-    "@nuxt/utils": "latest",
     "netlify-cms": "^2.10.39",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0",
+    "@nuxt/utils": "^2.12.2",
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/svg": "^0.1.7",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",

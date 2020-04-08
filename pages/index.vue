@@ -5,6 +5,7 @@
     </h1>
     <Categories
       :categories="categories"
+      :current-category="currentCategory"
       :filter-by-category="filterByCategory"
     />
     <section class="posts">
@@ -77,7 +78,8 @@ export default {
   data() {
     return {
       currentPostList: 1,
-      observer: {}
+      observer: {},
+      currentCategory: ''
     }
   },
   mounted() {
@@ -129,13 +131,14 @@ export default {
         observer.unobserve(targetPost)
       }
     },
-    filterByCategory(category, event) {
+    filterByCategory(category) {
       const { availablePosts } = this.$data
       const newFilteredPosts = category.length
         ? availablePosts.filter((item) =>
             item.attributes.categories.includes(category)
           )
         : availablePosts
+      this.$data.currentCategory = category
       this.$data.filteredPosts = newFilteredPosts
       this.$data.posts = newFilteredPosts.slice(0, postsPerPage)
       this.$data.currentPostList = 1
