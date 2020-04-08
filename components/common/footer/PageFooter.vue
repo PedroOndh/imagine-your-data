@@ -3,7 +3,11 @@
     <div
       class="footer__first-row"
       :style="{
-        'background-image': `url(${quotes[currentQuote].attributes.image})`
+        'background-image': [
+          quotes.length > 0
+            ? `url(${quotes[currentQuote].attributes.image})`
+            : 'none'
+        ]
       }"
     >
       <Quote :quote="quotes[currentQuote]" :change-quote="changeQuote" />
@@ -37,7 +41,9 @@ export default {
     return {
       quotes: [
         {
-          attributes: {}
+          attributes: {
+            image: ''
+          }
         }
       ],
       currentQuote: 0

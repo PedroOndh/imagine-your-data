@@ -66,6 +66,7 @@ export default {
 <style scoped lang="scss">
 .categories {
   border-top: solid 2px $blue-light;
+  margin-top: rem(126px);
   &__list {
     height: 0;
     justify-content: space-around;
@@ -125,8 +126,5 @@ export default {
       }
     }
   }
-}
-.categories__button-chevron svg g {
-  fill: red;
 }
 </style>

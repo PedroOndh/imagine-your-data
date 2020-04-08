@@ -5,7 +5,7 @@
         <div class="header__title">ImagineYourData</div>
         <div class="header__brand">
           wondered by
-          <img src="_media/empathy-co.svg" />
+          <img src="/_media/empathy-co.svg" />
         </div>
       </nuxt-link>
     </div>
@@ -45,8 +45,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 5vw;
-  padding-bottom: 5vw;
+  padding: rem(100px) 0 rem(160px);
   width: 85%;
   margin: auto;
   &__logo {
