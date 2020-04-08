@@ -3,8 +3,13 @@
     <h1 class="catchphrase">
       {{ content.attributes.catchphrase }}
     </h1>
+    <div class="more-link">
+      More
+      <Chevron class="more-link__chevron" />
+    </div>
     <Categories
       :categories="categories"
+      :current-category="currentCategory"
       :filter-by-category="filterByCategory"
     />
     <section class="posts">
@@ -25,12 +30,27 @@
   text-transform: uppercase;
   color: $grey-dark;
 }
+.more-link {
+  margin-top: rem(55px);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $grey-dark;
+  &__chevron {
+    svg {
+      margin-top: rem(-3px);
+      color: $grey-dark;
+    }
+  }
+}
 </style>
 
 <script>
 import Categories from '../components/home/Categories'
 import PostFeedItem from '../components/home/PostFeedItem'
 import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
+import Chevron from '~/static/_media/chevron.svg?inline'
 
 const postsPerPage = 6
 
@@ -62,7 +82,7 @@ async function getAvailableCategories() {
 
 export default {
   layout: 'page',
-  components: { Categories, PostFeedItem },
+  components: { Categories, PostFeedItem, Chevron },
   async asyncData() {
     const availablePosts = await getAvailablePosts()
     const content = await import('~/content/pages/home.md')
@@ -77,7 +97,8 @@ export default {
   data() {
     return {
       currentPostList: 1,
-      observer: {}
+      observer: {},
+      currentCategory: ''
     }
   },
   mounted() {
@@ -129,19 +150,22 @@ export default {
         observer.unobserve(targetPost)
       }
     },
-    filterByCategory(category, event) {
+    filterByCategory(category) {
       const { availablePosts } = this.$data
       const newFilteredPosts = category.length
         ? availablePosts.filter((item) =>
             item.attributes.categories.includes(category)
           )
         : availablePosts
+      this.$data.currentCategory = category
       this.$data.filteredPosts = newFilteredPosts
       this.$data.posts = newFilteredPosts.slice(0, postsPerPage)
       this.$data.currentPostList = 1
       this.observe(1, true)
     }
-  },
+  }
+  /*
+  ,
   head() {
     return {
       script: [
@@ -149,5 +173,6 @@ export default {
       ]
     }
   }
+  */
 }
 </script>

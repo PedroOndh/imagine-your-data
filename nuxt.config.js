@@ -53,7 +53,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/svg'],
   styleResources: {
     scss: [
       './assets/scss/abstracts/_functions.scss',
