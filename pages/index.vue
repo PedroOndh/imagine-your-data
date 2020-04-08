@@ -1,23 +1,20 @@
 <template>
-  <div class="container">
-    <h1 class="catchphrase">
-      {{ content.attributes.catchphrase }}
-    </h1>
-    <div class="more-link">
-      More
-      <Chevron class="more-link__chevron" />
-    </div>
-    <Categories
-      :categories="categories"
-      :current-category="currentCategory"
-      :filter-by-category="filterByCategory"
-    />
-    <section class="posts">
-      <!-- eslint-disable-next-line -->
-      <div v-for="(post, index) in posts" :key="index" :id="index" class="columns">
-        <PostFeedItem :post="post" />
+  <div>
+    <div class="container">
+      <h1 class="catchphrase">
+        {{ content.attributes.catchphrase }}
+      </h1>
+      <div class="more-link">
+        More
+        <Chevron class="more-link__chevron" />
       </div>
-    </section>
+      <Categories
+        :categories="categories"
+        :current-category="currentCategory"
+        :filter-by-category="filterByCategory"
+      />
+    </div>
+    <PostFeed :posts="posts" class="posts" />
   </div>
 </template>
 
@@ -48,7 +45,7 @@
 
 <script>
 import Categories from '../components/home/Categories'
-import PostFeedItem from '../components/home/PostFeedItem'
+import PostFeed from '../components/home/PostFeed'
 import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
 import Chevron from '~/static/_media/chevron.svg?inline'
 
@@ -82,7 +79,7 @@ async function getAvailableCategories() {
 
 export default {
   layout: 'page',
-  components: { Categories, PostFeedItem, Chevron },
+  components: { Categories, PostFeed, Chevron },
   async asyncData() {
     const availablePosts = await getAvailablePosts()
     const content = await import('~/content/pages/home.md')
