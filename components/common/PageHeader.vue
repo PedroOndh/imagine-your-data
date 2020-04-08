@@ -2,8 +2,9 @@
   <div class="header">
     <div>
       <div class="header__title">
-        <img src="~/assets/media/internal-nuxt-image.jpg" />
+        <img src="/_media/internal-nuxt-image.jpg" />
         Imagine Your Data
+        <Arrow />
       </div>
     </div>
     <div>
@@ -32,10 +33,11 @@
 
 <script>
 import SocialIcon from '~/components/common/SocialIcon'
+import Arrow from '~/static/_media/arrow.svg?inline'
 
 export default {
   name: 'PageHeader',
-  components: { SocialIcon }
+  components: { SocialIcon, Arrow }
 }
 </script>
 

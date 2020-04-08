@@ -5,8 +5,8 @@ backend:
 # for using local backend run "npm run local" and enter in /admin
 local_backend: true
 
-media_folder: static/media
-public_folder: /media
+media_folder: static/cms_media
+public_folder: /cms_media
 
 collections:
   - name: "blog"
