@@ -22,9 +22,10 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Post Author", name: "author", widget: "relation", collection: "authors", searchFields: ["name"], valueField: "name", displayFields: ["name"], required: false }
       - { label: "Post Category", name: "categories", widget: "relation", collection: "categories", searchFields: ["name"], valueField: "name", displayFields: ["name"], multiple: true }
     meta:
-      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss" }
 
   - name: "categories"
     label: "Blog Categories"
@@ -43,7 +44,7 @@ collections:
     folder: "content/authors"
     sort: "date:desc"
     create: true
-    slug: "{{slug}}"
+    slug: "{{name}}"
     fields:
       - {label: "Name and Last Name", name: "name", widget: "string"}
       - {label: "Job title", name: "jobtitle", widget: "string"}

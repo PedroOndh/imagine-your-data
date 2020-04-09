@@ -49,7 +49,7 @@ import PostFeed from '../components/home/PostFeed'
 import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
 import Chevron from '~/static/_media/chevron.svg?inline'
 
-const postsPerPage = 6
+const postsPerPage = 12
 
 async function getAvailablePosts() {
   const context = await require.context('~/content/blog', true, /\.md$/)
@@ -64,8 +64,27 @@ async function getAvailablePosts() {
     .sort(function(a, b) {
       return a.attributes.date > b.attributes.date ? -1 : 1
     })
+  return await getPostAuthor(availablePosts)
+}
 
-  return availablePosts
+async function getPostAuthor(posts) {
+  const postsWithAuthor = []
+  for (let i = 0; i < posts.length; i++) {
+    const post = posts[i]
+    const authorInKebapCase = post.attributes.author
+      .replace(/\s+/g, '-')
+      .toLowerCase()
+    const postAuthor = await import(`~/content/authors/${authorInKebapCase}.md`)
+    post.attributes = {
+      ...post.attributes,
+      author: {
+        ...postAuthor.attributes
+      },
+      styleIndex: i % 12
+    }
+    postsWithAuthor.push(post)
+  }
+  return postsWithAuthor
 }
 
 async function getAvailableCategories() {
