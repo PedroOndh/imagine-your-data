@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header container">
     <div class="header__logo">
       <nuxt-link to="/">
         <div class="header__title">ImagineYourData</div>
@@ -46,8 +46,6 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: rem(100px) 0 rem(160px);
-  width: 85%;
-  margin: auto;
   &__logo {
     display: flex;
     flex-direction: column;
@@ -83,7 +81,7 @@ export default {
     font-size: rem(13px);
     font-weight: 300;
     line-height: 0.92;
-    color: $blue-dark;
+    color: $corporative-blue;
   }
   &__menu {
     display: flex;
@@ -102,6 +100,27 @@ export default {
         width: 48px;
         height: 48px;
       }
+    }
+  }
+  @media screen and (max-width: $breakpoint__mobile--max) {
+    flex-direction: column;
+    padding-bottom: 6rem;
+    &__logo {
+      width: 100%;
+      .header__title {
+        font-size: 7vw;
+        width: 100%;
+      }
+    }
+    &__sub-title {
+      padding: 1rem 0;
+      text-align: center;
+      line-height: 1.5;
+    }
+    &__menu a.social-icon {
+      width: 35px;
+      height: 35px;
+      margin-right: 0.5rem;
     }
   }
 }

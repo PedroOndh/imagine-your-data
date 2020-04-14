@@ -65,7 +65,7 @@ export default {
 
 <style scoped lang="scss">
 .categories {
-  border-top: solid 2px $blue-light;
+  border-top: solid 2px $corporative-light-blue;
   margin-top: rem(126px);
   &__list {
     height: 0;
@@ -76,7 +76,7 @@ export default {
     &-item {
       text-transform: uppercase;
       opacity: 0.3;
-      color: $blue-light;
+      color: $corporative-light-blue;
       padding: rem(15px) 0;
       cursor: pointer;
       transition: opacity 0.5s ease;
@@ -98,21 +98,21 @@ export default {
     margin: rem(30px) 0;
     justify-content: center;
     text-transform: uppercase;
-    color: $blue-light;
+    color: $corporative-light-blue;
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
     &:hover {
-      color: $blue-dark;
+      color: $corporative-blue;
     }
     &.categories__button--active {
       flex-direction: column-reverse;
-      color: $blue-dark;
+      color: $corporative-blue;
       .categories__button-chevron {
         bottom: rem(21px);
         transform: rotate(90deg) scaleX(-1);
         g {
-          fill: $blue-dark;
+          fill: $corporative-blue;
         }
       }
     }
@@ -122,8 +122,14 @@ export default {
       transition: all 0.5s ease;
       transform: rotate(90deg) scaleX(1);
       g {
-        fill: $blue-light;
+        fill: $corporative-light-blue;
       }
+    }
+  }
+  @media screen and (max-width: $breakpoint__mobile--max) {
+    &__list {
+      flex-direction: column;
+      align-items: center;
     }
   }
 }

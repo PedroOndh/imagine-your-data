@@ -94,6 +94,10 @@ export default {
       text-decoration: none;
       color: $corporative-yellow;
     }
+    @media screen and (max-width: $breakpoint__mobile--max) {
+      padding: 0 1rem;
+      text-align: center;
+    }
   }
 }
 </style>

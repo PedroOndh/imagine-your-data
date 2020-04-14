@@ -20,7 +20,6 @@
 
 <style lang="scss">
 .catchphrase {
-  font-size: rem(50px);
   font-weight: 300;
   line-height: 1.22;
   text-align: center;
@@ -80,7 +79,7 @@ async function getPostAuthor(posts) {
       author: {
         ...postAuthor.attributes
       },
-      styleIndex: i % 12
+      index: i
     }
     postsWithAuthor.push(post)
   }
