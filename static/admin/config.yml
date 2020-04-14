@@ -21,6 +21,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Post Author", name: "author", widget: "relation", collection: "authors", searchFields: ["name"], valueField: "name", displayFields: ["name"], required: false }
       - { label: "Post Category", name: "categories", widget: "relation", collection: "categories", searchFields: ["name"], valueField: "name", displayFields: ["name"], multiple: true }

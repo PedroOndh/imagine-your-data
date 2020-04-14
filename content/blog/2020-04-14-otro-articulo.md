@@ -1,7 +1,8 @@
 ---
-title: Why DataViz is the next "i told you" of the Digital world
-date: 2020-04-09T13:31:51.782Z
-author: Germán Heredia
+title: Otro articulo
+date: 2020-04-09T13:43:03.225Z
+image: /cms_media/quote-einstein.png
+author: Noemi Ondiviela
 categories:
   - Data Visualizations
 ---

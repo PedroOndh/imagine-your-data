@@ -4,10 +4,12 @@
       <h1 class="catchphrase">
         {{ content.attributes.catchphrase }}
       </h1>
-      <div class="more-link">
-        More
-        <Chevron class="more-link__chevron" />
-      </div>
+      <nuxt-link class="header__link" to="/about">
+        <div class="more-link">
+          More
+          <Chevron class="more-link__chevron" />
+        </div>
+      </nuxt-link>
       <Categories
         :categories="categories"
         :current-category="currentCategory"
