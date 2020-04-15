@@ -21,10 +21,8 @@ export default {
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 80%;
-
   &__content {
-    width: 85%;
-    margin: auto;
+    margin-bottom: rem(-140px);
   }
 }
 </style>

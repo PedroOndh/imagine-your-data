@@ -1,3 +1,25 @@
 * {
   font-family: 'Montserrat'
 }
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.small-container {
+  width: 60%;
+  margin: auto;
+}
+
+h1 {
+  font-size: rem(50px);
+}
+
+@media screen and (max-width: $breakpoint__mobile--max) {
+  .container, .small-container {
+    width: 90%;
+  }
+  h1 {
+    font-size: rem(25px);
+  }
+}

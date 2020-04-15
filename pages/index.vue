@@ -1,29 +1,27 @@
 <template>
-  <div class="container">
-    <h1 class="catchphrase">
-      {{ content.attributes.catchphrase }}
-    </h1>
-    <div class="more-link">
-      More
-      <Chevron class="more-link__chevron" />
+  <div>
+    <div class="container">
+      <h1 class="catchphrase">
+        {{ content.attributes.catchphrase }}
+      </h1>
+      <nuxt-link class="header__link" to="/about">
+        <div class="more-link">
+          More
+          <Chevron class="more-link__chevron" />
+        </div>
+      </nuxt-link>
+      <Categories
+        :categories="categories"
+        :current-category="currentCategory"
+        :filter-by-category="filterByCategory"
+      />
     </div>
-    <Categories
-      :categories="categories"
-      :current-category="currentCategory"
-      :filter-by-category="filterByCategory"
-    />
-    <section class="posts">
-      <!-- eslint-disable-next-line -->
-      <div v-for="(post, index) in posts" :key="index" :id="index" class="columns">
-        <PostFeedItem :post="post" />
-      </div>
-    </section>
+    <PostFeed :posts="posts" class="posts" />
   </div>
 </template>
 
 <style lang="scss">
 .catchphrase {
-  font-size: rem(50px);
   font-weight: 300;
   line-height: 1.22;
   text-align: center;
@@ -48,11 +46,11 @@
 
 <script>
 import Categories from '../components/home/Categories'
-import PostFeedItem from '../components/home/PostFeedItem'
+import PostFeed from '../components/home/PostFeed'
 import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
 import Chevron from '~/static/_media/chevron.svg?inline'
 
-const postsPerPage = 6
+const postsPerPage = 12
 
 async function getAvailablePosts() {
   const context = await require.context('~/content/blog', true, /\.md$/)
@@ -67,8 +65,27 @@ async function getAvailablePosts() {
     .sort(function(a, b) {
       return a.attributes.date > b.attributes.date ? -1 : 1
     })
+  return await getPostAuthor(availablePosts)
+}
 
-  return availablePosts
+async function getPostAuthor(posts) {
+  const postsWithAuthor = []
+  for (let i = 0; i < posts.length; i++) {
+    const post = posts[i]
+    const authorInKebapCase = post.attributes.author
+      .replace(/\s+/g, '-')
+      .toLowerCase()
+    const postAuthor = await import(`~/content/authors/${authorInKebapCase}.md`)
+    post.attributes = {
+      ...post.attributes,
+      author: {
+        ...postAuthor.attributes
+      },
+      index: i
+    }
+    postsWithAuthor.push(post)
+  }
+  return postsWithAuthor
 }
 
 async function getAvailableCategories() {
@@ -82,7 +99,7 @@ async function getAvailableCategories() {
 
 export default {
   layout: 'page',
-  components: { Categories, PostFeedItem, Chevron },
+  components: { Categories, PostFeed, Chevron },
   async asyncData() {
     const availablePosts = await getAvailablePosts()
     const content = await import('~/content/pages/home.md')

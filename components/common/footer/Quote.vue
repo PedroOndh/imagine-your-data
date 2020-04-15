@@ -118,5 +118,20 @@ export default {
     cursor: pointer;
     margin-left: rem(26px);
   }
+  @media screen and (max-width: $breakpoint__mobile--max) {
+    width: 90%;
+    padding: 2rem;
+    &__second-row {
+      flex-direction: column;
+    }
+    &__navigation {
+      width: 100%;
+      padding-top: 2rem;
+      justify-content: space-around;
+    }
+    &__arrow {
+      margin: 0;
+    }
+  }
 }
 </style>
