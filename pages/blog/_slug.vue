@@ -10,6 +10,11 @@
           <span class="blog-post__author-date">{{ date }}</span>
           <span class="blog-post__author-name">
             By {{ author.attributes.name }}
+            {{
+              author.attributes.jobtitle
+                ? `, ${author.attributes.jobtitle}`
+                : ''
+            }}
           </span>
         </div>
       </div>
@@ -73,9 +78,16 @@
   }
   &__content {
     padding-bottom: 10rem;
+    h2,
+    h3 {
+      color: $grey-dark;
+      font-size: rem(50px);
+      font-weight: 300;
+      padding: rem(40px) 0 rem(30px);
+    }
     p {
       font-family: 'Lora', serif;
-      font-size: rem(29px);
+      font-size: rem(22px);
       line-height: 1.83;
       color: #747474;
       padding-bottom: rem(40px);
@@ -85,6 +97,7 @@
       }
     }
     img {
+      width: 100%;
       margin: rem(40px) 0;
     }
   }
@@ -114,6 +127,7 @@
       max-width: 33%;
       a {
         display: flex;
+        align-items: center;
         img {
           width: 50%;
           max-width: rem(183px);
@@ -157,10 +171,14 @@ async function getAvailablePosts() {
   return availablePosts
 }
 async function getPostAuthor(post) {
-  const authorInKebapCase = post.attributes.author
-    .replace(/\s+/g, '-')
-    .toLowerCase()
-  return await import(`~/content/authors/${authorInKebapCase}.md`)
+  const context = await require.context('~/content/authors', true, /\.md$/)
+  const authors = await context.keys().map((key) => ({
+    ...context(key)
+  }))
+  const postAuthor = authors.find(
+    (author) => author.attributes.email === post.attributes.author
+  )
+  return postAuthor
 }
 function getDate(post) {
   const date = new Date(post.attributes.date)
