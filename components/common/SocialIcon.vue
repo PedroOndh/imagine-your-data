@@ -21,17 +21,32 @@
 export default {
   name: 'SocialIcon',
   props: {
-    href: {
+    social: {
       type: String,
       default: ''
-    },
-    image: {
-      type: String,
-      default: ''
-    },
-    alt: {
-      type: String,
-      default: ''
+    }
+  },
+  data() {
+    let href
+    let image
+    let alt
+    if (this.social === 'linkedin') {
+      href = 'https://www.linkedin.com/company/empathyco'
+      image = 'linkedin.svg'
+      alt = 'LinkedIn'
+    } else if (this.social === 'twitter') {
+      href = 'https://twitter.com/empathyco_?lang=en'
+      image = 'twitter.svg'
+      alt = 'Twitter'
+    } else if (this.social === 'instagram') {
+      href = 'https://www.instagram.com/empathy_co/?hl=en'
+      image = 'instagram.svg'
+      alt = 'Instagram'
+    }
+    return {
+      href,
+      image,
+      alt
     }
   }
 }

@@ -12,21 +12,9 @@
     <div class="header__sub-title">Visualising eCommerce Search & Browse</div>
     <div class="header__menu">
       <nuxt-link class="header__link" to="/about">About</nuxt-link>
-      <SocialIcon
-        href="https://www.instagram.com/empathy_co/?hl=en"
-        image="instagram.svg"
-        alt="Instagram"
-      />
-      <SocialIcon
-        href="https://twitter.com/empathyco_?lang=en"
-        image="twitter.svg"
-        alt="Twitter"
-      />
-      <SocialIcon
-        href="https://www.linkedin.com/company/empathyco"
-        image="linkedin.svg"
-        alt="LinkedIn"
-      />
+      <SocialIcon social="instagram" />
+      <SocialIcon social="twitter" />
+      <SocialIcon social="linkedin" />
     </div>
   </div>
 </template>

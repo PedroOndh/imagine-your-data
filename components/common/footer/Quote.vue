@@ -13,21 +13,9 @@
     </div>
     <div class="quote__second-row">
       <div class="quote__social-icons">
-        <SocialIcon
-          href="https://twitter.com/empathyco_?lang=en"
-          image="twitter.svg"
-          alt="Twitter"
-        />
-        <SocialIcon
-          href="https://www.instagram.com/empathy_co/?hl=en"
-          image="instagram.svg"
-          alt="Instagram"
-        />
-        <SocialIcon
-          href="https://www.linkedin.com/company/empathyco"
-          image="linkedin.svg"
-          alt="LinkedIn"
-        />
+        <SocialIcon social="twitter" />
+        <SocialIcon social="instagram" />
+        <SocialIcon social="linkedin" />
       </div>
       <div class="quote__navigation">
         <div class="quote__arrow" @click="changeQuote(-1)">
