@@ -37,7 +37,12 @@ aside a {
 
 <script>
 if (process.client) {
-  import('netlify-cms') // eslint-disable-line
+  import('netlify-cms').then((cms) => {
+    cms.registerPreviewStyle(
+      'https://assets.empathybroker.com/resources/fonts/empathy-typography/style.css'
+    )
+    cms.registerPreviewStyle('/admin/admin.css')
+  }) // eslint-disable-line
 }
 
 export default {

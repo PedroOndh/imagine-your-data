@@ -16,6 +16,13 @@
       <!-- eslint-disable-next-line -->
       <div class="blog-post__content" v-html="blogPost.html" />
     </div>
+    <div class="blog-post__share">
+      Share if you liked it!
+      <div class="blog-post__share-social">
+        <SocialIcon social="twitter" />
+        <SocialIcon social="linkedin" />
+      </div>
+    </div>
     <div class="blog-post__related">
       <div
         v-for="(post, index) in relatedPosts"
@@ -71,14 +78,33 @@
       font-size: rem(29px);
       line-height: 1.83;
       color: #747474;
+      padding-bottom: rem(40px);
+      a {
+        color: $link-blue;
+        font-weight: bold;
+      }
     }
     img {
-      margin: rem(86px) 0;
+      margin: rem(40px) 0;
+    }
+  }
+  &__share {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    &-social {
+      margin: rem(36px) 0 rem(50px);
+      display: flex;
+      a {
+        margin: 0 rem(2.5px);
+      }
     }
   }
   &__related {
     background: #f5f6f7;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding-top: rem(150px);
     padding-bottom: rem(215px);
@@ -106,10 +132,14 @@
         }
       }
     }
+    @media screen and (max-width: $breakpoint__tablet--max) {
+      flex-direction: column;
+    }
   }
 }
 </style>
 <script>
+import SocialIcon from '~/components/common/SocialIcon'
 import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
 
 async function getAvailablePosts() {
@@ -151,6 +181,7 @@ function getDate(post) {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
 export default {
+  components: { SocialIcon },
   layout: 'page',
   async asyncData({ route, error }) {
     try {
