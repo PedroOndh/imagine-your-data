@@ -69,18 +69,23 @@ async function getAvailablePosts() {
 }
 
 async function getPostAuthor(posts) {
+  const context = await require.context('~/content/authors', true, /\.md$/)
+  const authors = await context.keys().map((key) => ({
+    ...context(key)
+  }))
   const postsWithAuthor = []
   for (let i = 0; i < posts.length; i++) {
     const post = posts[i]
-    const authorInKebapCase = post.attributes.author
-      .replace(/\s+/g, '-')
-      .toLowerCase()
-    const postAuthor = await import(`~/content/authors/${authorInKebapCase}.md`)
+    const postAuthor = authors.find(
+      (author) => author.attributes.email === post.attributes.author
+    )
     post.attributes = {
       ...post.attributes,
-      author: {
-        ...postAuthor.attributes
-      },
+      author: postAuthor
+        ? {
+            ...postAuthor.attributes
+          }
+        : undefined,
       index: i
     }
     postsWithAuthor.push(post)

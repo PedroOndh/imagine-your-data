@@ -5,7 +5,7 @@
         .attributes.index % 12}`
     "
   >
-    <div class="posts-feed-item__author">
+    <div v-if="post.attributes.author" class="posts-feed-item__author">
       <img
         class="posts-feed-item__author-image"
         :src="post.attributes.author.image"
@@ -13,9 +13,14 @@
       />
       <div class="posts-feed-item__author-name">
         By
-        <span class="colored">{{ post.attributes.author.name }}</span>
+        <span class="posts-feed-item__author-nickname colored">{{
+          post.attributes.author.nickname
+        }}</span>
       </div>
-      <div class="posts-feed-item__author-social">
+      <div
+        v-if="post.attributes.author.twitter"
+        class="posts-feed-item__author-social"
+      >
         <img
           class="posts-feed-item__author-twitter"
           src="/_media/twitter-white.png"
@@ -97,6 +102,7 @@ export default {
     font-weight: 600;
     .posts-feed-item__author-image {
       border-radius: 50%;
+      background: white;
     }
     .posts-feed-item__author-twitter {
       display: flex;
@@ -111,6 +117,9 @@ export default {
       span {
         color: white;
       }
+    }
+    &-nickname {
+      text-transform: lowercase;
     }
   }
   &__info {

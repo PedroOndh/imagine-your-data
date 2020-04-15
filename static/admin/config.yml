@@ -23,7 +23,7 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Post Author", name: "author", widget: "relation", collection: "authors", searchFields: ["name"], valueField: "name", displayFields: ["name"], required: false }
+      - { label: "Post Author", name: "author", widget: "relation", collection: "authors", searchFields: ["name"], valueField: "email", displayFields: ["name"], required: false }
       - { label: "Post Category", name: "categories", widget: "relation", collection: "categories", searchFields: ["name"], valueField: "name", displayFields: ["name"], multiple: true }
     meta:
       - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss" }
@@ -47,10 +47,12 @@ collections:
     create: true
     slug: "{{name}}"
     fields:
+      - {label: "Nickname", name: "nickname", widget: "string"}
       - {label: "Name and Last Name", name: "name", widget: "string"}
-      - {label: "Job title", name: "jobtitle", widget: "string"}
+      - {label: "Job title", name: "jobtitle", widget: "string", required: false}
       - {label: "Image", name: "image", widget: "image"}
-      - {label: "Twitter account", name: "twitter-account", widget: "string"}
+      - {label: "Email", name: "email", widget: "string"}
+      - {label: "Twitter account", name: "twitter-account", widget: "string", required: false}
     meta:
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
 
