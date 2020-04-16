@@ -22,6 +22,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$grid-gap: 2.19vw;
 section {
   margin-top: rem(280px);
   padding-bottom: rem(140px);
@@ -38,24 +39,24 @@ section {
       box-shadow: 0 0 rem(75px) 0 #d2d2d2;
       background: #fff;
       background-repeat: no-repeat;
-      margin-bottom: rem(42px);
+      margin-bottom: $grid-gap;
       display: grid;
       &--size {
         &-0 {
           grid-row: span 2;
           grid-column: span 2;
-          margin-right: rem(84px);
+          margin-right: $grid-gap * 2;
         }
         &-7 {
           grid-row: span 2;
           grid-column: span 2;
-          margin-left: rem(42px);
-          margin-right: rem(42px);
+          margin-left: $grid-gap;
+          margin-right: $grid-gap;
         }
         &-1 {
           grid-row: span 2;
           position: relative;
-          right: rem(42px);
+          right: $grid-gap;
         }
         &-2,
         &-4,
@@ -67,12 +68,12 @@ section {
         &-3,
         &-5 {
           grid-column: span 3;
-          margin-right: rem(42px);
+          margin-right: $grid-gap;
         }
         &-10,
         &-11 {
           grid-column: span 3;
-          margin-left: rem(42px);
+          margin-left: $grid-gap;
         }
       }
       &--background {
@@ -95,7 +96,7 @@ section {
           background: $corporative-light-blue;
           background-image: url('/_media/background/background-0.png');
           background-size: 100%;
-          background-position: 0 30%;
+          background-position: 0 14%;
           background-repeat: no-repeat;
         }
         &-1 {
@@ -134,7 +135,7 @@ section {
           background: $corporative-purple;
           background-image: url('/_media/background/background-0.png');
           background-size: 100%;
-          background-position: 0 30%;
+          background-position: 0 14%;
           background-repeat: no-repeat;
         }
         &-8 {
@@ -182,11 +183,14 @@ section {
         }
       }
     }
+    @media screen and (max-width: $breakpoint__small-desktop--max) {
+      grid-auto-rows: 19vw;
+    }
     @media screen and (max-width: $breakpoint__tablet--max) {
       grid-template-columns: 1fr;
       grid-auto-rows: 25vw;
       .posts-feed-item {
-        margin-bottom: rem(42px);
+        margin-bottom: $grid-gap;
         grid-row: span 1;
         grid-column: span 1;
         margin-left: 0;

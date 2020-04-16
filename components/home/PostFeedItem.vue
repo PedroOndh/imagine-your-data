@@ -12,8 +12,10 @@
         :alt="post.attributes.author.name"
       />
       <div class="posts-feed-item__author-name">
-        By
-        <span class="posts-feed-item__author-nickname colored">{{
+        <span class="posts-feed-item__author-by">
+          By
+        </span>
+        <span class="posts-feed-item__author-nickname">{{
           post.attributes.author.nickname
         }}</span>
       </div>
@@ -43,7 +45,7 @@
 
       <nuxt-link :to="post._path">
         <h1 class="posts-feed-item__title">
-          {{ post.attributes.title }}
+          {{ truncatedTitle }}
         </h1>
       </nuxt-link>
     </div>
@@ -51,6 +53,17 @@
 </template>
 
 <script>
+const trunc = (string, n, useWordBoundary) => {
+  if (string.length <= n) {
+    return string
+  }
+  const subString = string.substr(0, n - 1)
+  return (
+    (useWordBoundary
+      ? subString.substr(0, subString.lastIndexOf(' '))
+      : subString) + '...'
+  )
+}
 export default {
   name: 'PostFeedItem',
   props: {
@@ -82,8 +95,10 @@ export default {
     const dateString = `${date.getDate()} ${
       months[date.getMonth()]
     } ${date.getFullYear()}`
+    const truncatedTitle = trunc(this.$props.post.attributes.title, 65, true)
     return {
-      dateString
+      dateString,
+      truncatedTitle
     }
   }
 }
@@ -92,7 +107,6 @@ export default {
 <style scoped lang="scss">
 .posts-feed-item {
   position: relative;
-  padding: 0 rem(49px);
   &__author {
     width: rem(111px);
     position: absolute;
@@ -132,17 +146,17 @@ export default {
   }
   &__content {
     color: white;
-    margin-top: 16.3vw;
+    position: absolute;
+    bottom: rem(40px);
+    padding: 0 rem(49px);
     a {
       text-decoration: none;
     }
     h1 {
-      font-size: 36px;
+      font-size: rem(36px);
       font-weight: 300;
       line-height: 1.39;
-      height: 50%;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      min-height: 12vw;
     }
   }
   &--size {
@@ -151,8 +165,10 @@ export default {
     &-10,
     &-11 {
       .posts-feed-item__content {
-        margin-top: 4vw;
         margin-right: 20%;
+        h1 {
+          min-height: 6vw;
+        }
       }
     }
   }
@@ -162,24 +178,89 @@ export default {
     &-5,
     &-6,
     &-10 {
-      .posts-feed-item__content {
+      .posts-feed-item__content,
+      .posts-feed-item__author-by {
         color: $grey-dark;
       }
     }
-    &-1 .colored {
-      color: $corporative-pink;
+    &-3,
+    &-4,
+    &-7,
+    &-8 {
+      .colored {
+        color: $corporative-yellow;
+      }
+      .posts-feed-item__author {
+        &-by {
+          color: white;
+        }
+        &-nickname {
+          color: $corporative-yellow;
+        }
+      }
     }
-    &-2 .colored {
-      color: $corporative-blue;
+    &-1 {
+      .colored,
+      .posts-feed-item__author-nickname {
+        color: $corporative-pink;
+      }
     }
-    &-5 .colored {
-      color: $corporative-purple;
+    &-2,
+    &-6 {
+      .colored,
+      .posts-feed-item__author-nickname {
+        color: $corporative-blue;
+      }
     }
-    &-6 .colored {
-      color: $corporative-blue;
+    &-5 {
+      .colored,
+      .posts-feed-item__author-nickname {
+        color: $corporative-purple;
+      }
     }
-    &-10 .colored {
-      color: $corporative-green;
+    &-10 {
+      .colored,
+      .posts-feed-item__author-nickname {
+        color: $corporative-green;
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint__desktop--max) {
+    &__content {
+      h1 {
+        font-size: rem(24px);
+      }
+    }
+    &--size {
+      &-3,
+      &-5,
+      &-10,
+      &-11 {
+        .posts-feed-item__content h1 {
+          min-height: 4vw;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint__small-desktop--max) {
+    &__author {
+      width: 5rem;
+    }
+    &__content {
+      padding: 0 2rem;
+      h1 {
+        font-size: rem(20px);
+      }
+    }
+    &--size {
+      &-3,
+      &-5,
+      &-10,
+      &-11 {
+        .posts-feed-item__content h1 {
+          min-height: 0;
+        }
+      }
     }
   }
 }
