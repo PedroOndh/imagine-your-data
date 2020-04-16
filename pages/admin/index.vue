@@ -83,7 +83,7 @@ if (process.client) {
         if (obj.url) {
           const urlParams = obj.url.split('=')[1]
           if (urlParams) {
-            return `<iframe src="https://www.youtube.com/embed/${
+            return `<iframe class="youtube-video" src="https://www.youtube.com/embed/${
               urlParams.split('&')[0]
             }" frameborder="0" allowfullscreen></iframe>`
           }
@@ -93,11 +93,68 @@ if (process.client) {
         if (obj.url) {
           const urlParams = obj.url.split('=')[1]
           if (urlParams) {
-            return `<iframe src="https://www.youtube.com/embed/${
+            return `<iframe class="youtube-video" src="https://www.youtube.com/embed/${
               urlParams.split('&')[0]
             }" frameborder="0" allowfullscreen></iframe>`
           }
         }
+      }
+    })
+    cms.registerEditorComponent({
+      id: 'image-figcaption',
+      label: 'Complex Image',
+      fields: [
+        {
+          name: 'image',
+          label: 'image',
+          widget: 'image'
+        },
+        {
+          name: 'caption',
+          label: 'image Caption',
+          widget: 'string',
+          default: ''
+        },
+        {
+          name: 'lightbox',
+          label: 'Lightbox available?',
+          widget: 'boolean'
+        }
+      ],
+      pattern: /^<figure itemscope itemtype="http:\/\/schema\.org\/ImageObject" class="image-figcaption">[ \t]*<img src="([\s\S]*?)" alt="([\s\S]*?)" ([\s\S]*?)?\/>([\s\S]*?)?<\/figure>$/,
+      fromBlock: (match) => {
+        return {
+          image: match[1],
+          caption: match[2],
+          lightbox: match[3]
+        }
+      },
+      toBlock: (obj) => {
+        return `<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption">
+                <img src="${obj.image}" alt="${obj.caption}" ${
+          obj.lightbox ? 'class="lightbox"' : ''
+        }
+                />
+                  ${
+                    obj.caption
+                      ? `<figcaption itemprop="caption" class="text-centered">
+                          ${obj.caption}
+                        </figcaption>`
+                      : ''
+                  }
+                </figure>`
+      },
+      toPreview: (obj) => {
+        return `<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption">
+                <img src="${obj.image}" alt="${obj.caption}" />
+                  ${
+                    obj.caption
+                      ? `<figcaption itemprop="caption" class="text-centered">
+                                    ${obj.caption}
+                                  </figcaption>`
+                      : ''
+                  }
+                </figure>`
       }
     })
   }) // eslint-disable-line

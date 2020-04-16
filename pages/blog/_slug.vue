@@ -18,8 +18,7 @@
           </span>
         </div>
       </div>
-      <!-- eslint-disable-next-line -->
-      <div class="blog-post__content" v-html="blogPost.html" />
+      <PostContent :content="blogPost.html" />
     </div>
     <div class="blog-post__share">
       Share if you liked it!
@@ -76,31 +75,6 @@
       color: #747474;
     }
   }
-  &__content {
-    padding-bottom: 10rem;
-    h2,
-    h3 {
-      color: $grey-dark;
-      font-size: rem(50px);
-      font-weight: 300;
-      padding: rem(40px) 0 rem(30px);
-    }
-    p {
-      font-family: 'Lora', serif;
-      font-size: rem(22px);
-      line-height: 1.83;
-      color: #747474;
-      padding-bottom: rem(40px);
-      a {
-        color: $link-blue;
-        font-weight: bold;
-      }
-    }
-    img {
-      width: 100%;
-      margin: rem(40px) 0;
-    }
-  }
   &__share {
     display: flex;
     flex-direction: column;
@@ -153,6 +127,7 @@
 }
 </style>
 <script>
+import PostContent from '~/components/PostContent'
 import SocialIcon from '~/components/common/SocialIcon'
 import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
 
@@ -199,7 +174,7 @@ function getDate(post) {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
 export default {
-  components: { SocialIcon },
+  components: { SocialIcon, PostContent },
   layout: 'page',
   async asyncData({ route, error }) {
     try {
