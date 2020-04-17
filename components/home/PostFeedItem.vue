@@ -5,50 +5,49 @@
         .attributes.index % 12}`
     "
   >
-    <div v-if="post.attributes.author" class="posts-feed-item__author">
-      <img
-        class="posts-feed-item__author-image"
-        :src="post.attributes.author.image"
-        :alt="post.attributes.author.name"
-      />
-      <div class="posts-feed-item__author-name">
-        <span class="posts-feed-item__author-by">
-          By
-        </span>
-        <span class="posts-feed-item__author-nickname">{{
-          post.attributes.author.nickname
-        }}</span>
-      </div>
-      <div
-        v-if="post.attributes.author.twitter"
-        class="posts-feed-item__author-social"
-      >
+    <nuxt-link :to="post._path">
+      <div v-if="post.attributes.author" class="posts-feed-item__author">
         <img
-          class="posts-feed-item__author-twitter"
-          src="/_media/twitter-white.png"
-          alt="twitter"
+          class="posts-feed-item__author-image"
+          :src="post.attributes.author.image"
+          :alt="post.attributes.author.name"
         />
-      </div>
-    </div>
-    <div class="posts-feed-item__content">
-      <div class="posts-feed-item__info">
-        <p
-          v-for="(category, index) in post.attributes.categories"
-          :key="index"
-          class="posts-feed-item__categories-item"
+        <div class="posts-feed-item__author-name">
+          <span class="posts-feed-item__author-by">
+            By
+          </span>
+          <span class="posts-feed-item__author-nickname">{{
+            post.attributes.author.nickname
+          }}</span>
+        </div>
+        <div
+          v-if="post.attributes.author.twitter"
+          class="posts-feed-item__author-social"
         >
-          {{ `${index > 0 ? '- ' : ''}${category}` }}
-        </p>
-        •
-        <p class="posts-feed-item__date colored">{{ dateString }}</p>
+          <img
+            class="posts-feed-item__author-twitter"
+            src="/_media/twitter-white.png"
+            alt="twitter"
+          />
+        </div>
       </div>
-
-      <nuxt-link :to="post._path">
+      <div class="posts-feed-item__content">
+        <div class="posts-feed-item__info">
+          <p
+            v-for="(category, index) in post.attributes.categories"
+            :key="index"
+            class="posts-feed-item__categories-item"
+          >
+            {{ `${index > 0 ? '- ' : ''}${category}` }}
+          </p>
+          •
+          <p class="posts-feed-item__date colored">{{ dateString }}</p>
+        </div>
         <h1 class="posts-feed-item__title">
           {{ truncatedTitle }}
         </h1>
-      </nuxt-link>
-    </div>
+      </div>
+    </nuxt-link>
   </div>
 </template>
 
@@ -137,9 +136,9 @@ export default {
     }
   }
   &__info {
-    font-size: rem(15px);
     padding-bottom: 1rem;
     p {
+      font-size: rem(15px);
       font-weight: 600;
       display: inline;
     }

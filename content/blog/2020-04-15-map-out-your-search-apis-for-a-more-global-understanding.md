@@ -4,7 +4,7 @@ date: 2019-03-05T17:00:00.000Z
 image: /cms_media/query-volume.png
 author: germanh@empathy.co
 categories:
-  - User Journey
+  - User Journeys
 ---
 As most of our customers operate internationally, we’ve often found that when analysing search data, it behaves differently depending on the location, and that the whereabouts of the online store is often the key factor for retailers to discover any anomalies, trends or performance alerts.
 

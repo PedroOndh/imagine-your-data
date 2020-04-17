@@ -25,14 +25,12 @@ export default {
   h2,
   h3 {
     color: #243d48;
-    font-size: rem(50px);
     font-weight: 300;
-    padding: rem(40px) 0 rem(30px);
+    padding: rem(56px) 0 rem(30px);
   }
   p,
   ul li {
     font-family: 'Lora', serif;
-    font-size: rem(22px);
     line-height: 1.83;
     color: #747474;
     a {
@@ -51,13 +49,22 @@ export default {
     }
   }
   img {
-    width: 100%;
-    margin: rem(40px) 0;
+    width: 70%;
+    margin: rem(40px) 15%;
   }
   iframe {
     margin-bottom: rem(40px);
     &.youtube-video {
       height: 30vw;
+    }
+  }
+  figcaption {
+    color: #747474;
+  }
+  @media screen and (max-width: $breakpoint__mobile--max) {
+    img {
+      width: 100%;
+      margin: rem(40px) 0;
     }
   }
 }

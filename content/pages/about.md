@@ -1,8 +1,8 @@
 ---
-title: About Imagine Your Data
+slogan: >-
+  How the Data is displayed is what conditions behaviours as opposed to What the
+  Data tells.
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+iMAGINE YOUR DATA helps Analytics professionals and Digital Strategists with unique Data Experiences built to empathise with our Human nature.
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+iMAGINE YOUR DATA is intended to share and amplify deliverables before they are standardised as part of eMPATHY.co platform.

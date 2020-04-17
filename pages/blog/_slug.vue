@@ -44,7 +44,6 @@
 <style lang="scss">
 .blog-post {
   &__title {
-    font-size: rem(73px);
     font-weight: 300;
     line-height: 1.22;
     text-align: center;
@@ -122,6 +121,23 @@
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       flex-direction: column;
+      padding-left: 5%;
+      padding-right: 5%;
+      .related-post {
+        max-width: none;
+        a {
+          display: flex;
+          flex-direction: column;
+          img,
+          h3 {
+            max-width: none;
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 2rem;
+            font-size: rem(22px);
+          }
+        }
+      }
     }
   }
 }
@@ -129,7 +145,7 @@
 <script>
 import PostContent from '~/components/PostContent'
 import SocialIcon from '~/components/common/SocialIcon'
-import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
+import { turnFileNameToPath } from '~/assets/libs/utils'
 
 async function getAvailablePosts() {
   const context = await require.context('~/content/blog', true, /\.md$/)
