@@ -109,6 +109,10 @@ export default {
   @media screen and (max-width: $breakpoint__mobile--max) {
     width: 90%;
     padding: 2rem;
+    &__quote {
+      font-size: 22px;
+      line-height: 1.5;
+    }
     &__second-row {
       flex-direction: column;
     }

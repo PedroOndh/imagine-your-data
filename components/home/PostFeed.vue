@@ -90,7 +90,7 @@ section {
         &-10,
         &-11 {
           animation-name: appearing;
-          animation-duration: 0.5s;
+          animation-duration: 0.8s;
         }
         &-0 {
           background: $corporative-light-blue;

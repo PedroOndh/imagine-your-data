@@ -2,7 +2,8 @@
   <div>
     <div class="container">
       <h1 class="catchphrase">
-        {{ content.attributes.catchphrase }}
+        The value of data is contained in the way is perceived as opposed to the
+        data itself
       </h1>
       <nuxt-link class="header__link" to="/about">
         <div class="more-link">
@@ -22,11 +23,13 @@
 
 <style lang="scss">
 .catchphrase {
+  font-size: rem(50px);
   font-weight: 300;
   line-height: 1.22;
   text-align: center;
   text-transform: uppercase;
   color: $grey-dark;
+  margin-bottom: 0;
 }
 .more-link {
   margin-top: rem(55px);
@@ -42,12 +45,17 @@
     }
   }
 }
+@media screen and (max-width: $breakpoint__mobile--max) {
+  .catchphrase {
+    font-size: rem(25px);
+  }
+}
 </style>
 
 <script>
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
-import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
+import { turnFileNameToPath } from '~/assets/libs/utils'
 import Chevron from '~/static/_media/chevron.svg?inline'
 
 const postsPerPage = 12
@@ -107,9 +115,7 @@ export default {
   components: { Categories, PostFeed, Chevron },
   async asyncData() {
     const availablePosts = await getAvailablePosts()
-    const content = await import('~/content/pages/home.md')
     return {
-      content: { ...content },
       availablePosts,
       filteredPosts: availablePosts,
       posts: availablePosts.slice(0, postsPerPage),

@@ -4,7 +4,7 @@ date: 2018-06-21T16:36:32.895Z
 image: /cms_media/alert-system-4.png
 author: josianq@empathy.co
 categories:
-  - User Journey
+  - User Journeys
 ---
 As the online retail market continues to grow along with consumers expectations, the industry has become more and more data driven and metric obsessed.It’s especially important in today’s ever more ferocious and competitive multinational marketplace. Top notch performance is pivotal and faults, albeit temporary, can cause permanent damage with a loss of reputation, trust and revenue.
 

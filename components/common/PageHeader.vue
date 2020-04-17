@@ -9,7 +9,7 @@
         </div>
       </nuxt-link>
     </div>
-    <div class="header__sub-title">Visualising eCommerce Search & Browse</div>
+    <div class="header__sub-title">Data for Creativity</div>
     <div class="header__menu">
       <nuxt-link class="header__link" to="/about">About</nuxt-link>
       <SocialIcon social="instagram" />
@@ -95,6 +95,7 @@ export default {
     padding-bottom: 6rem;
     &__logo {
       width: 100%;
+      align-items: center;
       .header__title {
         font-size: 7vw;
         width: 100%;

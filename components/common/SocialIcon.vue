@@ -1,5 +1,5 @@
 <template>
-  <a class="social-icon" :href="href">
+  <a class="social-icon" :href="href" target="_blank">
     <img
       class="social-icon__image"
       :src="

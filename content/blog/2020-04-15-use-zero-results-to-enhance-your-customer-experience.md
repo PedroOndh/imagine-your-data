@@ -4,7 +4,7 @@ date: 2019-03-26T16:56:44.947Z
 image: /cms_media/no-res.gif
 author: olallas@empathy.co
 categories:
-  - User Journey
+  - User Journeys
 ---
 The mere mention of Zero Results pages will make most eCommerce retailers feel uneasy as they’re often the single, most common place where an online store will lose visitors who, in many cases, will then not return again.
 
