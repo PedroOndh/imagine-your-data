@@ -14,6 +14,8 @@ It’s for this reason that as we’ve been developing our new EmpathyInsights a
 * **User:** User´s behaviour is the core connection between queries and products. By analysing the way shoppers search and how they interact with results enables brands to comprehend context and boost site search performance.
 * **Product:** Visualizing the performance of products within the search experience helps retailers to identify gaps within the search journey, define priorities and, of course, redefine the search results to enhance the digital experience.
 
+  <video controls poster=""><source src="/cms_media/ins1.mp4" type="video/mp4"></video>
+
 Using these dimensions as a focus point on the app’s design allows our customers to **understand site search performance from different perspectives.** Each dimension, and each visualization, creates a holistic picture to help retailers identify real-time trends, potential opportunities, the effectiveness of site search performance, and, crucially, the customer experience.
 
 Site Search is the most powerful tool for delivering against customer expectations. It’s the **best connection between a brand, its users and products.** We think that having visibility over these key dimensions in one handy app is vital, and what’s more, it helps retailers turn data into ideas or, as we often like to say, it´s **data for dreammakers!**

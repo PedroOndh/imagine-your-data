@@ -1,5 +1,5 @@
 ---
-title: Creating the New EmpathyBroker Alert System
+title: Creating the New Empathy Alert System
 date: 2018-06-21T16:36:32.895Z
 image: /cms_media/alert-system-4.png
 author: josianq@empathy.co
@@ -10,7 +10,7 @@ As the online retail market continues to grow along with consumers expectations,
 
 Our EmpathyInsights captures data from our search and navigation engine which can categorise, filter and match millions of queries in a day to not only keep an eye on the vast amounts of streaming data but to help retailers unleash the value of large data sets. This enables them to enhance and tailor customer experiences, make more informed buying and design decisions, anticipate trends and detect opportunities as well as inspiring ideas and creativity.
 
-We wanted to drill down further into this data and help our customers by creating a new EmpathyBroker Alert System. A system built around two principal needs:
+We wanted to drill down further into this data and help our customers by creating a new Empathy Alert System. A system built around two principal needs:
 
 \-**Pattern Prediction:** To understand and forecast what’s coming based on consumer behaviour to give customers real-time information when they want it.
 

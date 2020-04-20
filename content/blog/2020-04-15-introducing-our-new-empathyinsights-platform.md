@@ -10,6 +10,8 @@ We’ve been working really hard and are super excited to announce that our new 
 
 The innovative product application brings together all our visualizations in one place for easy, at a glance access to your eCommerce data.
 
+<video controls poster=""><source src="/cms_media/insight-app.mp4" type="video/mp4"></video>
+
 We think it will really help retailers and data analysts make more informed and insightful decisions. Making eCommerce search data more visible and actionable while helping brands to understand and anticipate customer needs.
 
-To find out more, please visit our website at [EmpathyInsights](http://www.empathybroker.com/empathy-insights/) or contact us at [info@empathybroker.com](mailto:info@empathybroker.com)
+To find out more, please visit our website at [EmpathyInsights](https://www.empathy.co/services/empathy-insight/) or contact us at [info@empathy.co](mailto:info@empathy.co)

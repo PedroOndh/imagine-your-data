@@ -3,11 +3,13 @@
 }
 .container {
   width: 80%;
+  max-width: rem(1540px);
   margin: auto;
 }
 
 .small-container {
   width: 60%;
+  max-width: rem(1155px);
   margin: auto;
 }
 .text-centered {
@@ -15,14 +17,41 @@
 }
 
 h1 {
+  font-size: rem(73px);
+}
+h2,
+h3 {
   font-size: rem(50px);
 }
 
+p,
+ul li,
+ol li {
+  font-size: rem(22px);
+}
+@media screen and (max-width: $breakpoint__desktop--max) {
+  h1 {
+    font-size: rem(60px);
+  }
+  h2,
+  h3 {
+    font-size: rem(36px);
+  }
+}
 @media screen and (max-width: $breakpoint__mobile--max) {
   .container, .small-container {
     width: 90%;
   }
   h1 {
+    font-size: rem(36px);
+  }
+  h2,
+  h3 {
     font-size: rem(25px);
+  }
+  p,
+  ul li,
+  ol li {
+    font-size: rem(18px);
   }
 }

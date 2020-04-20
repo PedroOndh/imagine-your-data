@@ -20,4 +20,4 @@ That’s why many Empathy clients love the power of being able to easily visuali
 
 ![Now animation](/cms_media/now-animation.gif "Now animation")
 
-If you want to learn more about the Now visualisation, the actionable insights it offers and the way it provides instant interaction with customers, [download the Now overview](https://www.empathybroker.com/empathy-insight/now/).
+If you want to learn more about the Now visualisation, the actionable insights it offers and the way it provides instant interaction with customers, [download the Now overview](https://www.empathy.co/resources/now/).

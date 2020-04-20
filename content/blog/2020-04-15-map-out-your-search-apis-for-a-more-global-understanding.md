@@ -10,6 +10,8 @@ As most of our customers operate internationally, we’ve often found that when 
 
 So, we created the Worldwide Performance visualisation to do just that. Gathering together high-level search data by country and continent, it provides a full understanding and detailed analysis of the worldwide search experience. Offering a global overview that’s divides search KPIs by location and then drills down into different and actionable views so that each metric can be scrutinised.
 
+<video controls poster=""><source src="/cms_media/video-query-volume.mp4" type="video/mp4"></video>
+
 By providing such a global, but at the same time highly detailed, overview this visualisation focusses on the four core search KPI’s: queries, clicks, add to carts, and No Results. Each KPI can be analysed and checked individually or with others, and they can all be sorted by size or viewed as a map to easily compare different locations.
 
 Visualisations like this one that provide such as level of detail make data more accessible, understandable and actionable. For international eCommerce companies this not only enables them to identify country specific trends but also helps in the planning, distributing and redistributing of stock. Its invaluable insights are extracted from four different perspectives:
