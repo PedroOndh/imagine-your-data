@@ -1,6 +1,6 @@
 <template>
   <div class="blog-post__related">
-    <div class="related-post__filtering-method">by {{ filteringMethod }}</div>
+    <div class="related-post__filtering-method">By {{ filteringMethod }}</div>
     <div
       v-for="(post, index) in relatedPosts"
       :key="index"
@@ -21,6 +21,10 @@ export default {
   name: 'RelatedPosts',
   props: {
     currentPost: {
+      type: Object,
+      default() {}
+    },
+    currentAuthor: {
       type: Object,
       default() {}
     }
@@ -59,7 +63,7 @@ export default {
         (post) => post.attributes.author === currentPost.attributes.author
       )
       if (postsByAuthor.length >= 3) {
-        this.$data.filteringMethod = 'author'
+        this.$data.filteringMethod = this.$props.currentAuthor.attributes.nickname
         return postsByAuthor.slice(0, 3)
       }
       const postsByCategory = await availablePosts.filter(
@@ -85,10 +89,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: rem(150px);
-  padding-bottom: rem(215px);
-  padding-left: rem(69px);
-  padding-right: rem(69px);
+  padding: rem(150px) 10% rem(215px);
   .related-post {
     max-width: 33%;
     a {
@@ -98,13 +99,13 @@ export default {
         width: 50%;
         max-width: rem(183px);
         height: rem(119px);
-        margin-right: rem(39px);
+        margin-right: 7%;
         object-fit: cover;
       }
       h3 {
         width: 50%;
         max-width: rem(370px);
-        font-size: rem(28px);
+        font-size: rem(22px);
         line-height: 1.5;
         color: $grey-dark;
         display: flex;
@@ -113,15 +114,25 @@ export default {
     }
     &__filtering-method {
       position: absolute;
-      top: 1rem;
-      left: 1rem;
-      color: $corporative-yellow;
+      top: 5rem;
+      left: 10%;
+      font-weight: bold;
+      color: $grey-medium;
+    }
+  }
+  @media screen and (max-width: $breakpoint__desktop--max) {
+    padding-bottom: 20rem;
+    .related-post {
+      a h3 {
+        font-size: 1rem;
+      }
     }
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
     flex-direction: column;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: rem(150px);
     .related-post {
       max-width: none;
       a {
@@ -133,7 +144,15 @@ export default {
           width: 100%;
           margin-right: 0;
           margin-bottom: 2rem;
-          font-size: rem(22px);
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint__mobile--max) {
+    .related-post {
+      a {
+        img {
+          height: 10rem;
         }
       }
     }

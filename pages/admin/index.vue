@@ -83,7 +83,7 @@ if (process.client) {
         if (obj.url) {
           const urlParams = obj.url.split('=')[1]
           if (urlParams) {
-            return `<iframe class="youtube-video" src="https://www.youtube.com/embed/${
+            return `<iframe class="external-video" src="https://www.youtube.com/embed/${
               urlParams.split('&')[0]
             }" frameborder="0" allowfullscreen></iframe>`
           }
@@ -93,7 +93,7 @@ if (process.client) {
         if (obj.url) {
           const urlParams = obj.url.split('=')[1]
           if (urlParams) {
-            return `<iframe class="youtube-video" src="https://www.youtube.com/embed/${
+            return `<iframe class="external-video" src="https://www.youtube.com/embed/${
               urlParams.split('&')[0]
             }" frameborder="0" allowfullscreen></iframe>`
           }
@@ -121,7 +121,7 @@ if (process.client) {
           widget: 'boolean'
         }
       ],
-      pattern: /^<figure itemscope itemtype="http:\/\/schema\.org\/ImageObject" class="image-figcaption">[ \t]*<img src="([\s\S]*?)" alt="([\s\S]*?)" ([\s\S]*?)?\/>([\s\S]*?)?<\/figure>$/,
+      pattern: /^<figure itemscope itemtype="http:\/\/schema\.org\/ImageObject" class="image-figcaption">[ \t]*<img src="([\s\S]*?)" alt="([\s\S]*?)" class="([\s\S]*?)"\/>([\s\S]*?)?<\/figure>$/,
       fromBlock: (match) => {
         return {
           image: match[1],
@@ -130,31 +130,12 @@ if (process.client) {
         }
       },
       toBlock: (obj) => {
-        return `<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption">
-                <img src="${obj.image}" alt="${obj.caption}" ${
-          obj.lightbox ? 'class="lightbox"' : ''
-        }
-                />
-                  ${
-                    obj.caption
-                      ? `<figcaption itemprop="caption" class="text-centered">
-                          ${obj.caption}
-                        </figcaption>`
-                      : ''
-                  }
-                </figure>`
+        // eslint-disable-next-line
+        return `<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="${obj.image}" alt="${obj.caption}" class="${obj.lightbox ? 'lightbox' : ''}"/>${obj.caption ? `<figcaption itemprop="caption" class="text-centered">${obj.caption}</figcaption>` : '' }</figure>`
       },
       toPreview: (obj) => {
-        return `<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption">
-                <img src="${obj.image}" alt="${obj.caption}" />
-                  ${
-                    obj.caption
-                      ? `<figcaption itemprop="caption" class="text-centered">
-                                    ${obj.caption}
-                                  </figcaption>`
-                      : ''
-                  }
-                </figure>`
+        // eslint-disable-next-line
+        return `<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="${obj.image}" alt="${obj.caption}" />${obj.caption ? `<figcaption itemprop="caption" class="text-centered">${obj.caption}</figcaption>` : '' }</figure>`
       }
     })
   }) // eslint-disable-line

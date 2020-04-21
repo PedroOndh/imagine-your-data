@@ -10,8 +10,6 @@ categories:
 
 author: davidm@empathy.co
 
-description:
-keywords:
 ---
 <div class="col-sm-12" align="center">
 	<iframe src="https://www.imagineyourdata.com/datavis/cbn-diagram-uk/" width="100%" height="700" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

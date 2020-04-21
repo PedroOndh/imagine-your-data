@@ -9,17 +9,9 @@ categories:
 
 author: davidm@empathy.co
 
-custom_js:
-- media/2017-09-15-my-first-two-weeks-creating-Data-Viz/d3.v3.min.js
-- media/2017-09-25-top-queries-behavior-across-one-year/bubbles.js
-
-description:
-keywords:
 ---
 
-<div class="" align="center">
-	<svg class="bublesViz"></svg>
-</div>
+<iframe src="/local-data-vis/2017-09-25-top-queries-behavior-across-one-year/" framebimg-order="1" width="100%" height="620px"    max-height="720px" ></iframe>
 
 We were interested to find how some end users queries behave through the whole year, and find out from the data if would emerge common patterns. 
 

@@ -7,9 +7,6 @@ image:
 categories:
   - User Journeys
 author: alvarod@empathy.co
-
-description:
-keywords:
 ---
 <div class="col-sm-12" align="center">
 	<iframe src="https://www.imagineyourdata.com/datavis/iyd-contextualise-numterms/" framebimg-order="1" width="100%" height="565px"></iframe>

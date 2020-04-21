@@ -70,6 +70,9 @@ export default {
     font-weight: 300;
     line-height: 0.92;
     color: $corporative-blue;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   &__menu {
     display: flex;
@@ -90,17 +93,9 @@ export default {
       }
     }
   }
-  @media screen and (max-width: $breakpoint__mobile--max) {
+  @media screen and (max-width: $breakpoint__tablet--max) {
     flex-direction: column;
     padding-bottom: 6rem;
-    &__logo {
-      width: 100%;
-      align-items: center;
-      .header__title {
-        font-size: 7vw;
-        width: 100%;
-      }
-    }
     &__sub-title {
       padding: 1rem 0;
       text-align: center;
@@ -110,6 +105,16 @@ export default {
       width: 35px;
       height: 35px;
       margin-right: 0.5rem;
+    }
+  }
+  @media screen and (max-width: $breakpoint__mobile--max) {
+    &__logo {
+      width: 100%;
+      align-items: center;
+      .header__title {
+        font-size: 7vw;
+        width: 100%;
+      }
     }
   }
 }

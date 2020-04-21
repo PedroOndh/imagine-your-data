@@ -8,20 +8,31 @@ A cookie is a small file that is downloaded to the user’s computer in order to
 
 Below is a table with the cookies used on this website:
 
-| **Cookie**/Type/Duration | Description |
-| ------------------------ | ----------- |
 
-\| **__utma**\
-2 years after its creation                 |                                                                                                                                                                             | | **__utmb**\
-30 minutes after its creation              |                                                                                                                                                                             | | **__utmc**\
-At the end of the session                  |                                                                                                                                                                             | | **__utmz**\
-6 months after its creation                |                                                                                                                                                                             | | **_icl_visitor_lang_js**\
-1 day after its creation     |                                                                                                                                                                             | | **GOOGLE ANALYTICS**\
-GOOGLE ANALYTICS                 | Cookies to quantify the number of users and perform the measurement and statistical analysis of how users use the service offered.                                          | | **sb_session_id**\
-1 hour                              |                                                                                                                                                                             | | **sb_user_id**\
-sb_user_id\ | 3 years after its creation |                                                                                                                                                                             |
+
+| **Cookie**/Type/Duration                               | Description                                                                                                                                                                 |
+| ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **__utma**\
+2 years after its creation                 |                                                                                                                                                                             |
+| **__utmb**\
+30 minutes after its creation              |                                                                                                                                                                             |
+| **__utmc**\
+At the end of the session                  |                                                                                                                                                                             |
+| **__utmz**\
+6 months after its creation                |                                                                                                                                                                             |
+| **_icl_visitor_lang_js**\
+1 day after its creation     |                                                                                                                                                                             |
+| **GOOGLE ANALYTICS**\
+GOOGLE ANALYTICS                 | Cookies to quantify the number of users and perform the measurement and statistical analysis of how users use the service offered.                                          |
+| **sb_session_id**\
+1 hour                              |                                                                                                                                                                             |
+| **sb_user_id**\
+3 years after its creation |                                                                                                                                                                             |
 | **tk_ai**\
-At the end of the session                   |                                                                                                                                                                             | | **viewed_cookie_policy**                               | Used to remember whether the visitor has “accepted” our cookie policy (i.e. chosen to close the header). If set it contains the word “yes”. It doesn’t track personal data. |
+At the end of the session                   |                                                                                                                                                                             |
+| **viewed_cookie_policy**                               | Used to remember whether the visitor has “accepted” our cookie policy (i.e. chosen to close the header). If set it contains the word “yes”. It doesn’t track personal data. |
+
+
 
 ### How can you set your cookies?
 

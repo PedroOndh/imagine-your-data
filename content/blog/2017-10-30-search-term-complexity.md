@@ -1,23 +1,10 @@
 ---
-keywords: null
 title: Search Term Complexity
 date: 2017-10-30T16:36:32.895Z
 author: clemensa@empathy.co
-tags:
-  - statsAPI
-  - viz
-  - dta visualization
-  - data visualisation
-  - interative data
-  - infographics
-  - data tool
-  - graphical data
-  - Stats API
 image: /cms_media/cover-20.png
 categories:
   - User Journeys
-description: null
-category: statsAPI
 ---
 <div class="col-sm-12" align="center">
 	<iframe src="https://www.imagineyourdata.com/datavis/keyword-distribution/" framebimg-order="1" width="100%" height="765px"></iframe>

@@ -50,9 +50,9 @@ export default {
 
 <style scoped lang="scss">
 .quote {
-  width: 70%;
+  width: 60%;
   padding: rem(68px) rem(79px) rem(46px);
-  margin-left: 5%;
+  margin-left: 10%;
   border-radius: rem(20px);
   background-color: #fff;
   position: absolute;
@@ -72,7 +72,8 @@ export default {
   }
   &__author {
     font-size: 16px;
-    line-height: 2.88;
+    line-height: 2;
+    margin-top: 0.7rem;
     margin-bottom: rem(20px);
     &-name {
       font-weight: bold;
@@ -106,11 +107,22 @@ export default {
     cursor: pointer;
     margin-left: rem(26px);
   }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    width: 80%;
+    padding: rem(40px) rem(40px) rem(46px);
+    margin-left: 10%;
+    &__quote {
+      font-size: rem(22px);
+      line-height: 1.5;
+    }
+  }
   @media screen and (max-width: $breakpoint__mobile--max) {
     width: 90%;
-    padding: 2rem;
+    margin-left: 5%;
+    padding: 2rem 1rem;
+    position: initial;
     &__quote {
-      font-size: 22px;
+      font-size: rem(22px);
       line-height: 1.5;
     }
     &__second-row {

@@ -1,0 +1,126 @@
+p b{
+    font-weight: bold;
+    font-family: 'Ubuntu';
+  }
+
+      #deskvsmob-queries-weekdaysdist-form {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      #deskvsmob-queries-weekdaysdist-form label {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+      }
+
+      #deskvsmob-queries-weekdaysdist-form input {
+        margin-left: 20px;
+      }
+
+      #deskvsmob-queries-weekdaysdist {
+        display: block;
+        margin: auto;
+      }
+
+      #deskvsmob-queries-weekdaysdist text {
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart text {
+        font-size: 10px;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .titletext {
+        fill: #414649;
+        font-size: 16px;
+        text-anchor: middle;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .axis text {
+        fill: #81848B;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .axis.fillrect {
+        fill: #cdced1;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .axis.xaxis path,
+      #deskvsmob-queries-weekdaysdist .chart .axis.xaxis.scale text,
+      #deskvsmob-queries-weekdaysdist .chart .axis.xaxis.tickstext line {
+        display: none;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .axis.xaxis.scale line {
+        stroke: #FFF;
+        stroke-opacity: 0.7;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .axis.xaxis.tickstext text {
+        fill: #FFF;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .axis.xaxis.scale .tick:nth-child(2) {
+        display: none;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .axis.yaxis path,
+      #deskvsmob-queries-weekdaysdist .chart .axis.yaxis line {
+        display: none;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .axis.yaxis.hidetick {
+        display: none;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .axis.yaxis.daynighttick {
+        font-size: 9px;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .band text {
+        fill: #FFF;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .band .queryratiobar.desktopbar {
+        fill: #BD0B49;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .band .queryratiobar.mobilebar {
+        fill: #ecc16d;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .band .queryratiopoint.workdayspoint {
+        fill: #67A5B0;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .band .queryratiopoint.weekendpoint {
+        fill: #B6C630;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .band .queryratioline.queryratioworkdaysline {
+        fill: #67A5B0;
+      }
+
+      #deskvsmob-queries-weekdaysdist .chart .band .queryratioline.queryratioweekendline {
+        fill: #B6C630;
+      }
+
+      #deskvsmob-queries-weekdaysdist .legend .legenditem .legendtext {
+        fill: #414649;
+        font-size: 14px;
+      }
+
+      #deskvsmob-queries-weekdaysdist .legend .legenditem .legendcolor.legendcolordesktop {
+        fill: #BD0B49;
+      }
+
+      #deskvsmob-queries-weekdaysdist .legend .legenditem .legendcolor.legendcolormobile {
+        fill: #ecc16d;
+      }
+
+      #deskvsmob-queries-weekdaysdist .legend .legenditem .legendcolor.legendcolorworkdays {
+        fill: #67A5B0;
+      }
+
+      #deskvsmob-queries-weekdaysdist .legend .legenditem .legendcolor.legendcolorweekend {
+        fill: #B6C630;
+      }

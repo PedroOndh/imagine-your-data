@@ -18,14 +18,6 @@
   h3 {
     font-weight: 300;
   }
-  tr td {
-    background: #eee;
-    padding: 0.5rem 1rem;
-  }
-  tr th {
-    background: #ddd;
-    padding: 0.5rem 1rem;
-  }
 }
 </style>
 

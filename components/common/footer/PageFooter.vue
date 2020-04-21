@@ -80,10 +80,6 @@ export default {
     @media screen and (max-width: $breakpoint__mobile--max) {
       height: auto;
       padding: 1rem 0;
-      .quote {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
     }
   }
   &__second-row {
@@ -102,8 +98,9 @@ export default {
       text-decoration: none;
       color: $corporative-yellow;
     }
-    @media screen and (max-width: $breakpoint__mobile--max) {
-      padding: 0 1rem;
+    @media screen and (max-width: $breakpoint__tablet--max) {
+      padding: 1rem;
+      height: auto;
       text-align: center;
     }
   }

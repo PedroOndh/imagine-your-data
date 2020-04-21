@@ -65,13 +65,15 @@ export default {
   margin-top: rem(126px);
   &__list {
     display: flex;
+    flex-wrap: wrap;
     padding-top: rem(50px);
     justify-content: space-around;
     &-item {
       text-transform: uppercase;
+      text-align: center;
       opacity: 0.3;
       color: $corporative-light-blue;
-      padding: rem(15px) 0;
+      padding: rem(15px) 1rem;
       cursor: pointer;
       transition: opacity 0.5s ease;
       &:before {
@@ -90,10 +92,24 @@ export default {
       }
     }
   }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    &__list {
+      &-item {
+        &:before {
+          display: flex;
+        }
+      }
+    }
+  }
   @media screen and (max-width: $breakpoint__mobile--max) {
     &__list {
       flex-direction: column;
       align-items: center;
+      &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 }

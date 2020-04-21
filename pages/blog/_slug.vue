@@ -27,7 +27,7 @@
         <SocialIcon social="linkedin" />
       </div>
     </div>
-    <RelatedPosts :currentPost="blogPost" />
+    <RelatedPosts :current-post="blogPost" :current-author="author" />
   </div>
 </template>
 <style lang="scss">
@@ -74,6 +74,11 @@
       a {
         margin: 0 rem(2.5px);
       }
+    }
+  }
+  @media screen and (max-width: $breakpoint__mobile--max) {
+    &__author-name {
+      font-size: rem(22px);
     }
   }
 }
@@ -125,6 +130,11 @@ export default {
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Not found' })
+    }
+  },
+  head() {
+    return {
+      title: this.blogPost.attributes.title
     }
   }
 }

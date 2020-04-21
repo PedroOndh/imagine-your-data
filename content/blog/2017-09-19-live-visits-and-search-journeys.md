@@ -6,10 +6,9 @@ author: angelm@empathy.co
 categories:
   - User Journeys
   - Data Visualizations
-description: null
-keywords: null
+
 ---
-<iframe src="https://player.vimeo.com/video/235870820" width="640" height="325" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe class="external-video" src="https://player.vimeo.com/video/235870820" width="640" height="325" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 As part of the work we investigate on how to better **Contextualise Search** (as opposed to mere personalisation, although this is in itself another subject), the <a href="https://empathy.co" target="_blank">Empathy</a> team has been working in ways of **Visualising Search journeys** within the context and notions of New-Returning Visits and the applicability of this fundamental knowledge of User Behaviours to map **Context to Queries**.
 

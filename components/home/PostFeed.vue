@@ -118,7 +118,7 @@ section {
         }
         &-4 {
           background: $corporative-green;
-          background-image: url('/_media/background/background-4.png');
+          background-image: url('/_media/background/background-4.jpg');
           background-size: cover;
           background-position: center;
         }
@@ -148,7 +148,7 @@ section {
         }
         &-9 {
           background: $corporative-pink;
-          background-image: url('/_media/background/background-9.png');
+          background-image: url('/_media/background/background-9.jpg');
           background-size: cover;
           background-repeat: no-repeat;
         }
@@ -209,6 +209,7 @@ section {
       .posts-feed-item {
         background-size: 200%;
         background-position: center -20vw;
+        margin-bottom: 15vw;
       }
     }
   }

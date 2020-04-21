@@ -9,8 +9,6 @@ categories:
 
 author: alvarod@empathy.co
 
-description:
-keywords:
 ---
 <div class="col-sm-12" align="center">
 	<iframe src="https://www.imagineyourdata.com/datavis/iyd-clickvsconv-daily/" width="100%" height="350" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

@@ -7,8 +7,6 @@ categories:
   - Data Visualizations
 author: clemensa@empathy.co
 
-description:
-keywords:
 ---
 <div class="col-sm-12" align="center">
 	<iframe src="https://www.imagineyourdata.com/datavis/scatter-3D/" framebimg-order="1" width="100%" height="765px"></iframe>

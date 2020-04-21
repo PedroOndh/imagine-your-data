@@ -46,6 +46,7 @@ export default {
     a {
       color: $link-blue;
       font-weight: bold;
+      word-break: break-word;
     }
   }
   p {
@@ -59,27 +60,67 @@ export default {
       padding-bottom: rem(20px);
     }
   }
-  img {
+  img,
+  video,
+  iframe.external-video {
     width: 70%;
-    margin: rem(40px) 15%;
+    margin: 0 15% rem(40px);
   }
   iframe {
     margin-bottom: rem(40px);
-    &.youtube-video {
+    &.external-video {
       height: 30vw;
     }
   }
+  figure {
+    position: relative;
+  }
   figcaption {
     color: #747474;
+    position: absolute;
+    width: 15%;
+    top: rem(50px);
+    right: 0;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: left;
+  }
+  tr td {
+    background: #eee;
+    padding: 0.5rem 1rem;
+  }
+  tr th {
+    background: #ddd;
+    padding: 0.5rem 1rem;
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    figcaption {
+      font-size: 0.8rem;
+    }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
+    figcaption {
+      font-size: 1rem;
+      position: static;
+      text-align: center;
+      width: 100%;
+      margin-bottom: rem(40px);
+    }
     img {
       width: 100%;
       margin: rem(40px) 0;
     }
+    ul li,
+    ol li {
+      margin-left: 20px;
+    }
+    tr {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
-$mask-background-color: rgba(255, 255, 255, 0.8);
+$mask-background-color: rgba(0, 0, 0, 0.7);
 .lightbox {
   cursor: pointer;
 
@@ -102,7 +143,7 @@ $mask-background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 5rem 0;
+    padding: 3rem 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,6 +192,7 @@ $mask-background-color: rgba(255, 255, 255, 0.8);
     }
   }
   @media only screen and (max-width: $breakpoint__mobile--max) {
+    cursor: auto;
     &__media--images {
       max-width: rem(350px);
       padding: rem(25px);

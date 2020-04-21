@@ -22,6 +22,11 @@ export default {
     return {
       content: { ...content }
     }
+  },
+  head() {
+    return {
+      title: 'ImagineYourData - About'
+    }
   }
 }
 </script>

@@ -9,17 +9,9 @@ categories:
 
 author: alvarod@empathy.co
 
-custom_js:
-- media/2017-09-26-desktop-vs-mobile-search-traffic-evolution/scripts/vendor.js
-- media/2017-09-26-desktop-vs-mobile-search-traffic-evolution/scripts/main.js
-
-description:
-keywords:
 ---
 
-<div class="" align="center">
-	<svg id="deskvsmob-monthlyreport"></svg>
-</div>
+<iframe src="/local-data-vis/2017-09-26-desktop-vs-mobile-search-traffic-evolution/" framebimg-order="1" width="100%" height="620px"    max-height="720px" ></iframe>
 
 This chart represents a comparison over the last year of the Search traffic evolution between **Desktop** and **Mobile devices**, showing a notable increase in Mobile traffic during the last months.
 

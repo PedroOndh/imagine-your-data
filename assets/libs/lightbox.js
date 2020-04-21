@@ -8,7 +8,6 @@ export default function activateLightbox() {
   function onClickMediaElement(e) {
     e.preventDefault()
     openLightBox(e.target)
-    disableScroll()
   }
   function initLightboxBehaviour() {
     const width =
@@ -50,7 +49,7 @@ export default function activateLightbox() {
 
     lightBoxContainer.appendChild(lightBoxContent)
     lightBoxContent.appendChild(lightBoxCloseBtn)
-    lightBoxCloseBtn.textContent = 'X'
+    lightBoxCloseBtn.innerHTML = '<img src="/_media/times.svg" />'
     document.body.appendChild(lightBoxContainer)
 
     lightBoxContainer.addEventListener('click', (e) => {
@@ -88,34 +87,5 @@ export default function activateLightbox() {
   function deleteLightBox() {
     lightBox.content.removeChild(lightBox.media)
     document.body.removeChild(lightBox.container)
-    enableScroll()
-  }
-  function preventDefault(e) {
-    e.preventDefault()
-    e.returnValue = false
-  }
-  function preventDefaultForScrollKeys(e) {
-    preventDefault(e)
-    return false
-  }
-  function disableScroll() {
-    if (window.addEventListener) {
-      window.addEventListener('DOMMouseScroll', preventDefault, false)
-    }
-    document.addEventListener('wheel', preventDefault, { passive: false })
-    window.onwheel = preventDefault
-    window.onmousewheel = document.onmousewheel = preventDefault
-    window.ontouchmove = preventDefault
-    document.onkeydown = preventDefaultForScrollKeys
-  }
-  function enableScroll() {
-    if (window.removeEventListener) {
-      window.removeEventListener('DOMMouseScroll', preventDefault, false)
-    }
-    document.removeEventListener('wheel', preventDefault, { passive: false })
-    window.onmousewheel = document.onmousewheel = null
-    window.onwheel = null
-    window.ontouchmove = null
-    document.onkeydown = null
   }
 }

@@ -1,24 +1,13 @@
 ---
-keywords: null
 title: Visualising Black Friday
 date: 2017-09-27T16:36:32.895Z
 author: angelm@empathy.co
-tags:
-  - statsAPI
-  - data viz
-  - data visualization
-  - data black friday
-  - black friday
-  - data compare
-  - data visualisation
 image: /cms_media/cover-7.jpg
 categories:
   - Data Visualizations
-description: null
-category: statsAPI
 ---
 <div class="" align="center">
-<iframe src="https://player.vimeo.com/video/234684496" width="640" height="370" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe  class="external-video" src="https://player.vimeo.com/video/234684496" width="640" height="370" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
 
@@ -41,13 +30,7 @@ Using **d3.js** and with the extraordinary talent of various key members of the 
 
 #### Result
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption">
-                <img src="/cms_media/aproach1.png" alt="Thats the result of the first approach" class="lightbox"
-                />
-                  <figcaption itemprop="caption" class="text-centered">
-                          Thats the result of the first approach
-                        </figcaption>
-                </figure>
+<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/aproach1.png" alt="Thats the result of the first approach" class="lightbox"/><figcaption itemprop="caption" class="text-centered">Thats the result of the first approach</figcaption></figure>
 
 ### Issues we set out to improve from this original version:
 
@@ -67,36 +50,12 @@ Using **d3.js** and with the extraordinary talent of various key members of the 
 
 #### Approaches
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption">
-                <img src="/cms_media/aproach2.png" alt="Split events" class="lightbox"
-                />
-                  <figcaption itemprop="caption" class="text-centered">
-                          Split events
-                        </figcaption>
-                </figure>
+<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/aproach2.png" alt="Split events" class="lightbox"/><figcaption itemprop="caption" class="text-centered">Split events</figcaption></figure>
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption">
-                <img src="/cms_media/aproach3.png" alt="Transparency added to score ranking" class="lightbox"
-                />
-                  <figcaption itemprop="caption" class="text-centered">
-                          Transparency added to score ranking
-                        </figcaption>
-                </figure>
+<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/aproach3.png" alt="Transparency added to score ranking" class="lightbox"/><figcaption itemprop="caption" class="text-centered">Transparency added to score ranking</figcaption></figure>
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption">
-                <img src="/cms_media/aproach4.png" alt="Global stats, Lang and store filters, Time interval selection, Change main visualization" class="lightbox"
-                />
-                  <figcaption itemprop="caption" class="text-centered">
-                          Global stats, Lang and store filters, Time interval selection, Change main visualization
-                        </figcaption>
-                </figure>
+<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/aproach4.png" alt="Global stats, Lang and store filters, Time interval selection, Change main visualization" class="lightbox"/><figcaption itemprop="caption" class="text-centered">Global stats, Lang and store filters, Time interval selection, Change main visualization</figcaption></figure>
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption">
-                <img src="/cms_media/aproach5.png" alt="Relative ratios in global stats, Multiple simultaneous events, Configurable positioning" class="lightbox"
-                />
-                  <figcaption itemprop="caption" class="text-centered">
-                          Relative ratios in global stats, Multiple simultaneous events, Configurable positioning
-                        </figcaption>
-                </figure>
+<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/aproach5.png" alt="Relative ratios in global stats, Multiple simultaneous events, Configurable positioning" class="lightbox"/><figcaption itemprop="caption" class="text-centered">Relative ratios in global stats, Multiple simultaneous events, Configurable positioning</figcaption></figure>
 
 Hope you love this experiment as much as we do! Stay tuned as we continue to evolve these concepts that are already today projecting on the walls of top retailers (wink)
