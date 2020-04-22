@@ -158,7 +158,7 @@ section {
           height: 100%;
           background-image: url('/_media/background/background-8.png');
           background-size: 60vw;
-          background-position: 0vw -4vw;
+          background-position: 0vw -7vw;
           background-repeat: no-repeat;
           position: absolute;
         }
