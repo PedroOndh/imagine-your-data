@@ -89,9 +89,9 @@ export default {
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: rem(16px);
     font-weight: bold;
     p {
+      font-size: 1rem;
       margin-bottom: rem(4px);
     }
     a {
@@ -102,6 +102,9 @@ export default {
       padding: 1rem;
       height: auto;
       text-align: center;
+      p {
+        line-height: 1.4;
+      }
     }
   }
 }
