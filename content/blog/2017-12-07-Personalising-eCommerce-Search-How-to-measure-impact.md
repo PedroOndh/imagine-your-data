@@ -3,13 +3,14 @@ title: 'Personalising eCommerce Search: How to measure impact'
 date: 2017-12-07T16:36:32.895Z
 image: /cms_media/cover-24.png
 author: alvarod@empathy.co
+tags: [Viz,Search,Instant Search, Search Engine,search result,Data visualisation,Data visualization,infographics,Black Friday,ecommerce]
 categories:
   - Data Visualizations
-
+seo_keywords: blackfriday, Black Friday data viz, Black Friday eCommerce Data, Data Viz of Black Friday
 ---
-<div class="col-sm-12" align="center">
-	<iframe src="https://www.imagineyourdata.com/datavis/iyd-contextualise-queries/" framebimg-order="1" width="100%" height="620px"    max-height="720px" ></iframe>
-</div>
+
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/iyd-contextualise-queries/" desktop-height="620px" tablet-height="950px" mobile-height="620px" framebimg-order="1"></iyd-iframe>
+
 
 User queries are per definition an articulation of \*\*demand\*\*, and this demand might or might not respond to previous interactions, purchases, categories etc.
 
@@ -21,11 +22,11 @@ During the past weeks the Insights team has been exploring various options on ho
 
 First we attempted to simply expose **the overall performance with a Desktop/Mobile segmentation**:
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/cover-19.png" alt="Result of the first approach" class="lightbox"/><figcaption itemprop="caption" class="text-centered">Result of the first approach</figcaption></figure>
+<complex-image image="/cms_media/cover-19.png" caption="Result of the first approach" lightbox="lightbox" v-lightbox/></complex-image>
 
 Secondly **we focus on the query**, and what context (with a Fashion) sample gives better value to intervene as a contextualisation factor:
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/sample-graph-002.png" alt="Result of the second approach" class="lightbox"/><figcaption itemprop="caption" class="text-centered">Result of the second approach</figcaption></figure>
+<complex-image image="/cms_media/sample-graph-002.png" caption="Result of the second approach" lightbox="lightbox" v-lightbox/></complex-image>
 
 Note that the above also has been undergoing other variations that we have not yet published.
 

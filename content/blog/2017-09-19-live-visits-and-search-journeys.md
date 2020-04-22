@@ -3,6 +3,7 @@ title: Live Vists and Search Journeys
 date: 2017-09-19T16:36:32.895Z
 image: /cms_media/cover-8.png
 author: angelm@empathy.co
+tags: [statsAPI,contextualise search, interative data,infographics, data tool, graphical data,Stats API,visualisations]
 categories:
   - User Journeys
   - Data Visualizations

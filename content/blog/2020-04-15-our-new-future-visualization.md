@@ -3,6 +3,7 @@ title: Our new Future Visualization
 date: 2018-09-04T16:22:00.000Z
 image: /cms_media/cover-33.gif
 author: olallas@empathy.co
+tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 categories:
   - Data Visualizations
 ---

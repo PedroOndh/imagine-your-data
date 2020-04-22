@@ -1,10 +1,14 @@
-export default function activateLightbox() {
-  const media = document.querySelectorAll('.lightbox')
+import Vue from 'vue'
 
-  if (document.querySelectorAll('.lightbox').length > 0) {
-    initLightboxBehaviour()
-    window.addEventListener('resize', initLightboxBehaviour)
+Vue.directive('lightbox', {
+  inserted: (el) => {
+    activateLightbox(el)
   }
+})
+
+function activateLightbox(element) {
+  initLightboxBehaviour()
+  window.addEventListener('resize', initLightboxBehaviour)
   function onClickMediaElement(e) {
     e.preventDefault()
     openLightBox(e.target)
@@ -15,13 +19,9 @@ export default function activateLightbox() {
       document.documentElement.clientWidth ||
       document.body.clientWidth
     if (width <= 1023) {
-      media.forEach((mediaElement) =>
-        mediaElement.removeEventListener('click', onClickMediaElement)
-      )
+      element.removeEventListener('click', onClickMediaElement)
     } else {
-      media.forEach((mediaElement) =>
-        mediaElement.addEventListener('click', onClickMediaElement)
-      )
+      element.addEventListener('click', onClickMediaElement)
     }
   }
 

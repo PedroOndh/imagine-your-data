@@ -18,7 +18,9 @@
           </span>
         </div>
       </div>
-      <PostContent :content="blogPost.html" />
+      <client-only>
+        <PostContent :content="blogPost.html" />
+      </client-only>
     </div>
     <div class="blog-post__share">
       Share if you liked it!
@@ -116,6 +118,22 @@ function getDate(post) {
   ]
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
+function getMetatags(post) {
+  const metaTags = []
+  if (post.attributes.seo_description) {
+    metaTags.push({
+      name: 'description',
+      content: post.attributes.seo_description
+    })
+  }
+  if (post.attributes.seo_keywords) {
+    metaTags.push({
+      name: 'keywords',
+      content: post.attributes.seo_keywords
+    })
+  }
+  return metaTags
+}
 export default {
   components: { SocialIcon, PostContent, RelatedPosts },
   layout: 'page',
@@ -123,10 +141,12 @@ export default {
     try {
       const blogPost = await import(`~/content/blog/${route.name}.md`)
       const postAuthor = await getPostAuthor(blogPost)
+      const metaTags = getMetatags(blogPost)
       return {
         blogPost: { ...blogPost },
         author: { ...postAuthor },
-        date: getDate(blogPost)
+        date: getDate(blogPost),
+        metaTags
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Not found' })
@@ -134,7 +154,8 @@ export default {
   },
   head() {
     return {
-      title: this.blogPost.attributes.title
+      title: this.blogPost.attributes.title,
+      meta: [...this.metaTags]
     }
   }
 }

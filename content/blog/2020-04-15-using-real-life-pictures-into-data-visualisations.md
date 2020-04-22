@@ -3,6 +3,7 @@ title: Using Real-Life Pictures Into Data Visualisations
 date: 2019-07-30T13:45:00.000Z
 image: /cms_media/product-viz.jpg
 author: joseg@empathy.co
+tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 categories:
   - Data Visualizations
 ---

@@ -3,8 +3,10 @@ title: Real Time Search
 date: 2018-01-02T18:29:54.199Z
 image: /cms_media/cover-25.png
 author: alvarod@empathy.co
+tags: [Viz,Search,Instant Search, Search Engine,search result,Data visualisation,Data visualization,infographics,Black Friday,ecommerce]
 categories:
   - Data Visualizations
+seo_keywords: real time, real time data viz, real time search eCommerce Data, Data Viz of real time, real time
 ---
 <iframe src="https://www.imagineyourdata.com/datavis/iyd-rotate-360/" framebimg-order="1" width="100%" height="590px" max-height="720px" style="height: 100vw; max-height: 570px; margin-top: 10px; margin-bottom: 10px;"></iframe>
 

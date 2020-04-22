@@ -4,13 +4,14 @@ title:  "The importance of User Context"
 date: 2017-10-27T16:36:32.895Z
 image:
       /cms_media/cover-19.png
+tags: [statsAPI, viz, dta visualization,data visualisation,interactive data,infographics, data tool, graphical data,Stats API,user context,user data]
 categories:
   - User Journeys
 author: alvarod@empathy.co
 ---
-<div class="col-sm-12" align="center">
-	<iframe src="https://www.imagineyourdata.com/datavis/iyd-contextualise-numterms/" framebimg-order="1" width="100%" height="565px"></iframe>
-</div>
+
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/iyd-contextualise-numterms/" desktop-height="565px" tablet-height="" mobile-height="" framebimg-order="1"></iyd-iframe>
+
 
 In the previous post we introduced the concept of **User Context** and its importance when analysing, identifying and applying **previous User affinities**.
 

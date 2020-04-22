@@ -4,6 +4,7 @@ title:  "Desktop vs Mobile II"
 date: 2017-09-29T16:36:32.895Z
 image:
       /cms_media/cover-12.png
+tags: [statsAPI, article,data mobile vs desktop,data viz,data visualization,infographics, mobile data]
 categories:
   - User Journeys
 
@@ -13,7 +14,7 @@ author: alvarod@empathy.co
 
 <h3>Distribution of Search traffic throughout the day</h3>
 
-<iframe src="/local-data-vis/2017-09-29-desktop-vs-mobile/" framebimg-order="1" width="100%" height="620px"    max-height="720px" ></iframe>
+<iyd-iframe src="/local-data-vis/2017-09-29-desktop-vs-mobile/" desktop-height="560px" tablet-height="" mobile-height="580px" framebimg-order="1"></iyd-iframe>
 
 <p>As a further part of the comparison between the behaviour of users using <b>Mobile</b> and <b>Desktop devices</b>, we have analysed the distribution of Search traffic throughout the day.</p>
 

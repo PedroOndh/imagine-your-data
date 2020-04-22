@@ -3,6 +3,7 @@ title: Visualising Black Friday
 date: 2017-09-27T16:36:32.895Z
 author: angelm@empathy.co
 image: /cms_media/cover-7.jpg
+tags: [statsAPI, data viz, data visualization, data black friday, black friday, data compare, data visualisation]
 categories:
   - Data Visualizations
 ---
@@ -30,7 +31,7 @@ Using **d3.js** and with the extraordinary talent of various key members of the 
 
 #### Result
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/aproach1.png" alt="Thats the result of the first approach" class="lightbox"/><figcaption itemprop="caption" class="text-centered">Thats the result of the first approach</figcaption></figure>
+<complex-image image="/cms_media/aproach1.png" caption="Thats the result of the first approach" lightbox="lightbox" v-lightbox/></complex-image>
 
 ### Issues we set out to improve from this original version:
 
@@ -50,12 +51,12 @@ Using **d3.js** and with the extraordinary talent of various key members of the 
 
 #### Approaches
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/aproach2.png" alt="Split events" class="lightbox"/><figcaption itemprop="caption" class="text-centered">Split events</figcaption></figure>
+<complex-image image="/cms_media/aproach2.png" caption="Split events" lightbox="lightbox" v-lightbox/></complex-image>
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/aproach3.png" alt="Transparency added to score ranking" class="lightbox"/><figcaption itemprop="caption" class="text-centered">Transparency added to score ranking</figcaption></figure>
+<complex-image image="/cms_media/aproach3.png" caption="Transparency added to score ranking" lightbox="lightbox" v-lightbox/></complex-image>
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/aproach4.png" alt="Global stats, Lang and store filters, Time interval selection, Change main visualization" class="lightbox"/><figcaption itemprop="caption" class="text-centered">Global stats, Lang and store filters, Time interval selection, Change main visualization</figcaption></figure>
+<complex-image image="/cms_media/aproach4.png" caption="Global stats, Lang and store filters, Time interval selection, Change main visualization" lightbox="lightbox" v-lightbox/></complex-image>
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/aproach5.png" alt="Relative ratios in global stats, Multiple simultaneous events, Configurable positioning" class="lightbox"/><figcaption itemprop="caption" class="text-centered">Relative ratios in global stats, Multiple simultaneous events, Configurable positioning</figcaption></figure>
+<complex-image image="/cms_media/aproach5.png" caption="Relative ratios in global stats, Multiple simultaneous events, Configurable positioning" lightbox="lightbox" v-lightbox/></complex-image>
 
 Hope you love this experiment as much as we do! Stay tuned as we continue to evolve these concepts that are already today projecting on the walls of top retailers (wink)

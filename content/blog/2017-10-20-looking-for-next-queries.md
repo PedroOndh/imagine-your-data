@@ -4,15 +4,15 @@ title:  "Looking for Next Queries"
 date: 2017-10-20T16:36:32.895Z
 image:
       /cms_media/cover-17.png
+tags: [statsAPI, viz, dta visualization,data visualisation,interactive data,infographics, data tool, graphical data,Stats API,search engine]
 categories:
   - User Journeys
 
 author: alvarod@empathy.co
 
 ---
-<div class="col-sm-12" align="center">
-	<iframe src="https://www.imagineyourdata.com/datavis/iyd-nextqueries/" width="100%" height="505" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-</div>
+
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/iyd-nextqueries/" desktop-height="505px" tablet-height="" mobile-height="" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iyd-iframe>
 
 > You can play with the queries and its relations by mouse-overing and clicking on them.
 

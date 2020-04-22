@@ -3,6 +3,7 @@ title: 'MVT: Test, Analyse and Optimise Your Search Experience'
 date: 2019-07-24T15:33:37.502Z
 image: /cms_media/mvt-002.png
 author: pedrof@empathy.co
+tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 categories:
   - User Journeys
 ---
@@ -16,8 +17,7 @@ MVT is the definitive tool to help you determine and decide the best overall sea
 
 Allowing for multiple variations to be explored at the same time, you can easily define the best approach for product promotions or page results sorting. You just need to set a clear goal for each test and choose the search metrics you want to improve or test: Findability, CTR, Add to Cart. You can also define the traffic split that you want to dedicate to the test and your sensitivity threshold i.e. how good you want your results to be to declare it a success. Then you’re good to go.
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/mvt-002.png" alt="" class="lightbox"/></figure>
-
+<complex-image image="/cms_media/mvt-002.png" caption="" lightbox="lightbox" v-lightbox/></complex-image>
 
 
 ### Analyse your test results
@@ -26,8 +26,7 @@ Once each test has reached its completion date, the results will be available an
 
 Clear, informative displays guide you through your test results. In addition, other KPIs are also available, to have a more complete picture that includes other aspects that can affect a certain search configuration.
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/mvt-001.png" alt="" class="lightbox"/></figure>
-
+<complex-image image="/cms_media/mvt-001.png" caption="" lightbox="lightbox" v-lightbox/></complex-image>
 
 
 ### Optimise your search experience

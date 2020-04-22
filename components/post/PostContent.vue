@@ -1,38 +1,36 @@
-<template>
-  <!-- eslint-disable-next-line -->
-  <div class="blog-post__content" v-html="finalContent" />
-</template>
-
 <script>
-import activateLightbox from '~/assets/libs/lightbox'
-export default {
-  name: 'PostContent',
+import Vue from 'vue'
+import VueWithCompiler from 'vue/dist/vue.esm'
+import ComplexImage from '../cms/ComplexImage'
+import IYDIframe from '../cms/IYDIframe'
+
+Vue.component('complex-image', ComplexImage)
+Vue.component('iyd-iframe', IYDIframe)
+
+export default Vue.component('post-content', {
+  components: { ComplexImage },
   props: {
     content: {
       type: String,
       default() {}
     }
   },
-  data() {
-    const finalContent = this.$props.content.replace(
-      /<a/g,
-      '<a target="__blank"'
-    )
-    return {
-      finalContent
-    }
-  },
-  mounted() {
-    activateLightbox()
+  render(h) {
+    const div = document.createElement('div')
+    const content = this.content.replace(/<a/g, '<a target="__blank"')
+    div.innerHTML = content
+    div.classList.add('blog-post__content')
+    return h(VueWithCompiler.compile(div.outerHTML))
   }
-}
+})
 </script>
 
 <style lang="scss">
 .blog-post__content {
   padding-bottom: 10rem;
   h2,
-  h3 {
+  h3,
+  h4 {
     color: #243d48;
     font-weight: 300;
     padding: rem(56px) 0 rem(30px);
@@ -67,7 +65,6 @@ export default {
     margin: 0 15% rem(40px);
   }
   iframe {
-    margin-bottom: rem(40px);
     &.external-video {
       height: 30vw;
     }
@@ -79,7 +76,8 @@ export default {
     color: #747474;
     position: absolute;
     width: 15%;
-    top: rem(50px);
+    padding-left: 0.5rem;
+    top: 0;
     right: 0;
     font-size: 1rem;
     font-style: italic;
@@ -93,7 +91,14 @@ export default {
     background: #ddd;
     padding: 0.5rem 1rem;
   }
-  @media screen and (max-width: $breakpoint__tablet--max) {
+  blockquote {
+    text-align: center;
+    font-style: italic;
+    line-height: 1.83;
+    color: #747474;
+    padding-bottom: 2.5rem;
+  }
+  @media screen and (max-width: $breakpoint__desktop--max) {
     figcaption {
       font-size: 0.8rem;
     }
@@ -104,6 +109,7 @@ export default {
       position: static;
       text-align: center;
       width: 100%;
+      padding-left: 0;
       margin-bottom: rem(40px);
     }
     img {

@@ -3,6 +3,7 @@ title: 'Why the Now Visualisation is whipping up a storm, a bubbly one'
 date: 2019-04-05T15:40:32.767Z
 image: /cms_media/photo-post-def.jpg
 author: germanh@empathy.co
+tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 categories:
   - Data Visualizations
 ---
@@ -18,6 +19,6 @@ This visualisation not only enables retailers to see the online store’s real-t
 
 That’s why many Empathy clients love the power of being able to easily visualise the behaviour and queries taking place in their store as they happen. What’s more, as the Now visualisation enables retailers to proactively identify and action opportunities and trends, while also reacting early to any issues or new customer behaviours, it’s also a real gamechanger.
 
-<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="/cms_media/gif-post.gif" alt="" class="lightbox"/></figure>
+<complex-image image="/cms_media/gif-post.gif" caption="" lightbox="lightbox" v-lightbox></complex-image>
 
 If you want to learn more about the Now visualisation, the actionable insights it offers and the way it provides instant interaction with customers, [download the Now overview](https://www.empathy.co/resources/now/).

@@ -3,6 +3,7 @@ title: Introducing our new EmpathyInsights platform
 date: 2018-09-12T16:11:22.171Z
 image: /cms_media/cover-34.jpg
 author: germanh@empathy.co
+tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 categories:
   - Data Visualizations
 ---

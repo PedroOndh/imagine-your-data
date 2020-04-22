@@ -4,6 +4,7 @@ title:  "Instant Search Comparison"
 date: 2017-11-15T16:36:32.895Z
 image:
       /cms_media/cover-21.png
+tags: [Viz,Search,Instant Search, Search Engine,search result,Data visualisation,Data visualization,infographics, Interflora]
 categories:
   - Data Visualizations
   - User Journeys
@@ -11,9 +12,9 @@ categories:
 author: clemensa@empathy.co
 
 ---
-<div class="col-sm-12" align="center">
-	<iframe src="https://www.imagineyourdata.com/datavis/instantsearch-comparison-public/" framebimg-order="1" width="100%" height="635px"></iframe>
-</div>
+
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/instantsearch-comparison-public/" desktop-height="635px" tablet-height="" mobile-height="" framebimg-order="1"></iyd-iframe>
+
 
 ### The Question
 At <a href="https://empathy.co" target="_blank">Empathy</a>, we wanted to understand better how users engage with the instant search feature differently compared to a "normal" search experience. __Instant Search__ is a feature where search results are populated as the user types without having to specifically "submit" a search query.

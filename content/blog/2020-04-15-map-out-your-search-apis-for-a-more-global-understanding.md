@@ -3,6 +3,7 @@ title: Map Out Your Search APIs for a More Global Understanding
 date: 2019-03-05T17:00:00.000Z
 image: /cms_media/query-volume.png
 author: germanh@empathy.co
+tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 categories:
   - User Journeys
 ---

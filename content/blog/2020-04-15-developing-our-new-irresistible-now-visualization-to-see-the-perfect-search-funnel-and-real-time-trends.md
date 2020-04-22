@@ -5,6 +5,7 @@ title: >-
 date: 2018-07-27T16:32:45.906Z
 image: /cms_media/cover31.png
 author: germanh@empathy.co
+tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 categories:
   - Data Visualizations
 ---

@@ -4,15 +4,16 @@ title:  "Contextualized Queries"
 date: 2017-10-26T16:36:32.895Z
 image:
       /cms_media/cover-18.png
+tags: [statsAPI, viz, dta visualization,data visualisation,interactive data,infographics, data tool, graphical data,Stats API,contextualize data,contextualize queries]
 categories:
   - User Journeys
 
 author: davidm@empathy.co
 
 ---
-<div class="col-sm-12" align="center">
-	<iframe src="https://www.imagineyourdata.com/datavis/treelayout/" framebimg-order="1" width="100%" height="865px"></iframe>
-</div>
+
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/treelayout/" desktop-height="900px" tablet-height="" mobile-height="" framebimg-order="1"></iyd-iframe>
+
 
 > You can get more details for each query by mouse-overing and clicking on them.
 

@@ -3,14 +3,13 @@
 title:  "Comparing three Variables on a 3D Scatter Plot"
 date: 2017-11-29T16:36:32.895Z
 image: /cms_media/cover-23.png
+tags: [statsAPI, article, Viz,Search]
 categories:
   - Data Visualizations
 author: clemensa@empathy.co
 
 ---
-<div class="col-sm-12" align="center">
-	<iframe src="https://www.imagineyourdata.com/datavis/scatter-3D/" framebimg-order="1" width="100%" height="765px"></iframe>
-</div>
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/scatter-3D/" desktop-height="765px" tablet-height="" mobile-height="" framebimg-order="1"></iyd-iframe>
 
 In this visualisation, we are comparing three variables across our dataset of searched keywords on a fashion retailing website during autumn:
 

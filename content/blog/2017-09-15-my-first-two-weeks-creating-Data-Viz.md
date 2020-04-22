@@ -1,17 +1,24 @@
 ---
-
-title:  "My First Data Visualization with StatsAPI"
+title: My First Data Visualization with StatsAPI
 date: 2017-09-15T16:36:32.895Z
-image:
-      /cms_media/cover-9.png
+image: /cms_media/cover-9.png
+author: davidm@empathy.co
+tags: [statsAPI, viz, dta visualization,data visualisation,interactive data,infographics, data tool, graphical data,Stats API]
 categories:
   - Data Visualizations
+seo_description: >-
+  This is my first post, where to start? after working roughly 2 weeks with the
+  STATS API I would like to share my experience.
 
-author: davidm@empathy.co
 
+  As the way I see it, Empathy’s StatsAPI is aimed to process the data available
+  in Empathy Search & Navigation eCommerce customers (queries, clicks, add2carts
+  and all aspects of the search & navigation journey) and give insights, and
+  shorten the distance between raw data and usable information.
+seo_keywords: ''
 ---
 
-<iframe src="/local-data-vis/2017-09-15-my-first-two-weeks-creating-Data-Viz/bars.html" framebimg-order="1" width="100%" height="620px"    max-height="720px" ></iframe>
+<iyd-iframe src="/local-data-vis/2017-09-15-my-first-two-weeks-creating-Data-Viz/bars.html" desktop-height="520px" tablet-height="" mobile-height="" framebimg-order="1"></iyd-iframe>
 
 This is my first post, where to start? after working roughly 2 weeks with the __STATS API__ I would like to share my experience.
 
@@ -23,7 +30,7 @@ On the technical side, **StatsAPI** is divided in 2 parts: Reports and Exports.
 
 From Reports by setting a list of filters and a timeframe we can get key metrics, such as Term Success that allows to calculate the “success” for queries, Top Queries that displays a list of most relevant queries , Opportunities to see how most relevant queries perform through time, or Distribution that allows to get global metrics (click count, findability, etc) for a specific timeframe (Hourly or Daily).
 
-<iframe src="/local-data-vis/2017-09-15-my-first-two-weeks-creating-Data-Viz/bubbles.html" framebimg-order="1" width="100%" height="620px"    max-height="720px" ></iframe>
+<iyd-iframe src="/local-data-vis/2017-09-15-my-first-two-weeks-creating-Data-Viz/bubbles.html" desktop-height="520px" tablet-height="" mobile-height="" framebimg-order="1"></iyd-iframe>
 
 From Exports we can generate csv files directly based on the reports provided by the service.
 

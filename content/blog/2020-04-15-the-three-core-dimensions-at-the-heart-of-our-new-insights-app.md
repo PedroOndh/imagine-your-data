@@ -3,6 +3,7 @@ title: The Three Core Dimensions at the Heart of our New Insights App
 date: 2018-08-09T16:24:58.017Z
 image: /cms_media/cover-32.png
 author: germanh@empathy.co
+tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 categories:
   - Data Visualizations
 ---

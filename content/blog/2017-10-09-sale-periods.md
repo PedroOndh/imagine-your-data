@@ -4,15 +4,14 @@ title:  "Sale Periods"
 date: 2017-10-09T16:36:32.895Z
 image:
       /cms_media/cover-15.png
+tags: [statsAPI, article,data viz,data visualization,infographics,sale periods viz,data sale periods]
 categories:
   - User Journeys
 
 author: alvarod@empathy.co
 
 ---
-<div class="col-sm-12" align="center">
-	<iframe src="https://www.imagineyourdata.com/datavis/iyd-clickvsconv-daily/" width="100%" height="350" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-</div>
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/iyd-clickvsconv-daily/" desktop-height="350px" tablet-height="" mobile-height="" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iyd-iframe>
 
 Understanding users' behaviour of an online store through their searches is essential, especially during sale periods, when we are more active. This analysis allows to **improve** the results shown and to anticipate to the needs of the users in each moment.
 
