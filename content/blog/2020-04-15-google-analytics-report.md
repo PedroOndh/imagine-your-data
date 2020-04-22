@@ -3,12 +3,13 @@ title: Google Analytics Report
 date: 2018-01-15T18:27:20.560Z
 image: /cms_media/cover-26.png
 author: clemensa@empathy.co
+tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce]
 categories:
   - Data Visualizations
 ---
-<iframe src="https://www.imagineyourdata.com/datavis/ga-html-report-template/" framebimg-order="1" width="100%" height="590px" max-height="720px"></iframe>
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/ga-html-report-template/" desktop-height="32vw" tablet-height="300px" mobile-height="60vw" framebimg-order="1"></iyd-iframe>
 
-At [EmpathyBroker](https://www.empathybroker.com/ "EmpathyBroker"), we have been working towards building reports from **Google Analytics data** of our costumers. In particular, we and our customers are interested how well search performs on their website and how it affects the costumer’s behaviour. To understand this, we are looking at the total amount of visits during a given time period for a specific market and device types. These visits are broken down by whether search was used or not during the visit. We are also investigating how well the conversion rate performs on visits where search was used, in comparison to the visits where search was not used.
+At [Empathy.co](https://www.empathy.co/ "Empathy.co"), we have been working towards building reports from **Google Analytics data** of our costumers. In particular, we and our customers are interested how well search performs on their website and how it affects the costumer’s behaviour. To understand this, we are looking at the total amount of visits during a given time period for a specific market and device types. These visits are broken down by whether search was used or not during the visit. We are also investigating how well the conversion rate performs on visits where search was used, in comparison to the visits where search was not used.
 
 In the recent past, we have aggregated, analysed and shared these numbers with our clients using spreadsheets. Going forward, we want to present this data in a visual and engaging way, which is why we started to look into creating a web based **visualisation for the Google Analytics numbers**.
 

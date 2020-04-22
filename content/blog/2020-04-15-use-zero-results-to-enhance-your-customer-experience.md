@@ -3,6 +3,7 @@ title: Use Zero Results to Enhance your Customer Experience
 date: 2019-03-26T16:56:44.947Z
 image: /cms_media/no-res.gif
 author: olallas@empathy.co
+tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 categories:
   - User Journeys
 ---

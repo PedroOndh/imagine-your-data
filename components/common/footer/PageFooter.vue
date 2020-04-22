@@ -18,8 +18,8 @@
           We use cookies, just to track visits to our website, we store no
           personal details.
         </b>
-        <nuxt-link to="/">Accept cookies</nuxt-link> -
-        <nuxt-link to="/"><b>Cookie Policy</b></nuxt-link>
+        <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link> -
+        <nuxt-link to="/cookie-policy"><b>Cookie Policy</b></nuxt-link>
       </p>
     </div>
   </div>
@@ -77,6 +77,10 @@ export default {
     background-size: cover;
     background-position: right;
     position: relative;
+    @media screen and (max-width: $breakpoint__mobile--max) {
+      height: auto;
+      padding: 1rem 0;
+    }
   }
   &__second-row {
     height: rem(82px);
@@ -94,8 +98,9 @@ export default {
       text-decoration: none;
       color: $corporative-yellow;
     }
-    @media screen and (max-width: $breakpoint__mobile--max) {
-      padding: 0 1rem;
+    @media screen and (max-width: $breakpoint__tablet--max) {
+      padding: 1rem;
+      height: auto;
       text-align: center;
     }
   }

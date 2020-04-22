@@ -18,7 +18,9 @@
           </span>
         </div>
       </div>
-      <PostContent :content="blogPost.html" />
+      <client-only>
+        <PostContent :content="blogPost.html" />
+      </client-only>
     </div>
     <div class="blog-post__share">
       Share if you liked it!
@@ -27,18 +29,7 @@
         <SocialIcon social="linkedin" />
       </div>
     </div>
-    <div class="blog-post__related">
-      <div
-        v-for="(post, index) in relatedPosts"
-        :key="index"
-        class="related-post"
-      >
-        <nuxt-link :to="post._path">
-          <img :src="post.attributes.image" class="related-post__image" />
-          <h3 class="related-post__title">{{ post.attributes.title }}</h3>
-        </nuxt-link>
-      </div>
-    </div>
+    <RelatedPosts :current-post="blogPost" :current-author="author" />
   </div>
 </template>
 <style lang="scss">
@@ -87,80 +78,18 @@
       }
     }
   }
-  &__related {
-    background: #f5f6f7;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: rem(150px);
-    padding-bottom: rem(215px);
-    padding-left: rem(69px);
-    padding-right: rem(69px);
-    .related-post {
-      max-width: 33%;
-      a {
-        display: flex;
-        align-items: center;
-        img {
-          width: 50%;
-          max-width: rem(183px);
-          height: rem(119px);
-          margin-right: rem(39px);
-          object-fit: cover;
-        }
-        h3 {
-          width: 50%;
-          max-width: rem(370px);
-          font-size: rem(28px);
-          line-height: 1.5;
-          color: $grey-dark;
-          display: flex;
-          align-items: center;
-        }
-      }
-    }
-    @media screen and (max-width: $breakpoint__tablet--max) {
-      flex-direction: column;
-      padding-left: 5%;
-      padding-right: 5%;
-      .related-post {
-        max-width: none;
-        a {
-          display: flex;
-          flex-direction: column;
-          img,
-          h3 {
-            max-width: none;
-            width: 100%;
-            margin-right: 0;
-            margin-bottom: 2rem;
-            font-size: rem(22px);
-          }
-        }
-      }
+  @media screen and (max-width: $breakpoint__mobile--max) {
+    &__author-name {
+      font-size: rem(22px);
     }
   }
 }
 </style>
 <script>
-import PostContent from '~/components/PostContent'
+import PostContent from '~/components/post/PostContent'
+import RelatedPosts from '~/components/post/RelatedPosts'
 import SocialIcon from '~/components/common/SocialIcon'
-import { turnFileNameToPath } from '~/assets/libs/utils'
 
-async function getAvailablePosts() {
-  const context = await require.context('~/content/blog', true, /\.md$/)
-  const keys = context.keys()
-  const randomNumber = Math.floor(Math.random() * (keys.length - 3))
-  const availablePosts = await keys
-    .slice(randomNumber, randomNumber + 3)
-    .map((key) => ({
-      ...context(key),
-      _path: `/blog/${turnFileNameToPath(
-        key.replace('.md', '').replace('./', '')
-      )}`
-    }))
-  return availablePosts
-}
 async function getPostAuthor(post) {
   const context = await require.context('~/content/authors', true, /\.md$/)
   const authors = await context.keys().map((key) => ({
@@ -189,21 +118,44 @@ function getDate(post) {
   ]
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
+function getMetatags(post) {
+  const metaTags = []
+  if (post.attributes.seo_description) {
+    metaTags.push({
+      name: 'description',
+      content: post.attributes.seo_description
+    })
+  }
+  if (post.attributes.seo_keywords) {
+    metaTags.push({
+      name: 'keywords',
+      content: post.attributes.seo_keywords
+    })
+  }
+  return metaTags
+}
 export default {
-  components: { SocialIcon, PostContent },
+  components: { SocialIcon, PostContent, RelatedPosts },
   layout: 'page',
   async asyncData({ route, error }) {
     try {
       const blogPost = await import(`~/content/blog/${route.name}.md`)
       const postAuthor = await getPostAuthor(blogPost)
+      const metaTags = getMetatags(blogPost)
       return {
         blogPost: { ...blogPost },
         author: { ...postAuthor },
         date: getDate(blogPost),
-        relatedPosts: await getAvailablePosts()
+        metaTags
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Not found' })
+    }
+  },
+  head() {
+    return {
+      title: this.blogPost.attributes.title,
+      meta: [...this.metaTags]
     }
   }
 }

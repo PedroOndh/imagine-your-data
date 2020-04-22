@@ -5,7 +5,7 @@
         .attributes.index % 12}`
     "
   >
-    <nuxt-link :to="post._path">
+    <nuxt-link :to="post._path" class="posts-feed-item__link">
       <div v-if="post.attributes.author" class="posts-feed-item__author">
         <img
           class="posts-feed-item__author-image"
@@ -52,17 +52,7 @@
 </template>
 
 <script>
-const trunc = (string, n, useWordBoundary) => {
-  if (string.length <= n) {
-    return string
-  }
-  const subString = string.substr(0, n - 1)
-  return (
-    (useWordBoundary
-      ? subString.substr(0, subString.lastIndexOf(' '))
-      : subString) + '...'
-  )
-}
+import { trunc } from '~/assets/libs/utils'
 export default {
   name: 'PostFeedItem',
   props: {
@@ -260,6 +250,19 @@ export default {
           min-height: 0;
         }
       }
+    }
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    &__link .posts-feed-item__content {
+      margin-right: 20%;
+      h1 {
+        min-height: auto;
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint__mobile--max) {
+    &__link .posts-feed-item__content {
+      margin-right: 0;
     }
   }
 }

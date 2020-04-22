@@ -25,6 +25,8 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Post Author", name: "author", widget: "relation", collection: "authors", searchFields: ["name"], valueField: "email", displayFields: ["name"] }
       - { label: "Post Category", name: "categories", widget: "relation", collection: "categories", searchFields: ["name"], valueField: "name", displayFields: ["name"], multiple: true }
+      - { label: "SEO Description", name: "seo_description", hint: "Text for the description meta tag", widget: "text", required: false }
+      - { label: "SEO Keywords", name: "seo_keywords", hint: "List of terms separed by colons for keywords meta tag", widget: "text", required: false }
     meta:
       - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss" }
 
@@ -77,5 +79,15 @@ collections:
         name: "about"
         file: "content/pages/about.md"
         fields:
-          - {label: Slogan, name: slogan, widget: string}
+          - {label: Slogan, name: slogan, widget: text}
+          - {label: Body, name: body, widget: markdown}
+      - label: "Cookie Policy"
+        name: "cookie"
+        file: "content/pages/cookie.md"
+        fields:
+          - {label: Body, name: body, widget: markdown}
+      - label: "Privacy Policy"
+        name: "privacy"
+        file: "content/pages/privacy.md"
+        fields:
           - {label: Body, name: body, widget: markdown}

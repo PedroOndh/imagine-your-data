@@ -3,6 +3,7 @@ title: Really Understanding Zero Results Searches
 date: 2018-05-03T17:23:19.985Z
 image: /cms_media/cover-28.png
 author: joseac@empathy.co
+tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce]
 categories:
   - User Journeys
 ---
@@ -16,7 +17,7 @@ The following visualization provides an example of an eCommerce company with the
 
 ## You can get more details for each query by mouse-overing and clicking on them.
 
-<iframe src="https://assets.empathybroker.com/datavis/insights/weeklyreport-noresults/index.html" framebimg-order="1" width="85%" height="590px" max-height="85%"></iframe>
+<iyd-iframe src="https://assets.empathybroker.com/datavis/insights/weeklyreport-noresults/index.html" desktop-height="590px" tablet-height="" mobile-height="" framebimg-order="1"></iyd-iframe>
 
 To understand why trends are so important, let´s look at the query with the most zero results for this Retailer during the previous week, “***home***”. It had 233 searches that week but 272 searches two weeks prior. So actually, we can see that the trend of this query is downward. If the Retailer didn’t solve this zero results query two weeks ago, they may not be interested in solving it this week.
 

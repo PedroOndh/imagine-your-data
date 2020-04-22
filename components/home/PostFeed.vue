@@ -95,82 +95,83 @@ section {
         &-0 {
           background: $corporative-light-blue;
           background-image: url('/_media/background/background-0.png');
-          background-size: 100%;
-          background-position: 0 14%;
+          background-size: 60vw;
+          background-position: 0 70%;
           background-repeat: no-repeat;
         }
         &-1 {
           background-image: url('/_media/background/background-1.png');
-          background-size: 80%;
+          background-size: 180%;
+          background-position: 90% -100%;
         }
         &-2 {
           background-image: url('/_media/background/background-2.png');
-          background-size: 100%;
-          background-position: 0 0;
+          background-size: 60vw;
+          background-position: center 70%;
         }
         &-3 {
           background: $corporative-pink;
           background-image: url('/_media/background/background-3.png');
-          background-size: 100%;
-          background-position: 0 -240%;
+          background-size: 120%;
+          background-position: 10% 32%;
           background-repeat: no-repeat;
         }
         &-4 {
           background: $corporative-green;
-          background-image: url('/_media/background/background-4.png');
-          background-size: 100%;
+          background-image: url('/_media/background/background-4.jpg');
+          background-size: cover;
           background-position: center;
         }
         &-5 {
           background-image: url('/_media/background/background-5.png');
           background-size: 60vw;
-          background-position: 0 20%;
+          background-position: 0 -15vw;
         }
         &-6 {
           background-image: url('/_media/background/background-6.png');
-          background-size: 100%;
-          background-position: 0 20%;
+          background-size: 100% auto;
+          background-position: center 20%;
         }
         &-7 {
           background: $corporative-purple;
           background-image: url('/_media/background/background-0.png');
-          background-size: 100%;
-          background-position: 0 14%;
+          background-size: 60vw;
+          background-position: 0 70%;
           background-repeat: no-repeat;
         }
         &-8 {
           background: #0086b2;
           background-image: url('/_media/background/background-8.png');
-          background-size: 100%;
-          background-position: 0 20%;
+          background-size: 60vw;
+          background-position: 40% -5vw;
           background-repeat: no-repeat;
         }
         &-9 {
           background: $corporative-pink;
-          background-image: url('/_media/background/background-9.png');
-          background-size: 100%;
+          background-image: url('/_media/background/background-9.jpg');
+          background-size: cover;
           background-repeat: no-repeat;
         }
         &-9:before {
           content: '';
           width: 100%;
-          height: 17vw;
-          background-image: url('/_media/background/background-9-before.png');
-          background-size: 100%;
-          background-position: 0 100%;
+          height: 100%;
+          background-image: url('/_media/background/background-8.png');
+          background-size: 60vw;
+          background-position: 0vw -4vw;
           background-repeat: no-repeat;
           position: absolute;
         }
         &-10 {
           background-image: url('/_media/background/background-10.png');
           background-size: 60vw;
-          background-position: 0 20%;
+          background-position: 0 -15vw;
         }
         &-11 {
           background: $corporative-green;
           background-image: url('/_media/background/background-3.png');
-          background-size: 100%;
-          background-position: 0 500%;
+          background-size: 140%;
+          background-position: 20% 50%;
           background-repeat: no-repeat;
         }
       }
@@ -196,6 +197,8 @@ section {
         margin-left: 0;
         margin-right: 0;
         right: 0;
+        background-size: 100%;
+        background-position: 0 -10vw;
       }
     }
     @media screen and (max-width: $breakpoint__small-tablet--max) {
@@ -203,6 +206,11 @@ section {
     }
     @media screen and (max-width: $breakpoint__mobile--max) {
       grid-auto-rows: 120vw;
+      .posts-feed-item {
+        background-size: 200%;
+        background-position: center -20vw;
+        margin-bottom: 15vw;
+      }
     }
   }
 }
