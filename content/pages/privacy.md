@@ -1,9 +1,14 @@
 ### Who is responsible for the processing of your data?
 
-EMPATHYBROKER, LTD Tax ID No.: GB169951260\
-Address: Suite 2, 5 Percy Street, W1T 1DG, London\
-Tel.: +44(0)8454757973\
-Mail: [info@empathybroker.com](mailto:info@empathybroker.com)Registered in England and Wales: 8268541
+Empathy Systems Corporation S.L., CIF: B83601377
+
+Address: Profesor Potter, 51. 33023, Gijón (Asturias). Spain
+
+Mail: [info@empathy.co](mailto:info@empathy.co)
+
+DPO contact [dpo@empathy.co](mailto:dpo@empathy.co)
+
+Registered in England and Wales: 8268541
 
 You can contact us in any way to communicate with us.
 
