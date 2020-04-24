@@ -64,7 +64,7 @@ export default {
   border-top: solid 2px $corporative-light-blue;
   margin-top: rem(126px);
   &__list {
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     display: flex;
     flex-wrap: wrap;
     padding-top: rem(50px);
