@@ -6,9 +6,8 @@ image:
       /cms_media/cover-14.png
 tags: [statsAPI, article,data keyword,data viz,data visualization,infographics, keyword network]
 categories:
-  - User Journeys
   - Data Visualizations
-
+typology: Relations
 author: davidm@empathy.co
 
 ---

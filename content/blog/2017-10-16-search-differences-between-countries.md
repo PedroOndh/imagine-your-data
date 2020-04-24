@@ -6,8 +6,8 @@ image:
       /cms_media/cover-16.png
 tags: [statsAPI, article,data viz,data visualization,infographics,Search differences between countries ]
 categories:
-  - User Journeys
-
+  - Data Visualizations
+typology: Bars
 author: alvarod@empathy.co
 
 ---

@@ -1,36 +1,37 @@
 <template>
   <div
     :class="
-      `posts-feed-item posts-feed-item--size-${sizeIndex} posts-feed-item--background-${post
-        .attributes.index % 12}`
+      `posts-feed-item posts-feed-item--size-${sizeIndex} posts-feed-item--background-${style}`
     "
   >
-    <nuxt-link :to="post._path" class="posts-feed-item__link">
-      <div v-if="post.attributes.author" class="posts-feed-item__author">
-        <img
-          class="posts-feed-item__author-image"
-          :src="post.attributes.author.image"
-          :alt="post.attributes.author.name"
-        />
-        <div class="posts-feed-item__author-name">
-          <span class="posts-feed-item__author-by">
-            By
-          </span>
-          <span class="posts-feed-item__author-nickname">{{
-            post.attributes.author.nickname
-          }}</span>
-        </div>
-        <div
-          v-if="post.attributes.author.twitter"
-          class="posts-feed-item__author-social"
-        >
-          <img
-            class="posts-feed-item__author-twitter"
-            src="/_media/twitter-white.png"
-            alt="twitter"
-          />
-        </div>
+    <div
+      class="posts-feed-item__background"
+      :style="`background-image: url('${post.attributes.image}')`"
+    />
+    <div v-if="post.attributes.author" class="posts-feed-item__author">
+      <img
+        class="posts-feed-item__author-image"
+        :src="post.attributes.author.image"
+        :alt="post.attributes.author.name"
+      />
+      <div class="posts-feed-item__author-name">
+        <span class="posts-feed-item__author-by">
+          By
+        </span>
+        <span class="posts-feed-item__author-nickname">{{
+          post.attributes.author.nickname
+        }}</span>
       </div>
+      <div
+        v-if="post.attributes.author.twitter"
+        class="posts-feed-item__author-social colored"
+      >
+        <a :href="post.attributes.author.twitter">
+          <TwitterIcon />
+        </a>
+      </div>
+    </div>
+    <nuxt-link :to="post._path" class="posts-feed-item__link">
       <div class="posts-feed-item__content">
         <div class="posts-feed-item__info">
           <p
@@ -52,9 +53,11 @@
 </template>
 
 <script>
+import TwitterIcon from '~/static/_media/twitter.svg?inline'
 import { trunc } from '~/assets/libs/utils'
 export default {
   name: 'PostFeedItem',
+  components: { TwitterIcon },
   props: {
     post: {
       type: Object,
@@ -66,28 +69,54 @@ export default {
     }
   },
   data() {
-    const date = new Date(this.$props.post.attributes.date)
-    const months = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec'
-    ]
-    const dateString = `${date.getDate()} ${
-      months[date.getMonth()]
-    } ${date.getFullYear()}`
     const truncatedTitle = trunc(this.$props.post.attributes.title, 65, true)
     return {
-      dateString,
+      dateString: this.getDate(this.$props.post),
+      style: this.getStyle(this.$props.post),
       truncatedTitle
+    }
+  },
+  methods: {
+    getDate: (post) => {
+      const date = new Date(post.attributes.date)
+      const months = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec'
+      ]
+      const dateString = `${date.getDate()} ${
+        months[date.getMonth()]
+      } ${date.getFullYear()}`
+      return dateString
+    },
+    getStyle: (post) => {
+      const { categories, typology } = post.attributes
+      if (categories[0] === 'Data Visualizations') {
+        if (typology === 'Bubbles') {
+          return '0'
+        } else if (typology === 'Bars') {
+          return '3'
+        } else if (typology === 'Lines') {
+          return '4'
+        } else if (typology === 'Relations') {
+          return '7'
+        } else {
+          return '8'
+        }
+      } else {
+        const noTypologyStyles = ['1', '2', '5', '10']
+        const randomNumber = Math.floor(Math.random() * 4)
+        return noTypologyStyles[randomNumber]
+      }
     }
   }
 }
@@ -96,21 +125,39 @@ export default {
 <style scoped lang="scss">
 .posts-feed-item {
   position: relative;
+  &__background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    opacity: 0.09;
+    border-radius: 1.25rem;
+    filter: grayscale(100%) invert(1);
+  }
+  &--background-1,
+  &--background-2,
+  &--background-5,
+  &--background-10 {
+    .posts-feed-item__background {
+      opacity: 0.12;
+      filter: grayscale(100%);
+    }
+  }
   &__author {
-    width: rem(111px);
+    width: rem(95px);
     position: absolute;
     z-index: 1;
     right: rem(32px);
-    top: rem(-34px);
+    top: rem(-24px);
     font-weight: 600;
     .posts-feed-item__author-image {
       border-radius: 50%;
       background: white;
     }
-    .posts-feed-item__author-twitter {
-      display: flex;
-      margin: auto;
-      width: rem(14px);
+    &-social {
+      text-align: center;
     }
     &-name {
       font-size: rem(15px);
@@ -136,8 +183,12 @@ export default {
   &__content {
     color: white;
     position: absolute;
-    bottom: rem(40px);
-    padding: 0 rem(49px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 3.0625rem 2.5rem;
     a {
       text-decoration: none;
     }
@@ -154,7 +205,7 @@ export default {
     &-10,
     &-11 {
       .posts-feed-item__content {
-        margin-right: 20%;
+        padding-right: 25%;
         h1 {
           min-height: 6vw;
         }
@@ -178,6 +229,9 @@ export default {
     &-8 {
       .colored {
         color: $corporative-yellow;
+        path {
+          fill: $corporative-yellow;
+        }
       }
       .posts-feed-item__author {
         &-by {
@@ -192,6 +246,9 @@ export default {
       .colored,
       .posts-feed-item__author-nickname {
         color: $corporative-pink;
+        path {
+          fill: $corporative-pink;
+        }
       }
     }
     &-2,
@@ -199,18 +256,27 @@ export default {
       .colored,
       .posts-feed-item__author-nickname {
         color: $corporative-blue;
+        path {
+          fill: $corporative-blue;
+        }
       }
     }
     &-5 {
       .colored,
       .posts-feed-item__author-nickname {
         color: $corporative-purple;
+        path {
+          fill: $corporative-purple;
+        }
       }
     }
     &-10 {
       .colored,
       .posts-feed-item__author-nickname {
         color: $corporative-green;
+        path {
+          fill: $corporative-green;
+        }
       }
     }
   }
@@ -236,7 +302,7 @@ export default {
       width: 5rem;
     }
     &__content {
-      padding: 0 2rem;
+      padding: 0 2rem 2.5rem;
       h1 {
         font-size: rem(20px);
       }
@@ -254,7 +320,7 @@ export default {
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
     &__link .posts-feed-item__content {
-      margin-right: 20%;
+      padding-right: 25%;
       h1 {
         min-height: auto;
       }
@@ -262,7 +328,7 @@ export default {
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
     &__link .posts-feed-item__content {
-      margin-right: 0;
+      padding-right: 2rem;
     }
   }
 }

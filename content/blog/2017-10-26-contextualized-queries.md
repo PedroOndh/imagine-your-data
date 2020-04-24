@@ -5,8 +5,9 @@ date: 2017-10-26T16:36:32.895Z
 image:
       /cms_media/cover-18.png
 tags: [statsAPI, viz, dta visualization,data visualisation,interactive data,infographics, data tool, graphical data,Stats API,contextualize data,contextualize queries]
+typology: Other
 categories:
-  - User Journeys
+  - Data Visualizations
 
 author: davidm@empathy.co
 

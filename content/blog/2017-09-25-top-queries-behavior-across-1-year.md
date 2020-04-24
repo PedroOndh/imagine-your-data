@@ -6,7 +6,8 @@ image:
       /cms_media/cover-10.png
 tags: [statsAPI, interactive data,infographics, data tool, graphical data,Stats API,visualisations,Findability,dataviz]
 categories:
-  - User Journeys
+  - Data Visualizations
+typology: Bubbles
 
 author: davidm@empathy.co
 

@@ -2,8 +2,7 @@
   <div>
     <div class="container">
       <h1 class="catchphrase">
-        The value of data is contained in the way is perceived as opposed to the
-        data itself
+        Data for creativity
       </h1>
       <nuxt-link class="header__link" to="/about">
         <div class="more-link">

@@ -112,7 +112,9 @@ export default Vue.component('post-content', {
       padding-left: 0;
       margin-bottom: rem(40px);
     }
-    img {
+    img,
+    video,
+    iframe.external-video {
       width: 100%;
       margin: rem(40px) 0;
     }

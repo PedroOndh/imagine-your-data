@@ -6,6 +6,7 @@ image: /cms_media/cover-23.png
 tags: [statsAPI, article, Viz,Search]
 categories:
   - Data Visualizations
+typology: Bubbles
 author: clemensa@empathy.co
 
 ---

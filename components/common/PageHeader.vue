@@ -1,20 +1,22 @@
 <template>
-  <div class="header container">
-    <div class="header__logo">
-      <nuxt-link to="/">
-        <div class="header__title">ImagineYourData</div>
-        <div class="header__brand">
-          wondered by
-          <img src="/_media/empathy-co.svg" />
-        </div>
-      </nuxt-link>
-    </div>
-    <div class="header__sub-title">Data for Creativity</div>
-    <div class="header__menu">
-      <nuxt-link class="header__link" to="/about">About</nuxt-link>
-      <SocialIcon social="instagram" />
-      <SocialIcon social="twitter" />
-      <SocialIcon social="linkedin" />
+  <div v-header class="header">
+    <div class="container">
+      <div class="header__logo">
+        <nuxt-link to="/">
+          <div class="header__title">ImagineYourData</div>
+          <div class="header__brand">
+            wondered by
+            <img src="/_media/empathy-co.svg" />
+          </div>
+        </nuxt-link>
+      </div>
+      <div class="header__sub-title">Visualizing eCommerce Search & Browse</div>
+      <div class="header__menu">
+        <nuxt-link class="header__link" to="/about">About</nuxt-link>
+        <SocialIcon social="instagram" />
+        <SocialIcon social="twitter" />
+        <SocialIcon social="linkedin" />
+      </div>
     </div>
   </div>
 </template>
@@ -30,10 +32,12 @@ export default {
 
 <style scoped lang="scss">
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: rem(100px) 0 rem(160px);
+  padding: rem(100px) 0 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__logo {
     display: flex;
     flex-direction: column;
@@ -93,18 +97,45 @@ export default {
       }
     }
   }
-  @media screen and (max-width: $breakpoint__tablet--max) {
-    flex-direction: column;
-    padding-bottom: 6rem;
-    &__sub-title {
-      padding: 1rem 0;
-      text-align: center;
-      line-height: 1.5;
+  &--fixed {
+    padding: 0;
+    background: white;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background: white;
+    .container {
+      padding: 0.6rem 0px 1rem;
+      .header__logo {
+        .header__title {
+          transition: all 0.3s ease;
+          font-size: 1.5rem;
+          width: auto;
+          height: auto;
+        }
+      }
+      .header__menu {
+        a.social-icon {
+          transition: all 0.3s ease;
+          width: 40px;
+          height: 40px;
+        }
+      }
     }
-    &__menu a.social-icon {
-      width: 35px;
-      height: 35px;
-      margin-right: 0.5rem;
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    .container {
+      flex-direction: column;
+      .header__sub-title {
+        padding: 1rem 0;
+        text-align: center;
+        line-height: 1.5;
+      }
+      .header__menu a.social-icon {
+        width: 35px;
+        height: 35px;
+        margin-right: 0.5rem;
+      }
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {

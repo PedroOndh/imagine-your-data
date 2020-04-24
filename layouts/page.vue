@@ -22,7 +22,13 @@ export default {
   background-repeat: no-repeat;
   background-size: 80%;
   &__content {
+    padding-top: rem(260px);
     margin-bottom: rem(-140px);
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    &__content {
+      padding-top: rem(130px);
+    }
   }
 }
 </style>

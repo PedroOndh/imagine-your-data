@@ -122,7 +122,7 @@ No. As a general rule we only process data sent by its owner. If you supply us w
 
 **And children’s data?**
 
-We do not process data about children under 14 years of age. Therefore, please refrain from supplying such data if you are not that age or from supplying data about third parties who are not that age. EMPATHYBROKER, Ltd declines any responsibility for non-compliance with this provision.
+We do not process data about children under 14 years of age. Therefore, please refrain from supplying such data if you are not that age or from supplying data about third parties who are not that age. EMPATHY.co, Ltd declines any responsibility for non-compliance with this provision.
 
 **Do we make electronic communications?**
 
