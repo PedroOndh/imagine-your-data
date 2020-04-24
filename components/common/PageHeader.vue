@@ -105,7 +105,7 @@ export default {
     z-index: 2;
     background: white;
     .container {
-      padding: 0.6rem 0px 1rem;
+      padding: 0.6rem 0px 0.9rem;
       .header__logo {
         .header__title {
           transition: all 0.3s ease;

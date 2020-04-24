@@ -1,30 +1,24 @@
 import Vue from 'vue'
+import { isDesktop } from '~/assets/libs/utils'
 
 Vue.directive('header', {
   inserted: (el) => {
     if (isDesktop()) {
       const headerContainer = el.querySelector('.container')
       const containerTop = headerContainer.offsetTop
-      watchScroll(el, containerTop)
+      watchScroll(el, containerTop, 'header--fixed')
       window.addEventListener('scroll', function(e) {
-        watchScroll(el, containerTop)
+        watchScroll(el, containerTop, 'header--fixed')
       })
     }
   }
 })
 
-function watchScroll(header, containerTop) {
+function watchScroll(element, elementTop, classToToggle) {
   const currentScroll = Math.abs(document.body.getBoundingClientRect().top)
-  if (currentScroll > containerTop) {
-    header.classList.add('header--fixed')
+  if (currentScroll > elementTop) {
+    element.classList.add(classToToggle)
   } else {
-    header.classList.remove('header--fixed')
+    element.classList.remove(classToToggle)
   }
-}
-function isDesktop() {
-  const width =
-    window.innerWidth ||
-    document.documentElement.clientWidth ||
-    document.body.clientWidth
-  return width >= 1024
 }
