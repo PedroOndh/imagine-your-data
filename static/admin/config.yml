@@ -25,7 +25,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Post Author", name: "author", widget: "relation", collection: "authors", searchFields: ["name"], valueField: "email", displayFields: ["name"] }
       - { label: "Post Category", name: "categories", widget: "relation", collection: "categories", searchFields: ["name"], valueField: "name", displayFields: ["name"]}
-      - { label: "Data Viz Typology", name: "typology", widget: select, hint: "Will apply just for Data viz category posts", options: ['Bubbles', 'Bars', 'Lines', 'Relations', 'Other'], required: false }
+      - { label: "Data Viz Typology", name: "typology", widget: select, hint: "Will impact on Home styles, it will apply just for Data viz category posts", options: ['Bubbles', 'Bars', 'Lines', 'Relations', 'Other'], required: false }
       - { label: "SEO Description", name: "seo_description", hint: "Text for the description meta tag", widget: "text", required: false }
       - { label: "SEO Keywords", name: "seo_keywords", hint: "List of terms separed by colons for keywords meta tag", widget: "text", required: false }
     meta:

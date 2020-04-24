@@ -18,3 +18,10 @@ export const trunc = (string, n, useWordBoundary) => {
       : subString) + '...'
   )
 }
+export const isDesktop = () => {
+  const width =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth
+  return width >= 1024
+}

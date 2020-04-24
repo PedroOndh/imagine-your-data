@@ -1,4 +1,10 @@
+import CMS from 'netlify-cms'
+
 export default function adminConfig(cms) {
+  CMS.registerPreviewStyle(
+    'https://assets.empathybroker.com/resources/fonts/empathy-typography/style.css'
+  )
+  CMS.registerPreviewStyle('/admin/admin.css')
   cms.registerEditorComponent({
     id: 'video',
     label: 'Video',

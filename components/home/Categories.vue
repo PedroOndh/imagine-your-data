@@ -64,6 +64,7 @@ export default {
   border-top: solid 2px $corporative-light-blue;
   margin-top: rem(126px);
   &__list {
+    transition: all 0.5s ease;
     display: flex;
     flex-wrap: wrap;
     padding-top: rem(50px);
@@ -90,6 +91,18 @@ export default {
           opacity: 1;
         }
       }
+    }
+  }
+  &--fixed {
+    background: white;
+    position: fixed;
+    top: 4.3rem;
+    z-index: 2;
+    margin-top: 0;
+    width: 100%;
+    left: 0;
+    .categories__list {
+      padding-top: 0;
     }
   }
   @media screen and (max-width: $breakpoint__tablet--max) {

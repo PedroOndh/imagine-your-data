@@ -54,7 +54,7 @@
 <script>
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
-import { turnFileNameToPath } from '~/assets/libs/utils'
+import { turnFileNameToPath, isDesktop } from '~/assets/libs/utils'
 import Chevron from '~/static/_media/chevron.svg?inline'
 
 const postsPerPage = 12
@@ -130,6 +130,7 @@ export default {
   },
   mounted() {
     this.registerObserver()
+    this.prepareFixedCategories()
   },
   methods: {
     registerObserver() {
@@ -188,7 +189,41 @@ export default {
       this.$data.filteredPosts = newFilteredPosts
       this.$data.posts = newFilteredPosts.slice(0, postsPerPage)
       this.$data.currentPostList = 1
+      this.scrollInView()
       this.observe(1, true)
+    },
+    scrollInView() {
+      const currentScroll = Math.abs(document.body.getBoundingClientRect().top)
+      if (currentScroll > this.$data.categoriesTop && isDesktop()) {
+        const posts = document.querySelector('.posts')
+        posts.classList.add('posts--filtering')
+        window.scrollTo(0, this.$data.categoriesTop + 1)
+      }
+    },
+    prepareFixedCategories() {
+      if (isDesktop()) {
+        const header = document.querySelector('.header')
+        const headerHeight = header.offsetHeight
+        const headerContainerHeight = header.querySelector('.container')
+          .offsetHeight
+        const posts = document.querySelector('.posts')
+        const categories = document.querySelector('.categories')
+        const categoriesTop =
+          categories.offsetTop - headerHeight - headerContainerHeight
+        this.$data.categoriesTop = categoriesTop
+        window.addEventListener('scroll', function(e) {
+          const currentScroll = Math.abs(
+            document.body.getBoundingClientRect().top
+          )
+          if (currentScroll > categoriesTop) {
+            posts.classList.add('posts--filtering')
+            categories.classList.add('categories--fixed')
+          } else {
+            posts.classList.remove('posts--filtering')
+            categories.classList.remove('categories--fixed')
+          }
+        })
+      }
     }
   }
 }
