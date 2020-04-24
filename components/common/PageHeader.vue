@@ -33,6 +33,8 @@ export default {
 <style scoped lang="scss">
 .header {
   padding: rem(100px) 0 0;
+  position: absolute;
+  width: 100%;
   .container {
     display: flex;
     justify-content: space-between;
@@ -99,7 +101,6 @@ export default {
   }
   &--fixed {
     padding: 0;
-    background: white;
     position: fixed;
     width: 100%;
     z-index: 2;
