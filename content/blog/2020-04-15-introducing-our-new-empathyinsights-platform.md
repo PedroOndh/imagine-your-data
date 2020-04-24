@@ -5,7 +5,8 @@ image: /cms_media/cover-34.jpg
 author: germanh@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 categories:
-  - Data Visualizations
+  - User Journeys
+
 ---
 We’ve been working really hard and are super excited to announce that our new EmpathyInsights platform is now live!!!
 

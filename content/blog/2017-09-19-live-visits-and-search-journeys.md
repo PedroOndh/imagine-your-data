@@ -5,8 +5,8 @@ image: /cms_media/cover-8.png
 author: angelm@empathy.co
 tags: [statsAPI,contextualise search, interative data,infographics, data tool, graphical data,Stats API,visualisations]
 categories:
-  - User Journeys
   - Data Visualizations
+typology: Bubbles
 
 ---
 <iframe class="external-video" src="https://player.vimeo.com/video/235870820" width="640" height="325" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

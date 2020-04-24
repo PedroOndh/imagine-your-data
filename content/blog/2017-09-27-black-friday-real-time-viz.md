@@ -6,6 +6,7 @@ image: /cms_media/cover-7.jpg
 tags: [statsAPI, data viz, data visualization, data black friday, black friday, data compare, data visualisation]
 categories:
   - Data Visualizations
+typology: Bubbles
 ---
 <div class="" align="center">
 <iframe  class="external-video" src="https://player.vimeo.com/video/234684496" width="640" height="370" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -18,7 +19,7 @@ Sourced from these challenges and within the context of Search inside the store 
 
 At <a href="https://empathy.co" target="_blank">Empathy</a> we process tens of millions of queries every day in over **30 languages**, an awesome source to experiment with Data Visualisations and yet a massive computational challenge. Using the StatsAPI from the EmpathyAPI services we set out to create a Live Stream of the incoming queries, reflecting their Success in terms of No-Click, Click or No-Results.
 
-Using **d3.js** and with the extraordinary talent of various key members of the EmapthyBroker family **like Manuel Fachal** (on the early versions) and then the super-hero **Cristian Casais** we have been able to produce a pretty decent and effective experiment that is able to present query clusters by demand in Real-Time, exhibiting the language of the People and the success of these terms with a continuous sense of a living pulse.
+Using **d3.js** and with the extraordinary talent of various key members of the Empathy.co family **like Manuel Fachal** (on the early versions) and then the super-hero **Cristian Casais** we have been able to produce a pretty decent and effective experiment that is able to present query clusters by demand in Real-Time, exhibiting the language of the People and the success of these terms with a continuous sense of a living pulse.
 
 ### The first version of Black-Friday Real-Time Visualisation of Demand
 

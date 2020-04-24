@@ -1,8 +1,13 @@
 <template>
   <section>
     <div class="container posts-feed">
-      <!-- eslint-disable-next-line -->
-      <PostFeedItem v-for="(post, index) in posts" :key="post.attributes.index" :id="post.attributes.index" :post="post" :size-index="index % 12"/>
+      <PostFeedItem
+        v-for="(post, index) in posts"
+        :id="post.attributes.index"
+        :key="post.attributes.index"
+        :post="post"
+        :size-index="index % 12"
+      />
     </div>
   </section>
 </template>
@@ -94,85 +99,20 @@ section {
         }
         &-0 {
           background: $corporative-light-blue;
-          background-image: url('/_media/background/background-0.png');
-          background-size: 60vw;
-          background-position: 0 70%;
-          background-repeat: no-repeat;
         }
-        &-1 {
-          background-image: url('/_media/background/background-1.png');
-          background-size: 180%;
-          background-position: 90% -100%;
-        }
-        &-2 {
-          background-image: url('/_media/background/background-2.png');
-          background-size: 60vw;
-          background-position: center 70%;
-        }
-        &-3 {
+        &-3,
+        &-9 {
           background: $corporative-pink;
-          background-image: url('/_media/background/background-3.png');
-          background-size: 120%;
-          background-position: 10% 32%;
-          background-repeat: no-repeat;
         }
-        &-4 {
+        &-4,
+        &-11 {
           background: $corporative-green;
-          background-image: url('/_media/background/background-4.jpg');
-          background-size: cover;
-          background-position: center;
-        }
-        &-5 {
-          background-image: url('/_media/background/background-5.png');
-          background-size: 60vw;
-          background-position: 0 -15vw;
-        }
-        &-6 {
-          background-image: url('/_media/background/background-6.png');
-          background-size: 100% auto;
-          background-position: center 20%;
         }
         &-7 {
           background: $corporative-purple;
-          background-image: url('/_media/background/background-0.png');
-          background-size: 60vw;
-          background-position: 0 70%;
-          background-repeat: no-repeat;
         }
         &-8 {
           background: #0086b2;
-          background-image: url('/_media/background/background-8.png');
-          background-size: 60vw;
-          background-position: 40% -5vw;
-          background-repeat: no-repeat;
-        }
-        &-9 {
-          background: $corporative-pink;
-          background-image: url('/_media/background/background-9.jpg');
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-        &-9:before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          background-image: url('/_media/background/background-8.png');
-          background-size: 60vw;
-          background-position: 0vw -7vw;
-          background-repeat: no-repeat;
-          position: absolute;
-        }
-        &-10 {
-          background-image: url('/_media/background/background-10.png');
-          background-size: 60vw;
-          background-position: 0 -15vw;
-        }
-        &-11 {
-          background: $corporative-green;
-          background-image: url('/_media/background/background-3.png');
-          background-size: 140%;
-          background-position: 20% 50%;
-          background-repeat: no-repeat;
         }
       }
       @keyframes appearing {

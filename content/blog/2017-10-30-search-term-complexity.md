@@ -5,7 +5,8 @@ author: clemensa@empathy.co
 image: /cms_media/cover-20.png
 tags: [statsAPI, viz, data visualization,data visualisation,interactive data,infographics, data tool, graphical data,Stats API]
 categories:
-  - User Journeys
+  - Data Visualizations
+typology: Lines
 ---
 
 <iyd-iframe src="https://www.imagineyourdata.com/datavis/keyword-distribution/" desktop-height="38vw" tablet-height="300px" mobile-height="62vw" framebimg-order="1"></iyd-iframe>

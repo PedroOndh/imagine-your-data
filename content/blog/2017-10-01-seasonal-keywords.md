@@ -6,8 +6,8 @@ image:
       /cms_media/cover-13.png
 tags: [statsAPI, article,data ,data viz,data seasonal, data graphic, visualization,infographics]  
 categories:
-  - User Journeys
-
+  - Data Visualizations
+typology: Other
 author: davidm@empathy.co
 
 ---

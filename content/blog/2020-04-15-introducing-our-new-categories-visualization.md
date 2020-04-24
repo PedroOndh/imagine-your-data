@@ -4,6 +4,7 @@ date: 2018-12-05T17:07:34.835Z
 image: /cms_media/categories-viz.gif
 author: germanh@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
+typology: Lines
 categories:
   - Data Visualizations
 ---

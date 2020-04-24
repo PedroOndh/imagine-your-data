@@ -7,7 +7,7 @@ tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data
 categories:
   - User Journeys
 ---
-*“What products are customers currently demanding that we don’t have?”*This question is probably one of the most repeatedly asked by all eCommerce companies in order to understand demand and product replacement. The answer seems obvious: “The products that people search for and can’t find!” But, this isn’t entirely true.
+*“What products are customers currently demanding that we don’t have?”* This question is probably one of the most repeatedly asked by all eCommerce companies in order to understand demand and product replacement. The answer seems obvious: “The products that people search for and can’t find!” But, this isn’t entirely true.
 
 It may seem that the most demanded and yet unavailable product or products from the previous week would be the best candidates to be re-added to the catalogue. However, this is not always the case. That product may, for example, have only seen high demand on one single day of that week. Or, it might have been an item that was more highly demanded two weeks ago.
 

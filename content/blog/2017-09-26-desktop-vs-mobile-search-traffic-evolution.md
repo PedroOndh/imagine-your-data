@@ -6,7 +6,8 @@ image:
       /cms_media/cover-11.png
 tags: [statsAPI, article,data mobile vs desktop,data viz,data visualization,infographics, mobile data]
 categories:
-  - User Journeys
+  - Data Visualizations
+typology: Bars
 
 author: alvarod@empathy.co
 

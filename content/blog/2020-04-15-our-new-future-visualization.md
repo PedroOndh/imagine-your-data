@@ -6,6 +6,7 @@ author: olallas@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 categories:
   - Data Visualizations
+typology: Lines
 ---
 ## Detecting and predicting trends and behaviour
 

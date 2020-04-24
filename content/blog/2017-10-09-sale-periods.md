@@ -6,8 +6,8 @@ image:
       /cms_media/cover-15.png
 tags: [statsAPI, article,data viz,data visualization,infographics,sale periods viz,data sale periods]
 categories:
-  - User Journeys
-
+  - Data Visualizations
+typology: Other
 author: alvarod@empathy.co
 
 ---

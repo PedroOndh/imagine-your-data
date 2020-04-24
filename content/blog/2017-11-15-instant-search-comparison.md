@@ -7,7 +7,7 @@ image:
 tags: [Viz,Search,Instant Search, Search Engine,search result,Data visualisation,Data visualization,infographics, Interflora]
 categories:
   - Data Visualizations
-  - User Journeys
+typology: Lines
 
 author: clemensa@empathy.co
 

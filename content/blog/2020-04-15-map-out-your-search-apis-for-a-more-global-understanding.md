@@ -5,7 +5,8 @@ image: /cms_media/query-volume.png
 author: germanh@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 categories:
-  - User Journeys
+  - Data Visualizations
+typology: Bubbles
 ---
 As most of our customers operate internationally, we’ve often found that when analysing search data, it behaves differently depending on the location, and that the whereabouts of the online store is often the key factor for retailers to discover any anomalies, trends or performance alerts.
 
@@ -24,4 +25,4 @@ Visualisations like this one that provide such as level of detail make data more
 
 The Worldwide Performance visualisation is unique in providing eCommerce brands with a global view and an international perspective to enable them to understand the location specific differences in performance. It allows them to anticipate and accommodate individual customers’ needs, regional or national differences or trends, while comparing and contrasting the performance of countries and KPIs alongside each other to be able to leverage different market conditions, behaviours and opportunities.
 
-To discover more about this visualisation and how to map out your search APIs visit our website at [www.empathybroker.com/empathy-insight](https://www.imagineyourdata.com/statsapi/2019/03/05/Map-Out-Your-Search-APIs-for-a-More-Global-Understanding/www.empathybroker.com/empathy-insight).
+To discover more about this visualisation and how to map out your search APIs visit our website at [https://www.empathy.co/services/empathy-insight/](https://www.empathy.co/services/empathy-insight/).
