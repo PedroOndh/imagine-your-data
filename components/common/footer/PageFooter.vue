@@ -10,7 +10,9 @@
         ]
       }"
     >
-      <Quote :quote="quotes[currentQuote]" :change-quote="changeQuote" />
+      <div class="container">
+        <Quote :quote="quotes[currentQuote]" :change-quote="changeQuote" />
+      </div>
     </div>
     <div class="footer__second-row">
       <p>

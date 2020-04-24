@@ -50,13 +50,12 @@ export default {
 
 <style scoped lang="scss">
 .quote {
-  width: 60%;
+  width: 75%;
   padding: rem(68px) rem(79px) rem(46px);
-  margin-left: 10%;
   border-radius: rem(20px);
   background-color: #fff;
-  position: absolute;
-  bottom: rem(170px);
+  position: relative;
+  bottom: rem(63px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
