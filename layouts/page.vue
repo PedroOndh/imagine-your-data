@@ -1,13 +1,34 @@
 <template>
   <div class="page">
-    <header class="page__header">
-      head
-    </header>
+    <PageHeader />
     <nuxt class="page__content" />
-    <footer class="page__footer">
-      footer
-    </footer>
+    <PageFooter />
   </div>
 </template>
 
-<style scoped></style>
+<script>
+import PageHeader from '~/components/common/PageHeader'
+import PageFooter from '~/components/common/footer/PageFooter'
+
+export default {
+  components: { PageHeader, PageFooter }
+}
+</script>
+
+<style scoped lang="scss">
+.page {
+  background-image: url('/_media/page-background.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  &__content {
+    padding-top: rem(260px);
+    margin-bottom: rem(-140px);
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    &__content {
+      padding-top: rem(130px);
+    }
+  }
+}
+</style>

@@ -1,0 +1,14 @@
+@media screen and (max-width: 1024px) {
+  body {
+    width: 800px;
+  }
+}
+
+
+svg .texter, svg .player {
+  font-family: FontAwesome;
+}
+
+svg text {
+  font-family: Monserrat;
+}

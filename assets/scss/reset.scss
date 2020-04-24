@@ -13,7 +13,7 @@ body, h1, h2, h3, h4, h5, h6, p {
   font-weight: normal;
 }
 
-img, video, iframe {
+img, video {
   max-width: 100%;
   height: auto;
 }
@@ -27,4 +27,9 @@ address {
   font-style: normal;
   padding: inherit;
   margin: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

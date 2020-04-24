@@ -1,7 +1,7 @@
 {
-  "name": "basicstructure",
+  "name": "ImagineYourData",
   "version": "1.0.0",
-  "description": "My personal website with NuxtJs",
+  "description": "Creating beautiful evidence of People's emotional nature - Visualisations for eCommerce Search & Browse.",
   "author": "Empathy",
   "private": true,
   "scripts": {
@@ -13,14 +13,15 @@
     "test": "jest"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
-    "@nuxt/utils": "latest"
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0",
+    "@nuxt/utils": "^2.12.2",
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/svg": "^0.1.7",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
@@ -30,6 +31,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "frontmatter-markdown-loader": "^3.2.1",
     "jest": "^24.1.0",
+    "netlify-cms": "^2.10.40",
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",

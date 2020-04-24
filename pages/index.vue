@@ -1,43 +1,63 @@
 <template>
-  <div class="container">
-    <h1 class="title">
-      Imagine your data
-    </h1>
-    <div
-      v-for="(category, index) in categories"
-      :key="index"
-      class="category"
-      @click="filterByCategory(category)"
-    >
-      {{ category }}
+  <div>
+    <div class="container">
+      <h1 class="catchphrase">
+        Data for creativity
+      </h1>
+      <nuxt-link class="header__link" to="/about">
+        <div class="more-link">
+          More
+          <Chevron class="more-link__chevron" />
+        </div>
+      </nuxt-link>
+      <Categories
+        :categories="categories"
+        :current-category="currentCategory"
+        :filter-by-category="filterByCategory"
+      />
     </div>
-    <div class="category" @click="filterByCategory">
-      Stop filtering
-    </div>
-    <section class="posts">
-      <!-- eslint-disable-next-line -->
-      <div v-for="(post, index) in posts" :key="index" :id="index" class="columns">
-        <PostFeedItem :post="post" />
-      </div>
-    </section>
+    <PostFeed :posts="posts" class="posts" />
   </div>
 </template>
 
-<style>
-.category {
-  background: indianred;
-  padding: 1rem;
-  margin: 1rem;
-  color: white;
-  font-weight: bold;
+<style lang="scss">
+.catchphrase {
+  font-size: rem(50px);
+  font-weight: 300;
+  line-height: 1.22;
+  text-align: center;
+  text-transform: uppercase;
+  color: $grey-dark;
+  margin-bottom: 0;
+}
+.more-link {
+  margin-top: rem(55px);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $grey-dark;
+  &__chevron {
+    svg {
+      margin-top: rem(-3px);
+      color: $grey-dark;
+    }
+  }
+}
+@media screen and (max-width: $breakpoint__mobile--max) {
+  .catchphrase {
+    font-size: rem(25px);
+  }
 }
 </style>
 
 <script>
-import PostFeedItem from '../components/PostFeedItem'
-import turnFileNameToPath from '~/assets/libs/turnFileNameToPath'
+import Categories from '../components/home/Categories'
+import PostFeed from '../components/home/PostFeed'
+import { turnFileNameToPath } from '~/assets/libs/utils'
+import Chevron from '~/static/_media/chevron.svg?inline'
 
-const postsPerPage = 6
+const postsPerPage = 12
 
 async function getAvailablePosts() {
   const context = await require.context('~/content/blog', true, /\.md$/)
@@ -52,8 +72,32 @@ async function getAvailablePosts() {
     .sort(function(a, b) {
       return a.attributes.date > b.attributes.date ? -1 : 1
     })
+  return await getPostAuthor(availablePosts)
+}
 
-  return availablePosts
+async function getPostAuthor(posts) {
+  const context = await require.context('~/content/authors', true, /\.md$/)
+  const authors = await context.keys().map((key) => ({
+    ...context(key)
+  }))
+  const postsWithAuthor = []
+  for (let i = 0; i < posts.length; i++) {
+    const post = posts[i]
+    const postAuthor = authors.find(
+      (author) => author.attributes.email === post.attributes.author
+    )
+    post.attributes = {
+      ...post.attributes,
+      author: postAuthor
+        ? {
+            ...postAuthor.attributes
+          }
+        : undefined,
+      index: i
+    }
+    postsWithAuthor.push(post)
+  }
+  return postsWithAuthor
 }
 
 async function getAvailableCategories() {
@@ -66,7 +110,8 @@ async function getAvailableCategories() {
 }
 
 export default {
-  components: { PostFeedItem },
+  layout: 'page',
+  components: { Categories, PostFeed, Chevron },
   async asyncData() {
     const availablePosts = await getAvailablePosts()
     return {
@@ -79,7 +124,8 @@ export default {
   data() {
     return {
       currentPostList: 1,
-      observer: {}
+      observer: {},
+      currentCategory: ''
     }
   },
   mounted() {
@@ -138,17 +184,11 @@ export default {
             item.attributes.categories.includes(category)
           )
         : availablePosts
+      this.$data.currentCategory = category
       this.$data.filteredPosts = newFilteredPosts
       this.$data.posts = newFilteredPosts.slice(0, postsPerPage)
       this.$data.currentPostList = 1
       this.observe(1, true)
-    }
-  },
-  head() {
-    return {
-      script: [
-        { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
-      ]
     }
   }
 }

@@ -1,8 +1,8 @@
+import path from 'path'
+import glob from 'glob'
 import { sortRoutes } from '@nuxt/utils'
-import turnFileNameToPath from './assets/libs/turnFileNameToPath'
+import { turnFileNameToPath } from './assets/libs/utils'
 
-const path = require('path');
-const glob = require('glob');
 const markdownPaths = ['blog']
 
 export default {
@@ -19,9 +19,20 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        name: 'robots',
+        content: 'noindex'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://assets.empathybroker.com/resources/fonts/empathy-typography/style.css'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -34,7 +45,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/lightbox.js', '~/plugins/header-scroll.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -46,7 +57,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/svg'],
   styleResources: {
     scss: [
       './assets/scss/abstracts/_functions.scss',
@@ -66,7 +77,7 @@ export default {
       config.module.rules.push({
         test: /\.md$/,
         include: path.resolve(__dirname, 'content'),
-        loader: 'frontmatter-markdown-loader',
+        loader: 'frontmatter-markdown-loader'
       })
     }
   },

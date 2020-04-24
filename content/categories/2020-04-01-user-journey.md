@@ -1,3 +1,3 @@
 ---
-name: User Journey
+name: User Journeys
 ---
