@@ -131,6 +131,7 @@ export default {
   mounted() {
     this.registerObserver()
     this.prepareFixedCategories()
+    this.scrollInView()
   },
   methods: {
     registerObserver() {
@@ -203,13 +204,11 @@ export default {
     prepareFixedCategories() {
       if (isDesktop()) {
         const header = document.querySelector('.header')
-        const headerHeight = header.offsetHeight
         const headerContainerHeight = header.querySelector('.container')
           .offsetHeight
         const posts = document.querySelector('.posts')
         const categories = document.querySelector('.categories')
-        const categoriesTop =
-          categories.offsetTop - headerHeight - headerContainerHeight
+        const categoriesTop = categories.offsetTop - headerContainerHeight
         this.$data.categoriesTop = categoriesTop
         window.addEventListener('scroll', function(e) {
           const currentScroll = Math.abs(

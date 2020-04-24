@@ -71,16 +71,22 @@ export default Vue.component('post-content', {
   }
   figure {
     position: relative;
+    img {
+      margin-bottom: 0;
+    }
   }
   figcaption {
-    color: #747474;
+    height: 100%;
+    background: rgba(83, 185, 201, 0.18);
+    padding: rem(24px) rem(20px);
+    font-size: rem(14px);
+    line-height: 1.9;
+    font-family: Lora;
+    color: #163046;
     position: absolute;
     width: 15%;
-    padding-left: 0.5rem;
     top: 0;
     right: 0;
-    font-size: 1rem;
-    font-style: italic;
     text-align: left;
   }
   tr td {
@@ -100,18 +106,12 @@ export default Vue.component('post-content', {
   }
   @media screen and (max-width: $breakpoint__desktop--max) {
     figcaption {
-      font-size: 0.8rem;
-    }
-  }
-  @media screen and (max-width: $breakpoint__mobile--max) {
-    figcaption {
-      font-size: 1rem;
       position: static;
       text-align: center;
       width: 100%;
-      padding-left: 0;
-      margin-bottom: rem(40px);
     }
+  }
+  @media screen and (max-width: $breakpoint__mobile--max) {
     img,
     video,
     iframe.external-video {
