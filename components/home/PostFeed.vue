@@ -3,7 +3,7 @@
     <div class="container posts-feed">
       <PostFeedItem
         v-for="(post, index) in posts"
-        :id="post.attributes.index"
+        :id="index"
         :key="post.attributes.index"
         :post="post"
         :size-index="index % 12"

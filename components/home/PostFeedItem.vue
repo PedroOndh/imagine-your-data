@@ -132,7 +132,7 @@ export default {
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
-    opacity: 0.08;
+    opacity: 0.09;
     border-radius: 1.25rem;
     filter: grayscale(100%) invert(1);
   }
