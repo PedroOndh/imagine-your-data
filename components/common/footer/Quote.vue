@@ -107,17 +107,14 @@ export default {
     margin-left: rem(26px);
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
-    width: 80%;
+    width: 100%;
     padding: rem(40px) rem(40px) rem(46px);
-    margin-left: 10%;
     &__quote {
       font-size: rem(22px);
       line-height: 1.5;
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
-    width: 90%;
-    margin-left: 5%;
     padding: 2rem 1rem;
     position: initial;
     &__quote {

@@ -102,18 +102,18 @@ export default {
       const { categories, typology } = post.attributes
       if (categories[0] === 'Data Visualizations') {
         if (typology === 'Bubbles') {
-          return '0'
+          return '0dv'
         } else if (typology === 'Bars') {
-          return '3'
+          return '1dv'
         } else if (typology === 'Lines') {
-          return '4'
+          return '2dv'
         } else if (typology === 'Relations') {
-          return '7'
+          return '3dv'
         } else {
-          return '8'
+          return '4dv'
         }
       } else {
-        const noTypologyStyles = ['1', '2', '5', '10']
+        const noTypologyStyles = ['0us', '1us', '2us', '3us']
         const randomNumber = Math.floor(Math.random() * 4)
         return noTypologyStyles[randomNumber]
       }
@@ -136,10 +136,10 @@ export default {
     border-radius: 1.25rem;
     filter: grayscale(100%) invert(1);
   }
-  &--background-1,
-  &--background-2,
-  &--background-5,
-  &--background-10 {
+  &--background-0us,
+  &--background-1us,
+  &--background-2us,
+  &--background-3us {
     .posts-feed-item__background {
       opacity: 0.12;
       filter: grayscale(100%);
@@ -213,20 +213,19 @@ export default {
     }
   }
   &--background {
-    &-1,
-    &-2,
-    &-5,
-    &-6,
-    &-10 {
+    &-0us,
+    &-1us,
+    &-2us,
+    &-3us {
       .posts-feed-item__content,
       .posts-feed-item__author-by {
         color: $grey-dark;
       }
     }
-    &-3,
-    &-4,
-    &-7,
-    &-8 {
+    &-1dv,
+    &-2dv,
+    &-3dv,
+    &-4dv {
       .colored {
         color: $corporative-yellow;
         path {
@@ -242,7 +241,7 @@ export default {
         }
       }
     }
-    &-1 {
+    &-0us {
       .colored,
       .posts-feed-item__author-nickname {
         color: $corporative-pink;
@@ -251,8 +250,7 @@ export default {
         }
       }
     }
-    &-2,
-    &-6 {
+    &-1us {
       .colored,
       .posts-feed-item__author-nickname {
         color: $corporative-blue;
@@ -261,7 +259,7 @@ export default {
         }
       }
     }
-    &-5 {
+    &-2us {
       .colored,
       .posts-feed-item__author-nickname {
         color: $corporative-purple;
@@ -270,7 +268,7 @@ export default {
         }
       }
     }
-    &-10 {
+    &-3us {
       .colored,
       .posts-feed-item__author-nickname {
         color: $corporative-green;
