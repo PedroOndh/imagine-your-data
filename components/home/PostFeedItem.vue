@@ -4,10 +4,14 @@
       `posts-feed-item posts-feed-item--size-${sizeIndex} posts-feed-item--background-${style}`
     "
   >
-    <div
-      class="posts-feed-item__background"
-      :style="`background-image: url('${post.attributes.image}')`"
-    />
+    <div class="posts-feed-item__background">
+      <div
+        class="posts-feed-item__background-image"
+        :style="`background-image: url('${post.attributes.image}')`"
+      />
+      <div class="posts-feed-item__background-color" />
+      <div class="posts-feed-item__background-gradient" />
+    </div>
     <div v-if="post.attributes.author" class="posts-feed-item__author">
       <img
         class="posts-feed-item__author-image"
@@ -123,26 +127,73 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@mixin color-and-gradient($color) {
+  .posts-feed-item__background-color {
+    background: $color;
+  }
+  .posts-feed-item__background-gradient {
+    background: linear-gradient(175deg, rgba(255, 255, 255, 0) 0%, $color 80%);
+  }
+}
 .posts-feed-item {
   position: relative;
   &__background {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
-    opacity: 0.09;
-    border-radius: 1.25rem;
-    filter: grayscale(100%) invert(1);
-  }
-  &--background-0us,
-  &--background-1us,
-  &--background-2us,
-  &--background-3us {
-    .posts-feed-item__background {
-      opacity: 0.12;
+    &-image {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      border-radius: 1.25rem;
       filter: grayscale(100%);
+    }
+    &-color {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      opacity: 0.5;
+      border-radius: 1.25rem;
+      background: white;
+    }
+    &-gradient {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      border-radius: 1.25rem;
+      background: linear-gradient(175deg, rgba(255, 255, 255, 0) 0%, white 80%);
+    }
+  }
+  &--background {
+    &-0dv,
+    &-1dv,
+    &-2dv,
+    &-3dv,
+    &-4dv,
+    &-0us,
+    &-1us,
+    &-2us,
+    &-3us {
+      animation-name: appearing;
+      animation-duration: 0.8s;
+    }
+    &-0dv {
+      @include color-and-gradient($corporative-light-blue);
+    }
+    &-1dv {
+      @include color-and-gradient($corporative-pink);
+    }
+    &-2dv {
+      @include color-and-gradient($corporative-green);
+    }
+    &-3dv {
+      @include color-and-gradient($corporative-purple);
+    }
+    &-4dv {
+      @include color-and-gradient(#0086b2);
     }
   }
   &__author {
@@ -196,20 +247,7 @@ export default {
       font-size: rem(36px);
       font-weight: 300;
       line-height: 1.39;
-      min-height: 12vw;
-    }
-  }
-  &--size {
-    &-3,
-    &-5,
-    &-10,
-    &-11 {
-      .posts-feed-item__content {
-        padding-right: 25%;
-        h1 {
-          min-height: 6vw;
-        }
-      }
+      min-height: 11vw;
     }
   }
   &--background {

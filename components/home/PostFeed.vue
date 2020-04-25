@@ -6,7 +6,7 @@
         :id="index"
         :key="post.attributes.index"
         :post="post"
-        :size-index="index % 12"
+        :size-index="index % 9"
       />
     </div>
   </section>
@@ -50,39 +50,31 @@ section {
       background-repeat: no-repeat;
       margin-bottom: $grid-gap;
       display: grid;
+      grid-row: span 2;
       &--size {
-        &-0 {
-          grid-row: span 2;
+        &-0,
+        &-4,
+        &-8,
+        &-9 {
           grid-column: span 2;
-          margin-right: $grid-gap * 2;
         }
-        &-7 {
-          grid-row: span 2;
-          grid-column: span 2;
-          margin-left: $grid-gap;
-          margin-right: $grid-gap;
+        &-0 {
+          margin-right: 2 * $grid-gap;
         }
         &-1 {
-          grid-row: span 2;
           position: relative;
           right: $grid-gap;
         }
-        &-2,
-        &-4,
-        &-6,
-        &-8,
-        &-9 {
-          grid-row: span 2;
-        }
-        &-3,
-        &-5 {
-          grid-column: span 3;
+        &-4 {
+          margin-left: $grid-gap;
           margin-right: $grid-gap;
         }
-        &-10,
-        &-11 {
-          grid-column: span 3;
-          margin-left: $grid-gap;
+        &-7 {
+          position: relative;
+          left: $grid-gap;
+        }
+        &-8 {
+          margin-left: 2 * $grid-gap;
         }
       }
       &--background {
@@ -97,21 +89,6 @@ section {
         &-3us {
           animation-name: appearing;
           animation-duration: 0.8s;
-        }
-        &-0dv {
-          background: $corporative-light-blue;
-        }
-        &-1dv {
-          background: $corporative-pink;
-        }
-        &-2dv {
-          background: $corporative-green;
-        }
-        &-3dv {
-          background: $corporative-purple;
-        }
-        &-4dv {
-          background: #0086b2;
         }
       }
       @keyframes appearing {
@@ -136,6 +113,7 @@ section {
         margin-left: 0;
         margin-right: 0;
         right: 0;
+        left: 0;
         background-size: 100%;
         background-position: 0 -10vw;
       }
