@@ -62,7 +62,6 @@ export default {
 <style scoped lang="scss">
 .categories {
   margin-top: rem(80px);
-  background: white;
   &__list {
     transition: all 0.2s ease;
     display: flex;
@@ -112,7 +111,7 @@ export default {
       }
     }
   }
-  @media screen and (max-width: $breakpoint__desktop--max) {
+  @media screen and (max-width: $breakpoint__small-desktop--max) {
     margin-top: 0;
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
@@ -128,7 +127,8 @@ export default {
     &__list {
       flex-direction: column;
       align-items: center;
-      &-item {
+      .categories__list-item {
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -123,6 +123,26 @@ export default {
       }
     }
   }
+  @media screen and (max-width: $breakpoint__small-desktop--max) {
+    .container {
+      .header__logo {
+        .header__title {
+          font-size: 1.5rem;
+          width: auto;
+          height: auto;
+        }
+      }
+      .header__menu {
+        a.social-icon {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+    .header__sub-title {
+      width: 12rem;
+    }
+  }
   @media screen and (max-width: $breakpoint__tablet--max) {
     .container {
       flex-direction: column;
@@ -139,6 +159,11 @@ export default {
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
+    .container {
+      .header__sub-title {
+        width: auto;
+      }
+    }
     &__logo {
       width: 100%;
       align-items: center;

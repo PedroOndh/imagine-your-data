@@ -25,8 +25,12 @@ export default {
     padding-top: rem(360px);
     margin-bottom: rem(-140px);
   }
+  @media screen and (max-width: $breakpoint__desktop--max) {
+    background-size: 114%;
+  }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
-    background-size: 110%;
+    background-size: 135%;
+    background-position: 0 -25px;
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
     &__content {
