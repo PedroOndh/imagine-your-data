@@ -63,8 +63,9 @@ export default {
 .categories {
   border-top: solid 2px $corporative-light-blue;
   margin-top: rem(126px);
+  transition: background 0.1s ease;
   &__list {
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     display: flex;
     flex-wrap: wrap;
     padding-top: rem(50px);
@@ -94,7 +95,8 @@ export default {
     }
   }
   &--fixed {
-    background: white;
+    background: $corporative-light-blue;
+    border-bottom: 2px solid #f5f6f7;
     position: fixed;
     top: 4.3rem;
     z-index: 2;
@@ -103,6 +105,9 @@ export default {
     left: 0;
     .categories__list {
       padding-top: 0;
+      .categories__list-item {
+        color: white;
+      }
     }
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
