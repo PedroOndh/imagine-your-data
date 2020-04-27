@@ -7,7 +7,9 @@
       <div class="blog-post__author">
         <img :src="author.attributes.image" :alt="author.attributes.name" />
         <div class="blog-post__author-content">
+          <!--
           <span class="blog-post__author-date">{{ date }}</span>
+          -->
           <span class="blog-post__author-name">
             By {{ author.attributes.name }}
             {{
@@ -89,6 +91,7 @@
 import PostContent from '~/components/post/PostContent'
 import RelatedPosts from '~/components/post/RelatedPosts'
 import SocialIcon from '~/components/common/SocialIcon'
+import { months } from '~/assets/libs/consts'
 
 async function getPostAuthor(post) {
   const context = await require.context('~/content/authors', true, /\.md$/)
@@ -102,20 +105,6 @@ async function getPostAuthor(post) {
 }
 function getDate(post) {
   const date = new Date(post.attributes.date)
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ]
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
 function getMetatags(post) {

@@ -59,6 +59,7 @@
 <script>
 import TwitterIcon from '~/static/_media/twitter.svg?inline'
 import { trunc } from '~/assets/libs/utils'
+import { months } from '~/assets/libs/consts'
 export default {
   name: 'PostFeedItem',
   components: { TwitterIcon },
@@ -83,24 +84,10 @@ export default {
   methods: {
     getDate: (post) => {
       const date = new Date(post.attributes.date)
-      const months = [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec'
-      ]
       const dayNumber = date.getDate().toString()
       const dateString = `${
         dayNumber.length === 1 ? `0${dayNumber}` : dayNumber
-      } ${months[date.getMonth()]} ${date.getFullYear()}`
+      } ${months[date.getMonth()].slice(0, 3)} ${date.getFullYear()}`
       return dateString
     },
     getStyle: (post) => {

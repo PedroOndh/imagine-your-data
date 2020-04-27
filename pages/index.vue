@@ -1,15 +1,6 @@
 <template>
   <div>
     <div class="container">
-      <h1 class="catchphrase">
-        Data for creativity
-      </h1>
-      <nuxt-link class="header__link" to="/about">
-        <div class="more-link">
-          More
-          <Chevron class="more-link__chevron" />
-        </div>
-      </nuxt-link>
       <Categories
         :categories="categories"
         :current-category="currentCategory"
@@ -55,7 +46,6 @@
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
 import { turnFileNameToPath, isDesktop } from '~/assets/libs/utils'
-import Chevron from '~/static/_media/chevron.svg?inline'
 
 const postsPerPage = 9
 
@@ -111,7 +101,7 @@ async function getAvailableCategories() {
 
 export default {
   layout: 'page',
-  components: { Categories, PostFeed, Chevron },
+  components: { Categories, PostFeed },
   async asyncData() {
     const availablePosts = await getAvailablePosts()
     return {
