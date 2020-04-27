@@ -45,8 +45,10 @@
           >
             {{ `${index > 0 ? '- ' : ''}${category}` }}
           </p>
+          <!--
           •
           <p class="posts-feed-item__date colored">{{ dateString }}</p>
+          -->
         </div>
         <h1 class="posts-feed-item__title">
           {{ truncatedTitle }}
