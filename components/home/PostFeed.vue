@@ -6,7 +6,7 @@
         :id="index"
         :key="post.attributes.index"
         :post="post"
-        :size-index="index % 12"
+        :size-index="index % 9"
       />
     </div>
   </section>
@@ -46,43 +46,33 @@ section {
     .posts-feed-item {
       border-radius: rem(20px);
       box-shadow: 0 0 rem(75px) 0 #d2d2d2;
-      background: #fff;
-      background-repeat: no-repeat;
       margin-bottom: $grid-gap;
       display: grid;
+      grid-row: span 2;
       &--size {
-        &-0 {
-          grid-row: span 2;
+        &-0,
+        &-4,
+        &-8,
+        &-9 {
           grid-column: span 2;
-          margin-right: $grid-gap * 2;
         }
-        &-7 {
-          grid-row: span 2;
-          grid-column: span 2;
-          margin-left: $grid-gap;
-          margin-right: $grid-gap;
+        &-0 {
+          margin-right: 2 * $grid-gap;
         }
         &-1 {
-          grid-row: span 2;
           position: relative;
           right: $grid-gap;
         }
-        &-2,
-        &-4,
-        &-6,
-        &-8,
-        &-9 {
-          grid-row: span 2;
-        }
-        &-3,
-        &-5 {
-          grid-column: span 3;
+        &-4 {
+          margin-left: $grid-gap;
           margin-right: $grid-gap;
         }
-        &-10,
-        &-11 {
-          grid-column: span 3;
-          margin-left: $grid-gap;
+        &-7 {
+          position: relative;
+          left: $grid-gap;
+        }
+        &-8 {
+          margin-left: 2 * $grid-gap;
         }
       }
       &--background {
@@ -98,21 +88,6 @@ section {
           animation-name: appearing;
           animation-duration: 0.8s;
         }
-        &-0dv {
-          background: $corporative-light-blue;
-        }
-        &-1dv {
-          background: $corporative-pink;
-        }
-        &-2dv {
-          background: $corporative-green;
-        }
-        &-3dv {
-          background: $corporative-purple;
-        }
-        &-4dv {
-          background: #0086b2;
-        }
       }
       @keyframes appearing {
         from {
@@ -122,6 +97,9 @@ section {
           opacity: 1;
         }
       }
+    }
+    @media screen and (min-width: $breakpoint__large-desktop--min) {
+      grid-auto-rows: rem(313px);
     }
     @media screen and (max-width: $breakpoint__small-desktop--max) {
       grid-auto-rows: 19vw;
@@ -136,6 +114,7 @@ section {
         margin-left: 0;
         margin-right: 0;
         right: 0;
+        left: 0;
         background-size: 100%;
         background-position: 0 -10vw;
       }
@@ -148,7 +127,7 @@ section {
       .posts-feed-item {
         background-size: 200%;
         background-position: center -20vw;
-        margin-bottom: 15vw;
+        margin-bottom: 12vw;
       }
     }
   }

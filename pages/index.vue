@@ -57,7 +57,7 @@ import PostFeed from '../components/home/PostFeed'
 import { turnFileNameToPath, isDesktop } from '~/assets/libs/utils'
 import Chevron from '~/static/_media/chevron.svg?inline'
 
-const postsPerPage = 12
+const postsPerPage = 9
 
 async function getAvailablePosts() {
   const context = await require.context('~/content/blog', true, /\.md$/)

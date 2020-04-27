@@ -74,6 +74,14 @@ export default Vue.component('post-content', {
     img {
       margin-bottom: 0;
     }
+    &.figure--caption {
+      width: 90%;
+      margin-left: 5%;
+      img {
+        width: 80%;
+        margin: 0 20% 0 0;
+      }
+    }
   }
   figcaption {
     height: 100%;
@@ -84,7 +92,7 @@ export default Vue.component('post-content', {
     font-family: Lora;
     color: #163046;
     position: absolute;
-    width: 15%;
+    width: 20%;
     top: 0;
     right: 0;
     text-align: left;
@@ -104,7 +112,11 @@ export default Vue.component('post-content', {
     color: #747474;
     padding-bottom: 2.5rem;
   }
-  @media screen and (max-width: $breakpoint__desktop--max) {
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    figure.figure--caption img {
+      width: 100%;
+      margin: 0;
+    }
     figcaption {
       position: static;
       text-align: center;
