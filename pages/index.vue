@@ -11,37 +11,6 @@
   </div>
 </template>
 
-<style lang="scss">
-.catchphrase {
-  font-size: rem(50px);
-  font-weight: 300;
-  line-height: 1.22;
-  text-align: center;
-  text-transform: uppercase;
-  color: $grey-dark;
-  margin-bottom: 0;
-}
-.more-link {
-  margin-top: rem(55px);
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $grey-dark;
-  &__chevron {
-    svg {
-      margin-top: rem(-3px);
-      color: $grey-dark;
-    }
-  }
-}
-@media screen and (max-width: $breakpoint__mobile--max) {
-  .catchphrase {
-    font-size: rem(25px);
-  }
-}
-</style>
-
 <script>
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
