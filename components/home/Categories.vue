@@ -65,7 +65,7 @@ export default {
   margin-top: rem(126px);
   transition: background 0.1s ease;
   &__list {
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     display: flex;
     flex-wrap: wrap;
     padding-top: rem(50px);
