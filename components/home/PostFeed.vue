@@ -46,8 +46,6 @@ section {
     .posts-feed-item {
       border-radius: rem(20px);
       box-shadow: 0 0 rem(75px) 0 #d2d2d2;
-      background: #fff;
-      background-repeat: no-repeat;
       margin-bottom: $grid-gap;
       display: grid;
       grid-row: span 2;
@@ -100,6 +98,9 @@ section {
         }
       }
     }
+    @media screen and (min-width: $breakpoint__large-desktop--min) {
+      grid-auto-rows: rem(313px);
+    }
     @media screen and (max-width: $breakpoint__small-desktop--max) {
       grid-auto-rows: 19vw;
     }
@@ -126,7 +127,7 @@ section {
       .posts-feed-item {
         background-size: 200%;
         background-position: center -20vw;
-        margin-bottom: 15vw;
+        margin-bottom: 12vw;
       }
     }
   }

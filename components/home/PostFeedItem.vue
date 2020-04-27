@@ -127,12 +127,29 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@mixin color-and-gradient($color) {
-  .posts-feed-item__background-color {
-    background: $color;
+@mixin color-and-gradient($selector, $color) {
+  #{$selector} {
+    .posts-feed-item__background-color {
+      background: $color;
+    }
+    .posts-feed-item__background-gradient {
+      background: linear-gradient(
+        175deg,
+        rgba(255, 255, 255, 0) 0%,
+        $color 80%
+      );
+    }
   }
-  .posts-feed-item__background-gradient {
-    background: linear-gradient(175deg, rgba(255, 255, 255, 0) 0%, $color 80%);
+}
+@mixin custom-item-color($selector, $color) {
+  #{$selector} {
+    .colored,
+    .posts-feed-item__author-nickname {
+      color: $color;
+      path {
+        fill: $color;
+      }
+    }
   }
 }
 .posts-feed-item {
@@ -141,12 +158,13 @@ export default {
     width: 100%;
     height: 100%;
     position: absolute;
+    border-radius: 1.25rem;
+    overflow: hidden;
     &-image {
       width: 100%;
       height: 100%;
       background-size: cover;
       background-position: center;
-      border-radius: 1.25rem;
       filter: grayscale(100%);
     }
     &-color {
@@ -154,8 +172,7 @@ export default {
       height: 100%;
       position: absolute;
       top: 0;
-      opacity: 0.5;
-      border-radius: 1.25rem;
+      opacity: 0.65;
       background: white;
     }
     &-gradient {
@@ -163,7 +180,6 @@ export default {
       height: 100%;
       position: absolute;
       bottom: 0;
-      border-radius: 1.25rem;
       background: linear-gradient(175deg, rgba(255, 255, 255, 0) 0%, white 80%);
     }
   }
@@ -180,21 +196,15 @@ export default {
       animation-name: appearing;
       animation-duration: 0.8s;
     }
-    &-0dv {
-      @include color-and-gradient($corporative-light-blue);
-    }
-    &-1dv {
-      @include color-and-gradient($corporative-pink);
-    }
-    &-2dv {
-      @include color-and-gradient($corporative-green);
-    }
-    &-3dv {
-      @include color-and-gradient($corporative-purple);
-    }
-    &-4dv {
-      @include color-and-gradient(#0086b2);
-    }
+    @include color-and-gradient('&-0dv', $corporative-light-blue);
+
+    @include color-and-gradient('&-1dv', $corporative-pink);
+
+    @include color-and-gradient('&-2dv', $corporative-green);
+
+    @include color-and-gradient('&-3dv', $corporative-purple);
+
+    @include color-and-gradient('&-4dv', #0086b2);
   }
   &__author {
     width: rem(95px);
@@ -244,7 +254,7 @@ export default {
       text-decoration: none;
     }
     h1 {
-      font-size: rem(36px);
+      font-size: rem(32px);
       font-weight: 300;
       line-height: 1.39;
       min-height: 11vw;
@@ -279,40 +289,18 @@ export default {
         }
       }
     }
-    &-0us {
-      .colored,
-      .posts-feed-item__author-nickname {
-        color: $corporative-pink;
-        path {
-          fill: $corporative-pink;
-        }
-      }
-    }
-    &-1us {
-      .colored,
-      .posts-feed-item__author-nickname {
-        color: $corporative-blue;
-        path {
-          fill: $corporative-blue;
-        }
-      }
-    }
-    &-2us {
-      .colored,
-      .posts-feed-item__author-nickname {
-        color: $corporative-purple;
-        path {
-          fill: $corporative-purple;
-        }
-      }
-    }
-    &-3us {
-      .colored,
-      .posts-feed-item__author-nickname {
-        color: $corporative-green;
-        path {
-          fill: $corporative-green;
-        }
+    @include custom-item-color('&-0us', $corporative-pink);
+
+    @include custom-item-color('&-1us', $corporative-blue);
+
+    @include custom-item-color('&-2us', $corporative-purple);
+
+    @include custom-item-color('&-3us', $corporative-green);
+  }
+  @media screen and (min-width: $breakpoint__large-desktop--min) {
+    &__content {
+      h1 {
+        min-height: rem(211px);
       }
     }
   }
@@ -320,16 +308,6 @@ export default {
     &__content {
       h1 {
         font-size: rem(24px);
-      }
-    }
-    &--size {
-      &-3,
-      &-5,
-      &-10,
-      &-11 {
-        .posts-feed-item__content h1 {
-          min-height: 4vw;
-        }
       }
     }
   }
@@ -341,16 +319,6 @@ export default {
       padding: 0 2rem 2.5rem;
       h1 {
         font-size: rem(20px);
-      }
-    }
-    &--size {
-      &-3,
-      &-5,
-      &-10,
-      &-11 {
-        .posts-feed-item__content h1 {
-          min-height: 0;
-        }
       }
     }
   }
