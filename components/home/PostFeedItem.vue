@@ -97,9 +97,10 @@ export default {
         'Nov',
         'Dec'
       ]
-      const dateString = `${date.getDate()} ${
-        months[date.getMonth()]
-      } ${date.getFullYear()}`
+      const dayNumber = date.getDate().toString()
+      const dateString = `${
+        dayNumber.length === 1 ? `0${dayNumber}` : dayNumber
+      } ${months[date.getMonth()]} ${date.getFullYear()}`
       return dateString
     },
     getStyle: (post) => {
@@ -270,6 +271,7 @@ export default {
         color: $grey-dark;
       }
     }
+    &-0dv,
     &-1dv,
     &-2dv,
     &-3dv,
