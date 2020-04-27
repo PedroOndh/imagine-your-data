@@ -63,7 +63,7 @@ export default {
 .categories {
   border-top: solid 2px $corporative-light-blue;
   margin-top: rem(126px);
-  transition: background 0.1s ease;
+  background: white;
   &__list {
     transition: all 0.2s ease;
     display: flex;
@@ -95,6 +95,7 @@ export default {
     }
   }
   &--fixed {
+    transition: background 0.1s ease;
     background: $corporative-light-blue;
     border-bottom: 2px solid #f5f6f7;
     position: fixed;
