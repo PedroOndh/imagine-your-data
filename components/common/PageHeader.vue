@@ -3,7 +3,7 @@
     <div class="container">
       <div class="header__logo">
         <nuxt-link to="/">
-          <div class="header__title">ImagineYourData</div>
+          <div class="header__title">iMAGINEYOURDATA</div>
           <div class="header__brand">
             wondered by
             <img src="/_media/empathy-co.svg" />
@@ -54,7 +54,6 @@ export default {
       font-weight: 300;
       line-height: 1.39;
       letter-spacing: rem(2px);
-      text-transform: uppercase;
       color: #243d48;
     }
     .header__brand {

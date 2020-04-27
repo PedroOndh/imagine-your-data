@@ -1,15 +1,6 @@
 <template>
   <div>
     <div class="container">
-      <h1 class="catchphrase">
-        Data for creativity
-      </h1>
-      <nuxt-link class="header__link" to="/about">
-        <div class="more-link">
-          More
-          <Chevron class="more-link__chevron" />
-        </div>
-      </nuxt-link>
       <Categories
         :categories="categories"
         :current-category="currentCategory"
@@ -20,42 +11,10 @@
   </div>
 </template>
 
-<style lang="scss">
-.catchphrase {
-  font-size: rem(50px);
-  font-weight: 300;
-  line-height: 1.22;
-  text-align: center;
-  text-transform: uppercase;
-  color: $grey-dark;
-  margin-bottom: 0;
-}
-.more-link {
-  margin-top: rem(55px);
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $grey-dark;
-  &__chevron {
-    svg {
-      margin-top: rem(-3px);
-      color: $grey-dark;
-    }
-  }
-}
-@media screen and (max-width: $breakpoint__mobile--max) {
-  .catchphrase {
-    font-size: rem(25px);
-  }
-}
-</style>
-
 <script>
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
 import { turnFileNameToPath, isDesktop } from '~/assets/libs/utils'
-import Chevron from '~/static/_media/chevron.svg?inline'
 
 const postsPerPage = 9
 
@@ -111,7 +70,7 @@ async function getAvailableCategories() {
 
 export default {
   layout: 'page',
-  components: { Categories, PostFeed, Chevron },
+  components: { Categories, PostFeed },
   async asyncData() {
     const availablePosts = await getAvailablePosts()
     return {

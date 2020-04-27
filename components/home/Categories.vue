@@ -61,15 +61,14 @@ export default {
 
 <style scoped lang="scss">
 .categories {
-  border-top: solid 2px $corporative-light-blue;
-  margin-top: rem(126px);
+  margin-top: rem(80px);
   background: white;
   &__list {
     transition: all 0.2s ease;
     display: flex;
     flex-wrap: wrap;
-    padding-top: rem(50px);
-    justify-content: space-around;
+    padding-top: rem(30px);
+    justify-content: space-between;
     &-item {
       text-transform: uppercase;
       text-align: center;
@@ -105,11 +104,16 @@ export default {
     width: 100%;
     left: 0;
     .categories__list {
+      width: 80%;
+      margin: auto;
       padding-top: 0;
       .categories__list-item {
         color: white;
       }
     }
+  }
+  @media screen and (max-width: $breakpoint__desktop--max) {
+    margin-top: 0;
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
     &__list {
