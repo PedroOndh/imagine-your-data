@@ -4,8 +4,7 @@ date: 2018-08-09T16:24:58.017Z
 image: /cms_media/cover-32.png
 author: germanh@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
-categories:
-  - User Journeys
+category: User Journeys
 ---
 The eCommerce site search journey **must always start from the customer experience and the user’s expectations,** and that can be as simple as matching shopper’s queries to corresponding products.
 

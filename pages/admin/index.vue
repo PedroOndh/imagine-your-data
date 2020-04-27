@@ -37,8 +37,8 @@ aside a {
 
 <script>
 if (process.client) {
-  const adminConfig = import('~/static/admin/adminConfig')
-  adminConfig()
+  // eslint-disable-next-line
+  import('~/static/admin/adminConfig')
 }
 export default {
   head() {

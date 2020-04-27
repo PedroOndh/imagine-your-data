@@ -5,8 +5,7 @@ date: 2017-10-09T16:36:32.895Z
 image:
       /cms_media/cover-15.png
 tags: [statsAPI, article,data viz,data visualization,infographics,sale periods viz,data sale periods]
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Other
 author: alvarod@empathy.co
 

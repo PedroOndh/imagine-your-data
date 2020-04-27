@@ -5,8 +5,7 @@ date: 2017-10-06T16:36:32.895Z
 image:
       /cms_media/cover-14.png
 tags: [statsAPI, article,data keyword,data viz,data visualization,infographics, keyword network]
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Relations
 author: davidm@empathy.co
 

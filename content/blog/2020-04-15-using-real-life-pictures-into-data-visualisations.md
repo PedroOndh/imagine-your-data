@@ -17,8 +17,7 @@ tags:
   - analytics
   - ecommerce
   - Seasonal Keywords
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Bubbles
 ---
 The world of data visualisations has been evolving heavily during the last years. We have reached a point where it is so difficult to find a <a href="https://google.com" target="_self">unique angle</a> that hasn’t been treated yet.

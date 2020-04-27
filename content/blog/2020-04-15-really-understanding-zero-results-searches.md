@@ -4,8 +4,7 @@ date: 2018-05-03T17:23:19.985Z
 image: /cms_media/cover-28.png
 author: joseac@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce]
-categories:
-  - User Journeys
+category: User Journeys
 ---
 *“What products are customers currently demanding that we don’t have?”* This question is probably one of the most repeatedly asked by all eCommerce companies in order to understand demand and product replacement. The answer seems obvious: “The products that people search for and can’t find!” But, this isn’t entirely true.
 

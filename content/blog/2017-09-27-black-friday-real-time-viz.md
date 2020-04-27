@@ -4,8 +4,7 @@ date: 2017-09-27T16:36:32.895Z
 author: angelm@empathy.co
 image: /cms_media/cover-7.jpg
 tags: [statsAPI, data viz, data visualization, data black friday, black friday, data compare, data visualisation]
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Bubbles
 ---
 <div class="" align="center">

@@ -14,7 +14,7 @@
 <script>
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
-import { turnFileNameToPath, isDesktop } from '~/assets/libs/utils'
+import { turnFileNameToPath, isDesktop } from '~/assets/js/utils'
 
 const postsPerPage = 9
 

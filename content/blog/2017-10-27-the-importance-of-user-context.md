@@ -6,8 +6,7 @@ image:
       /cms_media/cover-19.png
 tags: [statsAPI, viz, dta visualization,data visualisation,interactive data,infographics, data tool, graphical data,Stats API,user context,user data]
 typology: Bars
-categories:
-  - Data Visualizations
+category: Data Visualizations
 author: alvarod@empathy.co
 ---
 
