@@ -1,16 +1,13 @@
 import Vue from 'vue'
-import { isDesktop } from '~/assets/js/utils'
 
 Vue.directive('header', {
   inserted: (el) => {
-    if (isDesktop()) {
-      const headerContainer = el.querySelector('.container')
-      const containerTop = headerContainer.offsetTop
+    const headerContainer = el.querySelector('.container')
+    const containerTop = headerContainer.offsetTop
+    watchScroll(el, containerTop, 'header--fixed')
+    window.addEventListener('scroll', function(e) {
       watchScroll(el, containerTop, 'header--fixed')
-      window.addEventListener('scroll', function(e) {
-        watchScroll(el, containerTop, 'header--fixed')
-      })
-    }
+    })
   }
 })
 

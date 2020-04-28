@@ -14,7 +14,7 @@
 <script>
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
-import { turnFileNameToPath, isDesktop } from '~/assets/js/utils'
+import { turnFileNameToPath } from '~/assets/js/utils'
 
 const postsPerPage = 9
 
@@ -152,34 +152,32 @@ export default {
     },
     scrollInView() {
       const currentScroll = Math.abs(document.body.getBoundingClientRect().top)
-      if (currentScroll > this.$data.categoriesTop && isDesktop()) {
+      if (currentScroll > this.$data.categoriesTop) {
         const posts = document.querySelector('.posts')
         posts.classList.add('posts--filtering')
         window.scrollTo(0, this.$data.categoriesTop + 1)
       }
     },
     prepareFixedCategories() {
-      if (isDesktop()) {
-        const header = document.querySelector('.header')
-        const headerContainerHeight = header.querySelector('.container')
-          .offsetHeight
-        const posts = document.querySelector('.posts')
-        const categories = document.querySelector('.categories')
-        const categoriesTop = categories.offsetTop - headerContainerHeight
-        this.$data.categoriesTop = categoriesTop
-        window.addEventListener('scroll', function(e) {
-          const currentScroll = Math.abs(
-            document.body.getBoundingClientRect().top
-          )
-          if (currentScroll > categoriesTop) {
-            posts.classList.add('posts--filtering')
-            categories.classList.add('categories--fixed')
-          } else {
-            posts.classList.remove('posts--filtering')
-            categories.classList.remove('categories--fixed')
-          }
-        })
-      }
+      const header = document.querySelector('.header')
+      const headerContainerHeight = header.querySelector('.container')
+        .offsetHeight
+      const posts = document.querySelector('.posts')
+      const categories = document.querySelector('.categories')
+      const categoriesTop = categories.offsetTop - headerContainerHeight
+      this.$data.categoriesTop = categoriesTop
+      window.addEventListener('scroll', function(e) {
+        const currentScroll = Math.abs(
+          document.body.getBoundingClientRect().top
+        )
+        if (currentScroll > categoriesTop) {
+          posts.classList.add('posts--filtering')
+          categories.classList.add('categories--fixed')
+        } else {
+          posts.classList.remove('posts--filtering')
+          categories.classList.remove('categories--fixed')
+        }
+      })
     }
   }
 }
