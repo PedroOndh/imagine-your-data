@@ -141,9 +141,7 @@ export default {
     filterByCategory(category) {
       const { availablePosts } = this.$data
       const newFilteredPosts = category.length
-        ? availablePosts.filter((item) =>
-            item.attributes.categories.includes(category)
-          )
+        ? availablePosts.filter((item) => item.attributes.category === category)
         : availablePosts
       this.$data.currentCategory = category
       this.$data.filteredPosts = newFilteredPosts
