@@ -4,8 +4,7 @@ date: 2019-07-24T15:33:37.502Z
 image: /cms_media/mvt-002.png
 author: pedrof@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
-categories:
-  - User Journeys
+category: User Journeys
 ---
 At empathy.co, we’ve gathered years of experience and loads of know-how on the search experience and analytics. And, we know that setting up and maintaining the best search experience for your customers can sometimes seem like a daunting task: How do I optimise the different parameters? How do I make sure that any change will positively impact the performance of the search engine?
 

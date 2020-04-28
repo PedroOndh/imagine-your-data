@@ -4,8 +4,7 @@ date: 2017-11-23T16:36:32.895Z
 image: /cms_media/cover-22.png
 author: alvarod@empathy.co
 tags: [Viz,Search,Instant Search, Search Engine,search result,Data visualisation,Data visualization,infographics,Black Friday,ecommerce]
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Bubbles
 description: null
 seo_keywords: blackfriday, Black Friday data viz, Black Friday eCommerce Data, Data Viz of Black Friday

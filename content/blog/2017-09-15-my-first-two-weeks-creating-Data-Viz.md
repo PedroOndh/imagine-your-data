@@ -4,8 +4,7 @@ date: 2017-09-15T16:36:32.895Z
 image: /cms_media/cover-9.png
 author: davidm@empathy.co
 tags: [statsAPI, viz, dta visualization,data visualisation,interactive data,infographics, data tool, graphical data,Stats API]
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Bars
 seo_description: >-
   This is my first post, where to start? after working roughly 2 weeks with the

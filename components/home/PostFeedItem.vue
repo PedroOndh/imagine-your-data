@@ -38,12 +38,8 @@
     <nuxt-link :to="post._path" class="posts-feed-item__link">
       <div class="posts-feed-item__content">
         <div class="posts-feed-item__info">
-          <p
-            v-for="(category, index) in post.attributes.categories"
-            :key="index"
-            class="posts-feed-item__categories-item"
-          >
-            {{ `${index > 0 ? '- ' : ''}${category}` }}
+          <p class="posts-feed-item__categories-item colored">
+            {{ post.attributes.category }}
           </p>
           <!--
           •
@@ -60,8 +56,8 @@
 
 <script>
 import TwitterIcon from '~/static/_media/twitter.svg?inline'
-import { trunc } from '~/assets/libs/utils'
-import { months } from '~/assets/libs/consts'
+import { trunc } from '~/assets/js/utils'
+import { months } from '~/assets/js/consts'
 export default {
   name: 'PostFeedItem',
   components: { TwitterIcon },
@@ -93,8 +89,8 @@ export default {
       return dateString
     },
     getStyle: (post) => {
-      const { categories, typology } = post.attributes
-      if (categories[0] === 'Data Visualizations') {
+      const { category, typology } = post.attributes
+      if (category === 'Data Visualizations') {
         if (typology === 'Bubbles') {
           return '0dv'
         } else if (typology === 'Bars') {

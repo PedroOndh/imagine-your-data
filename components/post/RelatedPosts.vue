@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { turnFileNameToPath, trunc } from '~/assets/libs/utils'
+import { turnFileNameToPath, trunc } from '~/assets/js/utils'
 
 export default {
   name: 'RelatedPosts',

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { isDesktop } from '~/assets/libs/utils'
+import { isDesktop } from '~/assets/js/utils'
 
 Vue.directive('header', {
   inserted: (el) => {

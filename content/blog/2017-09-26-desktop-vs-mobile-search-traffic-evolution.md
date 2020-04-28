@@ -5,8 +5,7 @@ date: 2017-09-26T16:36:32.895Z
 image:
       /cms_media/cover-11.png
 tags: [statsAPI, article,data mobile vs desktop,data viz,data visualization,infographics, mobile data]
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Bars
 
 author: alvarod@empathy.co

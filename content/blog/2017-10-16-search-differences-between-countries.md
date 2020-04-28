@@ -5,8 +5,7 @@ date: 2017-10-16T16:36:32.895Z
 image:
       /cms_media/cover-16.png
 tags: [statsAPI, article,data viz,data visualization,infographics,Search differences between countries ]
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Bars
 author: alvarod@empathy.co
 

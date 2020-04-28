@@ -5,8 +5,7 @@ image: /cms_media/categories-viz.gif
 author: germanh@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
 typology: Lines
-categories:
-  - Data Visualizations
+category: Data Visualizations
 ---
 Have you ever wondered how the merchandising and sales efforts behind each product category are performing?
 

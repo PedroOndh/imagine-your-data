@@ -6,8 +6,7 @@ image:
       /cms_media/cover-18.png
 tags: [statsAPI, viz, dta visualization,data visualisation,interactive data,infographics, data tool, graphical data,Stats API,contextualize data,contextualize queries]
 typology: Other
-categories:
-  - Data Visualizations
+category: Data Visualizations
 
 author: davidm@empathy.co
 
