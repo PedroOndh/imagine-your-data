@@ -34,7 +34,7 @@ export default {
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
     &__content {
-      padding-top: rem(195px);
+      padding-top: rem(330px);
     }
   }
 }
