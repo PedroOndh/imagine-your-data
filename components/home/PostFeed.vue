@@ -31,7 +31,7 @@ $grid-gap: 2.19vw;
 section {
   margin-top: rem(280px);
   padding-bottom: rem(140px);
-  background-color: #f5f6f7;
+  background-color: $grey-background;
   &.posts--filtering {
     padding-top: 20rem;
     margin-top: rem(120px);

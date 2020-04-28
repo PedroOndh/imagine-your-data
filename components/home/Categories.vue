@@ -5,7 +5,7 @@
         'categories--open': open
       }"
     >
-      <div class="categories__list">
+      <div class="categories__list container">
         <div
           id="all"
           class="categories__list-item categories__list-item--active"
@@ -119,6 +119,8 @@ export default {
     display: none;
     width: 100%;
     text-align: center;
+    position: relative;
+    z-index: -1;
     svg {
       transition: all 0.5s ease;
       transform: rotate(90deg);
@@ -135,7 +137,7 @@ export default {
   &--fixed {
     transition: background 0.1s ease;
     background: #deeef0;
-    border-bottom: 2px solid #f5f6f7;
+    border-bottom: 2px solid $grey-background;
     position: fixed;
     top: 4.3rem;
     z-index: 2;
@@ -143,8 +145,6 @@ export default {
     width: 100%;
     left: 0;
     .categories__list {
-      width: 80%;
-      margin: auto;
       padding-top: 0;
       .categories__list-item {
         color: #292929;
@@ -165,8 +165,12 @@ export default {
       top: rem(80px);
     }
     &--open {
-      .categories__list .categories__list-item {
-        display: inline-block;
+      .categories__list {
+        padding: 0.5rem 0;
+        .categories__list-item {
+          display: inline-block;
+          padding: 0.5rem 0;
+        }
       }
     }
     &__list {
@@ -177,7 +181,7 @@ export default {
         width: 100%;
         text-align: center;
         font-size: 0.8rem;
-        padding: 0.5rem 0;
+        padding: 0.5rem 0 0;
         &--active {
           display: inline-block;
         }

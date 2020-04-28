@@ -1,12 +1,10 @@
 <template>
   <div>
-    <div class="container">
-      <Categories
-        :categories="categories"
-        :current-category="currentCategory"
-        :filter-by-category="filterByCategory"
-      />
-    </div>
+    <Categories
+      :categories="categories"
+      :current-category="currentCategory"
+      :filter-by-category="filterByCategory"
+    />
     <PostFeed :posts="posts" class="posts" />
   </div>
 </template>

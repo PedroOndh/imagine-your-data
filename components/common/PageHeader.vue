@@ -81,7 +81,7 @@ export default {
       font-weight: 300;
       line-height: 1.39;
       letter-spacing: rem(2px);
-      color: #243d48;
+      color: $grey-dark;
     }
     .header__brand {
       font-size: rem(10px);
@@ -244,7 +244,7 @@ export default {
           margin: 0.5rem 0;
         }
         .header__social {
-          margin-bottom: 1rem;
+          margin: 3rem 0;
         }
         a.social-icon {
           width: 35px;

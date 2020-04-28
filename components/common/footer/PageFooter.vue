@@ -76,7 +76,6 @@ export default {
 .footer {
   &__first-row {
     height: rem(396px);
-    margin-top: rem(140px);
     position: relative;
     &-image {
       width: 100%;
@@ -87,6 +86,9 @@ export default {
       top: 0;
       left: 0;
       z-index: -1;
+    }
+    .container {
+      position: relative;
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       height: auto;
