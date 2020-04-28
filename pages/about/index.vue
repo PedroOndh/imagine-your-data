@@ -80,6 +80,7 @@ export default {
   @media screen and (max-width: $breakpoint__tablet--max) {
     &__body {
       flex-direction: column;
+      padding-bottom: rem(50px);
     }
     &__slogan {
       padding-bottom: 3rem;
@@ -91,6 +92,19 @@ export default {
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
+    &.small-container {
+      width: 100%;
+      h1,
+      .about-page__content {
+        width: 90%;
+        margin: 0 5%;
+      }
+      .about-page__slogan {
+        padding: 3rem 5%;
+        margin-bottom: 3rem;
+        background: $grey-background;
+      }
+    }
     &__body {
       padding-top: rem(30px);
     }

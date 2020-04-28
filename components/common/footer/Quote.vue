@@ -54,8 +54,8 @@ export default {
   padding: rem(68px) rem(79px) rem(46px);
   border-radius: rem(20px);
   background-color: #fff;
-  position: relative;
-  bottom: rem(63px);
+  position: absolute;
+  bottom: rem(-225px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

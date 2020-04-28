@@ -31,7 +31,7 @@ $grid-gap: 2.19vw;
 section {
   margin-top: rem(280px);
   padding-bottom: rem(140px);
-  background-color: #f5f6f7;
+  background-color: $grey-background;
   &.posts--filtering {
     padding-top: 20rem;
     margin-top: rem(120px);
@@ -43,12 +43,14 @@ section {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-rows: 16.3vw;
     transition: all 1s ease;
+
     .posts-feed-item {
       border-radius: rem(20px);
       box-shadow: 0 0 rem(75px) 0 #d2d2d2;
       margin-bottom: $grid-gap;
       display: grid;
       grid-row: span 2;
+
       &--size {
         &-0,
         &-4,
@@ -56,25 +58,31 @@ section {
         &-9 {
           grid-column: span 2;
         }
+
         &-0 {
           margin-right: 2 * $grid-gap;
         }
+
         &-1 {
           position: relative;
           right: $grid-gap;
         }
+
         &-4 {
           margin-left: $grid-gap;
           margin-right: $grid-gap;
         }
+
         &-7 {
           position: relative;
           left: $grid-gap;
         }
+
         &-8 {
           margin-left: 2 * $grid-gap;
         }
       }
+
       &--background {
         &-0dv,
         &-1dv,
@@ -89,6 +97,7 @@ section {
           animation-duration: 0.8s;
         }
       }
+
       @keyframes appearing {
         from {
           opacity: 0;
@@ -98,13 +107,25 @@ section {
         }
       }
     }
-    @media screen and (min-width: $breakpoint__large-desktop--min) {
+  }
+  @media screen and (min-width: $breakpoint__large-desktop--min) {
+    .posts-feed {
       grid-auto-rows: rem(313px);
     }
-    @media screen and (max-width: $breakpoint__small-desktop--max) {
+  }
+  @media screen and (max-width: $breakpoint__small-desktop--max) {
+    .posts-feed {
       grid-auto-rows: 19vw;
     }
-    @media screen and (max-width: $breakpoint__tablet--max) {
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    margin-top: 5rem;
+    &.posts--filtering {
+      padding-top: 5rem;
+      margin-top: 0;
+    }
+    .posts-feed {
+      margin-top: 10rem;
       grid-template-columns: 1fr;
       grid-auto-rows: 25vw;
       .posts-feed-item {
@@ -119,11 +140,16 @@ section {
         background-position: 0 -10vw;
       }
     }
-    @media screen and (max-width: $breakpoint__small-tablet--max) {
+  }
+  @media screen and (max-width: $breakpoint__small-tablet--max) {
+    .posts-feed {
       grid-auto-rows: 50vw;
     }
-    @media screen and (max-width: $breakpoint__mobile--max) {
+  }
+  @media screen and (max-width: $breakpoint__mobile--max) {
+    .posts-feed {
       grid-auto-rows: 120vw;
+
       .posts-feed-item {
         background-size: 200%;
         background-position: center -20vw;

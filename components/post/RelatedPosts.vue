@@ -85,7 +85,7 @@ export default {
 <style scoped lang="scss">
 .blog-post__related {
   position: relative;
-  background: #f5f6f7;
+  background: $grey-background;
   display: flex;
   align-items: center;
   justify-content: space-between;

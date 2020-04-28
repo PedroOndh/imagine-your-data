@@ -130,6 +130,9 @@ export default Vue.component('post-content', {
       width: 100%;
       margin: rem(40px) 0;
     }
+    iframe.external-video {
+      height: 50vw;
+    }
     ul li,
     ol li {
       margin-left: 20px;
