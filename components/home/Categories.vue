@@ -176,6 +176,7 @@ export default {
     &__list {
       flex-direction: column;
       align-items: center;
+      padding-top: 0;
       .categories__list-item {
         display: none;
         width: 100%;

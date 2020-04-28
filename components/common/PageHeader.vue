@@ -188,13 +188,15 @@ export default {
         flex-direction: row;
         justify-content: space-between;
         width: auto;
-        transition: all 0.5s ease;
         a {
-          transition: all 0.5s ease;
           position: fixed;
           z-index: 1;
           top: 4rem;
           right: 10%;
+          transition: all 0.5s ease;
+          .header__title {
+            transition: all 0.3s ease;
+          }
         }
       }
       .header__button {
@@ -279,7 +281,6 @@ export default {
         }
         .header__logo {
           a {
-            transition: all 0.5s ease;
             position: fixed;
             top: 1.3rem;
             .header__title {
@@ -308,10 +309,6 @@ export default {
         a {
           right: 5%;
           top: 5rem;
-          .header__title {
-            font-size: 7vw;
-            width: 100%;
-          }
         }
       }
     }
