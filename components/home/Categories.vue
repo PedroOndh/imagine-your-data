@@ -84,7 +84,6 @@ export default {
 
 <style scoped lang="scss">
 .categories {
-  margin-top: rem(80px);
   &__list {
     transition: all 0.2s ease;
     display: flex;
@@ -135,7 +134,6 @@ export default {
     }
   }
   &--fixed {
-    transition: background 0.1s ease;
     background: #deeef0;
     border-bottom: 2px solid $grey-background;
     position: fixed;
@@ -158,10 +156,12 @@ export default {
     margin-top: 0;
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
+    transition: all 0.5s ease;
     &__chevron {
       display: block;
     }
     &--fixed {
+      transition: all 0.3s ease;
       top: rem(80px);
       padding: 0.5rem 0 0.3rem;
     }

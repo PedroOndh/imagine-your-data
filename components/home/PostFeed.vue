@@ -29,12 +29,12 @@ export default {
 <style scoped lang="scss">
 $grid-gap: 2.19vw;
 section {
-  margin-top: rem(280px);
+  margin-top: 12vw;
   padding-bottom: rem(140px);
   background-color: $grey-background;
   &.posts--filtering {
     padding-top: 20rem;
-    margin-top: rem(120px);
+    margin-top: -5rem;
   }
   .posts-feed {
     position: relative;
@@ -112,6 +112,9 @@ section {
     .posts-feed {
       grid-auto-rows: rem(313px);
     }
+    &.posts--filtering {
+      margin-top: 0;
+    }
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
     .posts-feed {
@@ -121,11 +124,11 @@ section {
   @media screen and (max-width: $breakpoint__tablet--max) {
     margin-top: 5rem;
     &.posts--filtering {
-      padding-top: 5rem;
+      padding-top: 6rem;
       margin-top: 0;
     }
     .posts-feed {
-      margin-top: 10rem;
+      margin-top: 8rem;
       grid-template-columns: 1fr;
       grid-auto-rows: 25vw;
       .posts-feed-item {
@@ -148,6 +151,7 @@ section {
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
     .posts-feed {
+      margin-top: 5rem;
       grid-auto-rows: 120vw;
 
       .posts-feed-item {

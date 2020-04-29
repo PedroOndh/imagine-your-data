@@ -1,6 +1,6 @@
 <template>
   <div class="about-page small-container">
-    <h1>iMAGINE YOUR DATA is a R&D initiative wondered by eMPATHY.co</h1>
+    <h1>iMAGINE YOUR DATA is a R&D initiative wondered by empathy.co</h1>
     <div class="about-page__body">
       <div class="about-page__slogan">{{ content.attributes.slogan }}</div>
       <div class="about-page__content">
@@ -39,6 +39,7 @@ export default {
     text-align: center;
     color: $grey-medium;
     margin-bottom: rem(75px);
+    margin-top: 3rem;
   }
   &__body {
     display: flex;
@@ -78,6 +79,9 @@ export default {
     }
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
+    h1 {
+      margin-top: 0;
+    }
     &__body {
       flex-direction: column;
       padding-bottom: rem(50px);
@@ -96,11 +100,11 @@ export default {
       width: 100%;
       h1,
       .about-page__content {
-        width: 90%;
-        margin: 0 5%;
+        width: 80%;
+        margin: auto;
       }
       .about-page__slogan {
-        padding: 3rem 5%;
+        padding: 3rem 10%;
         margin-bottom: 3rem;
         background: $grey-background;
       }

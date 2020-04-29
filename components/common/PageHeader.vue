@@ -43,14 +43,14 @@ export default {
       open: false
     }
   },
-  methods: {
-    toggleMenu() {
-      this.open = !this.open
-    }
-  },
   watch: {
     $route(to, from) {
       this.open = false
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.open = !this.open
     }
   }
 }
@@ -197,6 +197,10 @@ export default {
           .header__title {
             transition: all 0.3s ease;
           }
+          .header__brand img {
+            margin-top: 0.1rem;
+            margin-left: 0.3rem;
+          }
         }
       }
       .header__button {
@@ -205,7 +209,7 @@ export default {
         width: rem(26px);
         height: rem(26px);
         position: relative;
-        z-index: 1;
+        z-index: 2;
         &-open {
           position: absolute;
           top: 0;
@@ -226,15 +230,18 @@ export default {
       .header__sub-title {
         width: auto;
         margin-right: 0;
+        margin-top: 0;
         position: relative;
         z-index: 1;
+        opacity: 1;
+        transition: all 0.6s ease;
       }
       .header__menu {
         background: white;
         flex-direction: column;
         position: absolute;
         transition: all 0.5s ease;
-        z-index: 0;
+        z-index: 1;
         top: 0;
         left: 0;
         opacity: 0;
@@ -243,14 +250,15 @@ export default {
         width: 100%;
         overflow: hidden;
         .header__link {
+          color: #292929;
           margin: 0.5rem 0;
         }
         .header__social {
-          margin: 3rem 0;
+          margin: 3rem 0 rem(64px);
         }
         a.social-icon {
-          width: 35px;
-          height: 35px;
+          width: 40px;
+          height: 40px;
           margin-right: 0.5rem;
         }
       }
@@ -260,7 +268,7 @@ export default {
         opacity: 1;
         height: auto;
         background: white;
-        padding-top: 10rem;
+        padding-top: rem(140px);
       }
       .header__button {
         &-open {
@@ -277,7 +285,9 @@ export default {
       .container {
         height: 100%;
         .header__sub-title {
-          display: none;
+          margin-top: -3rem;
+          opacity: 0;
+          transition: all 0.3s ease;
         }
         .header__logo {
           a {
@@ -286,14 +296,12 @@ export default {
             .header__title {
               font-size: 1.2rem;
             }
-            .header__brand img {
-              width: 6rem;
+            .header__brand {
+              font-size: 0.5rem;
+              img {
+                width: 6rem;
+              }
             }
-          }
-        }
-        &.header__container--open {
-          .header__menu {
-            padding-top: 5rem;
           }
         }
       }
@@ -312,9 +320,6 @@ export default {
         }
         .header__title {
           font-size: 7.7vw;
-          @media screen and (max-width: 400px) {
-            font-size: 7.5vw;
-          }
         }
       }
     }
@@ -329,6 +334,16 @@ export default {
             width: 5rem;
           }
         }
+      }
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .container {
+      .header__sub-title {
+        font-size: 0.65rem;
+      }
+      .header__logo .header__title {
+        font-size: 7.5vw;
       }
     }
   }
