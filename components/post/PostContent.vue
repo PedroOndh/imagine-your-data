@@ -71,13 +71,13 @@ export default Vue.component('post-content', {
   }
   figure {
     position: relative;
-    img {
+    img.figure-image {
       margin-bottom: 0;
     }
     &.figure--caption {
       width: 90%;
       margin-left: 5%;
-      img {
+      img.figure-image {
         width: 80%;
         margin: 0 20% 0 0;
       }
@@ -113,7 +113,7 @@ export default Vue.component('post-content', {
     padding-bottom: 2.5rem;
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
-    figure.figure--caption img {
+    figure.figure--caption img.figure-image {
       width: 100%;
       margin: 0;
     }
@@ -122,14 +122,14 @@ export default Vue.component('post-content', {
       text-align: center;
       width: 100%;
     }
-  }
-  @media screen and (max-width: $breakpoint__mobile--max) {
     img,
     video,
     iframe.external-video {
       width: 100%;
       margin: rem(40px) 0;
     }
+  }
+  @media screen and (max-width: $breakpoint__mobile--max) {
     iframe.external-video {
       height: 50vw;
     }
@@ -175,16 +175,15 @@ $mask-background-color: rgba(0, 0, 0, 0.7);
   &__media {
     max-width: 100%;
     max-height: 100%;
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
     object-fit: contain;
     padding: 1rem;
     transition-duration: 0ms;
     transition: transform $transitions-duration--short ease-out, width ease-out;
 
     &--initial-position {
-      transform: scale(1) translate3d(0, 0, 0) !important;
-      width: 100%;
+      transform: scale(1) translate3d(0, 0, 0);
     }
   }
 

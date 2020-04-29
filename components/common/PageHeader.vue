@@ -197,6 +197,10 @@ export default {
           .header__title {
             transition: all 0.3s ease;
           }
+          .header__brand img {
+            margin-top: 0.1rem;
+            margin-left: 0.3rem;
+          }
         }
       }
       .header__button {
@@ -287,8 +291,11 @@ export default {
             .header__title {
               font-size: 1.2rem;
             }
-            .header__brand img {
-              width: 6rem;
+            .header__brand {
+              font-size: 0.5rem;
+              img {
+                width: 6rem;
+              }
             }
           }
         }
