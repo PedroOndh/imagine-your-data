@@ -58,7 +58,7 @@ export default {
 
 <style scoped lang="scss">
 .header {
-  padding: rem(100px) 0 0;
+  margin: rem(100px) 0 0;
   position: absolute;
   width: 100%;
   .container {
@@ -132,7 +132,7 @@ export default {
     }
   }
   &--fixed {
-    padding: 0;
+    margin: 0;
     position: fixed;
     width: 100%;
     z-index: 3;
@@ -179,7 +179,7 @@ export default {
   @media screen and (max-width: $breakpoint__tablet--max) {
     height: rem(80px);
     display: flex;
-    padding: 0;
+    margin: 0;
     .container {
       padding: 0.5rem 0;
       .header__logo {
