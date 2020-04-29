@@ -20,8 +20,11 @@ aside a {
   &[href='#/collections/blog'] span::before {
     content: '\e909';
   }
-  &[href='#/collections/categories'] span::before {
-    content: '\e904';
+  &[href='#/collections/categories'] {
+    display: none;
+    span::before {
+      content: '\e904';
+    }
   }
   &[href='#/collections/authors'] span::before {
     content: '\e945';
