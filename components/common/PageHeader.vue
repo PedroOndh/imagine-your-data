@@ -232,6 +232,8 @@ export default {
         margin-right: 0;
         position: relative;
         z-index: 1;
+        opacity: 1;
+        transition: opacity 1s ease;
       }
       .header__menu {
         background: white;
@@ -282,7 +284,8 @@ export default {
       .container {
         height: 100%;
         .header__sub-title {
-          display: none;
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
         .header__logo {
           a {
@@ -315,9 +318,6 @@ export default {
         }
         .header__title {
           font-size: 7.7vw;
-          @media screen and (max-width: 400px) {
-            font-size: 7.5vw;
-          }
         }
       }
     }
@@ -332,6 +332,16 @@ export default {
             width: 5rem;
           }
         }
+      }
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .container {
+      .header__sub-title {
+        font-size: 0.65rem;
+      }
+      .header__logo .header__title {
+        font-size: 7.5vw;
       }
     }
   }

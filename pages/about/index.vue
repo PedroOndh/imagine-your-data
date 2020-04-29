@@ -96,11 +96,11 @@ export default {
       width: 100%;
       h1,
       .about-page__content {
-        width: 90%;
-        margin: 0 5%;
+        width: 80%;
+        margin: auto;
       }
       .about-page__slogan {
-        padding: 3rem 5%;
+        padding: 3rem 10%;
         margin-bottom: 3rem;
         background: $grey-background;
       }
