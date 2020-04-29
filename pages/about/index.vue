@@ -1,6 +1,6 @@
 <template>
   <div class="about-page small-container">
-    <h1>iMAGINE YOUR DATA is a R&D initiative wondered by eMPATHY.co</h1>
+    <h1>iMAGINE YOUR DATA is a R&D initiative wondered by empathy.co</h1>
     <div class="about-page__body">
       <div class="about-page__slogan">{{ content.attributes.slogan }}</div>
       <div class="about-page__content">
