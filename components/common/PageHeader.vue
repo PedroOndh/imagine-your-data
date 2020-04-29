@@ -205,7 +205,7 @@ export default {
         width: rem(26px);
         height: rem(26px);
         position: relative;
-        z-index: 1;
+        z-index: 2;
         &-open {
           position: absolute;
           top: 0;
@@ -234,7 +234,7 @@ export default {
         flex-direction: column;
         position: absolute;
         transition: all 0.5s ease;
-        z-index: 0;
+        z-index: 1;
         top: 0;
         left: 0;
         opacity: 0;
@@ -243,14 +243,15 @@ export default {
         width: 100%;
         overflow: hidden;
         .header__link {
+          color: #292929;
           margin: 0.5rem 0;
         }
         .header__social {
-          margin: 3rem 0;
+          margin: 3rem 0 rem(64px);
         }
         a.social-icon {
-          width: 35px;
-          height: 35px;
+          width: 40px;
+          height: 40px;
           margin-right: 0.5rem;
         }
       }
@@ -260,7 +261,7 @@ export default {
         opacity: 1;
         height: auto;
         background: white;
-        padding-top: 10rem;
+        padding-top: rem(140px);
       }
       .header__button {
         &-open {
@@ -289,11 +290,6 @@ export default {
             .header__brand img {
               width: 6rem;
             }
-          }
-        }
-        &.header__container--open {
-          .header__menu {
-            padding-top: 5rem;
           }
         }
       }

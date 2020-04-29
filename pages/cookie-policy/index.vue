@@ -1,5 +1,5 @@
 <template>
-  <div class="container policy">
+  <div class="small-container policy">
     <h1>Cookie Policy</h1>
     <client-only>
       <PostContent :content="content.html" />
