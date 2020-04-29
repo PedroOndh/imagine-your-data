@@ -12,7 +12,7 @@ export default {
   components: { LinkArrow },
   props: {
     error: {
-      type: String,
+      type: Object,
       default() {}
     }
   },
