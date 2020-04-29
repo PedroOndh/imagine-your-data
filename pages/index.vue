@@ -169,7 +169,6 @@ export default {
           document.body.getBoundingClientRect().top
         )
         if (currentScroll > categoriesTop) {
-          posts.classList.add('posts--filtering')
           categories.classList.add('categories--fixed')
         } else {
           posts.classList.remove('posts--filtering')

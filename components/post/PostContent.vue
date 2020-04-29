@@ -113,6 +113,7 @@ export default Vue.component('post-content', {
     padding-bottom: 2.5rem;
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
+    figure,
     figure.figure--caption img.figure-image {
       width: 100%;
       margin: 0;
