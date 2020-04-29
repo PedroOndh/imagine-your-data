@@ -43,14 +43,14 @@ export default {
       open: false
     }
   },
-  methods: {
-    toggleMenu() {
-      this.open = !this.open
-    }
-  },
   watch: {
     $route(to, from) {
       this.open = false
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.open = !this.open
     }
   }
 }
