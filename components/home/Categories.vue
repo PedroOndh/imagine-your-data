@@ -156,10 +156,12 @@ export default {
     margin-top: 0;
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
+    transition: all 0.5s ease;
     &__chevron {
       display: block;
     }
     &--fixed {
+      transition: all 0.3s ease;
       top: rem(80px);
       padding: 0.5rem 0 0.3rem;
     }
