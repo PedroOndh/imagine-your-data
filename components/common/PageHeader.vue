@@ -11,7 +11,7 @@
           <div class="header__title">iMAGINEYOURDATA</div>
           <div class="header__brand">
             wondered by
-            <img src="/_media/empathy-co.svg" />
+            <img src="/_media/empathy-co.svg" alt="Empathy.co" />
           </div>
         </nuxt-link>
         <div class="header__button" @click="toggleMenu">
@@ -181,7 +181,7 @@ export default {
     display: flex;
     padding: 0;
     .container {
-      padding: 0.5rem;
+      padding: 0.5rem 0;
       .header__logo {
         width: auto;
         display: flex;
@@ -307,8 +307,14 @@ export default {
       .header__logo {
         align-items: center;
         a {
-          right: 5%;
+          right: 7.5%;
           top: 5rem;
+        }
+        .header__title {
+          font-size: 7.7vw;
+          @media screen and (max-width: 400px) {
+            font-size: 7.5vw;
+          }
         }
       }
     }

@@ -49,8 +49,11 @@ ol li {
   }
 }
 @media screen and (max-width: $breakpoint__mobile--max) {
-  .container, .small-container {
-    width: 90%;
+  .container {
+    width: 85%;
+  }
+  .small-container {
+    width: 80%;
   }
   h1 {
     font-size: rem(32px);

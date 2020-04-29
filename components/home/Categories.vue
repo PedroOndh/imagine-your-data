@@ -163,6 +163,7 @@ export default {
     }
     &--fixed {
       top: rem(80px);
+      padding: 0.5rem 0 0.3rem;
     }
     &--open {
       .categories__list {
