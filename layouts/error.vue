@@ -1,8 +1,10 @@
 <template>
   <div class="error-page">
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred</h1>
-    <nuxt-link to="/">home page <LinkArrow /></nuxt-link>
+    <div class="error-page__background">
+      <img src="/_media/404.svg" alt="404" />
+    </div>
+    <h1>sorry it looks like we've entered a black hole</h1>
+    <nuxt-link to="/">I would like to go home <LinkArrow /></nuxt-link>
   </div>
 </template>
 
@@ -22,13 +24,26 @@ export default {
 
 <style lang="scss">
 .error-page {
-  padding-bottom: 15rem;
+  background: white;
+  padding-bottom: 10rem;
+  &__background {
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    margin: rem(-120px) auto 1rem;
+    img {
+      object-fit: contain;
+    }
+  }
   h1 {
     font-weight: 300;
     line-height: 1.22;
     text-align: center;
     color: $grey-medium;
-    margin-bottom: rem(75px);
+    width: 70%;
+    max-width: rem(1000px);
+    margin: 0 auto rem(75px);
   }
   a {
     margin-top: rem(50px);
@@ -45,6 +60,14 @@ export default {
     }
     &:hover svg {
       padding-left: 0.5rem;
+    }
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    &__background {
+      margin: rem(-60px) auto 0;
+    }
+    h1 {
+      width: 80%;
     }
   }
 }

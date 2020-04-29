@@ -2,11 +2,10 @@ import Vue from 'vue'
 
 Vue.directive('header', {
   inserted: (el) => {
-    const headerContainer = el.querySelector('.container')
-    const containerTop = headerContainer.offsetTop
-    watchScroll(el, containerTop, 'header--fixed')
+    const headerTop = el.offsetTop
+    watchScroll(el, headerTop, 'header--fixed')
     window.addEventListener('scroll', function(e) {
-      watchScroll(el, containerTop, 'header--fixed')
+      watchScroll(el, headerTop, 'header--fixed')
     })
   }
 })

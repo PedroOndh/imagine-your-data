@@ -157,18 +157,17 @@ export default {
       }
     },
     prepareFixedCategories() {
-      const header = document.querySelector('.header')
-      const headerContainerHeight = header.querySelector('.container')
-        .offsetHeight
+      const headerHeight = document.querySelector('.header').offsetHeight
       const posts = document.querySelector('.posts')
       const categories = document.querySelector('.categories')
-      const categoriesTop = categories.offsetTop - headerContainerHeight
+      const categoriesTop = categories.offsetTop - headerHeight
       this.$data.categoriesTop = categoriesTop
       window.addEventListener('scroll', function(e) {
         const currentScroll = Math.abs(
           document.body.getBoundingClientRect().top
         )
         if (currentScroll > categoriesTop) {
+          posts.classList.add('posts--filtering')
           categories.classList.add('categories--fixed')
         } else {
           posts.classList.remove('posts--filtering')
