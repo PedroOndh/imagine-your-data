@@ -9,13 +9,13 @@
 <script>
 import LinkArrow from '~/static/_media/link-arrow.svg?inline'
 export default {
+  components: { LinkArrow },
   props: {
     error: {
       type: String,
       default() {}
     }
   },
-  components: { LinkArrow },
   layout: 'page'
 }
 </script>
