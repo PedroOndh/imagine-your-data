@@ -230,10 +230,11 @@ export default {
       .header__sub-title {
         width: auto;
         margin-right: 0;
+        margin-top: 0;
         position: relative;
         z-index: 1;
         opacity: 1;
-        transition: opacity 1s ease;
+        transition: all 0.6s ease;
       }
       .header__menu {
         background: white;
@@ -284,8 +285,9 @@ export default {
       .container {
         height: 100%;
         .header__sub-title {
+          margin-top: -3rem;
           opacity: 0;
-          transition: opacity 0.3s ease;
+          transition: all 0.3s ease;
         }
         .header__logo {
           a {

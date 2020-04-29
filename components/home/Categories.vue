@@ -134,7 +134,6 @@ export default {
     }
   }
   &--fixed {
-    transition: background 0.1s ease;
     background: #deeef0;
     border-bottom: 2px solid $grey-background;
     position: fixed;
