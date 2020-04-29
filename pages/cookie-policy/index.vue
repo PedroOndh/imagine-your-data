@@ -1,7 +1,9 @@
 <template>
   <div class="container policy">
     <h1>Cookie Policy</h1>
-    <PostContent :content="content.html" />
+    <client-only>
+      <PostContent :content="content.html" />
+    </client-only>
   </div>
 </template>
 

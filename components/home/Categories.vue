@@ -163,6 +163,7 @@ export default {
     }
     &--fixed {
       top: rem(80px);
+      padding: 0.5rem 0 0.3rem;
     }
     &--open {
       .categories__list {
@@ -176,6 +177,7 @@ export default {
     &__list {
       flex-direction: column;
       align-items: center;
+      padding-top: 0;
       .categories__list-item {
         display: none;
         width: 100%;
