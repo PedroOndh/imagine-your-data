@@ -130,12 +130,11 @@ export default {
     try {
       const blogPost = await import(`~/content/blog/${route.name}.md`)
       const postAuthor = await getPostAuthor(blogPost)
-      const metaTags = getMetatags(blogPost)
       return {
         blogPost: { ...blogPost },
         author: { ...postAuthor },
         date: getDate(blogPost),
-        metaTags
+        metaTags: getMetatags(blogPost)
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Not found' })
