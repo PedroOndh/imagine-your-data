@@ -17,15 +17,14 @@ tags:
   - analytics
   - ecommerce
   - Seasonal Keywords
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Bubbles
 ---
 The world of data visualisations has been evolving heavily during the last years. We have reached a point where it is so difficult to find a <a href="https://google.com" target="_self">unique angle</a> that hasn’t been treated yet.
 
 That said, there is still a chunk within visualisations design that has not been so exploited. That is the incursion of pictures and real-life images into data visualisations. Of course, everything depends on the kind of data we want to expose and the audience to reach out but there is always a good reason for considering the possibility of using real images to make a visualisation more expressive and emotional.
 
-### MAKE A VISUALISATION DESIGN MORE ATTRACTIVE
+### Make a visualisation design more attractive
 
 With real shapes and images, a visualisation can be more accessible, get more attention and even become a way of art.
 
@@ -33,7 +32,7 @@ With real shapes and images, a visualisation can be more accessible, get more at
 
 This is what Craig Taylor, Data Visualisation Design Manager at Ito World, reached with [Coral Cities](https://towardsdatascience.com/coral-cities-an-ito-design-lab-concept-c01a3f4a2722). This beauty-centred visualisation maps out how far you can travel by car from various city centres in just 30 minutes, ignoring traffic. This ever-evolving visualisation has become art and the creator plans to put bespoke prints on sale soon.
 
-### EXPRESS THE INSIGHTS BETTER
+### Express the insights better
 
 This is the great challenge of using real-world images into Infographics. For instance, it’s one thing to see a line graph for the evolution of syringe exchange across years and it’s quite another to see this line graph shown as a rope held by men with different levels.
 
@@ -43,7 +42,7 @@ Artist and designer [Marion Luttenberger uses real-life images](http://marion-lu
 
 Photography-inspired visualisations like these are a great way to convey a message and make an impact with real data.
 
-### STORY TELLING VISUALISATION
+### Story telling visualisation
 
 ![Dawn wall](/cms_media/dawnwall.png "Dawn wall")
 
@@ -51,7 +50,7 @@ Storytelling has become one of the most influential ways of showing data on step
 
 Here is a great example of it from the*The New York Times*about the [19-day free-climb of the Dawn Wall](https://www.nytimes.com/interactive/2015/01/09/sports/the-dawn-wall-el-capitan.html?_r&_r=0) on El Capitan.
 
-### PUT DATA INTO CONTEXT
+### Put data into context
 
 ![Weather](/cms_media/weather.jpg "Weather")
 

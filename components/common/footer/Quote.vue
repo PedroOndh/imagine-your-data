@@ -54,13 +54,11 @@ export default {
   padding: rem(68px) rem(79px) rem(46px);
   border-radius: rem(20px);
   background-color: #fff;
-  position: relative;
-  bottom: rem(63px);
+  position: absolute;
+  bottom: rem(-225px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  &__first-row {
-  }
   &__quote {
     font-family: Montserrat;
     font-size: rem(24px);
@@ -107,29 +105,17 @@ export default {
     margin-left: rem(26px);
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
-    width: 80%;
-    padding: rem(40px) rem(40px) rem(46px);
-    margin-left: 10%;
-    &__quote {
-      font-size: rem(22px);
-      line-height: 1.5;
-    }
-  }
-  @media screen and (max-width: $breakpoint__mobile--max) {
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
     padding: 2rem 1rem;
     position: initial;
     &__quote {
       font-size: rem(22px);
       line-height: 1.5;
     }
-    &__second-row {
-      flex-direction: column;
-    }
     &__navigation {
       width: 100%;
-      padding-top: 2rem;
+      max-width: rem(200px);
+      padding-top: 0;
       justify-content: space-around;
     }
     &__arrow {

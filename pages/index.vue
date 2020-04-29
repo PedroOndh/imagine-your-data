@@ -1,63 +1,20 @@
 <template>
   <div>
-    <div class="container">
-      <h1 class="catchphrase">
-        Data for creativity
-      </h1>
-      <nuxt-link class="header__link" to="/about">
-        <div class="more-link">
-          More
-          <Chevron class="more-link__chevron" />
-        </div>
-      </nuxt-link>
-      <Categories
-        :categories="categories"
-        :current-category="currentCategory"
-        :filter-by-category="filterByCategory"
-      />
-    </div>
+    <Categories
+      :categories="categories"
+      :current-category="currentCategory"
+      :filter-by-category="filterByCategory"
+    />
     <PostFeed :posts="posts" class="posts" />
   </div>
 </template>
 
-<style lang="scss">
-.catchphrase {
-  font-size: rem(50px);
-  font-weight: 300;
-  line-height: 1.22;
-  text-align: center;
-  text-transform: uppercase;
-  color: $grey-dark;
-  margin-bottom: 0;
-}
-.more-link {
-  margin-top: rem(55px);
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $grey-dark;
-  &__chevron {
-    svg {
-      margin-top: rem(-3px);
-      color: $grey-dark;
-    }
-  }
-}
-@media screen and (max-width: $breakpoint__mobile--max) {
-  .catchphrase {
-    font-size: rem(25px);
-  }
-}
-</style>
-
 <script>
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
-import { turnFileNameToPath } from '~/assets/libs/utils'
-import Chevron from '~/static/_media/chevron.svg?inline'
+import { turnFileNameToPath } from '~/assets/js/utils'
 
-const postsPerPage = 12
+const postsPerPage = 9
 
 async function getAvailablePosts() {
   const context = await require.context('~/content/blog', true, /\.md$/)
@@ -111,7 +68,7 @@ async function getAvailableCategories() {
 
 export default {
   layout: 'page',
-  components: { Categories, PostFeed, Chevron },
+  components: { Categories, PostFeed },
   async asyncData() {
     const availablePosts = await getAvailablePosts()
     return {
@@ -130,6 +87,8 @@ export default {
   },
   mounted() {
     this.registerObserver()
+    this.prepareFixedCategories()
+    this.scrollInView()
   },
   methods: {
     registerObserver() {
@@ -180,15 +139,43 @@ export default {
     filterByCategory(category) {
       const { availablePosts } = this.$data
       const newFilteredPosts = category.length
-        ? availablePosts.filter((item) =>
-            item.attributes.categories.includes(category)
-          )
+        ? availablePosts.filter((item) => item.attributes.category === category)
         : availablePosts
       this.$data.currentCategory = category
       this.$data.filteredPosts = newFilteredPosts
       this.$data.posts = newFilteredPosts.slice(0, postsPerPage)
       this.$data.currentPostList = 1
+      this.scrollInView()
       this.observe(1, true)
+    },
+    scrollInView() {
+      const currentScroll = Math.abs(document.body.getBoundingClientRect().top)
+      if (currentScroll > this.$data.categoriesTop) {
+        const posts = document.querySelector('.posts')
+        posts.classList.add('posts--filtering')
+        window.scrollTo(0, this.$data.categoriesTop + 1)
+      }
+    },
+    prepareFixedCategories() {
+      const header = document.querySelector('.header')
+      const headerContainerHeight = header.querySelector('.container')
+        .offsetHeight
+      const posts = document.querySelector('.posts')
+      const categories = document.querySelector('.categories')
+      const categoriesTop = categories.offsetTop - headerContainerHeight
+      this.$data.categoriesTop = categoriesTop
+      window.addEventListener('scroll', function(e) {
+        const currentScroll = Math.abs(
+          document.body.getBoundingClientRect().top
+        )
+        if (currentScroll > categoriesTop) {
+          posts.classList.add('posts--filtering')
+          categories.classList.add('categories--fixed')
+        } else {
+          posts.classList.remove('posts--filtering')
+          categories.classList.remove('categories--fixed')
+        }
+      })
     }
   }
 }

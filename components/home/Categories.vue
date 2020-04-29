@@ -1,29 +1,42 @@
 <template>
   <div class="categories">
-    <div class="categories__list">
-      <div
-        id="all"
-        class="categories__list-item categories__list-item--active"
-        @click="activateCategoryFilter('')"
-      >
-        All
+    <div
+      :class="{
+        'categories--open': open
+      }"
+    >
+      <div class="categories__list container">
+        <div
+          id="all"
+          class="categories__list-item categories__list-item--active"
+          @click="activateCategoryFilter('')"
+        >
+          All
+        </div>
+        <div
+          v-for="(category, index) in categories"
+          :id="category"
+          :key="index"
+          class="categories__list-item"
+          @click="activateCategoryFilter(category)"
+        >
+          {{ category }}
+        </div>
       </div>
-      <div
-        v-for="(category, index) in categories"
-        :id="category"
-        :key="index"
-        class="categories__list-item"
-        @click="activateCategoryFilter(category)"
-      >
-        {{ category }}
+      <div class="categories__chevron">
+        <Chevron />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { isDesktop } from '~/assets/js/utils'
+import Chevron from '~/static/_media/chevron.svg?inline'
+
 export default {
   name: 'Categories',
+  components: { Chevron },
   props: {
     categories: {
       type: Array,
@@ -38,22 +51,32 @@ export default {
       default() {}
     }
   },
+  data() {
+    return {
+      open: false
+    }
+  },
   methods: {
     activateCategoryFilter(category) {
-      const { currentCategory, filterByCategory } = this.$props
+      const { currentCategory } = this.$props
+      if (!isDesktop()) {
+        this.open = !this.open
+      }
+      if (!category || (isDesktop() && currentCategory === category)) {
+        this.filter('all', category)
+      } else if (currentCategory !== category) {
+        this.filter(category, category)
+      }
+    },
+    filter(id, category) {
+      const { filterByCategory } = this.$props
       const categories = document.querySelectorAll('.categories__list-item')
       categories.forEach((category) => {
         category.classList.remove('categories__list-item--active')
       })
-      if (!category || currentCategory === category) {
-        filterByCategory('')
-        const targetCategory = document.getElementById('all')
-        targetCategory.classList.add('categories__list-item--active')
-      } else {
-        const targetCategory = document.getElementById(category)
-        targetCategory.classList.toggle('categories__list-item--active')
-        filterByCategory(category)
-      }
+      const targetCategory = document.getElementById(id)
+      targetCategory.classList.toggle('categories__list-item--active')
+      filterByCategory(category)
     }
   }
 }
@@ -61,13 +84,13 @@ export default {
 
 <style scoped lang="scss">
 .categories {
-  border-top: solid 2px $corporative-light-blue;
-  margin-top: rem(126px);
+  margin-top: rem(80px);
   &__list {
+    transition: all 0.2s ease;
     display: flex;
     flex-wrap: wrap;
-    padding-top: rem(50px);
-    justify-content: space-around;
+    padding-top: rem(30px);
+    justify-content: space-between;
     &-item {
       text-transform: uppercase;
       text-align: center;
@@ -92,23 +115,90 @@ export default {
       }
     }
   }
-  @media screen and (max-width: $breakpoint__tablet--max) {
-    &__list {
-      &-item {
-        &:before {
-          display: flex;
-        }
+  &__chevron {
+    display: none;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: -1;
+    svg {
+      transition: all 0.5s ease;
+      transform: rotate(90deg);
+      g {
+        fill: $corporative-light-blue;
       }
     }
   }
-  @media screen and (max-width: $breakpoint__mobile--max) {
+  &--open {
+    .categories__chevron svg {
+      display: none;
+    }
+  }
+  &--fixed {
+    transition: background 0.1s ease;
+    background: #deeef0;
+    border-bottom: 2px solid $grey-background;
+    position: fixed;
+    top: 4.3rem;
+    z-index: 2;
+    margin-top: 0;
+    width: 100%;
+    left: 0;
+    .categories__list {
+      padding-top: 0;
+      .categories__list-item {
+        color: #292929;
+      }
+    }
+    svg g {
+      fill: #292929;
+    }
+  }
+  @media screen and (max-width: $breakpoint__small-desktop--max) {
+    margin-top: 0;
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    &__chevron {
+      display: block;
+    }
+    &--fixed {
+      top: rem(80px);
+      padding: 0.5rem 0 0.3rem;
+    }
+    &--open {
+      .categories__list {
+        padding: 0.5rem 0;
+        .categories__list-item {
+          display: inline-block;
+          padding: 0.5rem 0;
+        }
+      }
+    }
     &__list {
       flex-direction: column;
       align-items: center;
-      &-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      padding-top: 0;
+      .categories__list-item {
+        display: none;
+        width: 100%;
+        text-align: center;
+        font-size: 0.8rem;
+        padding: 0.5rem 0 0;
+        &--active {
+          display: inline-block;
+        }
+        &:before {
+          display: inline-block;
+        }
+        &.categories__list-item--active {
+          &:before {
+            display: inline-block;
+          }
+        }
+        &:before {
+          content: 'showing ';
+          display: none;
+        }
       }
     }
   }

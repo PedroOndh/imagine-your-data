@@ -4,8 +4,7 @@ date: 2018-01-02T18:29:54.199Z
 image: /cms_media/cover-25.png
 author: alvarod@empathy.co
 tags: [Viz,Search,Instant Search, Search Engine,search result,Data visualisation,Data visualization,infographics,Black Friday,ecommerce]
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Bubbles
 seo_keywords: real time, real time data viz, real time search eCommerce Data, Data Viz of real time, real time
 ---

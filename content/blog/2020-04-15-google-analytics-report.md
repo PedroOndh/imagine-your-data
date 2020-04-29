@@ -4,8 +4,7 @@ date: 2018-01-15T18:27:20.560Z
 image: /cms_media/cover-26.png
 author: clemensa@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce]
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Other
 ---
 <iyd-iframe src="https://www.imagineyourdata.com/datavis/ga-html-report-template/" desktop-height="32vw" tablet-height="300px" mobile-height="60vw" framebimg-order="1"></iyd-iframe>

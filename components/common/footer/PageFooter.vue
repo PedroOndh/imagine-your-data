@@ -1,18 +1,19 @@
 <template>
   <div class="footer">
-    <div
-      class="footer__first-row"
-      :style="{
-        'background-image': [
-          quotes.length > 0
-            ? `url(${quotes[currentQuote].attributes.image})`
-            : 'none'
-        ]
-      }"
-    >
+    <div class="footer__first-row">
       <div class="container">
         <Quote :quote="quotes[currentQuote]" :change-quote="changeQuote" />
       </div>
+      <div
+        class="footer__first-row-image"
+        :style="{
+          'background-image': [
+            quotes.length > 0
+              ? `url(${quotes[currentQuote].attributes.image})`
+              : 'none'
+          ]
+        }"
+      />
     </div>
     <div class="footer__second-row">
       <p>
@@ -75,13 +76,26 @@ export default {
 .footer {
   &__first-row {
     height: rem(396px);
-    margin-top: rem(140px);
-    background-size: cover;
-    background-position: right;
     position: relative;
-    @media screen and (max-width: $breakpoint__mobile--max) {
+    &-image {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: right;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .container {
+      position: relative;
+    }
+    @media screen and (max-width: $breakpoint__tablet--max) {
       height: auto;
-      padding: 1rem 0;
+      &-image {
+        height: rem(200px);
+        position: initial;
+      }
     }
   }
   &__second-row {

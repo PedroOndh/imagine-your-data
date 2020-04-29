@@ -6,8 +6,7 @@ image:
       /cms_media/cover-17.png
 tags: [statsAPI, viz, dta visualization,data visualisation,interactive data,infographics, data tool, graphical data,Stats API,search engine]
 typology: Relations
-categories:
-  - Data Visualizations
+category: Data Visualizations
 
 author: alvarod@empathy.co
 

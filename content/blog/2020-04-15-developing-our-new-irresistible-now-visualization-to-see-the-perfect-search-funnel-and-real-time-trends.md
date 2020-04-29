@@ -6,8 +6,7 @@ date: 2018-07-27T16:32:45.906Z
 image: /cms_media/cover31.png
 author: germanh@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Bubbles
 ---
 We’ve been working on our new Now visualisation where we examine data sourced from any search provider feed or platform to look at the perfect search funnel and real-time analysis of shoppers’ activity. This starts by looking at the high-level searches with an overview of each continent and then drills down to scrutinise each country showing key metrics such as the clicks, add to carts and no results in more detail.

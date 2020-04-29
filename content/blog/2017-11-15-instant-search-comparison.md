@@ -5,8 +5,7 @@ date: 2017-11-15T16:36:32.895Z
 image:
       /cms_media/cover-21.png
 tags: [Viz,Search,Instant Search, Search Engine,search result,Data visualisation,Data visualization,infographics, Interflora]
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Lines
 
 author: clemensa@empathy.co

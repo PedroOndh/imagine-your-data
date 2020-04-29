@@ -35,11 +35,11 @@ export default {
       image = 'linkedin.svg'
       alt = 'LinkedIn'
     } else if (this.social === 'twitter') {
-      href = 'https://twitter.com/empathyco_?lang=en'
+      href = 'https://twitter.com/imagineyourdata'
       image = 'twitter.svg'
       alt = 'Twitter'
     } else if (this.social === 'instagram') {
-      href = 'https://www.instagram.com/empathy_co/?hl=en'
+      href = 'https://www.instagram.com/imagineyourdata/'
       image = 'instagram.svg'
       alt = 'Instagram'
     }

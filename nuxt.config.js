@@ -1,7 +1,7 @@
 import path from 'path'
 import glob from 'glob'
 import { sortRoutes } from '@nuxt/utils'
-import { turnFileNameToPath } from './assets/libs/utils'
+import { turnFileNameToPath } from './assets/js/utils'
 
 const markdownPaths = ['blog']
 

@@ -1,21 +1,32 @@
 <template>
   <div v-header class="header">
-    <div class="container">
+    <div
+      class="container header__container"
+      :class="{
+        'header__container--open': open
+      }"
+    >
       <div class="header__logo">
         <nuxt-link to="/">
-          <div class="header__title">ImagineYourData</div>
+          <div class="header__title">iMAGINEYOURDATA</div>
           <div class="header__brand">
             wondered by
-            <img src="/_media/empathy-co.svg" />
+            <img src="/_media/empathy-co.svg" alt="Empathy.co" />
           </div>
         </nuxt-link>
+        <div class="header__button" @click="toggleMenu">
+          <img class="header__button-closed" src="/_media/menu.svg" />
+          <img class="header__button-open" src="/_media/times-grey.svg" />
+        </div>
       </div>
       <div class="header__sub-title">Visualizing eCommerce Search & Browse</div>
       <div class="header__menu">
         <nuxt-link class="header__link" to="/about">About</nuxt-link>
-        <SocialIcon social="instagram" />
-        <SocialIcon social="twitter" />
-        <SocialIcon social="linkedin" />
+        <div class="header__social">
+          <SocialIcon social="instagram" />
+          <SocialIcon social="twitter" />
+          <SocialIcon social="linkedin" />
+        </div>
       </div>
     </div>
   </div>
@@ -26,13 +37,30 @@ import SocialIcon from '~/components/common/SocialIcon'
 
 export default {
   name: 'PageHeader',
-  components: { SocialIcon }
+  components: { SocialIcon },
+  data() {
+    return {
+      open: false
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.open = !this.open
+    }
+  },
+  watch: {
+    $route(to, from) {
+      this.open = false
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
 .header {
   padding: rem(100px) 0 0;
+  position: absolute;
+  width: 100%;
   .container {
     display: flex;
     justify-content: space-between;
@@ -44,6 +72,7 @@ export default {
     align-items: flex-end;
     a {
       text-decoration: none;
+      transition: all 0.3s ease;
     }
     .header__title {
       width: rem(347px);
@@ -52,8 +81,7 @@ export default {
       font-weight: 300;
       line-height: 1.39;
       letter-spacing: rem(2px);
-      text-transform: uppercase;
-      color: #243d48;
+      color: $grey-dark;
     }
     .header__brand {
       font-size: rem(10px);
@@ -68,6 +96,9 @@ export default {
         margin-left: rem(8px);
       }
     }
+  }
+  &__button {
+    display: none;
   }
   &__sub-title {
     font-size: rem(13px);
@@ -89,6 +120,9 @@ export default {
       text-decoration: none;
       color: $grey-light;
     }
+    .header__social {
+      display: flex;
+    }
     a {
       margin-right: rem(16px);
       &.social-icon {
@@ -99,13 +133,12 @@ export default {
   }
   &--fixed {
     padding: 0;
-    background: white;
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     background: white;
     .container {
-      padding: 0.6rem 0px 1rem;
+      padding: 0.6rem 0px 0.9rem;
       .header__logo {
         .header__title {
           transition: all 0.3s ease;
@@ -123,28 +156,179 @@ export default {
       }
     }
   }
-  @media screen and (max-width: $breakpoint__tablet--max) {
+  @media screen and (max-width: $breakpoint__small-desktop--max) {
     .container {
-      flex-direction: column;
-      .header__sub-title {
-        padding: 1rem 0;
-        text-align: center;
-        line-height: 1.5;
+      .header__logo {
+        .header__title {
+          font-size: 1.5rem;
+          width: auto;
+          height: auto;
+        }
       }
-      .header__menu a.social-icon {
-        width: 35px;
-        height: 35px;
-        margin-right: 0.5rem;
+      .header__menu {
+        a.social-icon {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .header__sub-title {
+        width: 12rem;
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    height: rem(80px);
+    display: flex;
+    padding: 0;
+    .container {
+      padding: 0.5rem 0;
+      .header__logo {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: auto;
+        a {
+          position: fixed;
+          z-index: 1;
+          top: 4rem;
+          right: 10%;
+          transition: all 0.5s ease;
+          .header__title {
+            transition: all 0.3s ease;
+          }
+        }
+      }
+      .header__button {
+        transition: all 0.5s ease;
+        display: block;
+        width: rem(26px);
+        height: rem(26px);
+        position: relative;
+        z-index: 1;
+        &-open {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: all 0.2s ease;
+          transform: rotate(-90deg);
+          opacity: 0;
+        }
+        &-closed {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: all 0.2s ease;
+          transform: rotate(0deg);
+          opacity: 1;
+        }
+      }
+      .header__sub-title {
+        width: auto;
+        margin-right: 0;
+        position: relative;
+        z-index: 1;
+      }
+      .header__menu {
+        background: white;
+        flex-direction: column;
+        position: absolute;
+        transition: all 0.5s ease;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        height: 0;
+        padding-top: 0;
+        width: 100%;
+        overflow: hidden;
+        .header__link {
+          margin: 0.5rem 0;
+        }
+        .header__social {
+          margin: 3rem 0;
+        }
+        a.social-icon {
+          width: 35px;
+          height: 35px;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+    .container.header__container--open {
+      .header__menu {
+        opacity: 1;
+        height: auto;
+        background: white;
+        padding-top: 10rem;
+      }
+      .header__button {
+        &-open {
+          transform: rotate(0);
+          opacity: 1;
+        }
+        &-closed {
+          transform: rotate(90deg);
+          opacity: 0;
+        }
+      }
+    }
+    &--fixed {
+      .container {
+        height: 100%;
+        .header__sub-title {
+          display: none;
+        }
+        .header__logo {
+          a {
+            position: fixed;
+            top: 1.3rem;
+            .header__title {
+              font-size: 1.2rem;
+            }
+            .header__brand img {
+              width: 6rem;
+            }
+          }
+        }
+        &.header__container--open {
+          .header__menu {
+            padding-top: 5rem;
+          }
+        }
       }
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
-    &__logo {
-      width: 100%;
-      align-items: center;
-      .header__title {
-        font-size: 7vw;
-        width: 100%;
+    .container {
+      .header__sub-title {
+        width: auto;
+      }
+      .header__logo {
+        align-items: center;
+        a {
+          right: 7.5%;
+          top: 5rem;
+        }
+        .header__title {
+          font-size: 7.7vw;
+          @media screen and (max-width: 400px) {
+            font-size: 7.5vw;
+          }
+        }
+      }
+    }
+    &--fixed {
+      .container {
+        .header__logo a {
+          top: 1.5rem;
+          .header__title {
+            font-size: 1rem;
+          }
+          .header__brand img {
+            width: 5rem;
+          }
+        }
       }
     }
   }

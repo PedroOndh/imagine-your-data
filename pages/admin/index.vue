@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div />
 </template>
 
 <style lang="scss">
@@ -36,17 +36,10 @@ aside a {
 </style>
 
 <script>
-import adminConfig from '~/static/admin/adminConfig'
 if (process.client) {
-  import('netlify-cms').then((cms) => {
-    cms.registerPreviewStyle(
-      'https://assets.empathybroker.com/resources/fonts/empathy-typography/style.css'
-    )
-    cms.registerPreviewStyle('/admin/admin.css')
-    adminConfig(cms)
-  }) // eslint-disable-line
+  // eslint-disable-next-line
+  import('~/static/admin/adminConfig')
 }
-
 export default {
   head() {
     return {

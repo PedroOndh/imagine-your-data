@@ -4,8 +4,7 @@ date: 2019-04-05T15:40:32.767Z
 image: /cms_media/photo-post-def.jpg
 author: germanh@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]
-categories:
-  - Data Visualizations
+category: Data Visualizations
 typology: Bubbles
 ---
 The Now visualisation was the very first one designed by the then newly formed Insights team and was warmly welcomed and rapidly employed by many Empathy customers.
