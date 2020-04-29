@@ -84,7 +84,6 @@ export default {
 
 <style scoped lang="scss">
 .categories {
-  margin-top: rem(80px);
   &__list {
     transition: all 0.2s ease;
     display: flex;

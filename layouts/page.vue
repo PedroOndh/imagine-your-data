@@ -18,13 +18,19 @@ export default {
 <style scoped lang="scss">
 .page {
   background-image: url('/_media/page-background.svg');
-  background-position: 0 0;
+  background-position: 0 -20px;
   background-repeat: no-repeat;
   background-size: 100%;
   &__content {
-    padding-top: rem(360px);
+    padding-top: 16vw;
+  }
+  @media screen and (min-width: $breakpoint__large-desktop--min) {
+    background-position: 0 -40px;
   }
   @media screen and (max-width: $breakpoint__desktop--max) {
+    &__content {
+      padding-top: 20vw;
+    }
     background-size: 114%;
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {

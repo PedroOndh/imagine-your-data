@@ -42,6 +42,7 @@
     text-align: center;
     color: $grey-medium;
     margin-bottom: rem(75px);
+    margin-top: 3rem;
   }
   &__author {
     margin-bottom: rem(85px);
@@ -78,6 +79,11 @@
       a {
         margin: 0 rem(2.5px);
       }
+    }
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    &__title {
+      margin-top: 0;
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {

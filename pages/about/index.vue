@@ -39,6 +39,7 @@ export default {
     text-align: center;
     color: $grey-medium;
     margin-bottom: rem(75px);
+    margin-top: 3rem;
   }
   &__body {
     display: flex;
@@ -78,6 +79,9 @@ export default {
     }
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
+    h1 {
+      margin-top: 0;
+    }
     &__body {
       flex-direction: column;
       padding-bottom: rem(50px);
