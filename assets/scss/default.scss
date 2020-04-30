@@ -15,6 +15,14 @@
 .text-centered {
   text-align: center;
 }
+.page-title {
+  margin-top: 3rem;
+  font-weight: 300;
+  line-height: 1.22;
+  text-align: center;
+  color: $grey-medium;
+  margin-bottom: rem(75px);
+}
 
 h1 {
   font-size: rem(73px);
@@ -46,6 +54,11 @@ ol li {
   h5,
   h6 {
     font-size: rem(25px);
+  }
+}
+@media screen and (max-width: $breakpoint__tablet--max) {
+  .page-title {
+    margin-top: 0;
   }
 }
 @media screen and (max-width: $breakpoint__mobile--max) {
