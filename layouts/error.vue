@@ -31,7 +31,7 @@ export default {
     height: 50vh;
     display: flex;
     justify-content: center;
-    margin: rem(-120px) auto 1rem;
+    margin: rem(-80px) auto 1rem;
     img {
       object-fit: contain;
     }
