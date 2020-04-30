@@ -65,6 +65,9 @@ export default {
       './assets/scss/abstracts/_mixins.scss'
     ]
   },
+  generate: {
+    fallback: '404.html'
+  },
   /*
    ** Build configuration
    */
