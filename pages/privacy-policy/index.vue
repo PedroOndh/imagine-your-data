@@ -1,6 +1,6 @@
 <template>
   <div class="small-container policy">
-    <h1>Privacy Policy</h1>
+    <h1 class="page-title">Privacy Policy</h1>
     <client-only>
       <PostContent :content="content.html" />
     </client-only>
@@ -9,12 +9,6 @@
 
 <style lang="scss">
 .policy {
-  h1 {
-    line-height: 1.22;
-    text-align: center;
-    color: $grey-medium;
-    margin-bottom: rem(75px);
-  }
   h1,
   h2,
   h3 {

@@ -1,6 +1,8 @@
 <template>
   <div class="about-page small-container">
-    <h1>iMAGINE YOUR DATA is a R&D initiative wondered by empathy.co</h1>
+    <h1 class="about-page__title page-title">
+      iMAGINE YOUR DATA is a R&D initiative wondered by empathy.co
+    </h1>
     <div class="about-page__body">
       <div class="about-page__slogan">{{ content.attributes.slogan }}</div>
       <div class="about-page__content">
@@ -33,14 +35,6 @@ export default {
 
 <style scoped lang="scss">
 .about-page {
-  h1 {
-    font-weight: 300;
-    line-height: 1.22;
-    text-align: center;
-    color: $grey-medium;
-    margin-bottom: rem(75px);
-    margin-top: 3rem;
-  }
   &__body {
     display: flex;
     padding: rem(120px) 0 rem(180px);
@@ -79,9 +73,6 @@ export default {
     }
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
-    h1 {
-      margin-top: 0;
-    }
     &__body {
       flex-direction: column;
       padding-bottom: rem(50px);
@@ -98,7 +89,7 @@ export default {
   @media screen and (max-width: $breakpoint__mobile--max) {
     &.small-container {
       width: 100%;
-      h1,
+      .about-page__title,
       .about-page__content {
         width: 80%;
         margin: auto;
