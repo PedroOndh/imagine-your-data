@@ -1,7 +1,7 @@
 <template>
   <div class="blog-post">
     <div class="small-container">
-      <h1 class="blog-post__title">
+      <h1 class="blog-post__title page-title">
         {{ blogPost.attributes.title }}
       </h1>
       <div class="blog-post__author">
@@ -36,14 +36,6 @@
 </template>
 <style lang="scss">
 .blog-post {
-  &__title {
-    font-weight: 300;
-    line-height: 1.22;
-    text-align: center;
-    color: $grey-medium;
-    margin-bottom: rem(75px);
-    margin-top: 3rem;
-  }
   &__author {
     margin-bottom: rem(85px);
     display: flex;
@@ -79,11 +71,6 @@
       a {
         margin: 0 rem(2.5px);
       }
-    }
-  }
-  @media screen and (max-width: $breakpoint__tablet--max) {
-    &__title {
-      margin-top: 0;
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
