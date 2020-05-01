@@ -20,25 +20,23 @@ export default {
   background-image: url('/_media/page-background.svg');
   background-position: 0 -20px;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 120%;
   &__content {
-    padding-top: 16vw;
+    padding-top: rem(195px);
   }
-  @media screen and (min-width: $breakpoint__large-desktop--min) {
-    background-position: 0 -40px;
-  }
-  @media screen and (max-width: $breakpoint__desktop--max) {
+  @media screen and (min-width: $breakpoint__small-desktop--min) {
     &__content {
       padding-top: 20vw;
     }
+  }
+  @media screen and (min-width: $breakpoint__desktop--min) {
     background-size: 114%;
   }
-  @media screen and (max-width: $breakpoint__small-desktop--max) {
-    background-size: 120%;
-  }
-  @media screen and (max-width: $breakpoint__tablet--max) {
+  @media screen and (min-width: $breakpoint__large-desktop--min) {
+    background-size: 100%;
+    background-position: 0 -40px;
     &__content {
-      padding-top: rem(195px);
+      padding-top: 16vw;
     }
   }
 }
