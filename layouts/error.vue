@@ -35,7 +35,7 @@ export default {
       font-weight: 300;
       line-height: 1.22;
       text-align: center;
-      color: $grey-medium;
+      color: #243d48;
       width: 80%;
       max-width: rem(1000px);
       margin: 0 auto rem(75px);
@@ -63,7 +63,7 @@ export default {
   }
   &__background {
     width: 90%;
-    height: 50vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     margin: rem(-60px) auto 0;
@@ -73,6 +73,7 @@ export default {
   }
   @media screen and (min-width: $breakpoint__tablet--min) {
     &__background {
+      height: 50vh;
       margin: rem(-80px) auto 1rem;
     }
   }
