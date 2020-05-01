@@ -243,7 +243,7 @@ export default {
       font-size: rem(32px);
       font-weight: 300;
       line-height: 1.39;
-      min-height: 11vw;
+      min-height: rem(211px);
     }
   }
   &--background {
@@ -284,16 +284,10 @@ export default {
 
     @include custom-item-color('&-3us', $corporative-green);
   }
-  @media screen and (min-width: $breakpoint__large-desktop--min) {
-    &__content {
-      h1 {
-        min-height: rem(211px);
-      }
-    }
-  }
   @media screen and (max-width: $breakpoint__desktop--max) {
     &__content {
       h1 {
+        min-height: 11vw;
         font-size: rem(24px);
       }
     }

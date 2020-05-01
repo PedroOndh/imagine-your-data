@@ -34,14 +34,14 @@ section {
   background-color: $grey-background;
   &.posts--filtering {
     padding-top: 20rem;
-    margin-top: -5rem;
+    margin-top: 0;
   }
   .posts-feed {
     position: relative;
     top: -8.5vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-rows: 16.3vw;
+    grid-auto-rows: rem(313px);
     transition: all 1s ease;
 
     .posts-feed-item {
@@ -108,12 +108,12 @@ section {
       }
     }
   }
-  @media screen and (min-width: $breakpoint__large-desktop--min) {
+  @media screen and (max-width: $breakpoint__desktop--max) {
     .posts-feed {
-      grid-auto-rows: rem(313px);
+      grid-auto-rows: 16.3vw;
     }
     &.posts--filtering {
-      margin-top: 0;
+      margin-top: -5rem;
     }
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
@@ -139,8 +139,6 @@ section {
         margin-right: 0;
         right: 0;
         left: 0;
-        background-size: 100%;
-        background-position: 0 -10vw;
       }
     }
   }
@@ -155,8 +153,6 @@ section {
       grid-auto-rows: 120vw;
 
       .posts-feed-item {
-        background-size: 200%;
-        background-position: center -20vw;
         margin-bottom: 12vw;
       }
     }
