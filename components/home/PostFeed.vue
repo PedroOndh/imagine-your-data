@@ -139,8 +139,6 @@ section {
         margin-right: 0;
         right: 0;
         left: 0;
-        background-size: 100%;
-        background-position: 0 -10vw;
       }
     }
   }
@@ -155,8 +153,6 @@ section {
       grid-auto-rows: 120vw;
 
       .posts-feed-item {
-        background-size: 200%;
-        background-position: center -20vw;
         margin-bottom: 12vw;
       }
     }
