@@ -1,7 +1,7 @@
 ---
 
 title:  "Seasonal Keywords"
-date: 2017-10-01T16:36:32.895Z
+date: 2016-10-01T16:36:32.895Z
 image:
       /cms_media/cover-13.png
 tags: [statsAPI, article,data ,data viz,data seasonal, data graphic, visualization,infographics]  

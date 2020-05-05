@@ -1,6 +1,6 @@
 ---
 title: Search Term Complexity
-date: 2017-10-30T16:36:32.895Z
+date: 2016-10-30T16:36:32.895Z
 author: clemensa@empathy.co
 image: /cms_media/cover-20.png
 tags: [statsAPI, viz, data visualization,data visualisation,interactive data,infographics, data tool, graphical data,Stats API]
