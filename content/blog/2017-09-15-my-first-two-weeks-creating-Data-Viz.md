@@ -1,6 +1,6 @@
 ---
 title: My First Data Visualization with StatsAPI
-date: 2017-09-15T16:36:32.895Z
+date: 2016-09-15T16:36:32.895Z
 image: /cms_media/cover-9.png
 author: davidm@empathy.co
 tags: [statsAPI, viz, dta visualization,data visualisation,interactive data,infographics, data tool, graphical data,Stats API]

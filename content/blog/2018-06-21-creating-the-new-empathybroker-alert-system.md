@@ -1,6 +1,6 @@
 ---
 title: Creating the New Empathy Alert System
-date: 2018-06-21T16:36:32.895Z
+date: 2017-06-21T16:36:32.895Z
 image: /cms_media/alert-system-4.png
 author: josianq@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce,Seasonal Keywords]

@@ -1,7 +1,7 @@
 ---
 
 title:  "Instant Search Comparison"
-date: 2017-11-15T16:36:32.895Z
+date: 2016-11-15T16:36:32.895Z
 image:
       /cms_media/cover-21.png
 tags: [Viz,Search,Instant Search, Search Engine,search result,Data visualisation,Data visualization,infographics, Interflora]

@@ -1,6 +1,6 @@
 ---
 title: Using Real-Life Pictures Into Data Visualisations
-date: 2019-07-30T13:45:00.000Z
+date: 2017-07-30T13:45:00.000Z
 image: /cms_media/product-viz.jpg
 author: joseg@empathy.co
 tags:

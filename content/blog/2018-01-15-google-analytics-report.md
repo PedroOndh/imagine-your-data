@@ -1,6 +1,6 @@
 ---
 title: Google Analytics Report
-date: 2018-01-15T18:27:20.560Z
+date: 2017-01-15T18:27:20.560Z
 image: /cms_media/cover-26.png
 author: clemensa@empathy.co
 tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data visualisation,Data visualization,infographics,analytics,ecommerce]
