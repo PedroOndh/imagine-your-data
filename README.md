@@ -2,7 +2,7 @@
 
 Creating beautiful evidence of People's emotional nature - Visualisations for eCommerce Search & Browse.
 
-> An Open Source project on Nuxt and Netlify-cms, created by *Empathy.co*
+> An Open Source project on Nuxt.js and Netlify-cms, created by *Empathy.co*
 
 ## Build Setup
 
