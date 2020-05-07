@@ -14,7 +14,7 @@ $ npm install
 $ npm run dev
 
 # run admin panel on local, at localhost:3000/admin
-$ npm run local
+$ npm run admin
 
 # build for production and launch server
 $ npm run build
