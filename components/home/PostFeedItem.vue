@@ -200,6 +200,7 @@ export default {
     top: rem(-24px);
     font-weight: 600;
     .posts-feed-item__author-image {
+      width: 100%;
       border-radius: 50%;
       background: white;
     }
