@@ -167,7 +167,7 @@ $mask-background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 3rem 5rem;
+    padding: 4rem 6rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,10 +176,7 @@ $mask-background-color: rgba(0, 0, 0, 0.7);
   &__media {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: 100%;
     object-fit: contain;
-    padding: 1rem;
     transition-duration: 0ms;
     transition: transform $transitions-duration--short ease-out, width ease-out;
 
