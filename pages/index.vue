@@ -5,7 +5,7 @@
       :current-category="currentCategory"
       :filter-by-category="filterByCategory"
     />
-    <PostFeed :posts="posts" class="posts" />
+    <PostFeed :posts="posts" />
   </div>
 </template>
 
@@ -121,7 +121,7 @@ export default {
     },
     observe(postList, observe) {
       const { observer } = this.$data
-      const idToSelect = (postList * postsPerPage - 1).toString()
+      const idToSelect = (postList * postsPerPage - 4).toString()
       let targetPost = document.getElementById(idToSelect)
 
       if (observe) {

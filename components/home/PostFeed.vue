@@ -1,13 +1,19 @@
 <template>
-  <section>
+  <section class="posts">
     <div class="container posts-feed">
-      <PostFeedItem
-        v-for="(post, index) in posts"
-        :id="index"
-        :key="post.attributes.index"
-        :post="post"
-        :size-index="index % 9"
-      />
+      <transition-group
+        name="reordering"
+        tag="div"
+        class="posts-feed__transition"
+      >
+        <PostFeedItem
+          v-for="(post, index) in posts"
+          :id="index"
+          :key="post.attributes.index"
+          :post="post"
+          :size-index="index % 9"
+        />
+      </transition-group>
     </div>
   </section>
 </template>
@@ -26,134 +32,122 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 $grid-gap: 2.19vw;
-section {
+section.posts {
   margin-top: 12vw;
   padding-bottom: rem(140px);
   background-color: $grey-background;
   &.posts--filtering {
-    padding-top: 20rem;
+    padding-top: 15rem;
     margin-top: 0;
   }
-  .posts-feed {
+  .posts-feed .posts-feed__transition {
     position: relative;
     top: -8.5vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-rows: rem(313px);
+    display: flex;
+    flex-wrap: wrap;
     transition: all 1s ease;
+    width: 105%;
+    overflow-y: hidden;
+    padding: 5rem 0 5rem 5rem;
+    margin-top: -5rem;
+    margin-left: -5rem;
 
     .posts-feed-item {
       border-radius: rem(20px);
       box-shadow: 0 0 rem(75px) 0 #d2d2d2;
       margin-bottom: $grid-gap;
-      display: grid;
-      grid-row: span 2;
+      width: 23.81%;
+      height: rem(626px);
+      transition-property: opacity, width, margin;
+      transition-duration: 0.8s;
+      &.reordering {
+        &-enter,
+        &-leave-active {
+          opacity: 0;
+          width: 0;
+          margin-left: 0;
+          margin-right: 0;
 
+          & .posts-feed-item__author,
+          & .posts-feed-item__link {
+            display: none;
+          }
+        }
+      }
       &--size {
         &-0,
         &-4,
         &-8,
         &-9 {
-          grid-column: span 2;
+          width: calc(47.62% - 2 * 2.19vw);
         }
-
-        &-0 {
-          margin-right: 2 * $grid-gap;
-        }
-
-        &-1 {
-          position: relative;
-          right: $grid-gap;
-        }
-
-        &-4 {
+        &-1,
+        &-2,
+        &-5 {
           margin-left: $grid-gap;
-          margin-right: $grid-gap;
         }
-
+        &-3,
+        &-6,
         &-7 {
-          position: relative;
-          left: $grid-gap;
-        }
-
-        &-8 {
-          margin-left: 2 * $grid-gap;
-        }
-      }
-
-      &--background {
-        &-0dv,
-        &-1dv,
-        &-2dv,
-        &-3dv,
-        &-4dv,
-        &-0us,
-        &-1us,
-        &-2us,
-        &-3us {
-          animation-name: appearing;
-          animation-duration: 0.8s;
-        }
-      }
-
-      @keyframes appearing {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
+          margin-right: $grid-gap;
         }
       }
     }
   }
   @media screen and (max-width: $breakpoint__desktop--max) {
-    .posts-feed {
-      grid-auto-rows: 16.3vw;
+    .posts-feed .posts-feed__transition .posts-feed-item {
+      height: 32.6vw;
     }
     &.posts--filtering {
       margin-top: -5rem;
     }
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
-    .posts-feed {
-      grid-auto-rows: 19vw;
+    .posts-feed .posts-feed__transition .posts-feed-item {
+      height: 38vw;
     }
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
     margin-top: 5rem;
+    min-height: 100vh;
     &.posts--filtering {
       padding-top: 6rem;
       margin-top: 0;
     }
-    .posts-feed {
+    .posts-feed .posts-feed__transition {
+      width: 100%;
       margin-top: 8rem;
-      grid-template-columns: 1fr;
-      grid-auto-rows: 25vw;
+      padding-top: 0;
+      padding-left: 0;
+      margin-left: 0;
+      overflow: visible;
       .posts-feed-item {
         margin-bottom: $grid-gap;
-        grid-row: span 1;
-        grid-column: span 1;
+        width: 100%;
+        height: 23vw;
         margin-left: 0;
         margin-right: 0;
         right: 0;
         left: 0;
+        &.reordering {
+          &-enter,
+          &-leave-active {
+            width: auto;
+            height: 0;
+          }
+        }
       }
     }
   }
-  @media screen and (max-width: $breakpoint__small-tablet--max) {
-    .posts-feed {
-      grid-auto-rows: 50vw;
-    }
-  }
   @media screen and (max-width: $breakpoint__mobile--max) {
-    .posts-feed {
+    .posts-feed .posts-feed__transition {
       margin-top: 5rem;
-      grid-auto-rows: 120vw;
 
       .posts-feed-item {
         margin-bottom: 12vw;
+        height: 108vw;
       }
     }
   }
