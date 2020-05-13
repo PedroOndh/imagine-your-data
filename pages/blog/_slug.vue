@@ -11,8 +11,8 @@
           <span class="blog-post__author-date">{{ date }}</span>
           -->
           <span class="blog-post__author-name">
-            By {{ author.attributes.name }}
-            {{
+            By {{ author.attributes.name
+            }}{{
               author.attributes.jobtitle
                 ? `, ${author.attributes.jobtitle}`
                 : ''
