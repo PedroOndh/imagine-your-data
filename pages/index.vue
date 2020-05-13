@@ -22,9 +22,11 @@ async function getAvailablePosts() {
     .keys()
     .map((key) => ({
       ...context(key),
-      _path: `/blog/${turnFileNameToPath(
-        key.replace('.md', '').replace('./', '')
-      )}`
+      _path: `/blog/${
+        !context(key).attributes.slug
+          ? turnFileNameToPath(key.replace('./', ''))
+          : context(key).attributes.slug
+      }`
     }))
     .sort(function(a, b) {
       return a.attributes.date > b.attributes.date ? -1 : 1
