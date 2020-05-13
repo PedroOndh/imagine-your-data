@@ -1,7 +1,7 @@
 ---
 
 title:  "Comparing three Variables on a 3D Scatter Plot"
-date: 2017-11-29T16:36:32.895Z
+date: 2016-11-29T16:36:32.895Z
 image: /cms_media/cover-23.png
 tags: [statsAPI, article, Viz,Search]
 category: Data Visualizations
