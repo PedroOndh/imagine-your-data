@@ -75,7 +75,7 @@
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
     &__author-name {
-      font-size: rem(22px);
+      font-size: rem(20px);
     }
   }
 }

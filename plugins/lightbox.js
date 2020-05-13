@@ -72,11 +72,20 @@ function activateLightbox(element) {
       lightBoxMedia.style.height = `${mediaElement.clientHeight}px`
       lightBoxMedia.setAttribute('controls', '')
     } else {
-      const image = new Image(
-        mediaElement.offsetWidth,
-        mediaElement.offsetHeight
-      )
+      const width =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth
+      const height =
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight
+      const isImageHorizontal =
+        mediaElement.offsetWidth > (mediaElement.offsetHeight * width) / height
+      const image = new Image()
       image.src = mediaElement.src
+      image.style.width = isImageHorizontal ? '100%' : 'auto'
+      image.style.height = isImageHorizontal ? 'auto' : '100%'
       lightBoxMedia = image
       lightBoxMedia.classList.add('lightbox__media--images')
     }
