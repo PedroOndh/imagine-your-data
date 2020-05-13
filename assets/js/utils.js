@@ -1,8 +1,5 @@
 export const turnFileNameToPath = (slug) => {
-  return slug
-    .slice(11)
-    .replace('.md', '')
-    .toLowerCase()
+  return slug.slice(11).replace('.md', '')
 }
 export const trunc = (string, n, useWordBoundary) => {
   if (string.length <= n) {
