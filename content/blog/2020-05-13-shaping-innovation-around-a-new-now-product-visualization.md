@@ -36,7 +36,7 @@ The bubbles will offer interaction while hovering over them, enabling retailers 
 
 Consequently, this new visualization prototype not only enhances the single interaction monitoring but also offers the possibility to show a combination of multiple events, as shown in the example below, where Clicks & Add2Cart are configured by the user to be displayed at the same time.
 
-<complex-image image="/cms_media/data_visual_click_addtocart.jpg" caption="" lightbox="true" v-lightbox></complex-image>
+<complex-image image="/cms_media/data_visual_click_addtocart.gif" caption="" lightbox="true" v-lightbox></complex-image>
 
 We believe that in order to understand the flow of user interaction, it is necessary to take into account key aspects that establish the perfect search funnel of shoppers’ activity: Aspects such as aesthetics, quality of content (product offerings), accessibility or simplicity of use.
 
