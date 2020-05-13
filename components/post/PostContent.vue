@@ -146,8 +146,6 @@ export default Vue.component('post-content', {
 }
 $mask-background-color: rgba(0, 0, 0, 0.7);
 .lightbox {
-  cursor: pointer;
-
   &__container {
     position: fixed;
     width: 100vw;
@@ -212,7 +210,6 @@ $mask-background-color: rgba(0, 0, 0, 0.7);
     }
   }
   @media only screen and (max-width: $breakpoint__mobile--max) {
-    cursor: auto;
     &__media--images {
       max-width: rem(350px);
       padding: rem(25px);

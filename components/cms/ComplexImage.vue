@@ -37,13 +37,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.lightbox {
-  cursor: pointer;
-  &-icon {
-    display: none;
-  }
+.lightbox-icon {
+  display: none;
 }
 @media screen and (min-width: $breakpoint__small-desktop--min) {
+  .lightbox {
+    cursor: pointer;
+  }
   .lightbox-icon {
     display: block;
     padding: 0.5rem;
