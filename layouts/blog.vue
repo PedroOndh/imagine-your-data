@@ -121,7 +121,7 @@ export default {
   layout: 'page',
   async asyncData({ route, error }) {
     try {
-      const blogPost = await import(`~/content/blog/${route.name}.md`)
+      const blogPost = await import(`~/content/${route.name}`)
       const postAuthor = await getPostAuthor(blogPost)
       return {
         blogPost: { ...blogPost },
