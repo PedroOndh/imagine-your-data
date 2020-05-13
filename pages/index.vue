@@ -14,7 +14,7 @@ import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
 import { turnFileNameToPath } from '~/assets/js/utils'
 
-const postsPerPage = 9
+const postsPerPage = 12
 
 async function getAvailablePosts() {
   const context = await require.context('~/content/blog', true, /\.md$/)

@@ -48,7 +48,7 @@ section.posts {
     display: flex;
     flex-wrap: wrap;
     transition: all 1s ease;
-    width: 105%;
+    width: calc(105% + 5rem);
     overflow-y: hidden;
     padding: 5rem 0 5rem 5rem;
     margin-top: -5rem;
@@ -63,7 +63,12 @@ section.posts {
       transition-property: opacity, width, margin;
       transition-duration: 0.8s;
       &.reordering {
-        &-enter,
+        &-enter {
+          opacity: 0;
+          width: 5%;
+          margin-left: 0;
+          margin-right: 0;
+        }
         &-leave-active {
           opacity: 0;
           width: 0;
