@@ -91,6 +91,8 @@ export default {
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       height: auto;
+      display: flex;
+      flex-direction: column-reverse;
       &-image {
         height: rem(200px);
         position: initial;
