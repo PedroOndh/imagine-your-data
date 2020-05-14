@@ -195,7 +195,6 @@ export default {
   &__author {
     width: rem(95px);
     position: absolute;
-    z-index: 1;
     right: rem(32px);
     top: rem(-24px);
     font-weight: 600;
