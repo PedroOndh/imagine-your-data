@@ -144,6 +144,7 @@ var min_val_range = new Date(copy_min.setTime( copy_min.getTime() - 15 * 8640000
 
   data.forEach(function(d) {
       var query = d.Queries;
+      if (newarr.includes(query)) {}
       else {
           newarr.push(query);
           var singleObj = {}

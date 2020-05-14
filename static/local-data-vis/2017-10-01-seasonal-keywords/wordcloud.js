@@ -101,8 +101,6 @@ d3.json(json_path + '/data/pullbear_en.json', function(jsondata) {
             })
             .text(function(d) { return d.text; });
 
-        cloud.on('click',function(d) {console.log(d.text);})
-
         cloud
             .transition()
                 .duration(600)

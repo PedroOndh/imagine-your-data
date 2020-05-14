@@ -8,16 +8,12 @@ libs:
 author: David Lourenço Mestre
 EmpathyBroker
 */
-console.log("Starting ... ");
 var countries_list;
 var margin = {top: 50, left: 200, bottom: 20, right: 20}
   , width = parseInt(d3.select('.europechart').style('width'))
   , width = width - margin.left - margin.right
   , mapRatio = .5
   , height = width * mapRatio;
-
-console.log("Initial Width: " + width);
-console.log("Initial Height: " + height);
 
 var projection = d3.geo.mercator()
     .scale(width/2.50)
@@ -57,7 +53,6 @@ function graphMap(error,topology,counts) {
     .style("border-radius","1px");
 
     countries_list = Object.keys(counts);
-    console.log(countries_list);
 
     g.selectAll("path")
       .data(topojson.feature(topology,topology.objects.europe).features)
@@ -96,7 +91,6 @@ function graphMap(error,topology,counts) {
           //if there is data for the country being hovered, display tooltip
           if (countries_list.includes(d.properties.name)) {
               country_name = d.properties.name;
-              console.log(d.properties.name);
               tooltipDiv
                  .style("opacity",0.65)
                  //.style("left", (d3.mouse(this)[0] - 55) + 'px')
@@ -105,11 +99,7 @@ function graphMap(error,topology,counts) {
                  .style("top", (d3.event.clientY + 60) + "px");
               html_to_insert = "<h3 style='margin:0; border-bottom: 1px solid black; padding: 5px; font-size:13px;'>" + d.properties.name + "</h3>";
 
-              console.log("Country Data:");
-              console.log(counts[country_name]);
-
               html_to_insert += "<p style='color:black;font-size:11px;'>" + "Value: " + counts[country_name]["count"] + "</p><p style='font-weight:bold;font-size:11px;'>" + "Text: " + counts[country_name]["query"] + "</p>";
-              console.log(html_to_insert);
               tooltipDiv.html(html_to_insert);
        }
   });
@@ -117,8 +107,6 @@ function graphMap(error,topology,counts) {
 
 // Color countries
 function colorCountry(country) {
-    console.log("Country:");
-    console.log(country.properties.name);
     //if we have data, color = orange
     if (countries_list.includes(country.properties.name)) {
         return '#E4A62F';
@@ -149,14 +137,10 @@ svg.call(zoom)
     .on("touchend.zoom", null);*/
 
 function resize() {
-    console.log("Resizing... ");
     // adjust things when the window size changes
     width = parseInt(d3.select('.europechart').style('width'));
     width = width - margin.left - margin.right;
     height = width * mapRatio;
-
-    console.log("Width: " + width);
-    console.log("Height: " + height);
 
     // update projection
     projection
