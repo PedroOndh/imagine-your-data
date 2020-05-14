@@ -108,7 +108,11 @@ function getMetatags(post, route) {
     },
     {
       name: 'og:image',
-      content: `https://www.imagineyourdata.com${post.attributes.image}`
+      content: `https://www.imagineyourdata.com${
+        !post.attributes.social_image
+          ? post.attributes.image
+          : post.attributes.social_image
+      }`
     },
     {
       name: 'og:url',
