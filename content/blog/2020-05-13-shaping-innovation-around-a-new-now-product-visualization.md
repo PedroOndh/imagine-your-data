@@ -2,7 +2,6 @@
 title: Shaping innovation around a new Now product visualization
 date: 2020-05-13T08:43:23.218Z
 image: /cms_media/data_visual_click_addtocart.gif
-social_image: /cms_media/data_visual_checkout_revenue.jpg
 author: alejandroj@empathy.co
 category: Data Visualizations
 typology: Relations
