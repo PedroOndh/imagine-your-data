@@ -60,17 +60,14 @@ d3.json(json_path + '/data/pullbear_en.json', function(jsondata) {
                 toggleSelected = false;
                 timeoutAnimation = 90000;
                 player.text(rendering());
-                console.log('Stopping ...');
                 clearTimeout(tevent)
             }
             else
             {
                 toggleSelected = true;
                 timeoutAnimation = 3000;
-                console.log('Resumming ...');
                 player.text(rendering());
                 clearTimeout(tevent);
-                console.log('Restarting with int = ' + dict['int']);
                 d3.select(selector).html('');
                 iterateWords(wordCloud(selector), dict['int']);
             }
@@ -103,8 +100,6 @@ d3.json(json_path + '/data/pullbear_en.json', function(jsondata) {
                     return 'translate(0,'+far+')rotate('+d.rotate+')';
             })
             .text(function(d) { return d.text; });
-
-        cloud.on('click',function(d) {console.log(d.text);})
 
         cloud
             .transition()

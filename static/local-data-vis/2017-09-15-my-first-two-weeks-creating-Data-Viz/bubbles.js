@@ -3,8 +3,6 @@
 var diameter = 500;
 var color    = d3.scale.category20b(); //color category
 
-console.log(diameter);
-
 var bubble = d3.layout.pack()
     .sort(null)
     .size([diameter, diameter])
@@ -22,7 +20,6 @@ var container = d3.select(".bubbleschart")
 var svg = container.append("g").attr("class", "bubble");
 
 d3.csv("/local-data-vis/2017-09-15-my-first-two-weeks-creating-Data-Viz/queries_by_country.csv", function(error, data){
-    console.log(data);
     //convert numerical values from strings to numbers
     data = data.map(function(d){ d.value = +d["counts"]; return d; });
 
@@ -92,10 +89,7 @@ tooltip.append("text")
   .style("font-family",'“Ubuntu”,“Open Sans”,sans-serif');
 
 function resize () {
-    console.log("Resizing... ");
-
     //diameter = parseInt(d3.select('.graph').style('width'))*0.5
-    console.log("Diameter: " + diameter);
     //bubble.size([diameter, diameter])
     //.padding(1.5);
 

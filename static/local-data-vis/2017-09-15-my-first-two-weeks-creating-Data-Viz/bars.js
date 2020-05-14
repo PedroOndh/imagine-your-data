@@ -8,9 +8,6 @@ d3.json("/local-data-vis/2017-09-15-my-first-two-weeks-creating-Data-Viz/data_co
     var counts = data.map(function(d) {return d.query_count});
     var clicks = data.map(function(d) {return d.click_count});
 
-    //console.log(keys);
-    //console.log(counts);
-
 var margin = {top: 20, right: w * 0.1, bottom: 95, left: w * 0.1};
 var width = w - margin.left - margin.right;
 var height = 500 - margin.top - margin.bottom;
@@ -33,8 +30,6 @@ var dataset = d3.layout.stack()(["query_count", "click_count"].map(function(i) {
     return {x: d.keyword, y: +d[i]};
   });
 }));
-
-//console.log(dataset);
 
 // Set x, y and colors
 var x = d3.scale.ordinal()
@@ -155,22 +150,14 @@ tooltip.append("text")
 
   function resize() {
 
-    console.log("Resizing ...");
-
     w = parseInt(d3.select(".graph").style('width'));
 
     width = w - margin.left - margin.right;
     margin = {top: 20, right: w * 0.1, bottom: 95, left: w * 0.1};
 
-    //alert(width);
-    console.log(width);
-
     if (width < 300) {width = 300}
 
     height = 500 - margin.top - margin.bottom;
-
-    console.log('Width:'+width);
-    console.log('Height:'+height);
 
     /* Update the range of the scale with new width/height */
     x.range([0, width]);
@@ -250,7 +237,6 @@ tooltip.append("text")
     /* Force D3 to recalculate and update the bars */
     svg.selectAll('.graph-columna')
       .attr("x", function(d) {
-          //console.log(d);
           return x(d.x);
         })
       .attr("width", x.rangeBand())
