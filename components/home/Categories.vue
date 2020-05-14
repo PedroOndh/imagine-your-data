@@ -119,7 +119,6 @@ export default {
     width: 100%;
     text-align: center;
     position: relative;
-    z-index: -1;
     svg {
       transition: all 0.5s ease;
       transform: rotate(90deg);

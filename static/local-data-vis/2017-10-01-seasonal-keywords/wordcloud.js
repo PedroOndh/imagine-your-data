@@ -60,17 +60,14 @@ d3.json(json_path + '/data/pullbear_en.json', function(jsondata) {
                 toggleSelected = false;
                 timeoutAnimation = 90000;
                 player.text(rendering());
-                console.log('Stopping ...');
                 clearTimeout(tevent)
             }
             else
             {
                 toggleSelected = true;
                 timeoutAnimation = 3000;
-                console.log('Resumming ...');
                 player.text(rendering());
                 clearTimeout(tevent);
-                console.log('Restarting with int = ' + dict['int']);
                 d3.select(selector).html('');
                 iterateWords(wordCloud(selector), dict['int']);
             }
