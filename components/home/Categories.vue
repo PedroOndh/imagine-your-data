@@ -63,7 +63,7 @@ export default {
         this.open = !this.open
       }
       if (!category || (isDesktop() && currentCategory === category)) {
-        this.filter('all', category)
+        this.filter('all', '')
       } else if (currentCategory !== category) {
         this.filter(category, category)
       }
