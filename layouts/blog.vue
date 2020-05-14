@@ -100,11 +100,36 @@ function getDate(post) {
   const date = new Date(post.attributes.date)
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
-function getMetatags(post) {
-  const metaTags = []
+function getMetatags(post, route) {
+  const metaTags = [
+    {
+      name: 'og:title',
+      content: post.attributes.title
+    },
+    {
+      name: 'og:image',
+      content: `https://www.imagineyourdata.com${
+        !post.attributes.social_image
+          ? post.attributes.image
+          : post.attributes.social_image
+      }`
+    },
+    {
+      name: 'og:url',
+      content: `https://www.imagineyourdata.com${route.path}`
+    },
+    {
+      name: 'og:site_name',
+      content: 'ImagineYourData'
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image'
+    }
+  ]
   if (post.attributes.seo_description) {
     metaTags.push({
-      name: 'description',
+      name: 'og:description',
       content: post.attributes.seo_description
     })
   }
@@ -127,7 +152,7 @@ export default {
         blogPost: { ...blogPost },
         author: { ...postAuthor },
         date: getDate(blogPost),
-        metaTags: getMetatags(blogPost)
+        metaTags: getMetatags(blogPost, route)
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Not found' })
