@@ -3,7 +3,7 @@
     v-header
     class="header"
     :class="{
-      'header--not-home': notHome
+      'header--not-home': !home
     }"
   >
     <div
@@ -46,17 +46,16 @@ export default {
   name: 'PageHeader',
   components: { SocialIcon },
   data() {
-    console.log(this.$nuxt.$route.path)
     return {
       open: false,
-      notHome: this.$nuxt.$route.path ? this.$nuxt.$route.path !== '/' : false,
+      home: !this.$nuxt.$route.path ? true : this.$nuxt.$route.path === '/',
       catchPhrase
     }
   },
   watch: {
     $route(to, from) {
       this.open = false
-      this.notHome = this.$nuxt.$route.path ? this.$nuxt.$route.path !== '/' : false
+      this.home = this.$nuxt.$route.path === '/'
     }
   },
   methods: {
