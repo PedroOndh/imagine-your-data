@@ -3,7 +3,7 @@
     v-header
     class="header"
     :class="{
-      'header--not-home': !home
+      'header--not-home': notHome
     }"
   >
     <div
@@ -48,14 +48,14 @@ export default {
   data() {
     return {
       open: false,
-      home: this.$nuxt.$route.path === '/',
+      notHome: this.$nuxt.$route.path !== '/',
       catchPhrase
     }
   },
   watch: {
     $route(to, from) {
       this.open = false
-      this.home = this.$nuxt.$route.path === '/'
+      this.notHome = this.$nuxt.$route.path !== '/'
     }
   },
   methods: {
