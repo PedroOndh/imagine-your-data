@@ -1,11 +1,5 @@
 <template>
-  <header
-    v-header
-    class="header"
-    :class="{
-      'header--home': $nuxt.$route.path === '/'
-    }"
-  >
+  <header v-header class="header" :class="home ? 'header--home' : ''">
     <div
       class="container header__container"
       :class="{
@@ -48,6 +42,7 @@ export default {
   data() {
     return {
       open: false,
+      home: this.$nuxt.$route.path === '/',
       catchPhrase
     }
   },
