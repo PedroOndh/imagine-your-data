@@ -78,26 +78,34 @@ CMS.registerEditorComponent({
       default: ''
     },
     {
+      name: 'caption_alignment',
+      label: 'caption Alignment',
+      widget: 'select',
+      default: 'right',
+      options: ['left', 'center', 'right']
+    },
+    {
       name: 'lightbox',
       label: 'Lightbox available?',
       widget: 'boolean'
     }
   ],
-  pattern: /^<complex-image image="([\s\S]*?)" caption="([\s\S]*?)" lightbox="([\s\S]*?)" ([\s\S]*?)><\/complex-image>$/,
+  pattern: /^<complex-image image="([\s\S]*?)" caption="([\s\S]*?)" caption-alignment="([\s\S]*?)" lightbox="([\s\S]*?)" ([\s\S]*?)><\/complex-image>$/,
   fromBlock: (match) => {
     return {
       image: match[1],
       caption: match[2],
-      lightbox: match[3]
+      caption_alignment: match[3],
+      lightbox: match[4]
     }
   },
   toBlock: (obj) => {
     // eslint-disable-next-line
-    return `<complex-image image="${obj.image}" caption="${obj.caption}" lightbox="${obj.lightbox}" ${obj.lightbox ? 'v-lightbox' : ''}></complex-image>`
+    return `<complex-image image="${obj.image}" caption="${obj.caption}" caption-alignment="${obj.caption_alignment}" lightbox="${obj.lightbox}" ${obj.lightbox ? 'v-lightbox' : ''}></complex-image>`
   },
   toPreview: (obj) => {
     // eslint-disable-next-line
-    return `<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption"><img src="${obj.image}" alt="${obj.caption}" />${obj.caption ? `<figcaption itemprop="caption" class="text-centered">${obj.caption}</figcaption>` : '' }</figure>`
+    return `<figure itemscope itemtype="http://schema.org/ImageObject" class="image-figcaption figcaption--align-${obj.caption_alignment}"><img src="${obj.image}" alt="${obj.caption}" />${obj.caption ? `<figcaption itemprop="caption">${obj.caption}</figcaption>` : '' }</figure>`
   }
 })
 CMS.registerEditorComponent({

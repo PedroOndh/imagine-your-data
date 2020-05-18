@@ -89,7 +89,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     padding-top: rem(30px);
-    justify-content: space-between;
+    justify-content: center;
     &-item {
       text-transform: uppercase;
       text-align: center;

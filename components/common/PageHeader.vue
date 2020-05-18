@@ -1,5 +1,11 @@
 <template>
-  <div v-header class="header">
+  <div
+    v-header
+    class="header"
+    :class="{
+      'header--home': $nuxt.$route.path === '/'
+    }"
+  >
     <div
       class="container header__container"
       :class="{
@@ -155,6 +161,19 @@ export default {
         }
       }
     }
+    &.header--home .header__sub-title {
+      position: initial;
+      font-size: rem(13px);
+    }
+  }
+  &--home .header__sub-title {
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    width: 100%;
+    font-size: 2.5rem;
+    margin: 0;
+    text-align: center;
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
     .container {
@@ -174,6 +193,11 @@ export default {
       .header__sub-title {
         width: 12rem;
       }
+    }
+    &--home .container .header__sub-title {
+      top: 6rem;
+      width: 100%;
+      font-size: 1.5rem;
     }
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
@@ -305,6 +329,10 @@ export default {
           }
         }
       }
+    }
+    &--home .container .header__sub-title {
+      position: initial;
+      font-size: rem(13px);
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {

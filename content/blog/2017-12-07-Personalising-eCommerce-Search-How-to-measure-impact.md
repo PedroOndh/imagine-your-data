@@ -22,11 +22,11 @@ During the past weeks the Insights team has been exploring various options on ho
 
 First we attempted to simply expose **the overall performance with a Desktop/Mobile segmentation**:
 
-<complex-image image="/cms_media/cover-19.png" caption="Result of the first approach" lightbox="lightbox" v-lightbox/></complex-image>
+<complex-image image="/cms_media/cover-19.png" caption="Result of the first approach" caption-alignment="right" lightbox="lightbox" v-lightbox/></complex-image>
 
 Secondly **we focus on the query**, and what context (with a Fashion) sample gives better value to intervene as a contextualisation factor:
 
-<complex-image image="/cms_media/sample-graph-002.png" caption="Result of the second approach" lightbox="lightbox" v-lightbox/></complex-image>
+<complex-image image="/cms_media/sample-graph-002.png" caption="Result of the second approach" caption-alignment="right" lightbox="lightbox" v-lightbox/></complex-image>
 
 Note that the above also has been undergoing other variations that we have not yet published.
 
