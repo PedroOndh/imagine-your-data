@@ -52,7 +52,7 @@ export default Vue.component('post-content', {
   }
   ul,
   ol {
-    padding-left: 0;
+    padding-left: 1.5rem;
     padding-bottom: 20px;
     li {
       padding-bottom: rem(20px);
