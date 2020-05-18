@@ -31,7 +31,7 @@ Using **d3.js** and with the extraordinary talent of various key members of the 
 
 #### Result
 
-<complex-image image="/cms_media/aproach1.png" caption="Thats the result of the first approach" lightbox="lightbox" v-lightbox/></complex-image>
+<complex-image image="/cms_media/aproach1.png" caption="Thats the result of the first approach" caption-alignment="center" lightbox="lightbox" v-lightbox/></complex-image>
 
 ### Issues we set out to improve from this original version:
 
@@ -51,12 +51,12 @@ Using **d3.js** and with the extraordinary talent of various key members of the 
 
 #### Approaches
 
-<complex-image image="/cms_media/aproach2.png" caption="Split events" lightbox="lightbox" v-lightbox/></complex-image>
+<complex-image image="/cms_media/aproach2.png" caption="Split events" caption-alignment="right" lightbox="lightbox" v-lightbox/></complex-image>
 
-<complex-image image="/cms_media/aproach3.png" caption="Transparency added to score ranking" lightbox="lightbox" v-lightbox/></complex-image>
+<complex-image image="/cms_media/aproach3.png" caption="Transparency added to score ranking" caption-alignment="left" lightbox="lightbox" v-lightbox/></complex-image>
 
-<complex-image image="/cms_media/aproach4.png" caption="Global stats, Lang and store filters, Time interval selection, Change main visualization" lightbox="lightbox" v-lightbox/></complex-image>
+<complex-image image="/cms_media/aproach4.png" caption="Global stats, Lang and store filters, Time interval selection, Change main visualization" caption-alignment="right" lightbox="lightbox" v-lightbox/></complex-image>
 
-<complex-image image="/cms_media/aproach5.png" caption="Relative ratios in global stats, Multiple simultaneous events, Configurable positioning" lightbox="lightbox" v-lightbox/></complex-image>
+<complex-image image="/cms_media/aproach5.png" caption="Relative ratios in global stats, Multiple simultaneous events, Configurable positioning" caption-alignment="left" lightbox="lightbox" v-lightbox/></complex-image>
 
 Hope you love this experiment as much as we do! Stay tuned as we continue to evolve these concepts that are already today projecting on the walls of top retailers (wink)

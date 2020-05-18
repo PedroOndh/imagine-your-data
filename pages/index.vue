@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="home__catchphrase">{{ catchPhrase }}</h1>
     <Categories
       :categories="categories"
       :current-category="currentCategory"
@@ -13,6 +14,7 @@
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
 import { turnFileNameToPath } from '~/assets/js/utils'
+import { catchPhrase } from '~/assets/js/consts'
 
 const postsPerPage = 9
 
@@ -77,7 +79,8 @@ export default {
       availablePosts,
       filteredPosts: availablePosts,
       posts: availablePosts.slice(0, postsPerPage),
-      categories: await getAvailableCategories()
+      categories: await getAvailableCategories(),
+      catchPhrase
     }
   },
   data() {
@@ -153,13 +156,12 @@ export default {
     scrollInView() {
       const currentScroll = Math.abs(document.body.getBoundingClientRect().top)
       if (currentScroll > this.$data.categoriesTop) {
-        const posts = document.querySelector('.posts')
-        posts.classList.add('posts--filtering')
         window.scrollTo(0, this.$data.categoriesTop + 1)
       }
     },
     prepareFixedCategories() {
-      const headerHeight = document.querySelector('.header').offsetHeight
+      const header = document.querySelector('.header')
+      const headerHeight = header.offsetHeight
       const posts = document.querySelector('.posts')
       const categories = document.querySelector('.categories')
       const categoriesTop = categories.offsetTop - headerHeight
@@ -169,9 +171,11 @@ export default {
           document.body.getBoundingClientRect().top
         )
         if (currentScroll > categoriesTop) {
+          header.classList.add('header--filtering')
           posts.classList.add('posts--filtering')
           categories.classList.add('categories--fixed')
         } else {
+          header.classList.remove('header--filtering')
           posts.classList.remove('posts--filtering')
           categories.classList.remove('categories--fixed')
         }
@@ -180,3 +184,25 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.home__catchphrase {
+  font-weight: 300;
+  line-height: 0.92;
+  color: #0086b2;
+  position: absolute;
+  top: 16rem;
+  left: 0;
+  width: 100%;
+  font-size: 2.5rem;
+  margin: 0;
+  text-align: center;
+  @media screen and (max-width: $breakpoint__small-desktop--max) {
+    top: 12rem;
+    font-size: rem(32px);
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    display: none;
+  }
+}
+</style>

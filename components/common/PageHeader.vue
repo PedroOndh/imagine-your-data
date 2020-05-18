@@ -1,5 +1,11 @@
 <template>
-  <div v-header class="header">
+  <header
+    v-header
+    class="header"
+    :class="{
+      'header--home': $nuxt.$route.path === '/'
+    }"
+  >
     <div
       class="container header__container"
       :class="{
@@ -19,7 +25,7 @@
           <img class="header__button-open" src="/_media/times-grey.svg" />
         </div>
       </div>
-      <div class="header__sub-title">Visualizing eCommerce Search & Browse</div>
+      <div class="header__sub-title">{{ catchPhrase }}</div>
       <div class="header__menu">
         <nuxt-link class="header__link" to="/about">About</nuxt-link>
         <div class="header__social">
@@ -29,18 +35,20 @@
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
 import SocialIcon from '~/components/common/SocialIcon'
+import { catchPhrase } from '~/assets/js/consts'
 
 export default {
   name: 'PageHeader',
   components: { SocialIcon },
   data() {
     return {
-      open: false
+      open: false,
+      catchPhrase
     }
   },
   watch: {
@@ -155,6 +163,12 @@ export default {
         }
       }
     }
+  }
+  &--home .header__sub-title {
+    display: none;
+  }
+  &--filtering.header--home .header__sub-title {
+    display: block;
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
     .container {
@@ -305,6 +319,9 @@ export default {
           }
         }
       }
+    }
+    &--home .container .header__sub-title {
+      display: block;
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {

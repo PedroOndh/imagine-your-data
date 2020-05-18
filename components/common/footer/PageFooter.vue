@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <div class="footer__first-row">
       <div
         class="footer__first-row-image"
@@ -25,7 +25,7 @@
         <nuxt-link to="/cookie-policy"><b>Cookie Policy</b></nuxt-link>
       </p>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
