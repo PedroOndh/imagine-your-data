@@ -46,16 +46,17 @@ export default {
   name: 'PageHeader',
   components: { SocialIcon },
   data() {
+    console.log(this.$nuxt.$route.path)
     return {
       open: false,
-      notHome: this.$nuxt.$route ? this.$nuxt.$route.path !== '/' : false,
+      notHome: this.$nuxt.$route.path ? this.$nuxt.$route.path !== '/' : false,
       catchPhrase
     }
   },
   watch: {
     $route(to, from) {
       this.open = false
-      this.notHome = this.$nuxt.$route ? this.$nuxt.$route.path !== '/' : false
+      this.notHome = this.$nuxt.$route.path ? this.$nuxt.$route.path !== '/' : false
     }
   },
   methods: {
