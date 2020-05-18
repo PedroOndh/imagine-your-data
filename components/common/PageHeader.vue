@@ -48,7 +48,7 @@ export default {
   data() {
     return {
       open: false,
-      home: !this.$nuxt.$route.path ? true : this.$nuxt.$route.path === '/',
+      home: true,
       catchPhrase
     }
   },
@@ -57,6 +57,9 @@ export default {
       this.open = false
       this.home = this.$nuxt.$route.path === '/'
     }
+  },
+  mounted() {
+    this.home = this.$nuxt.$route.path === '/'
   },
   methods: {
     toggleMenu() {
