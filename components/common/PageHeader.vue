@@ -1,5 +1,5 @@
 <template>
-  <div
+  <header
     v-header
     class="header"
     :class="{
@@ -25,7 +25,7 @@
           <img class="header__button-open" src="/_media/times-grey.svg" />
         </div>
       </div>
-      <div class="header__sub-title">Visualizing eCommerce Search & Browse</div>
+      <div class="header__sub-title">{{ catchPhrase }}</div>
       <div class="header__menu">
         <nuxt-link class="header__link" to="/about">About</nuxt-link>
         <div class="header__social">
@@ -35,18 +35,20 @@
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
 import SocialIcon from '~/components/common/SocialIcon'
+import { catchPhrase } from '~/assets/js/consts'
 
 export default {
   name: 'PageHeader',
   components: { SocialIcon },
   data() {
     return {
-      open: false
+      open: false,
+      catchPhrase
     }
   },
   watch: {
@@ -161,19 +163,12 @@ export default {
         }
       }
     }
-    &.header--home .header__sub-title {
-      position: initial;
-      font-size: rem(13px);
-    }
   }
   &--home .header__sub-title {
-    position: absolute;
-    top: 10rem;
-    left: 0;
-    width: 100%;
-    font-size: 2.5rem;
-    margin: 0;
-    text-align: center;
+    display: none;
+  }
+  &--filtering.header--home .header__sub-title {
+    display: block;
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
     .container {
@@ -193,11 +188,6 @@ export default {
       .header__sub-title {
         width: 12rem;
       }
-    }
-    &--home .container .header__sub-title {
-      top: 6rem;
-      width: 100%;
-      font-size: 1.5rem;
     }
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
@@ -331,8 +321,7 @@ export default {
       }
     }
     &--home .container .header__sub-title {
-      position: initial;
-      font-size: rem(13px);
+      display: block;
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {

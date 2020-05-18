@@ -1,5 +1,5 @@
 <template>
-  <div
+  <article
     :class="
       `posts-feed-item posts-feed-item--size-${sizeIndex} posts-feed-item--background-${style}`
     "
@@ -51,7 +51,7 @@
         </h1>
       </div>
     </nuxt-link>
-  </div>
+  </article>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-post__related">
+  <aside class="blog-post__related">
     <div class="small-container">
       <div class="related-post__filtering-method">By {{ filteringMethod }}</div>
       <div
@@ -13,7 +13,7 @@
         </nuxt-link>
       </div>
     </div>
-  </div>
+  </aside>
 </template>
 
 <script>
