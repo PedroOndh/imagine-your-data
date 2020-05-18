@@ -49,6 +49,7 @@ export default {
   watch: {
     $route(to, from) {
       this.open = false
+      this.home = this.$nuxt.$route.path === '/'
     }
   },
   methods: {
