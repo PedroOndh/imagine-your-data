@@ -48,14 +48,14 @@ export default {
   data() {
     return {
       open: false,
-      notHome: this.$nuxt.$route.path !== '/',
+      notHome: this.$nuxt.$route ? this.$nuxt.$route.path !== '/' : false,
       catchPhrase
     }
   },
   watch: {
     $route(to, from) {
       this.open = false
-      this.notHome = this.$nuxt.$route.path !== '/'
+      this.notHome = this.$nuxt.$route ? this.$nuxt.$route.path !== '/' : false
     }
   },
   methods: {

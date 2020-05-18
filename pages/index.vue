@@ -191,7 +191,7 @@ export default {
   top: 16rem;
   left: 0;
   width: 100%;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 0;
   text-align: center;
   @media screen and (max-width: $breakpoint__small-desktop--max) {
