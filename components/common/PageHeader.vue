@@ -1,5 +1,11 @@
 <template>
-  <header v-header class="header" :class="home ? 'header--home' : ''">
+  <header
+    v-header
+    class="header"
+    :class="{
+      'header--not-home': !home
+    }"
+  >
     <div
       class="container header__container"
       :class="{
@@ -105,6 +111,7 @@ export default {
     display: none;
   }
   &__sub-title {
+    display: none;
     font-size: rem(13px);
     font-weight: 300;
     line-height: 0.92;
@@ -160,11 +167,11 @@ export default {
       }
     }
   }
-  &--home .header__sub-title {
-    display: none;
-  }
-  &--filtering.header--home .header__sub-title {
-    display: block;
+  &--not-home,
+  &--filtering {
+    .header__sub-title {
+      display: block;
+    }
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
     .container {
@@ -238,6 +245,7 @@ export default {
         }
       }
       .header__sub-title {
+        display: block;
         width: auto;
         margin-right: 0;
         margin-top: 0;
@@ -315,9 +323,6 @@ export default {
           }
         }
       }
-    }
-    &--home .container .header__sub-title {
-      display: block;
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
