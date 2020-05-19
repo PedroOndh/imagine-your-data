@@ -13,7 +13,7 @@
 <script>
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
-import { turnFileNameToPath } from '~/assets/js/utils'
+import { turnFileNameToPath, isDesktop } from '~/assets/js/utils'
 import { catchPhrase } from '~/assets/js/consts'
 
 const postsPerPage = 9
@@ -91,6 +91,8 @@ export default {
     this.registerObserver()
     this.prepareFixedCategories()
     this.scrollInView()
+    this.moveChevron('')
+    window.addEventListener('resize', this.resize)
   },
   methods: {
     registerObserver() {
@@ -147,6 +149,7 @@ export default {
       this.$data.filteredPosts = newFilteredPosts
       this.$data.posts = newFilteredPosts.slice(0, postsPerPage)
       this.$data.currentPostList = 1
+      this.moveChevron(category)
       this.scrollInView()
       this.observe(1, true)
     },
@@ -154,6 +157,18 @@ export default {
       const currentScroll = Math.abs(document.body.getBoundingClientRect().top)
       if (currentScroll > this.$data.categoriesTop) {
         window.scrollTo(0, this.$data.categoriesTop + 1)
+      }
+    },
+    moveChevron(category) {
+      const chevron = document.querySelector('.categories__selected-chevron')
+      if (isDesktop()) {
+        const categoryListItem = document.getElementById(category || 'all')
+        const leftStyle =
+          categoryListItem.offsetLeft + categoryListItem.offsetWidth / 2 - 10
+        chevron.style.display = 'block'
+        chevron.style.left = `${leftStyle}px`
+      } else {
+        chevron.style.display = 'none'
       }
     },
     prepareFixedCategories() {
@@ -177,6 +192,9 @@ export default {
           categories.classList.remove('categories--fixed')
         }
       })
+    },
+    resize() {
+      this.moveChevron(this.currentCategory)
     }
   }
 }
