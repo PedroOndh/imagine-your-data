@@ -117,10 +117,7 @@ function generateRoutes(routes, resolve) {
 }
 
 function generateScripts() {
-  if (
-    env.parsed.BASE_URL.includes('imagineyourdata') &&
-    !env.parsed.BASE_URL.includes('dev')
-  ) {
+  if (env.parsed.ANALYTICS === 'true') {
     return [
       {
         src: 'https://cdn.usefathom.com/script.js',
