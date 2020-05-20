@@ -1,17 +1,19 @@
 <template>
-  <div class="blog-post__related">
-    <div class="related-post__filtering-method">By {{ filteringMethod }}</div>
-    <div
-      v-for="(post, index) in relatedPosts"
-      :key="index"
-      class="related-post"
-    >
-      <nuxt-link :to="post._path">
-        <img :src="post.attributes.image" class="related-post__image" />
-        <h3 class="related-post__title">{{ post.attributes.title }}</h3>
-      </nuxt-link>
+  <aside class="blog-post__related">
+    <div class="small-container">
+      <div class="related-post__filtering-method">By {{ filteringMethod }}</div>
+      <div
+        v-for="(post, index) in relatedPosts"
+        :key="index"
+        class="related-post"
+      >
+        <nuxt-link :to="post._path">
+          <img :src="post.attributes.image" class="related-post__image" />
+          <h3 class="related-post__title">{{ post.attributes.title }}</h3>
+        </nuxt-link>
+      </div>
     </div>
-  </div>
+  </aside>
 </template>
 
 <script>
@@ -84,12 +86,16 @@ export default {
 
 <style scoped lang="scss">
 .blog-post__related {
-  position: relative;
   background: $grey-background;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: rem(150px) 10% rem(215px);
+  padding: rem(150px) 0 rem(215px);
+  .small-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
   .related-post {
     max-width: 33%;
     a {
@@ -104,6 +110,7 @@ export default {
       }
       h3 {
         width: 50%;
+        word-break: break-word;
         max-width: rem(370px);
         font-size: rem(22px);
         line-height: 1.5;
@@ -114,8 +121,7 @@ export default {
     }
     &__filtering-method {
       position: absolute;
-      top: 5rem;
-      left: 10%;
+      top: -5rem;
       font-weight: bold;
       color: $grey-medium;
     }
@@ -128,13 +134,10 @@ export default {
       }
     }
   }
-  @media screen and (max-width: $breakpoint__tablet--max) {
-    flex-direction: column;
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-bottom: rem(150px);
+  @media screen and (max-width: $breakpoint__small-desktop--max) {
     .related-post {
       max-width: none;
+      padding: 0 1rem;
       a {
         display: flex;
         flex-direction: column;
@@ -148,13 +151,18 @@ export default {
       }
     }
   }
-  @media screen and (max-width: $breakpoint__mobile--max) {
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    padding-bottom: rem(50px);
+    .small-container {
+      flex-direction: column;
+    }
     .related-post {
-      a {
-        img {
-          height: 10rem;
-        }
-      }
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: $breakpoint__mobile--max) {
+    .related-post a img {
+      height: 10rem;
     }
   }
 }

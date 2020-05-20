@@ -22,6 +22,7 @@
   text-align: center;
   color: $grey-medium;
   margin-bottom: rem(75px);
+  word-break: break-word;
 }
 
 h1 {
@@ -59,6 +60,9 @@ ol li {
 @media screen and (max-width: $breakpoint__tablet--max) {
   .page-title {
     margin-top: 0;
+  }
+  h1 {
+    font-size: rem(50px);
   }
 }
 @media screen and (max-width: $breakpoint__mobile--max) {

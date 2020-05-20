@@ -1,5 +1,5 @@
 ---
-title: Introducing our new EmpathyInsights platform
+title: Introducing our new Empathy Insights platform
 date: 2018-09-12T16:11:22.171Z
 image: /cms_media/cover-34.jpg
 author: germanh@empathy.co

@@ -1,6 +1,6 @@
 <template>
   <div class="blog-post">
-    <div class="small-container">
+    <article class="small-container">
       <h1 class="blog-post__title page-title">
         {{ blogPost.attributes.title }}
       </h1>
@@ -23,7 +23,7 @@
       <client-only>
         <PostContent :content="blogPost.html" />
       </client-only>
-    </div>
+    </article>
     <div class="blog-post__share">
       Share if you liked it!
       <div class="blog-post__share-social">

@@ -19,6 +19,6 @@ This visualisation not only enables retailers to see the online store’s real-t
 
 That’s why many Empathy clients love the power of being able to easily visualise the behaviour and queries taking place in their store as they happen. What’s more, as the Now visualisation enables retailers to proactively identify and action opportunities and trends, while also reacting early to any issues or new customer behaviours, it’s also a real gamechanger.
 
-<complex-image image="/cms_media/gif-post.gif" caption="" lightbox="lightbox" v-lightbox></complex-image>
+<complex-image image="/cms_media/gif-post.gif" caption="" caption-alignment="right" lightbox="lightbox" v-lightbox></complex-image>
 
 If you want to learn more about the Now visualisation, the actionable insights it offers and the way it provides instant interaction with customers, [download the Now overview](https://www.empathy.co/resources/now/).
