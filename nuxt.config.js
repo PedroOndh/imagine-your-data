@@ -117,7 +117,7 @@ function generateRoutes(routes, resolve) {
 }
 
 function generateScripts() {
-  if (env.parsed.ANALYTICS === 'true') {
+  if (env.parsed && env.parsed.ANALYTICS === 'true') {
     return [
       {
         src: 'https://cdn.usefathom.com/script.js',
