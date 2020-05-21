@@ -75,7 +75,7 @@ collections:
       - {label: "Quote", name: "quote", widget: "string"}
       - {label: "Name and Last Name", name: "author", widget: "string"}
       - {label: "Occupation", name: "occupation", widget: "string"}
-      - {label: "Footer image", name: "image", widget: "image", , hint: "Footer images should have the same style and size between them, ask design team if needed"}
+      - {label: "Footer image", name: "image", widget: "image", hint: "Footer images should have the same style and size between them, ask design team if needed"}
     meta:
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
 
