@@ -5,6 +5,8 @@ import fm from 'front-matter'
 import { turnFileNameToPath } from './assets/js/utils'
 const fsPromise = fs.promises
 
+const env = require('dotenv').config()
+
 const markdownPaths = ['blog']
 
 export default {
@@ -34,7 +36,8 @@ export default {
         href:
           'https://assets.empathybroker.com/resources/fonts/empathy-typography/style.css'
       }
-    ]
+    ],
+    script: generateScripts()
   },
   /*
    ** Customize the progress-bar color
@@ -54,7 +57,8 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/dotenv'
   ],
   /*
    ** Nuxt.js modules
@@ -110,4 +114,18 @@ function generateRoutes(routes, resolve) {
       })
     })
   })
+}
+
+function generateScripts() {
+  if (env.parsed && env.parsed.ANALYTICS === 'true') {
+    return [
+      {
+        src: 'https://cdn.usefathom.com/script.js',
+        site: 'QZMVLHGF',
+        defer: true,
+        body: true
+      }
+    ]
+  }
+  return []
 }
