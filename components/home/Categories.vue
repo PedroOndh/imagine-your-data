@@ -22,8 +22,11 @@
         >
           {{ category }}
         </div>
+        <div class="categories__selected-chevron">
+          <Chevron />
+        </div>
       </div>
-      <div class="categories__chevron">
+      <div class="categories__open-chevron">
         <Chevron />
       </div>
     </div>
@@ -63,7 +66,7 @@ export default {
         this.open = !this.open
       }
       if (!category || (isDesktop() && currentCategory === category)) {
-        this.filter('all', category)
+        this.filter('all', '')
       } else if (currentCategory !== category) {
         this.filter(category, category)
       }
@@ -85,14 +88,14 @@ export default {
 <style scoped lang="scss">
 .categories {
   position: relative;
-  z-index: 2;
   &__list {
     transition: all 0.2s ease;
     display: flex;
     flex-wrap: wrap;
     padding-top: rem(30px);
-    justify-content: space-between;
+    justify-content: center;
     &-item {
+      display: flex;
       text-transform: uppercase;
       text-align: center;
       opacity: 0.3;
@@ -101,8 +104,8 @@ export default {
       cursor: pointer;
       transition: opacity 0.5s ease;
       &:before {
-        content: 'showing ';
-        opacity: 0;
+        content: 'showing\00a0';
+        display: none;
         transition: opacity 0.5s ease;
       }
       &:hover {
@@ -111,27 +114,44 @@ export default {
       &--active {
         opacity: 1;
         &:before {
-          opacity: 1;
+          display: block;
         }
       }
     }
   }
-  &__chevron {
+  &__selected-chevron {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.5s ease;
+    width: 20px;
+    height: 20px;
+  }
+  &__open-chevron {
     display: none;
     width: 100%;
     text-align: center;
     position: relative;
-    z-index: -1;
     svg {
       transition: all 0.5s ease;
+    }
+  }
+  &__selected-chevron,
+  &__open-chevron {
+    svg {
       transform: rotate(90deg);
       g {
-        fill: $corporative-light-blue;
+        use {
+          fill: $corporative-light-blue;
+        }
+        rect {
+          display: none;
+        }
       }
     }
   }
   &--open {
-    .categories__chevron svg {
+    .categories__open-chevron svg {
       display: none;
     }
   }
@@ -149,7 +169,7 @@ export default {
         color: #292929;
       }
     }
-    svg g {
+    svg g use {
       fill: #292929;
     }
   }
@@ -158,7 +178,7 @@ export default {
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
     transition: all 0.5s ease;
-    &__chevron {
+    &__open-chevron {
       display: block;
     }
     &--fixed {

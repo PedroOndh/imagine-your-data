@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="home__catchphrase">{{ catchPhrase }}</h1>
     <Categories
       :categories="categories"
       :current-category="currentCategory"
@@ -12,7 +13,8 @@
 <script>
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
-import { turnFileNameToPath } from '~/assets/js/utils'
+import { turnFileNameToPath, isDesktop } from '~/assets/js/utils'
+import { catchPhrase } from '~/assets/js/consts'
 
 const postsPerPage = 12
 
@@ -22,9 +24,8 @@ async function getAvailablePosts() {
     .keys()
     .map((key) => ({
       ...context(key),
-      _path: `/blog/${turnFileNameToPath(
-        key.replace('.md', '').replace('./', '')
-      )}`
+      _path: `/blog/${context(key).attributes.slug ||
+        turnFileNameToPath(key.replace('./', ''))}`
     }))
     .sort(function(a, b) {
       return a.attributes.date > b.attributes.date ? -1 : 1
@@ -75,7 +76,8 @@ export default {
       availablePosts,
       filteredPosts: availablePosts,
       posts: availablePosts.slice(0, postsPerPage),
-      categories: await getAvailableCategories()
+      categories: await getAvailableCategories(),
+      catchPhrase
     }
   },
   data() {
@@ -89,6 +91,8 @@ export default {
     this.registerObserver()
     this.prepareFixedCategories()
     this.scrollInView()
+    this.moveChevron('')
+    window.addEventListener('resize', this.resize)
   },
   methods: {
     registerObserver() {
@@ -145,19 +149,31 @@ export default {
       this.$data.filteredPosts = newFilteredPosts
       this.$data.posts = newFilteredPosts.slice(0, postsPerPage)
       this.$data.currentPostList = 1
+      this.moveChevron(category)
       this.scrollInView()
       this.observe(1, true)
     },
     scrollInView() {
       const currentScroll = Math.abs(document.body.getBoundingClientRect().top)
       if (currentScroll > this.$data.categoriesTop) {
-        const posts = document.querySelector('.posts')
-        posts.classList.add('posts--filtering')
         window.scrollTo(0, this.$data.categoriesTop + 1)
       }
     },
+    moveChevron(category) {
+      const chevron = document.querySelector('.categories__selected-chevron')
+      if (isDesktop()) {
+        const categoryListItem = document.getElementById(category || 'all')
+        const leftStyle =
+          categoryListItem.offsetLeft + categoryListItem.offsetWidth / 2 - 10
+        chevron.style.display = 'block'
+        chevron.style.left = `${leftStyle}px`
+      } else {
+        chevron.style.display = 'none'
+      }
+    },
     prepareFixedCategories() {
-      const headerHeight = document.querySelector('.header').offsetHeight
+      const header = document.querySelector('.header')
+      const headerHeight = header.offsetHeight
       const posts = document.querySelector('.posts')
       const categories = document.querySelector('.categories')
       const categoriesTop = categories.offsetTop - headerHeight
@@ -167,14 +183,41 @@ export default {
           document.body.getBoundingClientRect().top
         )
         if (currentScroll > categoriesTop) {
+          header.classList.add('header--filtering')
           posts.classList.add('posts--filtering')
           categories.classList.add('categories--fixed')
         } else {
+          header.classList.remove('header--filtering')
           posts.classList.remove('posts--filtering')
           categories.classList.remove('categories--fixed')
         }
       })
+    },
+    resize() {
+      this.moveChevron(this.currentCategory)
     }
   }
 }
 </script>
+
+<style scoped lang="scss">
+.home__catchphrase {
+  font-weight: 300;
+  line-height: 0.92;
+  color: #0086b2;
+  position: absolute;
+  top: 16rem;
+  left: 0;
+  width: 100%;
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+  @media screen and (max-width: $breakpoint__small-desktop--max) {
+    top: 12rem;
+    font-size: rem(32px);
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    display: none;
+  }
+}
+</style>

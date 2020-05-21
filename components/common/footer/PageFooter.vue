@@ -1,9 +1,6 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <div class="footer__first-row">
-      <div class="container">
-        <Quote :quote="quotes[currentQuote]" :change-quote="changeQuote" />
-      </div>
       <div
         class="footer__first-row-image"
         :style="{
@@ -14,6 +11,9 @@
           ]
         }"
       />
+      <div class="container">
+        <Quote :quote="quotes[currentQuote]" :change-quote="changeQuote" />
+      </div>
     </div>
     <div class="footer__second-row">
       <p>
@@ -25,7 +25,7 @@
         <nuxt-link to="/cookie-policy"><b>Cookie Policy</b></nuxt-link>
       </p>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -85,13 +85,14 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      z-index: -1;
     }
     .container {
       position: relative;
     }
     @media screen and (max-width: $breakpoint__tablet--max) {
       height: auto;
+      display: flex;
+      flex-direction: column-reverse;
       &-image {
         height: rem(200px);
         position: initial;

@@ -1,7 +1,11 @@
 import path from 'path'
+import fs from 'fs'
 import glob from 'glob'
-import { sortRoutes } from '@nuxt/utils'
+import fm from 'front-matter'
 import { turnFileNameToPath } from './assets/js/utils'
+const fsPromise = fs.promises
+
+const env = require('dotenv').config()
 
 const markdownPaths = ['blog']
 
@@ -32,7 +36,8 @@ export default {
         href:
           'https://assets.empathybroker.com/resources/fonts/empathy-typography/style.css'
       }
-    ]
+    ],
+    script: generateScripts()
   },
   /*
    ** Customize the progress-bar color
@@ -52,7 +57,8 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/dotenv'
   ],
   /*
    ** Nuxt.js modules
@@ -86,35 +92,40 @@ export default {
   },
   router: {
     extendRoutes(routes, resolve) {
-      routes.push(...generateRoutes(resolve))
-      routes.push(...extraRoutes(resolve))
-      sortRoutes(routes)
+      generateRoutes(routes, resolve)
     }
   }
 }
 
-function generateRoutes(resolve) {
-  return [].concat(
-    ...markdownPaths.map((mdPath) => {
-      return glob
-        .sync(`${mdPath}/*.md`, { cwd: 'content' })
-        .map(filepath => {
-        return {
-          name: `${path.basename(filepath, '.md')}`,
-          path: `/${mdPath}/${turnFileNameToPath(path.basename(filepath, '.md'))}`,
-          component: resolve(__dirname, `pages/${mdPath}/_slug.vue`)
-        }
+function generateRoutes(routes, resolve) {
+  markdownPaths.map((mdPath) => {
+    glob.sync(`${mdPath}/*.md`, { cwd: 'content' }).map((filePath) => {
+      fsPromise.readFile(`content/${filePath}`).then((data) => {
+        const slug = fm(data.toString('utf8')).attributes.slug
+        routes.push({
+          name: filePath,
+          path: `/${mdPath}/${
+            !slug
+              ? turnFileNameToPath(filePath.replace(`${mdPath}/`, ''))
+              : slug
+          }`,
+          component: resolve(__dirname, `layouts/${mdPath}.vue`)
+        })
       })
     })
-  )
+  })
 }
 
-function extraRoutes(resolve) {
-  return [
-    {
-      name: 'blog',
-      path: '/blog',
-      component: resolve(__dirname, `pages/index.vue`)
-    }
-  ]
+function generateScripts() {
+  if (env.parsed && env.parsed.ANALYTICS === 'true') {
+    return [
+      {
+        src: 'https://cdn.usefathom.com/script.js',
+        site: 'QZMVLHGF',
+        defer: true,
+        body: true
+      }
+    ]
+  }
+  return []
 }

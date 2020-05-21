@@ -1,5 +1,11 @@
 <template>
-  <div v-header class="header">
+  <header
+    v-header
+    class="header"
+    :class="{
+      'header--not-home': !home
+    }"
+  >
     <div
       class="container header__container"
       :class="{
@@ -19,7 +25,7 @@
           <img class="header__button-open" src="/_media/times-grey.svg" />
         </div>
       </div>
-      <div class="header__sub-title">Visualizing eCommerce Search & Browse</div>
+      <div class="header__sub-title">{{ catchPhrase }}</div>
       <div class="header__menu">
         <nuxt-link class="header__link" to="/about">About</nuxt-link>
         <div class="header__social">
@@ -29,24 +35,31 @@
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
 import SocialIcon from '~/components/common/SocialIcon'
+import { catchPhrase } from '~/assets/js/consts'
 
 export default {
   name: 'PageHeader',
   components: { SocialIcon },
   data() {
     return {
-      open: false
+      open: false,
+      home: true,
+      catchPhrase
     }
   },
   watch: {
     $route(to, from) {
       this.open = false
+      this.home = this.$nuxt.$route.path === '/'
     }
+  },
+  mounted() {
+    this.home = this.$nuxt.$route.path === '/'
   },
   methods: {
     toggleMenu() {
@@ -101,6 +114,7 @@ export default {
     display: none;
   }
   &__sub-title {
+    display: none;
     font-size: rem(13px);
     font-weight: 300;
     line-height: 0.92;
@@ -154,6 +168,12 @@ export default {
           height: 40px;
         }
       }
+    }
+  }
+  &--not-home,
+  &--filtering {
+    .header__sub-title {
+      display: block;
     }
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
@@ -228,6 +248,7 @@ export default {
         }
       }
       .header__sub-title {
+        display: block;
         width: auto;
         margin-right: 0;
         margin-top: 0;

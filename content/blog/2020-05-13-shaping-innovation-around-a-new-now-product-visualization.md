@@ -2,9 +2,17 @@
 title: Shaping innovation around a new Now product visualization
 date: 2020-05-13T08:43:23.218Z
 image: /cms_media/data_visual_click_addtocart.gif
+social_image: /cms_media/data_visual_checkout_revenue.jpg
 author: alejandroj@empathy.co
 category: Data Visualizations
 typology: Relations
+seo_description: >-
+  We have been working on a new visualization for Now with the aim of taking it
+  a leap forward.
+
+  This new approach represents a set of customer interactions (clicks, add2cart,
+  checkout and revenue) with products in real time -- without losing the roots
+  that made the Now visualization widely adopted by many Empathy customers.
 ---
 We have been working on a new visualization for Now with the aim of taking it a leap forward.
 
@@ -16,19 +24,19 @@ In this light, we have iterated over a new bubbly visualization composed of a re
 
 **Clicks:**
 
-<complex-image image="/cms_media/data_visual_click.jpg" caption="" lightbox="true" v-lightbox></complex-image>
+<complex-image image="/cms_media/data_visual_click.jpg" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
 
 **Add2Cart:**
 
-<complex-image image="/cms_media/data_visual_addtocart.jpg" caption="" lightbox="true" v-lightbox></complex-image>
+<complex-image image="/cms_media/data_visual_addtocart.jpg" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
 
 **Checkout (without revenue):**
 
-<complex-image image="/cms_media/data_visual_checkout.jpg" caption="" lightbox="true" v-lightbox></complex-image>
+<complex-image image="/cms_media/data_visual_checkout.jpg" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
 
 **Checkout (with revenue):**
 
-<complex-image image="/cms_media/data_visual_checkout_revenue.jpg" caption="" lightbox="true" v-lightbox></complex-image>
+<complex-image image="/cms_media/data_visual_checkout_revenue.jpg" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
 
 **Combination of multiple events:**
 
@@ -36,7 +44,7 @@ The bubbles will offer interaction while hovering over them, enabling retailers 
 
 Consequently, this new visualization prototype not only enhances the single interaction monitoring but also offers the possibility to show a combination of multiple events, as shown in the example below, where Clicks & Add2Cart are configured by the user to be displayed at the same time.
 
-<complex-image image="/cms_media/data_visual_click_addtocart.jpg" caption="" lightbox="true" v-lightbox></complex-image>
+<complex-image image="/cms_media/data_visual_click_addtocart.gif" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
 
 We believe that in order to understand the flow of user interaction, it is necessary to take into account key aspects that establish the perfect search funnel of shoppers’ activity: Aspects such as aesthetics, quality of content (product offerings), accessibility or simplicity of use.
 

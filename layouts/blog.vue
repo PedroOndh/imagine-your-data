@@ -1,6 +1,6 @@
 <template>
   <div class="blog-post">
-    <div class="small-container">
+    <article class="small-container">
       <h1 class="blog-post__title page-title">
         {{ blogPost.attributes.title }}
       </h1>
@@ -11,8 +11,8 @@
           <span class="blog-post__author-date">{{ date }}</span>
           -->
           <span class="blog-post__author-name">
-            By {{ author.attributes.name }}
-            {{
+            By {{ author.attributes.name
+            }}{{
               author.attributes.jobtitle
                 ? `, ${author.attributes.jobtitle}`
                 : ''
@@ -23,7 +23,7 @@
       <client-only>
         <PostContent :content="blogPost.html" />
       </client-only>
-    </div>
+    </article>
     <div class="blog-post__share">
       Share if you liked it!
       <div class="blog-post__share-social">
@@ -100,11 +100,36 @@ function getDate(post) {
   const date = new Date(post.attributes.date)
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
-function getMetatags(post) {
-  const metaTags = []
+function getMetatags(post, route) {
+  const metaTags = [
+    {
+      name: 'og:title',
+      content: post.attributes.title
+    },
+    {
+      name: 'og:image',
+      content: `https://www.imagineyourdata.com${
+        !post.attributes.social_image
+          ? post.attributes.image
+          : post.attributes.social_image
+      }`
+    },
+    {
+      name: 'og:url',
+      content: `https://www.imagineyourdata.com${route.path}`
+    },
+    {
+      name: 'og:site_name',
+      content: 'ImagineYourData'
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image'
+    }
+  ]
   if (post.attributes.seo_description) {
     metaTags.push({
-      name: 'description',
+      name: 'og:description',
       content: post.attributes.seo_description
     })
   }
@@ -121,13 +146,13 @@ export default {
   layout: 'page',
   async asyncData({ route, error }) {
     try {
-      const blogPost = await import(`~/content/blog/${route.name}.md`)
+      const blogPost = await import(`~/content/${route.name}`)
       const postAuthor = await getPostAuthor(blogPost)
       return {
         blogPost: { ...blogPost },
         author: { ...postAuthor },
         date: getDate(blogPost),
-        metaTags: getMetatags(blogPost)
+        metaTags: getMetatags(blogPost, route)
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Not found' })

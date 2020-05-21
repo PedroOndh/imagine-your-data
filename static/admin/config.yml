@@ -20,8 +20,10 @@ collections:
       preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Custom Slug", name: "slug", hint: "If blank slug will be generated using title. WARNING: Must be unique and use 'example-post-slug' format", widget: "string", required: false }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Image", name: "image", widget: "image" }
+      - { label: "Social image", name: "social_image", hint: "Twitter and other social media don't accept big gifs or images as thumbnails, in that case you can select an image only for this purpose", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Post Author", name: "author", widget: "relation", collection: "authors", searchFields: ["name"], valueField: "email", displayFields: ["name"] }
       - { label: "Post Category", name: "category", widget: "relation", collection: "categories", searchFields: ["name"], valueField: "name", displayFields: ["name"]}
@@ -73,7 +75,7 @@ collections:
       - {label: "Quote", name: "quote", widget: "string"}
       - {label: "Name and Last Name", name: "author", widget: "string"}
       - {label: "Occupation", name: "occupation", widget: "string"}
-      - {label: "Footer image", name: "image", widget: "image", , hint: "Footer images should have the same style and size between them, ask design team if needed"}
+      - {label: "Footer image", name: "image", widget: "image", hint: "Footer images should have the same style and size between them, ask design team if needed"}
     meta:
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
 
