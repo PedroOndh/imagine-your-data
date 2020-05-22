@@ -35,22 +35,22 @@ export default {
 <style lang="scss">
 $grid-gap: 2.19vw;
 section.posts {
-  margin-top: 12vw;
+  margin-top: calc(12vw + 5rem);
   padding-bottom: rem(140px);
   background-color: $grey-background;
   &.posts--filtering {
-    padding-top: 15rem;
+    padding-top: calc(15rem + 8.5vw);
     margin-top: 0;
   }
   .posts-feed .posts-feed__transition {
     position: relative;
-    top: -8.5vw;
+    top: calc(-8.5vw - 5rem);
     display: flex;
     flex-wrap: wrap;
     transition: all 1s ease;
-    width: calc(105% + 5rem);
+    width: calc(105% + 10rem);
     overflow-y: hidden;
-    padding: 5rem 0 5rem 5rem;
+    padding: 5rem;
     margin-top: -5rem;
     margin-left: -5rem;
 
@@ -58,8 +58,8 @@ section.posts {
       border-radius: rem(20px);
       box-shadow: 0 0 rem(75px) 0 #d2d2d2;
       margin-bottom: $grid-gap;
-      width: 23.81%;
-      height: rem(626px);
+      width: 23.8%;
+      height: rem(584px);
       transition-property: opacity, width, margin;
       transition-duration: 0.8s;
       &.reordering {
@@ -86,7 +86,7 @@ section.posts {
         &-4,
         &-8,
         &-9 {
-          width: calc(47.62% - 2 * 2.19vw);
+          width: calc(47.6% - 2 * 2.19vw);
         }
         &-1,
         &-2,
@@ -103,15 +103,15 @@ section.posts {
   }
   @media screen and (max-width: $breakpoint__desktop--max) {
     .posts-feed .posts-feed__transition .posts-feed-item {
-      height: 32.6vw;
+      height: 30.4vw;
     }
     &.posts--filtering {
-      margin-top: -5rem;
+      margin-top: -2rem;
     }
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
     .posts-feed .posts-feed__transition .posts-feed-item {
-      height: 38vw;
+      height: 35.81vw;
     }
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
@@ -124,7 +124,9 @@ section.posts {
     .posts-feed .posts-feed__transition {
       width: 100%;
       margin-top: 8rem;
+      top: -8.5vw;
       padding-top: 0;
+      padding-right: 0;
       padding-left: 0;
       margin-left: 0;
       overflow: visible;
@@ -144,6 +146,11 @@ section.posts {
           }
         }
       }
+    }
+  }
+  @media screen and (max-width: $breakpoint__small-tablet--max) {
+    .posts-feed .posts-feed__transition .posts-feed-item {
+      height: 50vw;
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {

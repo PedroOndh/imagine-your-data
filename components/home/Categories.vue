@@ -88,6 +88,7 @@ export default {
 <style scoped lang="scss">
 .categories {
   position: relative;
+  z-index: 2;
   &__list {
     transition: all 0.2s ease;
     display: flex;
