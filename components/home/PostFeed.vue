@@ -49,7 +49,7 @@ section.posts {
     flex-wrap: wrap;
     transition: all 1s ease;
     width: calc(105% + 10rem);
-    overflow-y: hidden;
+    overflow: hidden;
     padding: 5rem;
     margin-top: -5rem;
     margin-left: -5rem;
@@ -65,9 +65,20 @@ section.posts {
       &.reordering {
         &-enter {
           opacity: 0;
-          width: 5%;
+          width: 0;
           margin-left: 0;
           margin-right: 0;
+          &-active {
+            width: 23.8%;
+            &.posts-feed-item--size {
+              &-0,
+              &-4,
+              &-8,
+              &-9 {
+                width: calc(47.6% - 2 * 2.19vw);
+              }
+            }
+          }
         }
         &-leave-active {
           opacity: 0;
@@ -110,8 +121,12 @@ section.posts {
     }
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
-    .posts-feed .posts-feed__transition .posts-feed-item {
-      height: 35.81vw;
+    .posts-feed .posts-feed__transition {
+      width: calc(105% + 7rem);
+      padding-right: 2rem;
+      .posts-feed-item {
+        height: 35.81vw;
+      }
     }
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
@@ -142,9 +157,20 @@ section.posts {
         &.reordering {
           &-enter,
           &-leave-active {
-            width: auto;
+            width: 100%;
             height: 0;
             margin: 0;
+          }
+          &-enter-active {
+            width: 100%;
+            &.posts-feed-item--size {
+              &-0,
+              &-4,
+              &-8,
+              &-9 {
+                width: 100%;
+              }
+            }
           }
         }
       }
