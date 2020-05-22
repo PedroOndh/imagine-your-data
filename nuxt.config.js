@@ -24,10 +24,7 @@ export default {
         name: 'description',
         content: process.env.npm_package_description || ''
       },
-      {
-        name: 'robots',
-        content: 'noindex'
-      }
+      noIndex()
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -114,6 +111,16 @@ function generateRoutes(routes, resolve) {
       })
     })
   })
+}
+
+function noIndex() {
+  if (env.parsed && env.parsed.PROD_URL === 'false') {
+    return {
+      name: 'robots',
+      content: 'noindex'
+    }
+  }
+  return {}
 }
 
 function generateScripts() {
