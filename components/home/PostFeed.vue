@@ -130,6 +130,7 @@ section.posts {
       padding-left: 0;
       margin-left: 0;
       overflow: visible;
+      flex-direction: column;
       .posts-feed-item {
         margin-bottom: $grid-gap;
         width: 100%;
@@ -143,6 +144,7 @@ section.posts {
           &-leave-active {
             width: auto;
             height: 0;
+            margin: 0;
           }
         }
       }
@@ -150,7 +152,7 @@ section.posts {
   }
   @media screen and (max-width: $breakpoint__small-tablet--max) {
     .posts-feed .posts-feed__transition .posts-feed-item {
-      height: 50vw;
+      height: 55vw;
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
@@ -160,6 +162,7 @@ section.posts {
       .posts-feed-item {
         margin-bottom: 12vw;
         height: 108vw;
+        transition-property: none;
       }
     }
   }
