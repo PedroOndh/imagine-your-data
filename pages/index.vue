@@ -6,7 +6,7 @@
       :current-category="currentCategory"
       :filter-by-category="filterByCategory"
     />
-    <PostFeed :posts="posts" class="posts" />
+    <PostFeed :posts="posts" />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import PostFeed from '../components/home/PostFeed'
 import { turnFileNameToPath, isDesktop } from '~/assets/js/utils'
 import { catchPhrase } from '~/assets/js/consts'
 
-const postsPerPage = 9
+const postsPerPage = 12
 
 async function getAvailablePosts() {
   const context = await require.context('~/content/blog', true, /\.md$/)
@@ -125,7 +125,7 @@ export default {
     },
     observe(postList, observe) {
       const { observer } = this.$data
-      const idToSelect = (postList * postsPerPage - 1).toString()
+      const idToSelect = (postList * postsPerPage - 4).toString()
       let targetPost = document.getElementById(idToSelect)
 
       if (observe) {
