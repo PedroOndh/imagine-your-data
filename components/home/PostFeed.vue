@@ -147,7 +147,7 @@ section.posts {
       overflow: visible;
       flex-direction: column;
       .posts-feed-item {
-        transition-property: opacity;
+        transition-property: margin;
         margin-bottom: $grid-gap;
         width: 100%;
         height: 23vw;
@@ -162,7 +162,12 @@ section.posts {
             height: 0;
             margin: 0;
           }
+          &-leave,
+          &-leave-active {
+            display: none;
+          }
           &-enter-active {
+            transition-property: margin, opacity;
             width: 100%;
             &.posts-feed-item--size {
               &-0,
@@ -189,6 +194,7 @@ section.posts {
       .posts-feed-item {
         margin-bottom: 12vw;
         height: 108vw;
+        transition-property: none;
       }
     }
   }
