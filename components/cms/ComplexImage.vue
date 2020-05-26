@@ -11,9 +11,13 @@
     <img
       :src="image"
       :alt="caption"
-      :class="`figure-image ${lightbox ? 'lightbox' : ''}`"
+      :class="`figure-image ${lightbox === 'true' ? 'lightbox' : ''}`"
     />
-    <img v-if="lightbox" class="lightbox-icon" src="/_media/expand.svg" />
+    <img
+      v-if="lightbox === 'true'"
+      class="lightbox-icon"
+      src="/_media/expand.svg"
+    />
     <figcaption v-if="caption" itemprop="caption">
       {{ caption }}
     </figcaption>

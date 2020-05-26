@@ -3,9 +3,11 @@ import Vue from 'vue'
 import VueWithCompiler from 'vue/dist/vue.esm'
 import ComplexImage from '../cms/ComplexImage'
 import IYDIframe from '../cms/IYDIframe'
+import Carousel from '../cms/Carousel'
 
 Vue.component('complex-image', ComplexImage)
 Vue.component('iyd-iframe', IYDIframe)
+Vue.component('carousel', Carousel)
 
 export default Vue.component('post-content', {
   components: { ComplexImage },

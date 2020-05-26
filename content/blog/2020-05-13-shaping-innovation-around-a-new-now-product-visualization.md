@@ -10,9 +10,7 @@ seo_description: >-
   We have been working on a new visualization for Now with the aim of taking it
   a leap forward.
 
-  This new approach represents a set of customer interactions (clicks, add2cart,
-  checkout and revenue) with products in real time -- without losing the roots
-  that made the Now visualization widely adopted by many Empathy customers.
+  This new approach represents a set of customer interactions (clicks, add2cart, checkout and revenue) with products in real time -- without losing the roots that made the Now visualization widely adopted by many Empathy customers.
 ---
 We have been working on a new visualization for Now with the aim of taking it a leap forward.
 
@@ -21,6 +19,8 @@ This new approach represents a set of customer interactions (clicks, add2cart, c
 We want to achieve a brand-new real-time analysis of user behavior interactions. That is to say, we try to capture the user experience when browsing the different products that our customers offer.
 
 In this light, we have iterated over a new bubbly visualization composed of a real set of product images (fed directly from customer catalog) that are interconnected and user customizable from the available set of interactions previously mentioned.
+
+<carousel><complex-image class="figure--carousel-slide" key="carousel-0" image="/cms_media/Google-Analytics-Report.png" caption="Hola que tal" caption-alignment="right" lightbox="true" v-lightbox></complex-image><complex-image class="figure--carousel-slide" key="carousel-1" image="/cms_media/Google-Analytics-Report-collage.jpg" caption="" caption-alignment="right" lightbox="undefined" ></complex-image><complex-image class="figure--carousel-slide" key="carousel-2" image="/cms_media/alert-system-4.png" caption="dfdsfgsddfsfsdf" caption-alignment="center" lightbox="true" v-lightbox></complex-image></carousel>
 
 **Clicks:**
 

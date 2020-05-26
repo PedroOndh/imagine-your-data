@@ -156,3 +156,63 @@ CMS.registerEditorComponent({
     return `<iframe src="${obj.src}" height="${obj.desktopHeight}"></iframe>`
   }
 })
+CMS.registerEditorComponent({
+  id: 'carousel',
+  label: 'Carousel',
+  fields: [
+    {
+      name: 'slides',
+      label: 'Slides',
+      widget: 'list',
+      types: [
+        {
+          label: 'Slide',
+          name: 'slide',
+          widget: 'object',
+          fields: [
+            {
+              name: 'image',
+              label: 'image',
+              widget: 'image'
+            },
+            {
+              name: 'caption',
+              label: 'image Caption',
+              widget: 'string',
+              default: ''
+            },
+            {
+              name: 'caption_alignment',
+              label: 'caption Alignment',
+              widget: 'select',
+              default: 'right',
+              options: ['left', 'center', 'right']
+            },
+            {
+              name: 'lightbox',
+              label: 'Lightbox available?',
+              widget: 'boolean'
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  pattern: /^<carousel>([\s\S]*?)<\/carousel>$/,
+  fromBlock: (match) => {
+    return {
+      slides: match[1]
+    }
+  },
+  toBlock: (obj) => {
+    const htmlSlides = obj.slides.map(
+      (slide, index) =>
+        // eslint-disable-next-line
+        `<complex-image class="figure--carousel-slide" key="carousel-${index}" image="${slide.image}" caption="${slide.caption}" caption-alignment="${slide.caption_alignment}" lightbox="${slide.lightbox}" ${slide.lightbox ? 'v-lightbox' : ''}></complex-image>`
+    )
+    return `<carousel>${htmlSlides.join('')}</carousel>`
+  },
+  toPreview: (obj) => {
+    return `<div>Hola, soy un carousel</div>`
+  }
+})
