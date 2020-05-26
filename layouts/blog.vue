@@ -34,7 +34,7 @@
     <RelatedPosts :current-post="blogPost" :current-author="author" />
   </div>
 </template>
-<style lang="scss">
+<style scoped lang="scss">
 .blog-post {
   &__author {
     margin-bottom: rem(85px);

@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 $grid-gap: 2.19vw;
 section.posts {
   margin-top: calc(12vw + 5rem);
@@ -147,6 +147,7 @@ section.posts {
       overflow: visible;
       flex-direction: column;
       .posts-feed-item {
+        transition-property: opacity;
         margin-bottom: $grid-gap;
         width: 100%;
         height: 23vw;
@@ -188,7 +189,6 @@ section.posts {
       .posts-feed-item {
         margin-bottom: 12vw;
         height: 108vw;
-        transition-property: none;
       }
     }
   }
