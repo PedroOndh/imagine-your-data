@@ -96,10 +96,6 @@ export default Vue.component('post-content', {
     iframe.external-video {
       height: 50vw;
     }
-    ul li,
-    ol li {
-      margin-left: 20px;
-    }
     tr {
       display: flex;
       flex-direction: column;

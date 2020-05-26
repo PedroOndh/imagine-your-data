@@ -21,8 +21,16 @@
           </div>
         </nuxt-link>
         <div class="header__button" @click="toggleMenu">
-          <img class="header__button-closed" src="/_media/menu.svg" />
-          <img class="header__button-open" src="/_media/times-grey.svg" />
+          <img
+            class="header__button-closed"
+            src="/_media/menu.svg"
+            alt="Menu"
+          />
+          <img
+            class="header__button-open"
+            src="/_media/times-grey.svg"
+            alt="Close menu"
+          />
         </div>
       </div>
       <div class="header__sub-title">{{ catchPhrase }}</div>
