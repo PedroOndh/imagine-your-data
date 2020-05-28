@@ -65,7 +65,10 @@ export default {
       if (!isDesktop()) {
         this.open = !this.open
       }
-      if (!category || (isDesktop() && currentCategory === category)) {
+      if (
+        (!category && currentCategory) ||
+        (isDesktop() && currentCategory === category)
+      ) {
         this.filter('all', '')
       } else if (currentCategory !== category) {
         this.filter(category, category)
@@ -88,6 +91,7 @@ export default {
 <style scoped lang="scss">
 .categories {
   position: relative;
+  z-index: 2;
   &__list {
     transition: all 0.2s ease;
     display: flex;
@@ -160,7 +164,6 @@ export default {
     border-bottom: 2px solid $grey-background;
     position: fixed;
     top: 4.3rem;
-    z-index: 2;
     margin-top: 0;
     width: 100%;
     left: 0;
@@ -178,12 +181,14 @@ export default {
     margin-top: 0;
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
+    z-index: auto;
     transition: all 0.5s ease;
     &__open-chevron {
       display: block;
     }
     &--fixed {
       transition: all 0.3s ease;
+      z-index: 2;
       top: rem(80px);
       padding: 0.5rem 0 0.3rem;
     }

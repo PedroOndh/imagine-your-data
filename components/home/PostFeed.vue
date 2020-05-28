@@ -1,13 +1,19 @@
 <template>
-  <section>
+  <section class="posts">
     <div class="container posts-feed">
-      <PostFeedItem
-        v-for="(post, index) in posts"
-        :id="index"
-        :key="post.attributes.index"
-        :post="post"
-        :size-index="index % 9"
-      />
+      <transition-group
+        name="reordering"
+        tag="div"
+        class="posts-feed__transition"
+      >
+        <PostFeedItem
+          v-for="(post, index) in posts"
+          :id="index"
+          :key="post.attributes.index"
+          :post="post"
+          :size-index="index % 9"
+        />
+      </transition-group>
     </div>
   </section>
 </template>
@@ -28,132 +34,167 @@ export default {
 
 <style scoped lang="scss">
 $grid-gap: 2.19vw;
-section {
-  margin-top: 12vw;
+section.posts {
+  margin-top: calc(12vw + 5rem);
   padding-bottom: rem(140px);
   background-color: $grey-background;
   &.posts--filtering {
-    padding-top: 20rem;
+    padding-top: calc(15rem + 8.5vw);
     margin-top: 0;
   }
-  .posts-feed {
+  .posts-feed .posts-feed__transition {
     position: relative;
-    top: -8.5vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-rows: rem(313px);
+    top: calc(-8.5vw - 5rem);
+    display: flex;
+    flex-wrap: wrap;
     transition: all 1s ease;
+    width: calc(105% + 10rem);
+    overflow: hidden;
+    padding: 5rem;
+    margin-top: -5rem;
+    margin-left: -5rem;
 
     .posts-feed-item {
       border-radius: rem(20px);
       box-shadow: 0 0 rem(75px) 0 #d2d2d2;
       margin-bottom: $grid-gap;
-      display: grid;
-      grid-row: span 2;
+      width: 23.8%;
+      height: rem(584px);
+      transition-property: opacity, width, margin;
+      transition-duration: 0.8s;
+      &.reordering {
+        &-enter {
+          opacity: 0;
+          width: 0;
+          margin-left: 0;
+          margin-right: 0;
+          &-active {
+            width: 23.8%;
+            &.posts-feed-item--size {
+              &-0,
+              &-4,
+              &-8,
+              &-9 {
+                width: calc(47.6% - 2 * 2.19vw);
+              }
+            }
+          }
+        }
+        &-leave-active {
+          opacity: 0;
+          width: 0;
+          margin-left: 0;
+          margin-right: 0;
 
+          & .posts-feed-item__author,
+          & .posts-feed-item__link {
+            display: none;
+          }
+        }
+      }
       &--size {
         &-0,
         &-4,
         &-8,
         &-9 {
-          grid-column: span 2;
+          width: calc(47.6% - 2 * 2.19vw);
         }
-
-        &-0 {
-          margin-right: 2 * $grid-gap;
-        }
-
-        &-1 {
-          position: relative;
-          right: $grid-gap;
-        }
-
-        &-4 {
+        &-1,
+        &-2,
+        &-5 {
           margin-left: $grid-gap;
-          margin-right: $grid-gap;
         }
-
+        &-3,
+        &-6,
         &-7 {
-          position: relative;
-          left: $grid-gap;
-        }
-
-        &-8 {
-          margin-left: 2 * $grid-gap;
-        }
-      }
-
-      &--background {
-        &-0dv,
-        &-1dv,
-        &-2dv,
-        &-3dv,
-        &-4dv,
-        &-0us,
-        &-1us,
-        &-2us,
-        &-3us {
-          animation-name: appearing;
-          animation-duration: 0.8s;
-        }
-      }
-
-      @keyframes appearing {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
+          margin-right: $grid-gap;
         }
       }
     }
   }
   @media screen and (max-width: $breakpoint__desktop--max) {
-    .posts-feed {
-      grid-auto-rows: 16.3vw;
+    .posts-feed .posts-feed__transition .posts-feed-item {
+      height: 30.4vw;
     }
     &.posts--filtering {
-      margin-top: -5rem;
+      margin-top: -2rem;
     }
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
-    .posts-feed {
-      grid-auto-rows: 19vw;
+    .posts-feed .posts-feed__transition {
+      width: calc(105% + 7rem);
+      padding-right: 2rem;
+      .posts-feed-item {
+        height: 35.81vw;
+      }
     }
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
     margin-top: 5rem;
+    min-height: 100vh;
     &.posts--filtering {
       padding-top: 6rem;
       margin-top: 0;
     }
-    .posts-feed {
+    .posts-feed .posts-feed__transition {
+      width: 100%;
       margin-top: 8rem;
-      grid-template-columns: 1fr;
-      grid-auto-rows: 25vw;
+      top: -8.5vw;
+      padding-top: 0;
+      padding-right: 0;
+      padding-left: 0;
+      margin-left: 0;
+      overflow: visible;
+      flex-direction: column;
       .posts-feed-item {
+        transition-property: margin;
         margin-bottom: $grid-gap;
-        grid-row: span 1;
-        grid-column: span 1;
+        width: 100%;
+        height: 23vw;
         margin-left: 0;
         margin-right: 0;
         right: 0;
         left: 0;
+        &.reordering {
+          &-enter,
+          &-leave-active {
+            width: 100%;
+            height: 0;
+            margin: 0;
+          }
+          &-leave,
+          &-leave-active {
+            display: none;
+          }
+          &-enter-active {
+            transition-property: margin, opacity;
+            width: 100%;
+            &.posts-feed-item--size {
+              &-0,
+              &-4,
+              &-8,
+              &-9 {
+                width: 100%;
+              }
+            }
+          }
+        }
       }
     }
   }
   @media screen and (max-width: $breakpoint__small-tablet--max) {
-    .posts-feed {
-      grid-auto-rows: 50vw;
+    .posts-feed .posts-feed__transition .posts-feed-item {
+      height: 55vw;
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
-    .posts-feed {
+    .posts-feed .posts-feed__transition {
       margin-top: 5rem;
-      grid-auto-rows: 120vw;
 
       .posts-feed-item {
         margin-bottom: 12vw;
+        height: 108vw;
+        transition-property: none;
       }
     }
   }

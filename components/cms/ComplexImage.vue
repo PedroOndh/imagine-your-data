@@ -50,6 +50,7 @@ export default {
   margin-right: 0;
 }
 .image-figcaption {
+  overflow: hidden;
   img.figure-image {
     margin-bottom: 0;
   }
@@ -119,7 +120,7 @@ export default {
     }
     &.figure--caption.figure--caption-center {
       width: 70%;
-      margin: auto;
+      margin: 0 15%;
       img.figure-image {
         width: 100%;
         margin: 0;
