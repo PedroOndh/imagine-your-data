@@ -226,6 +226,6 @@ CMS.registerEditorComponent({
     )}]"></carousel>`
   },
   toPreview: (obj) => {
-    return `<div>Hola, soy un carousel</div>`
+    return `[ carousel ]`
   }
 })
