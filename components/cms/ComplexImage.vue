@@ -81,6 +81,12 @@ export default {
   }
   .image-figcaption {
     position: relative;
+    width: 70%;
+    margin: 0 15%;
+    img.figure-image {
+      width: 100%;
+      margin: 0;
+    }
 
     &.figure--caption {
       width: 90%;
