@@ -198,19 +198,32 @@ CMS.registerEditorComponent({
       ]
     }
   ],
-  pattern: /^<carousel>([\s\S]*?)<\/carousel>$/,
+  pattern: /^<carousel slides="([\s\S]*?)"><\/carousel>$/,
   fromBlock: (match) => {
-    return {
-      slides: match[1]
+    if (match[1]) {
+      const slides = JSON.parse(match[1].split('|/').join('"'))
+      return {
+        slides
+      }
+    } else {
+      return {
+        slides: []
+      }
     }
   },
   toBlock: (obj) => {
-    const htmlSlides = obj.slides.map(
-      (slide, index) =>
-        // eslint-disable-next-line
-        `<complex-image class="figure--carousel-slide" key="carousel-${index}" image="${slide.image}" caption="${slide.caption}" caption-alignment="${slide.caption_alignment}" lightbox="${slide.lightbox}" ${slide.lightbox ? 'v-lightbox' : ''}></complex-image>`
-    )
-    return `<carousel>${htmlSlides.join('')}</carousel>`
+    const finalSlides = obj.slides.map((slide) => {
+      return {
+        ...slide,
+        caption: slide.caption.split('"').join("''"),
+        lightbox: slide.lightbox ? 'lightbox' : ''
+      }
+    })
+    return `<carousel slides="[${finalSlides.map((slide) =>
+      JSON.stringify(slide)
+        .split('"')
+        .join('|/')
+    )}]"></carousel>`
   },
   toPreview: (obj) => {
     return `<div>Hola, soy un carousel</div>`

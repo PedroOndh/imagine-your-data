@@ -20,23 +20,7 @@ We want to achieve a brand-new real-time analysis of user behavior interactions.
 
 In this light, we have iterated over a new bubbly visualization composed of a real set of product images (fed directly from customer catalog) that are interconnected and user customizable from the available set of interactions previously mentioned.
 
-<carousel><complex-image class="figure--carousel-slide" key="carousel-0" image="/cms_media/Google-Analytics-Report.png" caption="Hola que tal" caption-alignment="right" lightbox="true" v-lightbox></complex-image><complex-image class="figure--carousel-slide" key="carousel-1" image="/cms_media/Google-Analytics-Report-collage.jpg" caption="" caption-alignment="right" lightbox="undefined" ></complex-image><complex-image class="figure--carousel-slide" key="carousel-2" image="/cms_media/alert-system-4.png" caption="dfdsfgsddfsfsdf" caption-alignment="center" lightbox="true" v-lightbox></complex-image></carousel>
-
-**Clicks:**
-
-<complex-image image="/cms_media/data_visual_click.jpg" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
-
-**Add2Cart:**
-
-<complex-image image="/cms_media/data_visual_addtocart.jpg" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
-
-**Checkout (without revenue):**
-
-<complex-image image="/cms_media/data_visual_checkout.jpg" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
-
-**Checkout (with revenue):**
-
-<complex-image image="/cms_media/data_visual_checkout_revenue.jpg" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
+<carousel slides="[{|/type|/:|/slide|/,|/caption|/:|/Clicks|/,|/caption_alignment|/:|/center|/,|/image|/:|//cms_media/data_visual_click.jpg|/,|/lightbox|/:|/lightbox|/},{|/type|/:|/slide|/,|/caption|/:|/Add2Cart|/,|/caption_alignment|/:|/center|/,|/image|/:|//cms_media/data_visual_addtocart.jpg|/,|/lightbox|/:|/lightbox|/},{|/type|/:|/slide|/,|/caption|/:|/Checkout (without revenue)|/,|/caption_alignment|/:|/center|/,|/image|/:|//cms_media/data_visual_checkout.jpg|/,|/lightbox|/:|/lightbox|/},{|/type|/:|/slide|/,|/caption|/:|/Checkout (with revenue)|/,|/caption_alignment|/:|/center|/,|/image|/:|//cms_media/data_visual_checkout_revenue.jpg|/,|/lightbox|/:|/lightbox|/}]"></carousel>
 
 **Combination of multiple events:**
 

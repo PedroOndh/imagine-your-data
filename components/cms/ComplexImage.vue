@@ -11,13 +11,9 @@
     <img
       :src="image"
       :alt="caption"
-      :class="`figure-image ${lightbox === 'true' ? 'lightbox' : ''}`"
+      :class="`figure-image ${lightbox ? 'lightbox' : ''}`"
     />
-    <img
-      v-if="lightbox === 'true'"
-      class="lightbox-icon"
-      src="/_media/expand.svg"
-    />
+    <img v-if="lightbox" class="lightbox-icon" src="/_media/expand.svg" />
     <figcaption v-if="caption" itemprop="caption">
       {{ caption }}
     </figcaption>
@@ -54,6 +50,7 @@ export default {
   margin-right: 0;
 }
 .image-figcaption {
+  overflow: hidden;
   img.figure-image {
     margin-bottom: 0;
   }
@@ -117,7 +114,7 @@ export default {
     }
     &.figure--caption.figure--caption-center {
       width: 70%;
-      margin: auto;
+      margin: 0 15%;
       img.figure-image {
         width: 100%;
         margin: 0;

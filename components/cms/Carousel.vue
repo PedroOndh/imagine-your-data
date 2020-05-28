@@ -1,46 +1,65 @@
 <template>
   <div class="carousel-container">
     <transition-group class="carousel" :name="animation" tag="div">
-      <vnodes :vnodes="slides[currentSlide]" />
+      <ComplexImage
+        :key="generatedSlides[currentSlide].key"
+        v-lightbox="generatedSlides[currentSlide].lightbox"
+        :image="generatedSlides[currentSlide].image"
+        :caption="generatedSlides[currentSlide].caption"
+        :caption-alignment="generatedSlides[currentSlide].caption_alignment"
+        :lightbox="generatedSlides[currentSlide].lightbox"
+      />
     </transition-group>
     <div class="carousel-controls">
-      <button class="carousel-controls__button" @click="changeSlide(-1)">
-        &#60;
+      <button
+        class="carousel-controls__button carousel-controls__button--prev"
+        @click="changeSlide(-1)"
+      >
+        <Chevron />
       </button>
-      <button class="carousel-controls__button" @click="changeSlide(1)">
-        &#62;
+      <button
+        class="carousel-controls__button carousel-controls__button--next"
+        @click="changeSlide(1)"
+      >
+        <Chevron />
       </button>
     </div>
   </div>
 </template>
 
 <script>
+import ComplexImage from '~/components/cms/ComplexImage'
+import Chevron from '~/static/_media/chevron.svg?inline'
+
 export default {
   name: 'Carousel',
-  components: {
-    Vnodes: {
-      functional: true,
-      render: (h, ctx) => ctx.props.vnodes
+  components: { ComplexImage, Chevron },
+  props: {
+    slides: {
+      type: String,
+      default() {}
     }
   },
   data() {
-    const slides = this.$slots.default
+    const slides = JSON.parse(this.slides.split('|/').join('"'))
+    const generatedSlides = slides.map((slide, index) => ({
+      ...slide,
+      key: index,
+      lightbox: slide.lightbox && slide.lightbox.toString()
+    }))
     return {
-      slides,
+      generatedSlides,
       animation: 'fade',
       currentSlide: 0
     }
-  },
-  mounted() {
-    this.$el.style.height = '1000px'
   },
   methods: {
     changeSlide(number) {
       this.animation = number === 1 ? 'slide-next' : 'slide-prev'
       const newIndex =
         this.currentSlide + number >= 0
-          ? (this.currentSlide + number) % this.slides.length
-          : this.slides.length - 1
+          ? (this.currentSlide + number) % this.generatedSlides.length
+          : this.generatedSlides.length - 1
       this.currentSlide = newIndex
     }
   }
@@ -48,38 +67,63 @@ export default {
 </script>
 
 <style lang="scss">
-.carousel-container .carousel {
+.carousel-container {
   position: relative;
-  overflow: hidden;
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    &-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      &__button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transform: scale(2);
+        &--prev {
+          transform: scale(2) rotate(180deg);
+        }
+        g {
+          fill: #6d7278;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
 
-  /* FADE IN */
-  .fade-enter-active {
-    transition: opacity 1s;
-  }
-  .fade-enter {
-    opacity: 0;
-  }
+    /* FADE IN */
+    .fade-enter-active {
+      transition: opacity 1s;
+    }
+    .fade-enter {
+      opacity: 0;
+    }
 
-  .slide-next-enter-active,
-  .slide-next-leave-active,
-  .slide-prev-enter-active,
-  .slide-prev-leave-active {
-    transition: transform 0.5s ease-in-out;
-  }
-  .slide-next-enter,
-  .slide-next-leave-to,
-  .slide-prev-enter,
-  .slide-prev-leave-to {
-    position: absolute;
-    top: 0;
-  }
-  .slide-next-enter,
-  .slide-prev-leave-to {
-    transform: translate(100%);
-  }
-  .slide-next-leave-to,
-  .slide-prev-enter {
-    transform: translate(-100%);
+    .slide-next-enter-active,
+    .slide-next-leave-active,
+    .slide-prev-enter-active,
+    .slide-prev-leave-active {
+      transition: transform 0.6s ease-in-out;
+    }
+    .slide-next-enter,
+    .slide-next-leave-to,
+    .slide-prev-enter,
+    .slide-prev-leave-to {
+      position: absolute;
+      top: 0;
+    }
+    .slide-next-enter,
+    .slide-prev-leave-to {
+      transform: translate(150%);
+    }
+    .slide-next-leave-to,
+    .slide-prev-enter {
+      transform: translate(-150%);
+    }
   }
 }
 </style>
