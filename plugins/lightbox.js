@@ -1,8 +1,13 @@
 import Vue from 'vue'
 
 Vue.directive('lightbox', {
-  inserted: (el) => {
-    activateLightbox(el)
+  bind(el, binding) {
+    if (
+      !Object.prototype.hasOwnProperty.call(binding, 'value') ||
+      binding.value
+    ) {
+      activateLightbox(el)
+    }
   }
 })
 

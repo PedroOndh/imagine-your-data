@@ -10,9 +10,7 @@ seo_description: >-
   We have been working on a new visualization for Now with the aim of taking it
   a leap forward.
 
-  This new approach represents a set of customer interactions (clicks, add2cart,
-  checkout and revenue) with products in real time -- without losing the roots
-  that made the Now visualization widely adopted by many Empathy customers.
+  This new approach represents a set of customer interactions (clicks, add2cart, checkout and revenue) with products in real time -- without losing the roots that made the Now visualization widely adopted by many Empathy customers.
 ---
 We have been working on a new visualization for Now with the aim of taking it a leap forward.
 
@@ -22,21 +20,7 @@ We want to achieve a brand-new real-time analysis of user behavior interactions.
 
 In this light, we have iterated over a new bubbly visualization composed of a real set of product images (fed directly from customer catalog) that are interconnected and user customizable from the available set of interactions previously mentioned.
 
-**Clicks:**
-
-<complex-image image="/cms_media/data_visual_click.jpg" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
-
-**Add2Cart:**
-
-<complex-image image="/cms_media/data_visual_addtocart.jpg" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
-
-**Checkout (without revenue):**
-
-<complex-image image="/cms_media/data_visual_checkout.jpg" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
-
-**Checkout (with revenue):**
-
-<complex-image image="/cms_media/data_visual_checkout_revenue.jpg" caption="" caption-alignment="right" lightbox="true" v-lightbox></complex-image>
+<carousel slides="[{|/type|/:|/slide|/,|/caption|/:|/Clicks|/,|/caption_alignment|/:|/center|/,|/image|/:|//cms_media/data_visual_click.jpg|/,|/lightbox|/:|/lightbox|/},{|/type|/:|/slide|/,|/caption|/:|/Add2Cart|/,|/caption_alignment|/:|/center|/,|/image|/:|//cms_media/data_visual_addtocart.jpg|/,|/lightbox|/:|/lightbox|/},{|/type|/:|/slide|/,|/caption|/:|/Checkout (without revenue)|/,|/caption_alignment|/:|/center|/,|/image|/:|//cms_media/data_visual_checkout.jpg|/,|/lightbox|/:|/lightbox|/},{|/type|/:|/slide|/,|/caption|/:|/Checkout (with revenue)|/,|/caption_alignment|/:|/center|/,|/image|/:|//cms_media/data_visual_checkout_revenue.jpg|/,|/lightbox|/:|/lightbox|/}]"></carousel>
 
 **Combination of multiple events:**
 

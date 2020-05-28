@@ -156,3 +156,76 @@ CMS.registerEditorComponent({
     return `<iframe src="${obj.src}" height="${obj.desktopHeight}"></iframe>`
   }
 })
+CMS.registerEditorComponent({
+  id: 'carousel',
+  label: 'Carousel',
+  fields: [
+    {
+      name: 'slides',
+      label: 'Slides',
+      widget: 'list',
+      types: [
+        {
+          label: 'Slide',
+          name: 'slide',
+          widget: 'object',
+          fields: [
+            {
+              name: 'image',
+              label: 'image',
+              widget: 'image'
+            },
+            {
+              name: 'caption',
+              label: 'image Caption',
+              widget: 'string',
+              default: ''
+            },
+            {
+              name: 'caption_alignment',
+              label: 'caption Alignment',
+              widget: 'select',
+              default: 'right',
+              options: ['left', 'center', 'right']
+            },
+            {
+              name: 'lightbox',
+              label: 'Lightbox available?',
+              widget: 'boolean'
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  pattern: /^<carousel slides="([\s\S]*?)"><\/carousel>$/,
+  fromBlock: (match) => {
+    if (match[1]) {
+      const slides = JSON.parse(match[1].split('|/').join('"'))
+      return {
+        slides
+      }
+    } else {
+      return {
+        slides: []
+      }
+    }
+  },
+  toBlock: (obj) => {
+    const finalSlides = obj.slides.map((slide) => {
+      return {
+        ...slide,
+        caption: slide.caption.split('"').join("''"),
+        lightbox: slide.lightbox ? 'lightbox' : ''
+      }
+    })
+    return `<carousel slides="[${finalSlides.map((slide) =>
+      JSON.stringify(slide)
+        .split('"')
+        .join('|/')
+    )}]"></carousel>`
+  },
+  toPreview: (obj) => {
+    return `<div>Hola, soy un carousel</div>`
+  }
+})
