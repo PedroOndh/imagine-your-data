@@ -99,7 +99,10 @@ export default async () => {
     },
     sitemap: {
       path: '/sitemap.xml',
-      hostname: 'https://imagineyourdata.com/',
+      hostname:
+        env.parsed && env.parsed.PROD_URL === 'false'
+          ? 'https://dev.imagineyourdata.com/'
+          : 'https://imagineyourdata.com/',
       cacheTime: 1000 * 60 * 15,
       gzip: true,
       exclude: ['/admin'],
