@@ -140,11 +140,11 @@ async function getRoutesData() {
   return routesData
 }
 function generateRoutes(routes, resolve, routesData) {
-  routesData.map((data) => {
+  routesData.map((route) => {
     routes.push({
-      name: data.filePath,
-      path: data.path,
-      component: resolve(__dirname, `layouts/${data.mdPath}.vue`)
+      name: route.filePath,
+      path: route.path,
+      component: resolve(__dirname, `layouts/${route.mdPath}.vue`)
     })
   })
 }
