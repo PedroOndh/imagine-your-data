@@ -3,6 +3,7 @@ import fs from 'fs'
 import glob from 'glob'
 import fm from 'front-matter'
 import { turnFileNameToPath } from './assets/js/utils'
+import { redirections } from './assets/js/consts'
 const fsPromise = fs.promises
 
 const env = require('dotenv').config()
@@ -105,7 +106,7 @@ export default async () => {
           : 'https://imagineyourdata.com/',
       cacheTime: 1000 * 60 * 15,
       gzip: true,
-      exclude: ['/admin'],
+      exclude: ['/admin', '/statsapi/**', '/pages/all-posts'],
       defaults: {
         changefreq: 'weekly',
         priority: 0.8,
@@ -146,6 +147,9 @@ function generateRoutes(routes, resolve, routesData) {
       path: route.path,
       component: resolve(__dirname, `layouts/${route.mdPath}.vue`)
     })
+  })
+  redirections.map((route) => {
+    routes.push(route)
   })
 }
 function generateSiteMapRoutes(routesData) {
