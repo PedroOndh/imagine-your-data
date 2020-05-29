@@ -21,10 +21,6 @@ export const redirections = [
     redirect: '/'
   },
   {
-    path: '/statsapi/2018/09/04/our-new-future-viz/',
-    redirect: '/blog/our-new-future-visualization'
-  },
-  {
     path: '/statsapi/2018/06/21/Creating-the-new-EmpathyBroker-alert-system',
     redirect: '/blog/creating-the-new-empathy-alert-system'
   },
