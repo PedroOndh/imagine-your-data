@@ -106,7 +106,7 @@ export default async () => {
           : 'https://imagineyourdata.com/',
       cacheTime: 1000 * 60 * 15,
       gzip: true,
-      exclude: ['/admin', '/statsapi/**', '/pages/all-posts'],
+      exclude: ['/admin', '/statsapi/**', '/pages/all-posts', '/blog'],
       defaults: {
         changefreq: 'weekly',
         priority: 0.8,
