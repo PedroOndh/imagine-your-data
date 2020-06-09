@@ -62,3 +62,12 @@ figure {
     flex-direction: row-reverse;
   }
 }
+.carousel {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #747474;
+  margin-top: 1rem;
+  img {
+   width: 140px;
+  }
+}

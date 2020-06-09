@@ -226,6 +226,10 @@ CMS.registerEditorComponent({
     )}]"></carousel>`
   },
   toPreview: (obj) => {
-    return `[ carousel ]`
+    return `<span>Carousel: </span><div class="carousel">${obj.slides.map(
+      (slide) => `<img class="carousel__image" src="${slide.image}" />`
+    )}</div>`
+      .split(',')
+      .join('')
   }
 })
