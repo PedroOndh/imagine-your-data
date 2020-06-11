@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 $grid-gap: 2.19vw;
 section.posts {
   margin-top: calc(12vw + 5rem);
@@ -86,8 +86,8 @@ section.posts {
           margin-left: 0;
           margin-right: 0;
 
-          & .posts-feed-item__author,
-          & .posts-feed-item__link {
+          .posts-feed-item__author,
+          .posts-feed-item__link {
             display: none;
           }
         }
