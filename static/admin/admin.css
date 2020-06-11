@@ -56,3 +56,25 @@ figure.figcaption--align-left, figure.figcaption--align-right {
 figure.figcaption--align-left {
   flex-direction: row-reverse;
 }
+.carousel {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 40px;
+  padding: 0 1rem;
+}
+.carousel img {
+  width: 140px;
+}
+.carousel:before, .carousel:after {
+  position: absolute;
+  top: 45%;
+}
+.carousel:before {
+  content: '<';
+  left: 0;
+}
+.carousel:after {
+  content: '>';
+  right: 0;
+}
