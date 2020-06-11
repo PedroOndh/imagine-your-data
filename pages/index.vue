@@ -94,6 +94,9 @@ export default {
     this.moveChevron('')
     window.addEventListener('resize', this.resize)
   },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.resize)
+  },
   methods: {
     registerObserver() {
       const options = {

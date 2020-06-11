@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /local-data-vis/
+Disallow: /datavis/
+
+Sitemap: https://www.imagineyourdata.com/sitemap.xml

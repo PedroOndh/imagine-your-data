@@ -11,7 +11,8 @@ Vue.directive('lightbox', {
   }
 })
 
-function activateLightbox(element) {
+function activateLightbox(wholeElement) {
+  const element = wholeElement.querySelector('.figure-image')
   initLightboxBehaviour()
   window.addEventListener('resize', initLightboxBehaviour)
   function onClickMediaElement(e) {

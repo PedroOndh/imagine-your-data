@@ -53,6 +53,9 @@ export default {
       currentSlide: 0
     }
   },
+  mounted() {
+    this.loadImages()
+  },
   methods: {
     changeSlide(number) {
       this.animation = number === 1 ? 'slide-next' : 'slide-prev'
@@ -61,6 +64,12 @@ export default {
           ? (this.currentSlide + number) % this.generatedSlides.length
           : this.generatedSlides.length - 1
       this.currentSlide = newIndex
+    },
+    loadImages() {
+      this.generatedSlides.forEach((slide) => {
+        const image = new Image()
+        image.src = slide.image
+      })
     }
   }
 }
