@@ -65,9 +65,23 @@ figure {
 .carousel {
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid #747474;
-  margin-top: 1rem;
+  position: relative;
+  margin-bottom: 40px;
+  padding: 0 1rem;
   img {
    width: 140px;
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    top: 45%;
+  }
+  &:before {
+    content: '<';
+    left: 0;
+  }
+  &:after {
+    content: '>';
+    right: 0;
   }
 }

@@ -59,9 +59,22 @@ figure.figcaption--align-left {
 .carousel {
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid #747474;
-  margin-top: 1rem;
+  position: relative;
+  margin-bottom: 40px;
+  padding: 0 1rem;
 }
 .carousel img {
   width: 140px;
+}
+.carousel:before, .carousel:after {
+  position: absolute;
+  top: 45%;
+}
+.carousel:before {
+  content: '<';
+  left: 0;
+}
+.carousel:after {
+  content: '>';
+  right: 0;
 }
