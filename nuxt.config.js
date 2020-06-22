@@ -40,7 +40,14 @@ export default async () => {
             'https://assets.empathybroker.com/resources/fonts/empathy-typography/style.css'
         }
       ],
-      script: generateScripts()
+      script: [
+        ...generateScripts(),
+        {
+          src:
+            'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver',
+          body: true
+        }
+      ]
     },
     /*
      ** Customize the progress-bar color

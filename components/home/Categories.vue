@@ -76,7 +76,9 @@ export default {
     },
     filter(id, category) {
       const { filterByCategory } = this.$props
-      const categories = document.querySelectorAll('.categories__list-item')
+      const categories = Array.from(
+        document.querySelectorAll('.categories__list-item')
+      )
       categories.forEach((category) => {
         category.classList.remove('categories__list-item--active')
       })
