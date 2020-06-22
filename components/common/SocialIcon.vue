@@ -54,6 +54,9 @@ export default {
 
 <style scoped lang="scss">
 .social-icon {
+  img {
+    width: 100%;
+  }
   &__image {
     display: block;
     &--hover {
