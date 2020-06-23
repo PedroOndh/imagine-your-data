@@ -97,7 +97,7 @@ export default {
     position: relative;
   }
   .related-post {
-    max-width: 33%;
+    width: 33%;
     a {
       display: flex;
       align-items: center;
@@ -136,7 +136,7 @@ export default {
   }
   @media screen and (max-width: $breakpoint__small-desktop--max) {
     .related-post {
-      max-width: none;
+      width: 100%;
       padding: 0 1rem;
       a {
         display: flex;
