@@ -70,6 +70,7 @@
       display: flex;
       a {
         margin: 0 rem(2.5px);
+        max-width: rem(50px);
       }
     }
   }
