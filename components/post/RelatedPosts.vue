@@ -101,6 +101,7 @@ export default {
     a {
       display: flex;
       align-items: center;
+      height: 100%;
       img {
         width: 50%;
         max-width: rem(183px);
@@ -112,7 +113,7 @@ export default {
         width: 50%;
         word-break: break-word;
         max-width: rem(370px);
-        font-size: rem(22px);
+        font-size: rem(20px);
         line-height: 1.5;
         color: $grey-dark;
         display: flex;
