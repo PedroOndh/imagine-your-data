@@ -34,6 +34,11 @@ export const redirections = [
       '/blog/developing-our-now-visualization-search-funnel-and-real-time-trends'
   },
   {
+    path:
+      '/statsapi/2019/07/24/MVT-Test-Analyse-and-Optimise-Your-Search-Experienice/',
+    redirect: '/blog/mvt-test-analyse-and-optimise-your-search-experience'
+  },
+  {
     path: '/statsapi/:year/:month/:day/:slug/',
     redirect: '/blog/:slug'
   }
