@@ -53,7 +53,7 @@ export default {
 
       svg {
         height: 2.8rem;
-        transition: padding 0.5s ease;
+        transition: padding $transitions-duration ease;
       }
 
       &:hover svg {

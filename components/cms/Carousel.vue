@@ -116,7 +116,7 @@ export default {
     .slide-next-leave-active,
     .slide-prev-enter-active,
     .slide-prev-leave-active {
-      transition: transform 0.6s ease-in-out;
+      transition: transform $transitions-duration ease-in-out;
     }
     .slide-next-enter,
     .slide-next-leave-to,

@@ -108,11 +108,11 @@ export default {
       color: $corporative-light-blue;
       padding: rem(15px) 1rem;
       cursor: pointer;
-      transition: opacity 0.5s ease;
+      transition: opacity $transitions-duration ease;
       &:before {
         content: 'showing\00a0';
         display: none;
-        transition: opacity 0.5s ease;
+        transition: opacity $transitions-duration ease;
       }
       &:hover {
         opacity: 1;
@@ -129,7 +129,7 @@ export default {
     display: none;
     position: absolute;
     bottom: 0;
-    transition: all 0.5s ease;
+    transition: all $transitions-duration ease;
     width: 20px;
     height: 20px;
   }
@@ -139,7 +139,7 @@ export default {
     text-align: center;
     position: relative;
     svg {
-      transition: all 0.5s ease;
+      transition: all $transitions-duration ease;
     }
   }
   &__selected-chevron,
@@ -184,12 +184,12 @@ export default {
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
     z-index: auto;
-    transition: all 0.5s ease;
+    transition: all $transitions-duration ease;
     &__open-chevron {
       display: block;
     }
     &--fixed {
-      transition: all 0.3s ease;
+      transition: all $transitions-duration--short ease;
       z-index: 2;
       top: rem(80px);
       padding: 0.5rem 0 0.3rem;

@@ -60,7 +60,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   &__quote {
-    font-family: Montserrat;
+    font-family: $font-family;
     font-size: rem(24px);
     font-weight: 300;
     line-height: 1.92;
