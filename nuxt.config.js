@@ -110,7 +110,7 @@ export default async () => {
       hostname:
         env.parsed && env.parsed.PROD_URL === 'false'
           ? 'https://dev.imagineyourdata.com/'
-          : 'https://imagineyourdata.com/',
+          : 'https://www.imagineyourdata.com/',
       cacheTime: 1000 * 60 * 15,
       gzip: true,
       exclude: ['/admin', '/statsapi/**', '/pages/all-posts', '/blog'],
