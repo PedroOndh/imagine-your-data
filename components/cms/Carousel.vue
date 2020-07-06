@@ -96,7 +96,7 @@ export default {
           transform: scale(2) rotate(180deg);
         }
         g {
-          fill: #6d7278;
+          fill: $grey-medium;
         }
         &:focus {
           outline: none;

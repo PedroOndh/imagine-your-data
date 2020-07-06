@@ -12,7 +12,7 @@
   h1,
   h2,
   h3 {
-    font-weight: 300;
+    font-weight: $font-weight--light;
   }
 }
 </style>
