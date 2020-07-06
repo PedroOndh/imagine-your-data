@@ -106,7 +106,7 @@ export default {
     justify-content: center;
     align-items: center;
     color: white;
-    font-weight: bold;
+    font-weight: $font-weight--bold;
     p {
       font-size: 1rem;
       margin-bottom: rem(4px);

@@ -190,14 +190,14 @@ export default {
 
     @include color-and-gradient('&-3dv', $corporative-purple);
 
-    @include color-and-gradient('&-4dv', #0086b2);
+    @include color-and-gradient('&-4dv', $corporative-blue);
   }
   &__author {
     width: rem(95px);
     position: absolute;
     right: rem(32px);
     top: rem(-24px);
-    font-weight: 600;
+    font-weight: $font-weight--semibold;
     .posts-feed-item__author-image {
       width: 100%;
       border-radius: 50%;
@@ -223,7 +223,7 @@ export default {
     padding-bottom: 1rem;
     p {
       font-size: rem(15px);
-      font-weight: 600;
+      font-weight: $font-weight--semibold;
       display: inline;
     }
   }
@@ -241,7 +241,7 @@ export default {
     }
     h1 {
       font-size: rem(32px);
-      font-weight: 300;
+      font-weight: $font-weight--light;
       line-height: 1.39;
       min-height: rem(211px);
     }

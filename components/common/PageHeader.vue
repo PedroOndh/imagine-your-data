@@ -99,14 +99,14 @@ export default {
       width: rem(347px);
       height: rem(39px);
       font-size: rem(31px);
-      font-weight: 300;
+      font-weight: $font-weight--light;
       line-height: 1.39;
       letter-spacing: rem(2px);
       color: $grey-dark;
     }
     .header__brand {
       font-size: rem(10px);
-      font-weight: 300;
+      font-weight: $font-weight--light;
       color: $grey-dark;
       display: flex;
       justify-content: flex-end;
@@ -124,7 +124,7 @@ export default {
   &__sub-title {
     display: none;
     font-size: rem(13px);
-    font-weight: 300;
+    font-weight: $font-weight--light;
     line-height: 0.92;
     color: $corporative-blue;
     text-align: center;
@@ -136,7 +136,7 @@ export default {
     align-items: center;
     .header__link {
       font-size: rem(19px);
-      font-weight: 300;
+      font-weight: $font-weight--light;
       line-height: 2.26;
       text-transform: uppercase;
       text-decoration: none;

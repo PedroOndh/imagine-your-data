@@ -205,9 +205,9 @@ export default {
 
 <style scoped lang="scss">
 .home__catchphrase {
-  font-weight: 300;
+  font-weight: $font-weight--light;
   line-height: 0.92;
-  color: #0086b2;
+  color: $corporative-blue;
   position: absolute;
   top: 16rem;
   left: 0;

@@ -123,7 +123,7 @@ export default {
     &__filtering-method {
       position: absolute;
       top: -5rem;
-      font-weight: bold;
+      font-weight: $font-weight--bold;
       color: $grey-medium;
     }
   }

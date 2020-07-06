@@ -58,7 +58,7 @@ export default {
     a {
       margin-top: rem(50px);
       font-size: rem(16px);
-      font-weight: 600;
+      font-weight: $font-weight--semibold;
       letter-spacing: 0.37px;
       color: #2e2e2e;
       display: flex;

@@ -62,7 +62,7 @@ export default {
   &__quote {
     font-family: $font-family;
     font-size: rem(24px);
-    font-weight: 300;
+    font-weight: $font-weight--light;
     line-height: 1.92;
     letter-spacing: 0.96px;
     color: $grey-dark;
@@ -73,11 +73,11 @@ export default {
     margin-top: 0.7rem;
     margin-bottom: rem(20px);
     &-name {
-      font-weight: bold;
+      font-weight: $font-weight--bold;
       color: $grey-dark;
     }
     &-occupation {
-      font-weight: 300;
+      font-weight: $font-weight--light;
     }
   }
   &__second-row {
