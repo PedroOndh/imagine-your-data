@@ -93,7 +93,7 @@ export default {
     align-items: flex-end;
     a {
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all $transitions-duration--short ease;
     }
     .header__title {
       width: rem(347px);
@@ -163,7 +163,7 @@ export default {
       padding: 0.6rem 0px 0.9rem;
       .header__logo {
         .header__title {
-          transition: all 0.3s ease;
+          transition: all $transitions-duration--short ease;
           font-size: 1.5rem;
           width: auto;
           height: auto;
@@ -171,7 +171,7 @@ export default {
       }
       .header__menu {
         a.social-icon {
-          transition: all 0.3s ease;
+          transition: all $transitions-duration--short ease;
           width: 40px;
           height: 40px;
         }
@@ -221,9 +221,9 @@ export default {
           z-index: 1;
           top: 4rem;
           right: 10%;
-          transition: all 0.5s ease;
+          transition: all $transitions-duration ease;
           .header__title {
-            transition: all 0.3s ease;
+            transition: all $transitions-duration--short ease;
           }
           .header__brand img {
             margin-top: 0.1rem;
@@ -232,7 +232,7 @@ export default {
         }
       }
       .header__button {
-        transition: all 0.5s ease;
+        transition: all $transitions-duration ease;
         display: block;
         width: rem(26px);
         height: rem(26px);
@@ -263,13 +263,13 @@ export default {
         position: relative;
         z-index: 1;
         opacity: 1;
-        transition: all 0.6s ease;
+        transition: all $transitions-duration ease;
       }
       .header__menu {
         background: white;
         flex-direction: column;
         position: absolute;
-        transition: all 0.5s ease;
+        transition: all $transitions-duration ease;
         z-index: 1;
         top: 0;
         left: 0;
@@ -316,7 +316,7 @@ export default {
         .header__sub-title {
           margin-top: -3rem;
           opacity: 0;
-          transition: all 0.3s ease;
+          transition: all $transitions-duration--short ease;
         }
         .header__logo {
           a {
