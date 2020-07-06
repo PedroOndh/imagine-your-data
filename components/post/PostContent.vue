@@ -147,7 +147,7 @@ $mask-background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: rem(14px);
     right: rem(20px);
-    font-size: rem(18px);
+    font-size: $font-size--small;
     color: black;
     cursor: pointer;
   }

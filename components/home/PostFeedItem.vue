@@ -207,7 +207,7 @@ export default {
       text-align: center;
     }
     &-name {
-      font-size: rem(15px);
+      font-size: $font-size--extra-small;
       padding: 1rem 0;
       text-align: center;
       color: $grey-dark;
@@ -222,7 +222,7 @@ export default {
   &__info {
     padding-bottom: 1rem;
     p {
-      font-size: rem(15px);
+      font-size: $font-size--extra-small;
       font-weight: $font-weight--semibold;
       display: inline;
     }
@@ -240,7 +240,7 @@ export default {
       text-decoration: none;
     }
     h1 {
-      font-size: rem(32px);
+      font-size: $font-size--big;
       font-weight: $font-weight--light;
       line-height: 1.39;
       min-height: rem(211px);
@@ -288,7 +288,7 @@ export default {
     &__content {
       h1 {
         min-height: 11vw;
-        font-size: rem(24px);
+        font-size: $font-size--regular-big;
       }
     }
   }
@@ -299,7 +299,7 @@ export default {
     &__content {
       padding: 0 2rem 2.5rem;
       h1 {
-        font-size: rem(20px);
+        font-size: $font-size--regular;
       }
     }
   }
@@ -314,6 +314,9 @@ export default {
   @media screen and (max-width: $breakpoint__mobile--max) {
     &__link .posts-feed-item__content {
       padding-right: 2rem;
+    }
+    &__content h1 {
+      font-size: $font-size--small;
     }
   }
 }

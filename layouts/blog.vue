@@ -56,7 +56,7 @@
     }
     &-name {
       font-family: 'Lora', serif;
-      font-size: rem(25px);
+      font-size: $font-size--regular-big;
       color: #747474;
     }
   }
@@ -76,7 +76,7 @@
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
     &__author-name {
-      font-size: rem(20px);
+      font-size: $font-size--small;
     }
   }
 }

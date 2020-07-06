@@ -61,14 +61,14 @@ export default {
   justify-content: space-between;
   &__quote {
     font-family: $font-family;
-    font-size: rem(24px);
+    font-size: $font-size--regular-big;
     font-weight: $font-weight--light;
     line-height: 1.92;
     letter-spacing: 0.96px;
     color: $grey-dark;
   }
   &__author {
-    font-size: 16px;
+    font-size: $font-size--extra-small;
     line-height: 2;
     margin-top: 0.7rem;
     margin-bottom: rem(20px);
@@ -109,7 +109,7 @@ export default {
     padding: 2rem 1rem;
     position: initial;
     &__quote {
-      font-size: rem(22px);
+      font-size: $font-size--regular;
       line-height: 1.5;
     }
     &__navigation {
