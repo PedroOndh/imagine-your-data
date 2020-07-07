@@ -157,7 +157,7 @@ export default {
     margin: 0;
     position: fixed;
     width: 100%;
-    z-index: 3;
+    z-index: 2;
     background: white;
     .container {
       padding: 0.6rem 0px 0.9rem;
@@ -261,7 +261,6 @@ export default {
         margin-right: 0;
         margin-top: 0;
         position: relative;
-        z-index: 1;
         opacity: 1;
         transition: all $transitions-duration ease;
       }
@@ -326,7 +325,7 @@ export default {
               font-size: $font-size--small;
             }
             .header__brand {
-              font-size: $font-size--tiny;
+              font-size: 0.5rem;
               img {
                 width: 6rem;
               }

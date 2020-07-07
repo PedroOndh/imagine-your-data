@@ -93,7 +93,7 @@ export default {
 <style scoped lang="scss">
 .categories {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   &__list {
     transition: all 0.2s ease;
     display: flex;
@@ -190,7 +190,7 @@ export default {
     }
     &--fixed {
       transition: all $transitions-duration--short ease;
-      z-index: 2;
+      z-index: 1;
       top: rem(80px);
       padding: 0.5rem 0 0.3rem;
     }
