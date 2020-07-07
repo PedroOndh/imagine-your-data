@@ -211,7 +211,7 @@ export default {
         display: none;
         width: 100%;
         text-align: center;
-        font-size: 0.8rem;
+        font-size: $font-size--caption;
         padding: 0.5rem 0 0;
         &--active {
           display: inline-block;
