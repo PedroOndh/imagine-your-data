@@ -1,21 +1,17 @@
 <template>
-  <aside class="cms-buttons">
-    <button class="cms-buttons__deploy" @click="openPopup">Deploy</button>
-    <a
-      v-if="blog"
-      class="cms-buttons__edit"
-      :href="
-        `https://dev.imagineyourdata.com/admin/#/collections/blog/entries/${filename}`
-      "
-    >
-      Edit on CMS
-    </a>
-    <div v-if="open" class="cms-buttons__popup-container">
-      <div v-if="open" class="cms-buttons__popup">
+  <aside
+    class="deploy-button"
+    :class="{
+      'deploy-button--open': open
+    }"
+  >
+    <button class="deploy-button__deploy" @click="setOpen(true)">Deploy</button>
+    <div v-if="open" class="deploy-button__popup-container">
+      <div v-if="open" class="deploy-button__popup">
         Deploy is going to be performed. Are you sure you want to continue?
-        <div class="cms-buttons__actions">
-          <button class="cms-buttons__accept" @click="deploy">Accept</button>
-          <button class="cms-buttons__cancel" @click="closePopup">
+        <div class="deploy-button__actions">
+          <button class="deploy-button__accept" @click="deploy">Accept</button>
+          <button class="deploy-button__cancel" @click="setOpen(false)">
             Cancel
           </button>
         </div>
@@ -26,42 +22,25 @@
 
 <script>
 export default {
-  name: 'CMSButtons',
+  name: 'DeployButton',
   data() {
     return {
-      open: false,
-      blog: this.isBlog(),
-      filename: this.getFilename()
-    }
-  },
-  watch: {
-    $route(to, from) {
-      this.blog = this.isBlog()
-      this.filename = this.getFilename()
+      open: false
     }
   },
   methods: {
-    openPopup() {
-      this.open = true
-    },
-    closePopup() {
-      this.open = false
-    },
-    isBlog() {
-      return this.$nuxt.$route.path.indexOf('blog') > 0
-    },
-    getFilename() {
-      return this.isBlog() && this.$nuxt.$route.path.split('/')[2]
+    setOpen(value) {
+      this.open = value
     },
     deploy() {
-      this.closePopup()
+      this.setOpen(false)
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-.cms-buttons {
+.deploy-button {
   position: fixed;
   z-index: 3;
   padding: 1rem;
@@ -70,14 +49,17 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  &--open {
+    width: 100%;
+    height: 100%;
+  }
   button {
     cursor: pointer;
     &:focus {
       outline: none;
     }
   }
-  & > button,
-  & > a {
+  & > button {
     background: $corporative-blue;
     border: none;
     border-radius: 1.25rem;
@@ -93,11 +75,22 @@ export default {
     border-radius: 1.25rem;
     border: 2px solid $corporative-blue;
     margin: 0.5rem 0.2rem;
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
     max-width: 500px;
     display: flex;
     flex-direction: column;
     text-align: center;
+    &-container {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
   &__actions {
     margin-top: 1rem;

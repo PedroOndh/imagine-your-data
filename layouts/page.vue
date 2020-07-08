@@ -3,22 +3,17 @@
     <PageHeader />
     <nuxt class="page__content" />
     <PageFooter />
-    <CMSButtons v-if="dev" />
+    <DeployButton v-if="$nuxt.context.env.dev" />
   </div>
 </template>
 
 <script>
-import CMSButtons from '~/components/common/CMSButtons'
+import DeployButton from '~/components/common/DeployButton'
 import PageHeader from '~/components/common/PageHeader'
 import PageFooter from '~/components/common/footer/PageFooter'
 
 export default {
-  components: { PageHeader, PageFooter, CMSButtons },
-  data() {
-    return {
-      dev: this.$nuxt.context.env.dev
-    }
-  }
+  components: { PageHeader, PageFooter, DeployButton }
 }
 </script>
 
