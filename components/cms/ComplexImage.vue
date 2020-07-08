@@ -58,7 +58,7 @@ export default {
     height: 100%;
     background: rgba(83, 185, 201, 0.18);
     padding: rem(24px) rem(20px);
-    font-size: rem(14px);
+    font-size: $font-size--caption;
     line-height: 1.9;
     font-family: Lora;
     color: #163046;

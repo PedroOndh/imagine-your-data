@@ -43,7 +43,7 @@ export default {
     a {
       margin-top: rem(50px);
       margin-bottom: rem(150px);
-      font-size: rem(16px);
+      font-size: $font-size--extra-small;
       font-weight: $font-weight--semibold;
       letter-spacing: 0.37px;
       color: #2e2e2e;

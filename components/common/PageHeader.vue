@@ -105,7 +105,7 @@ export default {
       color: $grey-dark;
     }
     .header__brand {
-      font-size: rem(10px);
+      font-size: $font-size--tiny;
       font-weight: $font-weight--light;
       color: $grey-dark;
       display: flex;
@@ -123,7 +123,7 @@ export default {
   }
   &__sub-title {
     display: none;
-    font-size: rem(13px);
+    font-size: $font-size--caption;
     font-weight: $font-weight--light;
     line-height: 0.92;
     color: $corporative-blue;
@@ -135,7 +135,7 @@ export default {
     display: flex;
     align-items: center;
     .header__link {
-      font-size: rem(19px);
+      font-size: $font-size--small;
       font-weight: $font-weight--light;
       line-height: 2.26;
       text-transform: uppercase;
@@ -157,14 +157,14 @@ export default {
     margin: 0;
     position: fixed;
     width: 100%;
-    z-index: 3;
+    z-index: 2;
     background: white;
     .container {
       padding: 0.6rem 0px 0.9rem;
       .header__logo {
         .header__title {
           transition: all $transitions-duration--short ease;
-          font-size: 1.5rem;
+          font-size: $font-size--regular-big;
           width: auto;
           height: auto;
         }
@@ -188,7 +188,7 @@ export default {
     .container {
       .header__logo {
         .header__title {
-          font-size: 1.5rem;
+          font-size: $font-size--regular-big;
           width: auto;
           height: auto;
         }
@@ -261,7 +261,6 @@ export default {
         margin-right: 0;
         margin-top: 0;
         position: relative;
-        z-index: 1;
         opacity: 1;
         transition: all $transitions-duration ease;
       }
@@ -323,7 +322,7 @@ export default {
             position: fixed;
             top: 1.3rem;
             .header__title {
-              font-size: 1.2rem;
+              font-size: $font-size--small;
             }
             .header__brand {
               font-size: 0.5rem;
@@ -357,7 +356,7 @@ export default {
         .header__logo a {
           top: 1.5rem;
           .header__title {
-            font-size: 1rem;
+            font-size: $font-size--extra-small;
           }
           .header__brand img {
             width: 5rem;
@@ -369,7 +368,7 @@ export default {
   @media screen and (max-width: 400px) {
     .container {
       .header__sub-title {
-        font-size: 0.65rem;
+        font-size: $font-size--tiny;
       }
       .header__logo .header__title {
         font-size: 7.5vw;
