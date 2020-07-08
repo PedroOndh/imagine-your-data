@@ -3,7 +3,7 @@ backend:
   repo: empathyco/labs-imagine-your-data
   branch: develop
   auth_endpoint: /admin/auth
-  base_url: (base_url) # OAuth server
+  base_url: (base_url) # OAuth server URL
 
 # for using local backend run "npm run local" and enter in /admin
 local_backend: true
