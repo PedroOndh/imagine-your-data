@@ -96,7 +96,7 @@ export default {
           transform: scale(2) rotate(180deg);
         }
         g {
-          fill: #6d7278;
+          fill: $grey-medium;
         }
         &:focus {
           outline: none;
@@ -116,7 +116,7 @@ export default {
     .slide-next-leave-active,
     .slide-prev-enter-active,
     .slide-prev-leave-active {
-      transition: transform 0.6s ease-in-out;
+      transition: transform $transitions-duration ease-in-out;
     }
     .slide-next-enter,
     .slide-next-leave-to,

@@ -60,24 +60,24 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   &__quote {
-    font-family: Montserrat;
-    font-size: rem(24px);
-    font-weight: 300;
+    font-family: $font-family;
+    font-size: $font-size--regular-big;
+    font-weight: $font-weight--light;
     line-height: 1.92;
     letter-spacing: 0.96px;
     color: $grey-dark;
   }
   &__author {
-    font-size: 16px;
+    font-size: $font-size--extra-small;
     line-height: 2;
     margin-top: 0.7rem;
     margin-bottom: rem(20px);
     &-name {
-      font-weight: bold;
+      font-weight: $font-weight--bold;
       color: $grey-dark;
     }
     &-occupation {
-      font-weight: 300;
+      font-weight: $font-weight--light;
     }
   }
   &__second-row {
@@ -109,7 +109,7 @@ export default {
     padding: 2rem 1rem;
     position: initial;
     &__quote {
-      font-size: rem(22px);
+      font-size: $font-size--regular;
       line-height: 1.5;
     }
     &__navigation {

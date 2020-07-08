@@ -1,0 +1,114 @@
+<template>
+  <aside
+    class="deploy-button"
+    :class="{
+      'deploy-button--open': open
+    }"
+  >
+    <button class="deploy-button__deploy" @click="setOpen(true)">Deploy</button>
+    <div v-if="open" class="deploy-button__popup-container">
+      <div v-if="open" class="deploy-button__popup">
+        Deploy is going to be performed. Are you sure you want to continue?
+        <div class="deploy-button__actions">
+          <button class="deploy-button__accept" @click="deploy">Accept</button>
+          <button class="deploy-button__cancel" @click="setOpen(false)">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </aside>
+</template>
+
+<script>
+export default {
+  name: 'DeployButton',
+  data() {
+    return {
+      open: false
+    }
+  },
+  methods: {
+    setOpen(value) {
+      this.open = value
+    },
+    deploy() {
+      this.setOpen(false)
+    }
+  }
+}
+</script>
+
+<style scoped lang="scss">
+.deploy-button {
+  position: fixed;
+  z-index: 3;
+  padding: 1rem;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  &--open {
+    width: 100%;
+    height: 100%;
+  }
+  button {
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+  & > button {
+    background: $corporative-blue;
+    border: none;
+    border-radius: 1.25rem;
+    padding: 0.5rem 1rem;
+    margin: 0.2rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: $font-weight--semibold;
+    color: white;
+  }
+  &__popup {
+    background: white;
+    border-radius: 1.25rem;
+    border: 2px solid $corporative-blue;
+    margin: 0.5rem 0.2rem;
+    padding: 1rem 2rem;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    &-container {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__actions {
+    margin-top: 1rem;
+    button {
+      text-transform: uppercase;
+      font-weight: $font-weight--semibold;
+      border: 1px solid $corporative-blue;
+      border-radius: 1.25rem;
+      margin: 0.2rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+  &__accept {
+    background: white;
+  }
+  &__cancel {
+    color: white;
+    background: $corporative-pink;
+  }
+}
+</style>

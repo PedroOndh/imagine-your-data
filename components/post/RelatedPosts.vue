@@ -113,7 +113,7 @@ export default {
         width: 50%;
         word-break: break-word;
         max-width: rem(370px);
-        font-size: rem(20px);
+        font-size: $font-size--small;
         line-height: 1.5;
         color: $grey-dark;
         display: flex;
@@ -123,7 +123,7 @@ export default {
     &__filtering-method {
       position: absolute;
       top: -5rem;
-      font-weight: bold;
+      font-weight: $font-weight--bold;
       color: $grey-medium;
     }
   }
@@ -131,7 +131,7 @@ export default {
     padding-bottom: 20rem;
     .related-post {
       a h3 {
-        font-size: 1rem;
+        font-size: $font-size--extra-small;
       }
     }
   }

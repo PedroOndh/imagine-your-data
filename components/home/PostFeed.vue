@@ -47,7 +47,7 @@ section.posts {
     top: calc(-8.5vw - 5rem);
     display: flex;
     flex-wrap: wrap;
-    transition: all 1s ease;
+    transition: all $transitions-duration--long ease;
     width: calc(105% + 10rem);
     overflow: hidden;
     padding: 5rem;

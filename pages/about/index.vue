@@ -41,7 +41,7 @@ export default {
   }
   &__slogan {
     font-family: Lora;
-    font-size: rem(37px);
+    font-size: $font-size--big;
     line-height: 1.2;
     color: #747474;
     width: 50%;
@@ -51,21 +51,21 @@ export default {
     display: flex;
     flex-direction: column;
     font-family: Lora;
-    font-size: rem(22px);
+    font-size: $font-size--regular;
     line-height: 1.83;
     width: 50%;
     color: #747474;
     a {
       margin-top: rem(50px);
-      font-size: rem(16px);
-      font-weight: 600;
+      font-size: $font-size--extra-small;
+      font-weight: $font-weight--semibold;
       letter-spacing: 0.37px;
       color: #2e2e2e;
       display: flex;
       align-items: center;
       svg {
         height: 2.8rem;
-        transition: padding 0.5s ease;
+        transition: padding $transitions-duration ease;
       }
       &:hover svg {
         padding-left: 0.5rem;
@@ -104,7 +104,7 @@ export default {
       padding-top: rem(30px);
     }
     &__slogan {
-      font-size: rem(25px);
+      font-size: $font-size--regular-big;
     }
   }
 }

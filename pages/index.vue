@@ -205,19 +205,19 @@ export default {
 
 <style scoped lang="scss">
 .home__catchphrase {
-  font-weight: 300;
+  font-weight: $font-weight--light;
   line-height: 0.92;
-  color: #0086b2;
+  color: $corporative-blue;
   position: absolute;
   top: 16rem;
   left: 0;
   width: 100%;
-  font-size: 3rem;
+  font-size: $font-size--large;
   margin: 0;
   text-align: center;
   @media screen and (max-width: $breakpoint__small-desktop--max) {
     top: 12rem;
-    font-size: rem(32px);
+    font-size: $font-size--big;
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
     display: none;

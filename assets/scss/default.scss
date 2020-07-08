@@ -1,5 +1,5 @@
 * {
-  font-family: 'Montserrat'
+  font-family: $font-family
 }
 .container {
   width: 80%;
@@ -17,7 +17,7 @@
 }
 .page-title {
   margin-top: 3rem;
-  font-weight: 300;
+  font-weight: $font-weight--light;
   line-height: 1.22;
   text-align: center;
   color: $grey-medium;
@@ -26,35 +26,35 @@
 }
 
 h1 {
-  font-size: rem(73px);
+  font-size: $font-size--huge;
 }
 h2,
 h3 {
-  font-size: rem(50px);
+  font-size: $font-size--large;
 }
 h4,
 h5,
 h6 {
-  font-size: rem(35px);
+  font-size: $font-size--big;
 }
 
 p,
 ul li,
 ol li {
-  font-size: rem(22px);
+  font-size: $font-size--regular;
 }
 @media screen and (max-width: $breakpoint__desktop--max) {
   h1 {
-    font-size: rem(60px);
+    font-size: $font-size--extra-large;
   }
   h2,
   h3 {
-    font-size: rem(36px);
+    font-size: $font-size--big;
   }
   h4,
   h5,
   h6 {
-    font-size: rem(25px);
+    font-size: $font-size--regular-big;
   }
 }
 @media screen and (max-width: $breakpoint__tablet--max) {
@@ -62,7 +62,7 @@ ol li {
     margin-top: 0;
   }
   h1 {
-    font-size: rem(50px);
+    font-size: $font-size--large;
   }
 }
 @media screen and (max-width: $breakpoint__mobile--max) {
@@ -73,20 +73,20 @@ ol li {
     width: 80%;
   }
   h1 {
-    font-size: rem(32px);
+    font-size: $font-size--big;
   }
   h2,
   h3 {
-    font-size: rem(25px);
+    font-size: $font-size--regular-big;
   }
   h4,
   h5,
   h6 {
-    font-size: rem(22px);
+    font-size: $font-size--regular;
   }
   p,
   ul li,
   ol li {
-    font-size: rem(18px);
+    font-size: $font-size--small;
   }
 }

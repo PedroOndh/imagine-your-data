@@ -33,8 +33,8 @@ export default Vue.component('post-content', {
   h2,
   h3,
   h4 {
-    color: #243d48;
-    font-weight: 300;
+    color: $grey-dark;
+    font-weight: $font-weight--light;
     padding: rem(56px) 0 rem(30px);
   }
   p,
@@ -45,7 +45,7 @@ export default Vue.component('post-content', {
     color: #747474;
     a {
       color: $link-blue;
-      font-weight: bold;
+      font-weight: $font-weight--bold;
       word-break: break-word;
     }
   }
@@ -147,7 +147,7 @@ $mask-background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: rem(14px);
     right: rem(20px);
-    font-size: rem(18px);
+    font-size: $font-size--small;
     color: black;
     cursor: pointer;
   }

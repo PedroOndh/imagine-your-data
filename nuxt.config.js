@@ -81,6 +81,9 @@ export default async () => {
         './assets/scss/abstracts/_mixins.scss'
       ]
     },
+    env: {
+      dev: env.parsed && env.parsed.PROD_URL === 'false'
+    },
     generate: {
       fallback: '404.html'
     },

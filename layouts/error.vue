@@ -32,10 +32,10 @@ export default {
   &__content {
     padding-top: rem(195px);
     h1 {
-      font-weight: 300;
+      font-weight: $font-weight--light;
       line-height: 1.22;
       text-align: center;
-      color: #243d48;
+      color: $grey-dark;
       width: 80%;
       max-width: rem(1000px);
       margin: 0 auto rem(75px);
@@ -43,8 +43,8 @@ export default {
     a {
       margin-top: rem(50px);
       margin-bottom: rem(150px);
-      font-size: rem(16px);
-      font-weight: 600;
+      font-size: $font-size--extra-small;
+      font-weight: $font-weight--semibold;
       letter-spacing: 0.37px;
       color: #2e2e2e;
       display: flex;
@@ -53,7 +53,7 @@ export default {
 
       svg {
         height: 2.8rem;
-        transition: padding 0.5s ease;
+        transition: padding $transitions-duration ease;
       }
 
       &:hover svg {
