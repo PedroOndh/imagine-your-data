@@ -14,7 +14,7 @@
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
 import { turnFileNameToPath, isDesktop } from '~/assets/js/utils'
-import { catchPhrase } from '~/assets/js/consts'
+import { catchPhrase } from '~/assets/js/config'
 
 const postsPerPage = 12
 

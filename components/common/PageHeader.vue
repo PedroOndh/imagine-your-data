@@ -48,7 +48,7 @@
 
 <script>
 import SocialIcon from '~/components/common/SocialIcon'
-import { catchPhrase } from '~/assets/js/consts'
+import { catchPhrase } from '~/assets/js/config'
 
 export default {
   name: 'PageHeader',

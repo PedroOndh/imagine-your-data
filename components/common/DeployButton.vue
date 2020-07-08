@@ -8,11 +8,28 @@
     <button class="deploy-button__deploy" @click="setOpen(true)">Deploy</button>
     <div v-if="open" class="deploy-button__popup-container">
       <div v-if="open" class="deploy-button__popup">
-        Deploy is going to be performed. Are you sure you want to continue?
+        {{ message }}
         <div class="deploy-button__actions">
-          <button class="deploy-button__accept" @click="deploy">Accept</button>
-          <button class="deploy-button__cancel" @click="setOpen(false)">
+          <button
+            v-if="!actionDone"
+            class="deploy-button__accept"
+            @click="checkDeploy"
+          >
+            Accept
+          </button>
+          <button
+            v-if="!actionDone"
+            class="deploy-button__cancel"
+            @click="setOpen(false)"
+          >
             Cancel
+          </button>
+          <button
+            v-if="actionDone"
+            class="deploy-button__accept"
+            @click="setOpen(false)"
+          >
+            Accept
           </button>
         </div>
       </div>
@@ -21,19 +38,71 @@
 </template>
 
 <script>
+import axios from 'axios'
+import { GITHUB_TOKEN } from '~/assets/js/config'
+
 export default {
   name: 'DeployButton',
   data() {
     return {
-      open: false
+      open: false,
+      message: '',
+      actionDone: false
     }
   },
   methods: {
     setOpen(value) {
       this.open = value
+      this.message =
+        'Deploy is going to be performed. Are you sure you want to continue?'
+      this.actionDone = false
     },
-    deploy() {
-      this.setOpen(false)
+    async checkDeploy() {
+      const config = {
+        headers: {
+          Authorization: 'Bearer ' + GITHUB_TOKEN
+        }
+      }
+      const { data: developData } = await axios
+        .get(
+          'https://api.github.com/repos/empathyco/labs-imagine-your-data/commits?sha=develop',
+          config
+        )
+        .catch(() => {
+          this.message = 'Error getting Develop commits'
+        })
+      const { data: masterData } = await axios
+        .get(
+          'https://api.github.com/repos/empathyco/labs-imagine-your-data/commits?sha=master',
+          config
+        )
+        .catch(() => {
+          this.message = 'Error getting Master commits'
+        })
+      const developAndMasterMatch =
+        developData[0].commit.url === masterData[0].commit.url
+      if (!developAndMasterMatch) {
+        await axios
+          .post(
+            'https://api.github.com/repos/empathyco/labs-imagine-your-data/merges',
+            {
+              base: 'master',
+              head: 'develop',
+              commit_message: 'Deployed from dev.imagineyourdata'
+            },
+            config
+          )
+          .then(() => {
+            this.message = 'Deployment has been initialized'
+          })
+          .catch((error) => {
+            this.message = error
+          })
+      } else {
+        this.message =
+          'No difference has been found between develop and master branches'
+      }
+      this.actionDone = true
     }
   }
 }
