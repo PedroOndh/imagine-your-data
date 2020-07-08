@@ -3,7 +3,7 @@ import fs from 'fs'
 import glob from 'glob'
 import fm from 'front-matter'
 import { turnFileNameToPath } from './assets/js/utils'
-import { redirections } from './assets/js/consts'
+import { redirections } from './assets/js/config'
 const fsPromise = fs.promises
 
 const env = require('dotenv').config()

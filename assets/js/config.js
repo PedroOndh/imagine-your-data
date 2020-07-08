@@ -44,4 +44,4 @@ export const redirections = [
   }
 ]
 
-export const GITHUB_TOKEN = 'github_token'
+export const GITHUB_TOKEN = '(github_token)'

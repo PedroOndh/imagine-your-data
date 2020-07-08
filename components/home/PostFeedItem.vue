@@ -57,7 +57,7 @@
 <script>
 import TwitterIcon from '~/static/_media/twitter.svg?inline'
 import { trunc } from '~/assets/js/utils'
-import { months } from '~/assets/js/consts'
+import { months } from '~/assets/js/config'
 export default {
   name: 'PostFeedItem',
   components: { TwitterIcon },

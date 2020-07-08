@@ -39,7 +39,7 @@
 
 <script>
 import axios from 'axios'
-import { GITHUB_TOKEN } from '~/assets/js/consts'
+import { GITHUB_TOKEN } from '~/assets/js/config'
 
 export default {
   name: 'DeployButton',
