@@ -1,9 +1,6 @@
 <template>
   <div class="blog-post">
     <article class="small-container">
-      <h1 class="blog-post__title page-title">
-        {{ blogPost.attributes.title }}
-      </h1>
       <div class="blog-post__edit-button-container">
         <a
           v-if="$nuxt.context.env.dev"
@@ -15,6 +12,9 @@
           Edit on CMS
         </a>
       </div>
+      <h1 class="blog-post__title page-title">
+        {{ blogPost.attributes.title }}
+      </h1>
       <div class="blog-post__author">
         <img :src="author.attributes.image" :alt="author.attributes.name" />
         <div class="blog-post__author-content">
@@ -83,7 +83,7 @@
     color: white;
     &-container {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
     }
   }
   &__share {
