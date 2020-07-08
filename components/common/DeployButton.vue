@@ -70,6 +70,7 @@ export default {
         )
         .catch(() => {
           this.message = 'Error getting Develop commits'
+          this.actionDone = true
         })
       const { data: masterData } = await axios
         .get(
@@ -78,6 +79,7 @@ export default {
         )
         .catch(() => {
           this.message = 'Error getting Master commits'
+          this.actionDone = true
         })
       const developAndMasterMatch =
         developData[0].commit.url === masterData[0].commit.url
@@ -97,6 +99,7 @@ export default {
           })
           .catch((error) => {
             this.message = error
+            this.actionDone = true
           })
       } else {
         this.message =
@@ -112,7 +115,7 @@ export default {
 .deploy-button {
   position: fixed;
   z-index: 3;
-  padding: 1rem;
+  padding: 0.9rem 1rem;
   top: 0;
   right: 0;
   display: flex;
@@ -142,7 +145,6 @@ export default {
   &__popup {
     background: white;
     border-radius: 1.25rem;
-    border: 2px solid $corporative-blue;
     margin: 0.5rem 0.2rem;
     padding: 1rem 2rem;
     max-width: 500px;
@@ -166,17 +168,17 @@ export default {
     button {
       text-transform: uppercase;
       font-weight: $font-weight--semibold;
-      border: 1px solid $corporative-blue;
+      color: white;
+      border: none;
       border-radius: 1.25rem;
       margin: 0.2rem;
       padding: 0.5rem 1rem;
     }
   }
   &__accept {
-    background: white;
+    background: $corporative-blue;
   }
   &__cancel {
-    color: white;
     background: $corporative-pink;
   }
 }
