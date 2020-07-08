@@ -43,3 +43,5 @@ export const redirections = [
     redirect: '/blog/:slug'
   }
 ]
+
+export const GITHUB_TOKEN = '(github_token)'

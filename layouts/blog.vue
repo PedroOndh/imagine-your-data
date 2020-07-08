@@ -111,7 +111,7 @@
 import PostContent from '~/components/post/PostContent'
 import RelatedPosts from '~/components/post/RelatedPosts'
 import SocialIcon from '~/components/common/SocialIcon'
-import { months } from '~/assets/js/consts'
+import { months } from '~/assets/js/config'
 
 async function getPostAuthor(post) {
   const context = await require.context('~/content/authors', true, /\.md$/)
