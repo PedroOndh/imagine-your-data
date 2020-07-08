@@ -4,6 +4,17 @@
       <h1 class="blog-post__title page-title">
         {{ blogPost.attributes.title }}
       </h1>
+      <div class="blog-post__edit-button-container">
+        <a
+          v-if="$nuxt.context.env.dev"
+          class="blog-post__edit-button"
+          :href="
+            `https://dev.imagineyourdata.com/admin/#/collections/blog/entries/${filename}`
+          "
+        >
+          Edit on CMS
+        </a>
+      </div>
       <div class="blog-post__author">
         <img :src="author.attributes.image" :alt="author.attributes.name" />
         <div class="blog-post__author-content">
@@ -58,6 +69,21 @@
       font-family: 'Lora', serif;
       font-size: $font-size--regular-big;
       color: #747474;
+    }
+  }
+  &__edit-button {
+    background: $corporative-blue;
+    border: none;
+    border-radius: 1.25rem;
+    padding: 0.5rem 1rem;
+    margin: 0.2rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: $font-weight--semibold;
+    color: white;
+    &-container {
+      display: flex;
+      justify-content: center;
     }
   }
   &__share {
@@ -150,6 +176,7 @@ export default {
       const blogPost = await import(`~/content/${route.name}`)
       const postAuthor = await getPostAuthor(blogPost)
       return {
+        filename: route.name.slice(5, -3),
         blogPost: { ...blogPost },
         author: { ...postAuthor },
         date: getDate(blogPost),

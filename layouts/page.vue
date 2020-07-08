@@ -3,15 +3,17 @@
     <PageHeader />
     <nuxt class="page__content" />
     <PageFooter />
+    <DeployButton v-if="$nuxt.context.env.dev" />
   </div>
 </template>
 
 <script>
+import DeployButton from '~/components/common/DeployButton'
 import PageHeader from '~/components/common/PageHeader'
 import PageFooter from '~/components/common/footer/PageFooter'
 
 export default {
-  components: { PageHeader, PageFooter }
+  components: { PageHeader, PageFooter, DeployButton }
 }
 </script>
 
