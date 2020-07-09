@@ -7,7 +7,14 @@
   >
     <button class="deploy-button__deploy" @click="setOpen(true)">Deploy</button>
     <div v-if="open" class="deploy-button__popup-container">
-      <div v-if="open" class="deploy-button__popup">
+      <div
+        v-if="open"
+        class="deploy-button__popup"
+        :class="{
+          'deploy-button__popup--error': error
+        }"
+      >
+        <h2 class="deploy-button__error-title" v-if="error">Error</h2>
         {{ message }}
         <div class="deploy-button__actions">
           <button
@@ -47,7 +54,8 @@ export default {
     return {
       open: false,
       message: '',
-      actionDone: false
+      actionDone: false,
+      error: false
     }
   },
   methods: {
@@ -56,6 +64,11 @@ export default {
       this.message =
         'Deploy is going to be performed. Are you sure you want to continue?'
       this.actionDone = false
+      this.error = false
+    },
+    endAction(message) {
+      this.message = message
+      this.actionDone = true
     },
     async checkDeploy() {
       const config = {
@@ -63,49 +76,35 @@ export default {
           Authorization: 'Bearer ' + GITHUB_TOKEN
         }
       }
-      const { data: developData } = await axios
-        .get(
-          'https://api.github.com/repos/empathyco/labs-imagine-your-data/commits?sha=develop',
+      await axios
+        .post(
+          'https://api.github.com/repos/empathyco/labs-imagine-your-data/merges',
+          {
+            base: 'master',
+            head: 'develop',
+            commit_message: 'Deployed from dev.imagineyourdata'
+          },
           config
         )
-        .catch(() => {
-          this.message = 'Error getting Develop commits'
-          this.actionDone = true
+        .then((response) => {
+          if (response.status === 201) {
+            this.endAction('Deployment has been initialized')
+          } else {
+            this.endAction(
+              'No difference has been found between develop and master branches'
+            )
+          }
         })
-      const { data: masterData } = await axios
-        .get(
-          'https://api.github.com/repos/empathyco/labs-imagine-your-data/commits?sha=master',
-          config
-        )
-        .catch(() => {
-          this.message = 'Error getting Master commits'
-          this.actionDone = true
+        .catch((error) => {
+          this.error = true
+          if (error.message.indexOf('409') > 0) {
+            this.endAction(
+              'There is a conflict between develop and master branches'
+            )
+          } else {
+            this.endAction(error.message)
+          }
         })
-      const developAndMasterMatch =
-        developData[0].commit.url === masterData[0].commit.url
-      if (!developAndMasterMatch) {
-        await axios
-          .post(
-            'https://api.github.com/repos/empathyco/labs-imagine-your-data/merges',
-            {
-              base: 'master',
-              head: 'develop',
-              commit_message: 'Deployed from dev.imagineyourdata'
-            },
-            config
-          )
-          .then(() => {
-            this.message = 'Deployment has been initialized'
-          })
-          .catch((error) => {
-            this.message = error
-            this.actionDone = true
-          })
-      } else {
-        this.message =
-          'No difference has been found between develop and master branches'
-      }
-      this.actionDone = true
     }
   }
 }
@@ -151,6 +150,9 @@ export default {
     display: flex;
     flex-direction: column;
     text-align: center;
+    &--error {
+      border: 3px solid #d44a6f;
+    }
     &-container {
       position: fixed;
       width: 100%;
@@ -162,6 +164,10 @@ export default {
       justify-content: center;
       align-items: center;
     }
+  }
+  &__error-title {
+    color: #d44a6f;
+    margin-bottom: 1rem;
   }
   &__actions {
     margin-top: 1rem;
