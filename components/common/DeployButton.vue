@@ -57,6 +57,10 @@ export default {
         'Deploy is going to be performed. Are you sure you want to continue?'
       this.actionDone = false
     },
+    endAction(message) {
+      this.message = message
+      this.actionDone = true
+    },
     async checkDeploy() {
       const config = {
         headers: {
@@ -68,21 +72,21 @@ export default {
           'https://api.github.com/repos/empathyco/labs-imagine-your-data/commits?sha=develop',
           config
         )
-        .catch(() => {
-          this.message = 'Error getting Develop commits'
-          this.actionDone = true
+        .catch((error) => {
+          this.endAction(`Error getting Develop commits: ${error}`)
         })
       const { data: masterData } = await axios
         .get(
           'https://api.github.com/repos/empathyco/labs-imagine-your-data/commits?sha=master',
           config
         )
-        .catch(() => {
-          this.message = 'Error getting Master commits'
-          this.actionDone = true
+        .catch((error) => {
+          this.endAction(`Error getting Master commits: ${error}`)
         })
       const developAndMasterMatch =
-        developData[0].commit.url === masterData[0].commit.url
+        developData[0].sha === masterData[0].sha ||
+        (developData[0].sha === masterData[1].sha &&
+          masterData[0].commit.author.name === 'support-empathy')
       if (!developAndMasterMatch) {
         await axios
           .post(
@@ -94,18 +98,18 @@ export default {
             },
             config
           )
-          .then(() => {
-            this.message = 'Deployment has been initialized'
+          .then((response) => {
+            console.log(response)
+            this.endAction('Deployment has been initialized')
           })
           .catch((error) => {
-            this.message = error
-            this.actionDone = true
+            this.endAction(error)
           })
       } else {
-        this.message =
+        this.endAction(
           'No difference has been found between develop and master branches'
+        )
       }
-      this.actionDone = true
     }
   }
 }
