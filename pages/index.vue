@@ -14,7 +14,7 @@
 import Categories from '../components/home/Categories'
 import PostFeed from '../components/home/PostFeed'
 import { turnFileNameToPath, isDesktop } from '~/assets/js/utils'
-import { catchPhrase } from '~/assets/js/consts'
+import { catchPhrase } from '~/assets/js/config'
 
 const postsPerPage = 12
 
@@ -212,12 +212,12 @@ export default {
   top: 16rem;
   left: 0;
   width: 100%;
-  font-size: 3rem;
+  font-size: $font-size--large;
   margin: 0;
   text-align: center;
   @media screen and (max-width: $breakpoint__small-desktop--max) {
     top: 12rem;
-    font-size: rem(32px);
+    font-size: $font-size--big;
   }
   @media screen and (max-width: $breakpoint__tablet--max) {
     display: none;

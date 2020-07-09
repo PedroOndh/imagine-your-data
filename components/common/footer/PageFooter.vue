@@ -108,7 +108,7 @@ export default {
     color: white;
     font-weight: $font-weight--bold;
     p {
-      font-size: 1rem;
+      font-size: $font-size--extra-small;
       margin-bottom: rem(4px);
     }
     a {

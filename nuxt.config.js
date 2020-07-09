@@ -3,7 +3,7 @@ import fs from 'fs'
 import glob from 'glob'
 import fm from 'front-matter'
 import { turnFileNameToPath } from './assets/js/utils'
-import { redirections } from './assets/js/consts'
+import { redirections } from './assets/js/config'
 const fsPromise = fs.promises
 
 const env = require('dotenv').config()
@@ -80,6 +80,9 @@ export default async () => {
         './assets/scss/vars/*.scss',
         './assets/scss/abstracts/_mixins.scss'
       ]
+    },
+    env: {
+      dev: env.parsed && env.parsed.PROD_URL === 'false'
     },
     generate: {
       fallback: '404.html'
