@@ -12,7 +12,7 @@ seo_description: >-
 
   This new approach represents a set of customer interactions (clicks, add2cart, checkout and revenue) with products in real time -- without losing the roots that made the Now visualization widely adopted by many Empathy customers.
 ---
-We have been working on a new visualization for Now with the aim of taking it a leap forward. 
+We have been working on a new visualization for Now with the aim of taking it a leap forward.
 
 This new approach represents a set of customer interactions (clicks, add2cart, checkout and revenue) with products in real time -- without losing the roots that made the Now visualization widely adopted by many Empathy customers. What are those roots? Simplicity, meaningfulness and instantaneity.
 
