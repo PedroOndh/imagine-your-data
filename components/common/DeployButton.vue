@@ -14,7 +14,7 @@
           'deploy-button__popup--error': error
         }"
       >
-        <h2 class="deploy-button__error-title" v-if="error">Error</h2>
+        <h2 v-if="error" class="deploy-button__error-title">Error</h2>
         {{ message }}
         <div class="deploy-button__actions">
           <button
