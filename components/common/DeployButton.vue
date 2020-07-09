@@ -67,49 +67,28 @@ export default {
           Authorization: 'Bearer ' + GITHUB_TOKEN
         }
       }
-      const { data: developData } = await axios
-        .get(
-          'https://api.github.com/repos/empathyco/labs-imagine-your-data/commits?sha=develop',
+      await axios
+        .post(
+          'https://api.github.com/repos/empathyco/labs-imagine-your-data/merges',
+          {
+            base: 'master',
+            head: 'develop',
+            commit_message: 'Deployed from dev.imagineyourdata'
+          },
           config
         )
-        .catch((error) => {
-          this.endAction(`Error getting Develop commits: ${error}`)
-        })
-      const { data: masterData } = await axios
-        .get(
-          'https://api.github.com/repos/empathyco/labs-imagine-your-data/commits?sha=master',
-          config
-        )
-        .catch((error) => {
-          this.endAction(`Error getting Master commits: ${error}`)
-        })
-      const developAndMasterMatch =
-        developData[0].sha === masterData[0].sha ||
-        (developData[0].sha === masterData[1].sha &&
-          masterData[0].commit.author.name === 'support-empathy')
-      if (!developAndMasterMatch) {
-        await axios
-          .post(
-            'https://api.github.com/repos/empathyco/labs-imagine-your-data/merges',
-            {
-              base: 'master',
-              head: 'develop',
-              commit_message: 'Deployed from dev.imagineyourdata'
-            },
-            config
-          )
-          .then((response) => {
-            console.log(response)
+        .then((response) => {
+          if (response.status === 201) {
             this.endAction('Deployment has been initialized')
-          })
-          .catch((error) => {
-            this.endAction(error)
-          })
-      } else {
-        this.endAction(
-          'No difference has been found between develop and master branches'
-        )
-      }
+          } else {
+            this.endAction(
+              'No difference has been found between develop and master branches'
+            )
+          }
+        })
+        .catch((error) => {
+          this.endAction(error)
+        })
     }
   }
 }
