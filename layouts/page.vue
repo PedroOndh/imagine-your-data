@@ -13,7 +13,8 @@ import PageHeader from '~/components/common/PageHeader'
 import PageFooter from '~/components/common/footer/PageFooter'
 
 export default {
-  components: { PageHeader, PageFooter, DeployButton }
+  components: { PageHeader, PageFooter, DeployButton },
+  layout: 'default'
 }
 </script>
 

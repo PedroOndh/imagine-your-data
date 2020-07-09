@@ -3,9 +3,15 @@
     <PageHeader />
     <div class="error-page__content">
       <div class="error-page__background">
-        <img src="/_media/404.svg" alt="404" />
+        <img :src="is404 ? '/_media/404.svg' : '/_media/error.svg'" alt="404" />
       </div>
-      <h1 class="page-title">sorry it looks like we've entered a black hole</h1>
+      <h1 class="page-title">
+        {{
+          is404
+            ? "sorry, it looks like we've entered a black hole"
+            : `sorry, there was an error ${error.statusCode}`
+        }}
+      </h1>
       <nuxt-link to="/">I would like to go home <LinkArrow /></nuxt-link>
     </div>
     <PageFooter />
@@ -18,10 +24,16 @@ import PageHeader from '~/components/common/PageHeader'
 import LinkArrow from '~/static/_media/link-arrow.svg?inline'
 export default {
   components: { LinkArrow, PageHeader, PageFooter },
+  layout: 'default',
   props: {
     error: {
       type: Object,
       default() {}
+    }
+  },
+  data() {
+    return {
+      is404: this.error.statusCode === 404
     }
   }
 }
@@ -69,6 +81,7 @@ export default {
     margin: rem(-60px) auto 0;
     img {
       object-fit: contain;
+      width: 100%;
     }
   }
   @media screen and (min-width: $breakpoint__tablet--min) {
