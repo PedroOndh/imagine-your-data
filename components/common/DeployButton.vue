@@ -99,10 +99,10 @@ export default {
           this.error = true
           if (error.message.indexOf('409') > 0) {
             this.endAction(
-              'Error 409: There is a conflict between develop and master branches'
+              'There is a conflict between develop and master branches'
             )
           } else {
-            this.endAction(error)
+            this.endAction(error.message)
           }
         })
     }
