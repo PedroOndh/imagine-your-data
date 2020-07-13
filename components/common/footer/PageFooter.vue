@@ -52,11 +52,12 @@ export default {
       currentQuote: 0
     }
   },
-  async beforeCreate() {
+  async beforeMount() {
     const quotes = await getQuotes()
     const currentQuote = Math.floor(Math.random() * quotes.length)
     this.$data.currentQuote = currentQuote
     this.$data.quotes = quotes
+    this.loadImages(quotes)
   },
   methods: {
     changeQuote(numberToAdd) {
@@ -67,6 +68,12 @@ export default {
       } else {
         this.$data.currentQuote = quotes.length - 1
       }
+    },
+    loadImages(quotes) {
+      quotes.forEach((quote) => {
+        const image = new Image()
+        image.src = quote.attributes.image
+      })
     }
   }
 }

@@ -7,7 +7,14 @@
   >
     <button class="deploy-button__deploy" @click="setOpen(true)">Deploy</button>
     <div v-if="open" class="deploy-button__popup-container">
-      <div v-if="open" class="deploy-button__popup">
+      <div
+        v-if="open"
+        class="deploy-button__popup"
+        :class="{
+          'deploy-button__popup--error': error
+        }"
+      >
+        <h2 v-if="error" class="deploy-button__error-title">Error</h2>
         {{ message }}
         <div class="deploy-button__actions">
           <button
@@ -47,7 +54,8 @@ export default {
     return {
       open: false,
       message: '',
-      actionDone: false
+      actionDone: false,
+      error: false
     }
   },
   methods: {
@@ -56,6 +64,7 @@ export default {
       this.message =
         'Deploy is going to be performed. Are you sure you want to continue?'
       this.actionDone = false
+      this.error = false
     },
     endAction(message) {
       this.message = message
@@ -87,7 +96,14 @@ export default {
           }
         })
         .catch((error) => {
-          this.endAction(error)
+          this.error = true
+          if (error.message.indexOf('409') > 0) {
+            this.endAction(
+              'There is a conflict between develop and master branches'
+            )
+          } else {
+            this.endAction(error.message)
+          }
         })
     }
   }
@@ -134,6 +150,9 @@ export default {
     display: flex;
     flex-direction: column;
     text-align: center;
+    &--error {
+      border: 3px solid #d44a6f;
+    }
     &-container {
       position: fixed;
       width: 100%;
@@ -145,6 +164,10 @@ export default {
       justify-content: center;
       align-items: center;
     }
+  }
+  &__error-title {
+    color: #d44a6f;
+    margin-bottom: 1rem;
   }
   &__actions {
     margin-top: 1rem;
