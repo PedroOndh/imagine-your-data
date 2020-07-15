@@ -8,7 +8,11 @@
         class="related-post"
       >
         <nuxt-link :to="post._path">
-          <img :src="post.attributes.image" class="related-post__image" />
+          <img
+            :src="post.attributes.image"
+            :alt="post.attributes.title"
+            class="related-post__image"
+          />
           <h3 class="related-post__title">{{ post.attributes.title }}</h3>
         </nuxt-link>
       </div>
