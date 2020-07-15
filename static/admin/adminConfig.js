@@ -1,9 +1,11 @@
 import CMS from 'netlify-cms'
+// eslint-disable-next-line
+import styles from '!css-loader!sass-loader!./admin.scss'
 
 CMS.registerPreviewStyle(
   'https://assets.empathybroker.com/resources/fonts/empathy-typography/style.css'
 )
-CMS.registerPreviewStyle('/admin/admin.css')
+CMS.registerPreviewStyle(styles.toString(), { raw: true })
 CMS.registerEditorComponent({
   id: 'video',
   label: 'Video',
