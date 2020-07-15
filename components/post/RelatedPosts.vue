@@ -128,7 +128,7 @@ export default {
       position: absolute;
       top: -5rem;
       font-weight: $font-weight--bold;
-      color: $grey-medium;
+      color: $grey-dark;
     }
   }
   @media screen and (max-width: $breakpoint__desktop--max) {
