@@ -4,5 +4,5 @@ quote: >-
   lose.
 author: Bill Gates
 occupation: Businessman
-image: /cms_media/quote_bill_gates.png
+image: /cms_media/quote_bill_gates.jpg
 ---

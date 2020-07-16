@@ -4,5 +4,5 @@ quote: >-
   rather than understanding that influences behaviour.
 author: Marshall McLuhan
 occupation: Canadian professor
-image: /cms_media/quote_marshall.png
+image: /cms_media/quote_marshall.jpg
 ---
