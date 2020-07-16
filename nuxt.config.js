@@ -32,14 +32,7 @@ export default async () => {
         },
         noIndex()
       ],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        {
-          rel: 'stylesheet',
-          href:
-            'https://assets.empathybroker.com/resources/fonts/empathy-typography/style.css'
-        }
-      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
       script: [
         ...generateScripts(),
         {
@@ -56,7 +49,11 @@ export default async () => {
     /*
      ** Global CSS
      */
-    css: ['@/assets/scss/reset.scss', '@/assets/scss/default.scss'],
+    css: [
+      '@/assets/scss/reset.scss',
+      '@/assets/scss/default.scss',
+      '@/assets/scss/fonts.scss'
+    ],
     /*
      ** Plugins to load before mounting the App
      */
