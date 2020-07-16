@@ -4,5 +4,5 @@ quote: >-
   looks outside, dreams; who looks inside, awakes.
 author: Carl Jung
 occupation: Swiss psychiatrist
-image: /cms_media/quote_bill_carl_jung.png
+image: /cms_media/quote_bill_carl_jung.jpg
 ---
