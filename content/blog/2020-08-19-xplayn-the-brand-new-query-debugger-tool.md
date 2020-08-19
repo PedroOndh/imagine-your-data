@@ -11,6 +11,8 @@ That way, any merchandiser or ecommerce manager dealing with search can easily c
 
 
 
+
+
 It is wonderful to see how a new product causes such an impact in its first release. Xplayn tool solves some of the most basic, but at the same time more tedious, problems that Empathy team faces on a daily basis thanks to the following specs:
 
 * An easy-to-use interface that allows users to see the score given to each one of the products. Avoiding manual tasks that require different tools, actions and technical knowledge.
