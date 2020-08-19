@@ -9,7 +9,7 @@ This new Empathy query debugger tool was designed to quick and easy drive tactic
 
 That way, any merchandiser or ecommerce manager dealing with search can easily check or explain to anyone the whys and hows of the search results. With an incredible time-to-market, this tool was ready to be used on some Empathy clients in less than one month and it was really well welcomed! Check here how it works:
 
-![Xplayn graph interaction](/cms_media/xplayn-example.gif "Xplayn graph interaction")
+<video controls poster=""><source src="/cms_media/xplayn-graph.mp4" type="video/mp4"></video>
 
 It is wonderful to see how a new product causes such an impact in its first release. Xplayn tool solves some of the most basic, but at the same time more tedious, problems that Empathy team faces on a daily basis thanks to the following specs:
 
