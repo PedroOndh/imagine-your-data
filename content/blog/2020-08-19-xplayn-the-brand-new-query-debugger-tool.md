@@ -1,7 +1,7 @@
 ---
 title: "XPLAYN: the brand-new query debugger tool"
 date: 2020-08-19T10:34:40.970Z
-image: /cms_media/xplayn-debug-new-style.png
+image: /cms_media/xplayn.jpg
 author: beltrang@empathy.co
 category: User Journeys
 ---
