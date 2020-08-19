@@ -3,7 +3,7 @@ title: XPLAYN, the brand-new query debugger tool
 date: 2020-08-19T10:34:40.970Z
 image: /cms_media/xplayn-debug-style-new.png
 author: beltrang@empathy.co
-category: Data Visualizations
+category: User Journeys
 ---
 This new Empathy query debugger tool was designed to quick and easy drive tactical decisions about search results and configuration. It explains in a straight and simple way all the search configurations related to a specific product or query.
 
