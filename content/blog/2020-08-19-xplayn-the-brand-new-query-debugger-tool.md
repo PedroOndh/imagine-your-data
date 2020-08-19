@@ -1,5 +1,5 @@
 ---
-title: XPLAYN, the brand-new query debugger tool
+title: "XPLAYN: the brand-new query debugger tool"
 date: 2020-08-19T10:34:40.970Z
 image: /cms_media/xplayn-debug-style-new.png
 author: beltrang@empathy.co
