@@ -11,4 +11,4 @@ See how Search & Navigation data surfaces great insights simply, beautifully, an
 
 <video controls poster=""><source src="/cms_media/empathy_product_queries.mov" type="video/mp4"></video>
 
-It is amazing how these two concepts interact with each other, and how great insights are revealed about most important KPI's (Queries, Clicks, Add to Cart..) with the easy comparison between the two variables. Just one tick is need to change from Queries to Products view!
+It is amazing how these two concepts interact with each other, and how great insights are revealed about most important KPI's (Queries, Clicks, Add to Cart..) with the easy comparison between the two variables. With just one tick you can change from Queries to Products view!
