@@ -8,7 +8,7 @@
       <h1 class="page-title">
         {{
           is404
-            ? "sorry, it looks like we've entered a black hole."
+            ? "sorry, it looks like we've entered a black hole"
             : `sorry, there was an error ${error.statusCode}`
         }}
       </h1>
