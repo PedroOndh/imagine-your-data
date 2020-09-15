@@ -13,7 +13,7 @@ export const months = [
   'December'
 ]
 
-export const catchPhrase = 'Visualizing eCommerce Search & Browse'
+export const catchPhrase = 'Visualising Search & Navigation'
 
 export const redirections = [
   {
