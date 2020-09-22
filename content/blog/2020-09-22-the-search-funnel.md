@@ -1,5 +1,5 @@
 ---
-title: "The Search Funnel: an overview of what is happening in your search"
+title: The Search Funnel
 date: 2020-09-22T12:13:57.917Z
 image: /cms_media/00_playboard.jpg
 author: evag@empathy.co
