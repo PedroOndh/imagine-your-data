@@ -65,12 +65,14 @@ export default {
         .filter(
           (post) => post.attributes.title !== currentPost.attributes.title
         )
-      const postsByAuthor = await availablePosts.filter(
-        (post) => post.attributes.author === currentPost.attributes.author
-      )
-      if (postsByAuthor.length >= 3) {
-        this.$data.filteringMethod = this.$props.currentAuthor.attributes.nickname
-        return postsByAuthor.slice(0, 3)
+      if (this.$props.currentAuthor.attributes) {
+        const postsByAuthor = await availablePosts.filter(
+          (post) => post.attributes.author === currentPost.attributes.author
+        )
+        if (postsByAuthor.length >= 3) {
+          this.$data.filteringMethod = this.$props.currentAuthor.attributes.nickname
+          return postsByAuthor.slice(0, 3)
+        }
       }
       const postsByCategory = await availablePosts.filter(
         (post) => currentPost.attributes.category === post.attributes.category
