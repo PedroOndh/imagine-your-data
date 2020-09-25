@@ -15,7 +15,7 @@
       <h1 class="blog-post__title page-title">
         {{ blogPost.attributes.title }}
       </h1>
-      <div class="blog-post__author">
+      <div v-if="author.attributes" class="blog-post__author">
         <img :src="author.attributes.image" :alt="author.attributes.name" />
         <div class="blog-post__author-content">
           <!--
