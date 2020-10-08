@@ -2,6 +2,7 @@
 title: Measure Your Users’ Flow
 date: 2020-10-07T11:56:14.847Z
 image: /cms_media/grafica-2.png
+social_image: /cms_media/empathy.co-users-flow-visualisation.gif
 author: denisec@empathy.co
 category: User Journeys
 ---
@@ -71,7 +72,7 @@ Finally, we have a group of variables that tell us about the users’ behaviour 
 
 We use this block of variables to study how users behave when browsing. In this case, we can see how there are a greater number of queries than clicks and that the higher the users' engagement, the greater the number of events on pages other than search-results page one.
 
-![](/cms_media/the-flow-theory.gif "Search Users Engagement - Visualisation based on The Flow Theory")
+![](/cms_media/empathy.co-users-flow-visualisation.gif "Search Users Engagement - Visualisation based on The Flow Theory")
 
 ### CONCLUSIONS
 
