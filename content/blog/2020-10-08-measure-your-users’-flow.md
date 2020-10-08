@@ -77,7 +77,7 @@ We use this block of variables to study how users behave when browsing. In this 
 ### CONCLUSIONS
 
 * In the **high engagement group**, we discover the shoppers with the highest intent to purchase, highest feeling of security, and highest motivation to explore the product catalogue for unplanned purchases. This group enjoys the site most, and is most likely to return.
-* In contrast, with the fewest A2Cs, the **low engagement grou**p shows the least intention to buy. Their interaction with us is concise, leaving no time for discovery. Flow theory tells us that they will feel frustrated if don’t reach their goal swiftly.
+* In contrast, with the fewest A2Cs, the **low engagement group** shows the least intention to buy. Their interaction with us is concise, leaving no time for discovery. Flow theory tells us that they will feel frustrated if don’t reach their goal swiftly.
 * It is the **medium engagement group** that offers the greatest opportunity for increased sales. The group’s intermediate involvement offers great possibilities for reviewing shoppers’ flow attraction in terms of intent, engagement and interaction with the site. Ecommerce managers and merchandisers prioritize this group for conversion into loyal and repeat visitors who move into the high engagement group.
 
 If you want to know more about how search analytics help us understand our customers and segment their intentions, [check out this paper](https://www.empathy.co/resources/site-search-analytics/). Let’s make online consumers have fun, feel understood, and get into the Flow!
