@@ -22,11 +22,9 @@ Studying this theory, we get different metrics that explain the engagement and F
 
 We form three groups based on the users’ level of engagement or Flow (Low, Medium and High). Then, we study the behaviour of the different groups according to three different variable blocks.
 
-## Engagement variables
-
 In this block, we have different metrics that show us the engagement of the groups. First of all, we show the percentage of each type of user (new and recurrent) and the percentage of each device or scope (mobile, app, desktop...) and the differences between the total users and the users that make an Add to Cart (A2C) event.
 
-* User and device types
+## User and device types
 
 As a first indicator, we must see which of the groups has a higher percentage of recurrent users; the higher this percentage is, the higher the satisfaction of the users that make up the group.
 
@@ -36,15 +34,15 @@ It is also interesting to study the percentage of users who perform A2C and what
 
 ![](/cms_media/users-flow.jpg)
 
-* Numeric engagement variables
+1. Numeric engagement variables
 
 On the other hand, we have numerical variables that indicate the level of engagement of the users’ group. The higher the value of the groups in these metrics, the higher user’s engagement level. And therefore, the greater the predisposition of the users of the group to come into the Flow state.
 
 As might be expected, the group with the highest engagement is the one with the highest values ​​in these metrics, being the users who carry out a greater number of events or longer sessions, who carry out the greatest number of events aided with the Empathy search tools. In addition to being the group with the highest proportion of sessions with A2C, they are also the group where the greatest number of A2C events takes place per session.
 
-![](/cms_media/users-flow-1.jpg)
+![](/cms_media/users-flow-2.jpg)
 
-1. Variables on the purpose of the visit
+2. Variables on the purpose of the visit
 
 We divide this block of variables between the metrics that indicate the motivation of the users and the metrics that tell us about the effort of the users on the page.
 
@@ -62,13 +60,13 @@ These metrics help us to corroborate the type of motivation that leads users to 
 
 In this sense, the flow theory tells us that when a person performs an activity out of intrinsic motivation, they will have a greater chance of entering a state of Flow. We can see how users with a higher engagement level are those who do not have a specific objective on the page (intrinsic motivation) and make a greater effort through search and navigation on the web page.
 
-![](/cms_media/users-flow-2.jpg)
+![](/cms_media/users-flow-3.jpg)
 
-2. Navigation Variables
+3. Navigation Variables
 
 Finally, we have a group of variables that tell us about the users’ behaviour when they browse, the number of each type of event carried out and the number of these events occur after the first page of search results.
 
-![](/cms_media/users-flow-3.jpg)
+![](/cms_media/users-flow-1.jpg)
 
 We use this block of variables to study how users behave when browsing. In this case, we can see how there are a greater number of queries than clicks and that the higher the users' engagement, the greater the number of events on pages other than search-results page one.
 
