@@ -33,7 +33,7 @@ On the other hand, Flow theory tells us about perception of safety and its influ
 
 It is also interesting to study the percentage of users who perform A2C and what kinds of user trigger these events. In this case, the highly engaged users are more confident on the page; they are the highest percentage of new users making A2C and the highest percentage of users who perform A2C with a device distinct from a desktop.
 
-![]()
+![](/cms_media/users-flow.jpg)
 
 * Numeric engagement variables
 
@@ -41,7 +41,7 @@ On the other hand, we have numerical variables that indicate the level of engage
 
 As might be expected, the group with the highest engagement is the one with the highest values ​​in these metrics, being the users who carry out a greater number of events or longer sessions, who carry out the greatest number of events aided with the Empathy search tools. In addition to being the group with the highest proportion of sessions with A2C, they are also the group where the greatest number of A2C events takes place per session.
 
-![]()
+![](/cms_media/users-flow-1.jpg)
 
 1. Variables on the purpose of the visit
 
@@ -61,13 +61,13 @@ These metrics help us to corroborate the type of motivation that leads users to 
 
 In this sense, the flow theory tells us that when a person performs an activity out of intrinsic motivation, they will have a greater chance of entering a state of Flow. We can see how users with a higher engagement level are those who do not have a specific objective on the page (intrinsic motivation) and make a greater effort through search and navigation on the web page.
 
-![]()
+![](/cms_media/users-flow-2.jpg)
 
 2. Navigation Variables
 
 Finally, we have a group of variables that tell us about the users’ behaviour when they browse, the number of each type of event carried out and the number of these events occur after the first page of search results.
 
-![]()
+![](/cms_media/users-flow-3.jpg)
 
 We use this block of variables to study how users behave when browsing. In this case, we can see how there are a greater number of queries than clicks and that the higher the users' engagement, the greater the number of events on pages other than search-results page one.
 
