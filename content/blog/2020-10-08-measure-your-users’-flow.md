@@ -72,7 +72,7 @@ Finally, we have a group of variables that tell us about the users’ behaviour 
 
 We use this block of variables to study how users behave when browsing. In this case, we can see how there are a greater number of queries than clicks and that the higher the users' engagement, the greater the number of events on pages other than search-results page one.
 
-<complex-image image="/cms_media/the-flow-theory.gif" caption="Search Users Engagement - Visualisation based on The Flow Theory" caption-alignment="right" lightbox="undefined" ></complex-image>
+![](/cms_media/empathy.co-users-flow-visualisation.gif "Search Users Engagement - Visualisation based on The Flow Theory")
 
 ### CONCLUSIONS
 
