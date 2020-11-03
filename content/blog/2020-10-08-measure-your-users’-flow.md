@@ -6,6 +6,8 @@ social_image: /cms_media/empathy.co-users-flow-visualisation.gif
 author: denisec@empathy.co
 category: User Journeys
 ---
+![](/cms_media/empathy.co-users-flow-visualisation.gif "Search Users Engagement - Visualisation based on The Flow Theory")
+
 Most e-commerce and online platforms track different metrics that measure users’ general behaviour on their websites.Due to these different approaches, the industry lacks consistent knowledge about theintention of users’ journeys and transactions; we therefore struggle to obtain insights about how to encourage shoppers to repeat the behaviour that led to the purchase.
 
 If we want to make our shoppers feel happy on our page, and consequently increase purchases, we have to endeavor to understand how they feel and make their navigations as easy and comfortable as we can. We must empathize with them. We do this the same way that businesses focus their efforts on improving the shopping experience in physical stores: personalized treatment, product overviews, accessible catalogue…
@@ -70,7 +72,7 @@ Finally, we have a group of variables that tell us about the users’ behaviour 
 
 We use this block of variables to study how users behave when browsing. In this case, we can see how there are a greater number of queries than clicks and that the higher the users' engagement, the greater the number of events on pages other than search-results page one.
 
-![](/cms_media/empathy.co-users-flow-visualisation.gif "Search Users Engagement - Visualisation based on The Flow Theory")
+<complex-image image="/cms_media/the-flow-theory.gif" caption="Search Users Engagement - Visualisation based on The Flow Theory" caption-alignment="right" lightbox="undefined" ></complex-image>
 
 ### CONCLUSIONS
 
