@@ -6,6 +6,8 @@ social_image: /cms_media/empathy.co-users-flow-visualisation.gif
 author: denisec@empathy.co
 category: User Journeys
 ---
+![](/cms_media/empathy.co-users-flow-visualisation.gif "Search Users Engagement - Visualisation based on The Flow Theory")
+
 Most e-commerce and online platforms track different metrics that measure users’ general behaviour on their websites.Due to these different approaches, the industry lacks consistent knowledge about theintention of users’ journeys and transactions; we therefore struggle to obtain insights about how to encourage shoppers to repeat the behaviour that led to the purchase.
 
 If we want to make our shoppers feel happy on our page, and consequently increase purchases, we have to endeavor to understand how they feel and make their navigations as easy and comfortable as we can. We must empathize with them. We do this the same way that businesses focus their efforts on improving the shopping experience in physical stores: personalized treatment, product overviews, accessible catalogue…
