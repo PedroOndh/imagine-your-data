@@ -11,10 +11,10 @@
     <img
       :src="image"
       :alt="caption"
-      :class="`figure-image ${lightbox ? 'lightbox' : ''}`"
+      :class="`figure-image ${lightbox === 'true' ? 'lightbox' : ''}`"
     />
     <img
-      v-if="lightbox"
+      v-if="lightbox === 'true'"
       class="lightbox-icon"
       src="/_media/expand.svg"
       alt="Open lightbox"
