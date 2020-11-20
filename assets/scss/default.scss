@@ -25,6 +25,61 @@
   word-break: break-word;
 }
 
+.tooltip {
+  position: relative;
+  &:hover {
+    &:before,
+    &:after {
+      display: block;
+      opacity: 1;
+    }
+    &:before {
+      transform: rotate(45deg) translate(0, 0);
+      transition: all $transitions-duration--short ease
+      $transitions-duration;
+    }
+    &:after {
+      transform: scale(1);
+      transition: all $transitions-duration
+      cubic-bezier(0.84, -0.18, 0.31, 1.26),
+      opacity $transitions-duration ease;
+    }
+  }
+  &:before {
+    position: absolute;
+    bottom: rem(38px);
+    content: '';
+    width: rem(15px);
+    height: rem(15px);
+    margin-left: rem(52px);
+    opacity: 0;
+    background-color: $corporative-blue;
+    transform: rotate(45deg) translate(-1rem, -1rem);
+    transform-origin: bottom;
+    transition: all $transitions-duration--short ease,
+    opacity 0s ease $transitions-duration--short;
+  }
+  &:after {
+    position: absolute;
+    bottom: rem(40px);
+    left: rem(-32px);
+    content: attr(data-tip);
+    width: rem(200px);
+    padding: rem(20px) rem(25px);
+    opacity: 0;
+    color: white;
+    background-color: $corporative-blue;
+    font-size: $font-size--caption;
+    line-height: 1.6;
+    border-radius: rem(20px);
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all $transitions-duration
+    cubic-bezier(0.84, -0.18, 0.31, 1.26) $transitions-duration--short,
+    opacity $transitions-duration ease $transitions-duration--short;
+  }
+}
+
 h1 {
   font-size: $font-size--huge;
 }
@@ -60,6 +115,14 @@ ol li {
 @media screen and (max-width: $breakpoint__tablet--max) {
   .page-title {
     margin-top: 0;
+  }
+  .tooltip {
+    &:before {
+      bottom: rem(27px);
+    }
+    &:after {
+      bottom: rem(32px);
+    }
   }
   h1 {
     font-size: $font-size--large;
