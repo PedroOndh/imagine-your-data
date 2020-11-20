@@ -21,8 +21,19 @@
           We use cookies, just to track visits to our website, we store no
           personal details.
         </b>
-        <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link> -
-        <nuxt-link to="/cookie-policy"><b>Cookie Policy</b></nuxt-link>
+        <nuxt-link
+          class="footer__link footer__link--privacy"
+          to="/privacy-policy"
+        >
+          Privacy Policy
+        </nuxt-link>
+        -
+        <span
+          class="footer__link footer__link--tooltip tooltip"
+          data-tip="Looking for a cookie disclaimer? We don't use cookies so relax and browse away."
+        >
+          <b>Cookie Policy</b>
+        </span>
       </p>
     </div>
   </footer>
@@ -128,6 +139,33 @@ export default {
       text-align: center;
       p {
         line-height: 1.4;
+      }
+    }
+  }
+  &__link {
+    &--tooltip {
+      display: inline-block;
+      color: $corporative-yellow;
+      cursor: help;
+      &:before {
+        left: 0;
+        margin-left: rem(32px);
+      }
+      &:after {
+        left: rem(-50px);
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint__tablet--max) {
+    &__link {
+      &--tooltip {
+        &:before {
+          margin-left: rem(35px);
+        }
+        &:after {
+          left: rem(-80px);
+          transform-origin: 70% bottom;
+        }
       }
     }
   }

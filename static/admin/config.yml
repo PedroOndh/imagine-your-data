@@ -91,11 +91,6 @@ collections:
         fields:
           - {label: Slogan, name: slogan, widget: text}
           - {label: Body, name: body, widget: markdown}
-      - label: "Cookie Policy"
-        name: "cookie"
-        file: "content/pages/cookie.md"
-        fields:
-          - {label: Body, name: body, widget: markdown}
       - label: "Privacy Policy"
         name: "privacy"
         file: "content/pages/privacy.md"
