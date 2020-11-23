@@ -1,18 +1,23 @@
 <template>
-  <a class="social-icon" :href="href" target="_blank" rel="noopener">
+  <a
+    class="social-icon"
+    :href="share ? currentSocial.shareHref : currentSocial.href"
+    target="_blank"
+    rel="noopener"
+  >
     <img
       class="social-icon__image"
       :src="
-        `https://assets.empathybroker.com/resources/media/social-media/${image}`
+        `https://assets.empathybroker.com/resources/media/social-media/${currentSocial.image}`
       "
-      :alt="alt"
+      :alt="currentSocial.alt"
     />
     <img
       class="social-icon__image--hover"
       :src="
-        `https://assets.empathybroker.com/resources/media/social-media/active/${image}`
+        `https://assets.empathybroker.com/resources/media/social-media/active/${currentSocial.image}`
       "
-      :alt="alt"
+      :alt="currentSocial.alt"
     />
   </a>
 </template>
@@ -24,29 +29,62 @@ export default {
     social: {
       type: String,
       default: ''
+    },
+    share: {
+      type: Boolean,
+      default: false
+    },
+    path: {
+      type: String,
+      default: ''
+    },
+    post: {
+      type: Object,
+      default() {}
     }
   },
   data() {
-    let href
-    let image
-    let alt
-    if (this.social === 'linkedin') {
-      href = 'https://www.linkedin.com/company/empathyco'
-      image = 'linkedin.svg'
-      alt = 'LinkedIn'
-    } else if (this.social === 'twitter') {
-      href = 'https://twitter.com/imagineyourdata'
-      image = 'twitter.svg'
-      alt = 'Twitter'
-    } else if (this.social === 'instagram') {
-      href = 'https://www.instagram.com/imagineyourdata/'
-      image = 'instagram.svg'
-      alt = 'Instagram'
-    }
     return {
-      href,
-      image,
-      alt
+      socialMediaData: {
+        linkedin: {
+          href: 'https://www.linkedin.com/company/empathyco',
+          shareHref:
+            this.share && this.post
+              ? `https://www.linkedin.com/shareArticle?mini=true&url=https://www.imagineyourdata.com${
+                  this.path
+                }&title=${encodeURIComponent(
+                  this.post.attributes.title
+                )}&summary=${this.post.attributes.seo_description ||
+                  ''}&source=ImagineYourData`
+              : '',
+          image: 'linkedin.svg',
+          alt: 'LinkedIn'
+        },
+        twitter: {
+          href: 'https://twitter.com/imagineyourdata',
+          shareHref:
+            this.share && this.post
+              ? `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                  this.post.attributes.title
+                )}&url=https://www.imagineyourdata.com${
+                  this.path
+                }&hashtags=ImagineYourData`
+              : '',
+          image: 'twitter.svg',
+          alt: 'Twitter'
+        },
+        instagram: {
+          href: 'https://www.instagram.com/imagineyourdata/',
+          shareHref: '',
+          image: 'instagram.svg',
+          alt: 'Instagram'
+        }
+      }
+    }
+  },
+  computed: {
+    currentSocial() {
+      return this.socialMediaData[this.social]
     }
   }
 }
