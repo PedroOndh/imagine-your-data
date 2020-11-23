@@ -38,8 +38,18 @@
     <div class="blog-post__share">
       Share if you liked it!
       <div class="blog-post__share-social">
-        <SocialIcon social="twitter" />
-        <SocialIcon social="linkedin" />
+        <SocialIcon
+          social="twitter"
+          :share="true"
+          :post="blogPost"
+          :path="path"
+        />
+        <SocialIcon
+          social="linkedin"
+          :share="true"
+          :post="blogPost"
+          :path="path"
+        />
       </div>
     </div>
     <RelatedPosts :current-post="blogPost" :current-author="author" />
@@ -180,7 +190,8 @@ export default {
         blogPost: { ...blogPost },
         author: { ...postAuthor },
         date: getDate(blogPost),
-        metaTags: getMetatags(blogPost, route)
+        metaTags: getMetatags(blogPost, route),
+        path: route.path
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Not found' })
