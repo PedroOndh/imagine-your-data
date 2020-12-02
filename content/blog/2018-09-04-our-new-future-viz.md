@@ -2,6 +2,7 @@
 title: New Future Visualization
 date: 2018-09-04T16:22:00.000Z
 image: /cms_media/cover-33.gif
+social_image: /cms_media/new-future-viz_thumbnail.png
 author: olallas@empathy.co
 tags:
   - Viz
