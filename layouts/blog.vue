@@ -140,11 +140,17 @@ function getDate(post) {
 function getMetatags(post, route) {
   const metaTags = [
     {
-      name: 'og:title',
+      name: 'title',
+      property: 'og:title',
       content: post.attributes.title
     },
     {
-      name: 'og:image',
+      property: 'og:type',
+      content: 'Article'
+    },
+    {
+      name: 'image',
+      property: 'og:image',
       content: `https://www.imagineyourdata.com${
         !post.attributes.social_image
           ? post.attributes.image
@@ -166,7 +172,8 @@ function getMetatags(post, route) {
   ]
   if (post.attributes.seo_description) {
     metaTags.push({
-      name: 'og:description',
+      name: 'description',
+      property: 'og:description',
       content: post.attributes.seo_description
     })
   }
