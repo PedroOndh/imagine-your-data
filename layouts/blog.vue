@@ -158,15 +158,15 @@ function getMetatags(post, route) {
       }`
     },
     {
-      name: 'og:url',
+      property: 'og:url',
       content: `https://www.imagineyourdata.com${route.path}`
     },
     {
-      name: 'og:site_name',
+      property: 'og:site_name',
       content: 'ImagineYourData'
     },
     {
-      name: 'twitter:card',
+      property: 'twitter:card',
       content: 'summary_large_image'
     }
   ]
