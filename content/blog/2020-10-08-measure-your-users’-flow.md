@@ -2,7 +2,7 @@
 title: Measure Your Users’ Flow
 date: 2020-10-07T11:56:14.847Z
 image: /cms_media/grafica-2.png
-social_image: /cms_media/users-flow-visualisation.gif
+social_image: /cms_media/users-flow-visualisation_thumbnail.png
 author: denisec@empathy.co
 category: User Journeys
 ---
