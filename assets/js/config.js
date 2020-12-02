@@ -39,6 +39,10 @@ export const redirections = [
     redirect: '/blog/mvt-test-analyse-and-optimise-your-search-experience'
   },
   {
+    path: '/blog/measure-your-users’-flow',
+    redirect: '/blog/measure-your-users-flow'
+  },
+  {
     path: '/statsapi/:year/:month/:day/:slug/',
     redirect: '/blog/:slug'
   }
