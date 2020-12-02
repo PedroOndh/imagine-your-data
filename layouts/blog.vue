@@ -137,7 +137,7 @@ function getDate(post) {
   const date = new Date(post.attributes.date)
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
-function getMetatags(post, route) {
+function getMetatags(post, author, route) {
   const metaTags = [
     {
       name: 'title',
@@ -146,7 +146,7 @@ function getMetatags(post, route) {
     },
     {
       property: 'og:type',
-      content: 'Article'
+      content: 'article'
     },
     {
       name: 'image',
@@ -156,6 +156,10 @@ function getMetatags(post, route) {
           ? post.attributes.image
           : post.attributes.social_image
       }`
+    },
+    {
+      name: 'author',
+      content: author.attributes.name
     },
     {
       property: 'og:url',
@@ -197,7 +201,7 @@ export default {
         blogPost: { ...blogPost },
         author: { ...postAuthor },
         date: getDate(blogPost),
-        metaTags: getMetatags(blogPost, route),
+        metaTags: getMetatags(blogPost, postAuthor, route),
         path: route.path
       }
     } catch (e) {
