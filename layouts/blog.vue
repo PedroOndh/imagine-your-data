@@ -168,7 +168,7 @@ function getMetatags(post, route) {
     {
       name: 'twitter:card',
       content: 'summary_large_image'
-    },
+    }
   ]
   if (post.attributes.seo_description) {
     metaTags.push({
