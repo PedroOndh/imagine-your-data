@@ -2,11 +2,11 @@
 title: Measure Your Users’ Flow
 date: 2020-10-07T11:56:14.847Z
 image: /cms_media/grafica-2.png
-social_image: /cms_media/empathy.co-users-flow-visualisation.gif
+social_image: /cms_media/users-flow-visualisation.gif
 author: denisec@empathy.co
 category: User Journeys
 ---
-![Search Users Engagement - Visualisation based on The Flow Theory](/cms_media/empathy.co-users-flow-visualisation.gif "Search Users Engagement - Visualisation based on The Flow Theory")
+![Search Users Engagement - Visualisation based on The Flow Theory](/cms_media/users-flow-visualisation.gif "Search Users Engagement - Visualisation based on The Flow Theory")
 
 Most e-commerce and online platforms track different metrics that measure users’ general behaviour on their websites.Due to these different approaches, the industry lacks consistent knowledge about theintention of users’ journeys and transactions; we therefore struggle to obtain insights about how to encourage shoppers to repeat the behaviour that led to the purchase.
 
@@ -72,7 +72,7 @@ Finally, we have a group of variables that tell us about the users’ behaviour 
 
 We use this block of variables to study how users behave when browsing. In this case, we can see how there are a greater number of queries than clicks and that the higher the users' engagement, the greater the number of events on pages other than search-results page one.
 
-![Search Users Engagement - Visualisation based on The Flow Theory](/cms_media/empathy.co-users-flow-visualisation.gif "Search Users Engagement - Visualisation based on The Flow Theory")
+![Search Users Engagement - Visualisation based on The Flow Theory](/cms_media/users-flow-visualisation.gif "Search Users Engagement - Visualisation based on The Flow Theory")
 
 ### CONCLUSIONS
 
