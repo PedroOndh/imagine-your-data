@@ -138,10 +138,17 @@ function getDate(post) {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
 function getMetatags(post, author, route) {
+  const image = !post.attributes.social_image
+    ? post.attributes.image
+    : post.attributes.social_image
   const metaTags = [
     {
       name: 'title',
       property: 'og:title',
+      content: post.attributes.title
+    },
+    {
+      name: 'twitter:title',
       content: post.attributes.title
     },
     {
@@ -151,11 +158,11 @@ function getMetatags(post, author, route) {
     {
       name: 'image',
       property: 'og:image',
-      content: `https://www.imagineyourdata.com${
-        !post.attributes.social_image
-          ? post.attributes.image
-          : post.attributes.social_image
-      }`
+      content: `https://www.imagineyourdata.com${image}`
+    },
+    {
+      name: 'twitter:image',
+      content: `https://www.imagineyourdata.com${image}`
     },
     {
       name: 'author',
