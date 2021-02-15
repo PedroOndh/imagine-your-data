@@ -8,6 +8,8 @@ author: jorgem@empathy.co
 category: Data Visualizations
 typology: Bubbles
 ---
+![ Comparison of count interval filtering by particular product categories. ](/cms_media/iyd_video.gif " Comparison of count interval filtering by particular product categories. ")
+
 Back in 1842, John Herschel invented the blueprint, a highly precise drawing technique at the time that served to accurately lay out engineering plans for industrial and construction purposes.Its distinctive dark blue background soon became a landmark of precision and a cultural icon whenever drawings referred to all necessary details to describe a particular design.
 
 ![Statue of Liberty original blueprint. ](/cms_media/statueliberty.jpg "Statue of Liberty original blueprint. ")
