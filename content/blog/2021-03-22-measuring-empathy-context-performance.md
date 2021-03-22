@@ -85,7 +85,7 @@ We also extract some quantitative analysis with interesting insight:
 * CTR has grown 2.95% after the Context implementation; this indicates that the products shown by the search engine arouse more interest in the people who make these queries.
 * Findability and Quality Experience Distance corroborate the improvement caused by Context. Not only does CTR increase, but also the clicks on first page (Findability). This shows how the products displayed by the analysed queries are more relevant to customers and, consequently, users make less effort in finding - and clicking - on the desired products.
 
-  ![](/cms_media/measuring-context-5.png)
+  ![](/cms_media/measuring-context-5.jpg)
 
 When analyzing the **Quality Experience Rates** (Quality and B-Quality), these metrics give us a little more information on Context's performance. If we observe the two graphs below, it is evident that the percentage of clicks on the first page (QER) of all the terms after Context implementation is higher, going from an average of 53% before Context, to 80% after it.
 
