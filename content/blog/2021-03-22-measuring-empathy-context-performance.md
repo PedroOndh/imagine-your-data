@@ -1,5 +1,5 @@
 ---
-title: Measuring Empathy Context Performance
+title: Search Intelligence Performance Measurement
 date: 2021-03-22T11:37:33.965Z
 image: /cms_media/qed-empathy-contexy-kpis.png
 author: denisec@empathy.co
