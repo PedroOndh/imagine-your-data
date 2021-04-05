@@ -7,6 +7,8 @@ author: jorgem@empathy.co
 category: Data Visualizations
 typology: Lines
 ---
+![Blooming tree fed with query origin data](/cms_media/tree2_g.gif "Blooming tree fed with query origin data")
+
 Search tools are at the core of every e-commerce platform: They are the platform’s central nervous system, binding needs to decisions and actions. Measuring the performance of a search tool significantly aids potential improvements and redesign strategies. This is usually done by tracking the number of queries related to each possible path or category that was chosen by users. The larger the number of queries, the more frequently this particular feature or event is used, compared to others.
 
 Now, let us imagine that we have all this data. Is it possible to depict and portray this flux of queries through the different paths in an intuitive fashion?
