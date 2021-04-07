@@ -66,10 +66,8 @@ export default Vue.component('post-content', {
     width: 70%;
     margin: 0 15% rem(40px);
   }
-  iframe {
-    &.external-video {
-      height: 30vw;
-    }
+  iframe.external-video {
+    height: rem(450px);
   }
   tr td {
     background: #eee;
@@ -86,12 +84,20 @@ export default Vue.component('post-content', {
     color: #747474;
     padding-bottom: 2.5rem;
   }
+  @media screen and (max-width: $breakpoint__desktop--max) {
+    iframe.external-video {
+      height: 24vw;
+    }
+  }
   @media screen and (max-width: $breakpoint__tablet--max) {
     img,
     video,
     iframe.external-video {
       width: 100%;
       margin: rem(40px) 0;
+    }
+    iframe.external-video {
+      height: 34vw;
     }
   }
   @media screen and (max-width: $breakpoint__mobile--max) {
