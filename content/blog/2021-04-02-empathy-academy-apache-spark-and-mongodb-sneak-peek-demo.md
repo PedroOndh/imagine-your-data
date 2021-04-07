@@ -21,3 +21,5 @@ In this short introduction you'll be seeing some examples on how to work with Ap
 Also, time is key in data retrieval, that's why we will also cover how you can easily speed up queries with indexes and how data in MongoDB looks like! 
 
 Together with a short introduction to its aggregation framework.
+
+<iframe class="external-video" src="https://www.youtube.com/embed/AdPNGAM5D8s" frameborder="0" allowfullscreen></iframe>
