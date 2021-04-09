@@ -1,5 +1,5 @@
 ---
-title: Topography of the search tool paths
+title: Topography of the Search Tool Paths
 date: 2021-04-05T14:12:45.428Z
 image: /cms_media/tree2_g.gif
 social_image: /cms_media/tree2_g.gif
