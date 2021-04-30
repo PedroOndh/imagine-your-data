@@ -5,7 +5,7 @@ image: /cms_media/4.1.view.png
 author: luciab@empathy.co
 category: Data Visualizations
 ---
-We live in a world with data: From online shopping to our Netflix viewing history, information about ourselves and other people arounds us is always being collected. But, is that information truly helpful when it’s only numbers on a paper?
+We live in a world suffused with data: From online shopping to our Netflix viewing history, information about ourselves and other people arounds us is always being collected. But, is that information truly helpful when it’s only numbers on a paper?
 
 I’ve always loved data visualization. I remember scrolling through my Twitter feed and coming across all these beautiful drawings… Not only were they stunning to the eye, but they provided value and knowledge to the viewer. I used to check that account everyday and wonder if, one day, I would be able to do something similar. Now, I do.
 
