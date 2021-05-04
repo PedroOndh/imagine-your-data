@@ -28,3 +28,5 @@ Finally, tell your story. Yes, you have some data that looks visually beautiful.
 <video controls poster=""><source src="/cms_media/population.mov" type="video/mp4"></video>
 
 That’s all, folks! Now you just have to start. Open up to this new world of data visualization. And remember one of the most important things: nothing ventured, nothing gained.
+
+<iframe class="external-video" src="https://www.youtube.com/embed/_SSCwmgvudQ" frameborder="0" allowfullscreen></iframe>
