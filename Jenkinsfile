@@ -1,5 +1,5 @@
 TESTS = false
-BUCKETS = [ prod: 'imagineyourdata.com', dev: 'dev.imagineyordata.com' ]
+BUCKETS = [ prod: 'imagineyourdata.com', dev: 'dev.imagineyourdata.com' ]
 CLOUDFRONT_ID = [ dev: 'E37P3T68OB7LDJ', prod: 'E3QN6XMRWM5FIL']
 CACHE = [   prod: 'max-age=3600',
             dev:    'no-store' ]
