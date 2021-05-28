@@ -181,10 +181,6 @@ function noIndex() {
       content: 'noindex'
     }
   }
-  return {
-    name: 'google-site-verification',
-    content: 'M15PvV_pw0n1sIiCEhAyQnlk2TpMlm0wZAkQfUIEocU'
-  }
 }
 
 function generateScripts() {
