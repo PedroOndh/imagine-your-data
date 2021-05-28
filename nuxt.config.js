@@ -181,6 +181,7 @@ function noIndex() {
       content: 'noindex'
     }
   }
+  return {}
 }
 
 function generateScripts() {
