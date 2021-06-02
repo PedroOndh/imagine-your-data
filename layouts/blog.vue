@@ -131,7 +131,8 @@ async function getPostAuthor(post) {
   const postAuthor = authors.find(
     (author) => author.attributes.email === post.attributes.author
   )
-  return postAuthor
+
+  return postAuthor || { attributes: false }
 }
 function getDate(post) {
   const date = new Date(post.attributes.date)
@@ -165,10 +166,6 @@ function getMetatags(post, author, route) {
       content: `https://www.imagineyourdata.com${image}`
     },
     {
-      name: 'author',
-      content: author.attributes.name
-    },
-    {
       property: 'og:url',
       content: `https://www.imagineyourdata.com${route.path}`
     },
@@ -181,6 +178,12 @@ function getMetatags(post, author, route) {
       content: 'summary_large_image'
     }
   ]
+  if (author.attributes.name) {
+    metaTags.push({
+      name: 'author',
+      content: author.attributes.name
+    })
+  }
   if (post.attributes.seo_description) {
     metaTags.push({
       name: 'description',
