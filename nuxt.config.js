@@ -82,6 +82,7 @@ export default async () => {
       dev: env.parsed && env.parsed.PROD_URL === 'false'
     },
     generate: {
+      exclude: ['/datavis'],
       fallback: '404.html'
     },
     /*
