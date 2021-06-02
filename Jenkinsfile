@@ -49,9 +49,11 @@ pipeline {
                     }
                 }
                 stage('Build Datavis 3d-scatter') {
-                    docker {
-                        image 'node:8'
-                        reuseNode true
+                    agent {
+                        docker {
+                            image 'node:8'
+                            reuseNode true
+                        }
                     }
                     steps {
                         sh 'mkdir -p dist/datavis/3d-scatter'
