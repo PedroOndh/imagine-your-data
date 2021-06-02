@@ -1,0 +1,120 @@
+{
+  "desktop": [
+    {
+      "numterms": 1,
+      "not_contextualised_data": {
+        "query_count": 166100,
+        "find_count": 23601,
+        "click_count": 41796,
+        "conversion_count": 667
+      },
+      "contextualised_data": {
+        "query_count": 889873,
+        "find_count": 234146,
+        "click_count": 354392,
+        "conversion_count": 9637
+      }
+    }, {
+      "numterms": 2,
+      "not_contextualised_data": {
+        "query_count": 55563,
+        "find_count": 11482,
+        "click_count": 18111,
+        "conversion_count": 459
+      },
+      "contextualised_data": {
+        "query_count": 411700,
+        "find_count": 153412,
+        "click_count": 201195,
+        "conversion_count": 6497
+      }
+    }, {
+      "numterms": 3,
+      "not_contextualised_data": {
+        "query_count": 8155,
+        "find_count": 2280,
+        "click_count": 3251,
+        "conversion_count": 49
+      },
+      "contextualised_data": {
+        "query_count": 103603,
+        "find_count": 40713,
+        "click_count": 51121,
+        "conversion_count": 2641
+      }
+    }, {
+      "numterms": 4,
+      "not_contextualised_data": {
+        "query_count": 504,
+        "find_count": 145,
+        "click_count": 185,
+        "conversion_count": 0
+      },
+      "contextualised_data": {
+        "query_count": 12460,
+        "find_count": 4895,
+        "click_count": 5798,
+        "conversion_count": 267
+      }
+    }
+  ],
+  "mobile": [
+    {
+      "numterms": 1,
+      "not_contextualised_data": {
+        "query_count": 167226,
+        "find_count": 16485,
+        "click_count": 25769,
+        "conversion_count": 1810
+      },
+      "contextualised_data": {
+        "query_count": 497623,
+        "find_count": 113719,
+        "click_count": 150093,
+        "conversion_count": 16123
+      }
+    }, {
+      "numterms": 2,
+      "not_contextualised_data": {
+        "query_count": 98636,
+        "find_count": 12574,
+        "click_count": 17835,
+        "conversion_count": 1371
+      },
+      "contextualised_data": {
+        "query_count": 411299,
+        "find_count": 111124,
+        "click_count": 132989,
+        "conversion_count": 16786
+      }
+    }, {
+      "numterms": 3,
+      "not_contextualised_data": {
+        "query_count": 18507,
+        "find_count": 2429,
+        "click_count": 3293,
+        "conversion_count": 180
+      },
+      "contextualised_data": {
+        "query_count": 114526,
+        "find_count": 35163,
+        "click_count": 41033,
+        "conversion_count": 5023
+      }
+    }, {
+      "numterms": 4,
+      "not_contextualised_data": {
+        "query_count": 818,
+        "find_count": 149,
+        "click_count": 199,
+        "conversion_count": 14
+      },
+      "contextualised_data": {
+        "query_count": 15305,
+        "find_count": 3907,
+        "click_count": 4670,
+        "conversion_count": 680
+      }
+    }
+  ]
+}

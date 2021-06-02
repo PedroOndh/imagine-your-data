@@ -1,0 +1,137 @@
+@import "variables";
+
+
+svg#blackfriday-360-chart {
+  height: 100%;
+  width: 100%;
+
+  text {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .chartcenter {
+    fill: $eb-black;
+    stroke-width: 0;
+    transition: fill .4s ease;
+
+    &.nothighlight {
+      fill: #FFF;
+      stroke: $eb-black;
+      stroke-width: 3;
+    }
+
+  }
+
+  .charttext {
+    transition: fill, font-size .4s ease;
+
+    &.details {
+      alignment-baseline: central;
+      fill: #FFF;
+      font-size: 0.9em;
+      text-anchor: middle;
+
+      &.initial {
+        font-size: 1.3em;
+      }
+
+      &.nothighlight {
+        fill: $eb-black;
+      }
+
+      &.datetime {
+        font-size: 1.05em;
+      }
+
+      &.value {
+        font-size: 0.95em;
+
+        &.add2cart {
+          font-size: 1em;
+        }
+
+      }
+
+    }
+
+  }
+
+  .serie {
+
+    .serieitem {
+      transition: all .4s ease;
+
+      &.container,
+      &.daytext,
+      &.content {
+        cursor: pointer;
+      }
+
+      &.container {
+        fill: transparent;
+
+        &.highlight {
+          fill: $eb-grey;
+        }
+
+      }
+
+      &.daytext,
+      &.hourtext {
+        alignment-baseline: central;
+        text-anchor: middle;
+      }
+
+      &.daytext {
+        fill: $eb-red;
+        font-size: 0.75em;
+
+        &.highlight,
+        &.selected {
+          font-size: 0.85em;
+        }
+
+        &.highlight {
+          fill: $eb-black;
+          font-weight: bold;
+        }
+
+        &.notselected {
+          fill: $eb-black;
+        }
+
+      }
+
+      &.hourtext {
+        fill: $eb-black;
+        font-size: 0.7em;
+
+        &.highlight,
+        &.selected {
+          font-size: 0.75em;
+        }
+      }
+
+      &.hourseparator {
+        fill: transparent;
+        stroke: $eb-grey;
+      }
+
+      &.content {
+        fill: $eb-red;
+
+        &.highlight {
+          fill: $eb-black;
+        }
+
+        &.notselected:not(.highlight) {
+          fill: $eb-grey;
+        }
+
+      }
+
+    }
+
+  }
+
+}

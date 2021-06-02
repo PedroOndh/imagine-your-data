@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EmpathyBroker</title>
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+
+<body>
+  <div>
+    <table id="mainTable" border=0>
+      <tr>
+        <th width="100">
+          <form id="languageSelector">
+            <span> How does the Query Size of Instant & Normal Search distribute for Searches in </span>
+            <select class="languages" name="metrics" onChange="updateLanguage(this.value)">
+              <option value="es">Spanish</option>
+              <option  value="en">English</option>
+              <option value="fr">French</option>
+              <option value="de">German</option>
+              <option value="all">All languages</option>
+            </select>
+            <span>over certain Metrics?</span>
+          </form>
+        </th>
+      </tr>
+      <tr>
+        <th width="700">
+          <div id="chart"></div>
+        </th>
+      </tr>
+    </table>
+    <table id="buttonTable" border=0>
+      <tr>
+        <th width="350">
+          <form>
+            <span>Y Axis Metric:</span>
+            <select id="ySelector" name="metrics" onChange="updateChartY(this.value)">
+              <option value="% of Total Queries">% of Total Queries</option>
+              <option value="CTR">CTR</option>
+              <option value="Findability">Findability</option>
+            </select>
+          </form>
+        </th>
+        <th width="350">
+          <form>
+            <span>X Axis Metric:</span>
+            <select id="xSelector" name="metrics" onChange="updateChartX(this.value)">
+              <option value="query">Search Query Character Count</option>
+              <option value="term">Search Query Word Count</option>
+            </select>
+          </form>
+        </th>
+      </tr>
+    </table>
+  </div>
+  <!-- build:js scripts/vendor.js -->
+  <!-- endbuild -->
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/d3.min.js"></script>
+  <script src="scripts/echarts.min.js"></script>
+  <script src="scripts/chartOptions.js"></script>
+  <script src="scripts/dataHelper.js"></script>
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

@@ -25,6 +25,7 @@ pipeline {
                 stage('Installing Dependencies') {
                     steps {
                         npmCI()
+                        sh "npm install -g bower gulp"
                     }
                 }
                 stage('CMS OAuth GitHub') {
@@ -46,6 +47,15 @@ pipeline {
                 stage('Build') {
                     steps {
                         sh 'npm run generate'
+                    }
+                }
+                stage('Build Datavis 3d-scatter') {
+                    steps {
+                        sh 'mkdir -p dist/datavis/3d-scatter'
+                        sh 'cd datavis/3d-scatter'
+                        sh 'npm ci'
+                        sh 'npm run build'
+                        sh 'cp dist/* ../../dist/datavis/3d-scatter'
                     }
                 }
             }

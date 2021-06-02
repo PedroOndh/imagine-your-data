@@ -1,0 +1,123 @@
+// bower:scss
+// endbower
+
+@import "variables";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#clickvsconv-daily-form {
+  text-align: center;
+  margin-top: 25px;
+  label {
+    color: $eb-black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+  }
+}
+
+#clickvsconv-daily-chartcontainer {
+  display: block;
+  margin: auto;
+
+  text {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .chart {
+
+    .serie {
+
+      text {
+        fill: #FFF;
+      }
+
+      .serieitem {
+        &.clickcountitem,
+        &.conversioncountitem {
+          cursor: pointer;
+        }
+
+        &.clickcountitem {
+          fill: scale-color($eb-green, $red: $scale-serieitem-color, $green: $scale-serieitem-color, $blue: $scale-serieitem-color);
+          &.serieitemhover {
+            fill: $eb-green;
+          }
+        }
+        &.conversioncountitem {
+          fill: scale-color($eb-blue, $red: $scale-serieitem-color, $green: $scale-serieitem-color, $blue: $scale-serieitem-color);
+          &.serieitemhover {
+            fill: $eb-blue;
+          }
+        }
+
+        &.xaxisitem {
+          fill: $eb-orange;
+          &.previousmonth {
+            fill: $eb-grey;
+          }
+          &.nextmonth {
+            fill: $eb-orange;
+          }
+        }
+
+      }
+
+      .serietext {
+
+        &.xaxistext {
+          font-size: 11px;
+        }
+
+      }
+
+    }
+
+  }
+
+  .legend {
+
+    .legenditem {
+
+      .legendtext {
+        fill: $eb-black;
+        font-size: 14px;
+      }
+
+      .legendcolor {
+
+        &.legendcolorclickscount {
+          fill: $eb-green;
+        }
+        &.legendcolorconversioncount {
+          fill: $eb-blue;
+        }
+      }
+
+    }
+
+  }
+
+  .tooltip {
+
+    .tooltipbody {
+      fill: $eb-orange;
+      &.previousmonth {
+        fill: $eb-grey;
+      }
+      &.nextmonth {
+        fill: $eb-orange;
+      }
+    }
+
+    .tooltiptext {
+      fill: #FFF;
+      font-size: 12px;
+      text-anchor: middle;
+    }
+
+  }
+
+}

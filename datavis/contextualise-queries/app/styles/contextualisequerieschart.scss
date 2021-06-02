@@ -1,0 +1,113 @@
+@import 'variables';
+
+$scale-serie-item-color: 25%;
+$scale-details-container-color: 90%;
+$scale-details-content-color: 10%;
+$scale-details-content-color-unhighlight: 25%;
+
+
+text {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.contextualise-title,
+.contextualise-subtitle {
+  fill: $eb-black;
+  text-anchor: middle;
+}
+
+.contextualise-title {
+  font-size: 1.4em;
+}
+
+.contextualise-title--contextualised {
+  font-size: 1.5em;
+}
+
+.contextualise-subtitle {
+  font-size: 1.15em;
+}
+
+.serie-item-container,
+.serie-item-content,
+.serie-item-text {
+  cursor: pointer;
+}
+
+.series-background--contextualised,
+.serie-item-container--contextualised,
+.serie-item-content--contextualised {
+  fill: $eb-green;
+}
+.series-background--not-contextualised,
+.serie-item-container--not-contextualised,
+.serie-item-content--not-contextualised {
+  fill: $eb-blue;
+}
+
+.series-center-background {
+  fill: #FFF;
+}
+
+.serie-item-text {
+  alignment-baseline: central;
+  fill: $eb-black;
+  font-size: 0.8em;
+  transition: opacity, font-size $duration-transitions ease;
+}
+
+.serie-item-text--first-half {
+  text-anchor: start;
+}
+.serie-item-text--second-half {
+  text-anchor: end;
+}
+
+.serie-item-text.serie-item--hover,
+.serie-item-text.serie-item--selected {
+  font-size: 0.9em;
+}
+
+
+
+.details-image {
+  transition: opacity $duration-transitions ease;
+}
+
+.details-text,
+.details-value {
+  alignment-baseline: central;
+  fill: $eb-black;
+  font-size: 0.85em;
+}
+
+.details-text {
+  text-anchor: middle;
+}
+
+.details-text__queries {
+  text-anchor: end;
+}
+
+.details-value__ctr,
+.details-value__findability {
+  text-anchor: end;
+}
+.details-value__queries {
+  text-anchor: start;
+}
+
+.details-bar-container {
+  fill: scale-color($eb-black, $red: $scale-details-container-color, $green: $scale-details-container-color, $blue: $scale-details-container-color);
+}
+
+.details-bar-content--contextualised {
+  fill: scale-color($eb-green, $red: $scale-details-content-color, $green: $scale-details-content-color, $blue: $scale-details-content-color);
+}
+.details-bar-content--not-contextualised {
+  fill: scale-color($eb-blue, $red: $scale-details-content-color, $green: $scale-details-content-color, $blue: $scale-details-content-color);
+}
+
+.details-bar-content__ctr {
+  fill: scale-color($eb-grey, $red: $scale-details-content-color-unhighlight, $green: $scale-details-content-color-unhighlight, $blue: $scale-details-content-color-unhighlight);
+}

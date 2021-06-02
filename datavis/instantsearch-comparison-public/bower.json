@@ -1,0 +1,14 @@
+{
+  "name": "cbn-datavis-instantsearch-comparison-public",
+  "authors": [
+    "Clemens Anzmann"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

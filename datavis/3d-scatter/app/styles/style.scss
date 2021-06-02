@@ -1,0 +1,100 @@
+@import "variables";
+@font-face {
+  font-family: OpenSans;
+  src: url('./OpenSans-Regular.ttf');
+}
+
+body {
+  font-family: OpenSans;
+  margin: auto;
+  padding: 0;
+  max-width: 1000px;
+  min-width: 650px;
+}
+
+table {
+  width: 100%;
+  margin: auto;
+}
+
+tr {
+  height: 50px;
+}
+
+.btn {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 5px;
+  float: left;
+  cursor: pointer;
+  text-align: right;
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  color: $eb-black;
+  font-size: 10px;
+  background: $eb-green;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+  opacity: .5;
+  transition: opacity .5s;
+  -webkit-box-shadow: 0px 0px 2px $eb-grey;
+  -moz-box-shadow: 0px 0px 2px $eb-grey;
+  box-shadow: 0px 0px 2px $eb-grey;
+}
+
+.btn:hover {
+  opacity: .7;
+}
+
+.btn[checked="checked"] {
+  opacity: 1;
+  pointer-events: none;
+}
+
+.btn[disabled="true"] {
+  opacity: .3;
+}
+
+.legendItem {
+  font-size: 14px;
+  margin-left: 20px;
+  float: left;
+  cursor: default;
+}
+
+#mainPage {
+  visibility: hidden;
+}
+
+#buttons {
+  margin: auto;
+  text-align: left;
+  width: 96%;
+}
+
+#chart {
+  height: 500px;
+  // border-style: solid;
+  // border-width: 1px;
+  // border-color: $eb-grey;
+  border-radius: 5px;
+  margin: 20px;
+  cursor: move;
+  transition: box-shadow .3s;
+  box-shadow: inset 0 0 0px $eb-green;
+}
+
+#chart:hover {
+  -moz-box-shadow: inset 0 0 50px $eb-green;
+  -webkit-box-shadow: inset 0 0 50px $eb-green;
+  box-shadow: inset 0 0 25px $eb-green;
+}
+
+#english {
+  color: $eb-blue;
+}
+
+#spanish {
+  color: $eb-orange;
+}

@@ -1,0 +1,33 @@
+{
+  "data": [ {
+    "country": "GB",
+    "count_desktop": 146216,
+    "count_mobile": 31641,
+    "count_new": 130754,
+    "count_recurrent": 47103
+  }, {
+    "country": "ES",
+    "count_desktop": 386854,
+    "count_mobile": 162717,
+    "count_new": 402638,
+    "count_recurrent": 146933
+  }, {
+    "country": "FR",
+    "count_desktop": 202978,
+    "count_mobile": 45988,
+    "count_new": 185720,
+    "count_recurrent": 63246
+  }, {
+    "country": "DE",
+    "count_desktop": 70219,
+    "count_mobile": 18257,
+    "count_new": 66693,
+    "count_recurrent": 21783
+  }, {
+    "country": "IT",
+    "count_desktop": 56839,
+    "count_mobile": 27180,
+    "count_new": 65768,
+    "count_recurrent": 18251
+  } ]
+}

@@ -1,0 +1,63 @@
+@import '../../node_modules/select2/src/scss/core.scss';
+
+@import 'variables';
+
+$horizontal-layout-limit: 600px;
+
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.chart-container,
+.chart-form,
+.queries-selector-container {
+  text-align: center;
+}
+
+.chart-form {
+  height: 70px;
+}
+
+.queries-selector-container {
+  display: inline-block;
+  height: 100%;
+  @media(max-width: $horizontal-layout-limit) {
+    width: 95vw;
+  }
+  @media(min-width: $horizontal-layout-limit) {
+    width: 45vw;
+  }
+  max-width: $horizontal-layout-limit;
+}
+
+.queries-selector-container__outer {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.queries-selector-container__inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.queries-selector {
+  width: 80%;
+}
+
+.chart {
+  @media(max-width: $horizontal-layout-limit) {
+    height: 95vw;
+    width: 95vw;
+  }
+  @media(min-width: $horizontal-layout-limit) {
+    height: 45vw;
+    width: 45vw;
+  }
+  max-height: $horizontal-layout-limit;
+  max-width: $horizontal-layout-limit;
+}

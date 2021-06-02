@@ -1,0 +1,108 @@
+// bower:scss
+// endbower
+
+@import "variables";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#contextualise-prototype-chartcontainer {
+  display: block;
+  margin: auto;
+
+  text {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .scopefilterbutton,
+  .countratiofilterbutton {
+    fill: $eb-grey;
+    &.selected {
+      fill: $eb-orange;
+    }
+  }
+
+  .scopefiltertext,
+  .countratiofiltertext {
+    fill: #FFF;
+    font-size: 13px;
+    text-anchor: middle;
+  }
+
+  .scopefilter,
+  .countratiofilter {
+    cursor: default;
+
+    :not(.selected) {
+      cursor: pointer;
+    }
+  }
+
+  .chart {
+
+    .serie {
+
+      .serieitem {
+
+        &.findability {
+          fill: $eb-blue;
+        }
+        &.ctr {
+          fill: $eb-green;
+        }
+        &.cvr {
+          fill: $eb-red;
+        }
+
+        &.xaxis {
+          fill: $eb-grey;
+        }
+
+      }
+
+      .serietext {
+
+        &.countratio {
+          fill: $eb-black;
+          font-size: 11px;
+
+          &.difference {
+            text-anchor: middle;
+
+            &.positive,
+            &.negative {
+              font-weight: bold;
+            }
+
+            &.positive {
+              fill: $eb-green;
+            }
+            &.negative {
+              fill: $eb-red;
+            }
+          }
+
+          &.csu,
+          &.countratiovalue {
+            fill: #FFF;
+            font-size: 10px;
+            text-anchor: middle;
+          }
+
+        }
+
+        &.xaxis {
+          fill: #FFF;
+          font-size: 11px;
+          text-anchor: middle;
+        }
+
+      }
+
+    }
+
+  }
+
+}

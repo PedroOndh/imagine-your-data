@@ -1,0 +1,70 @@
+// bower:scss
+// endbower
+@import "variables";
+@font-face {
+  font-family: OpenSans;
+  src: url("./../fonts/OpenSans-Regular.ttf");
+}
+
+body {
+  font-family: OpenSans;
+  margin: 0;
+  padding: 0;
+}
+
+#mainTable {
+  margin: auto;
+  height: 400px;
+  width: 800px;
+}
+#buttonTable {
+  margin: auto;
+  height: 50px;
+  width: 700px;
+}
+
+#chart {
+  margin: auto;
+  height: 400px;
+  width: 700px;
+}
+
+#languageSelector {
+  font-size: 24px;
+}
+
+.languages {
+  width: 150px;
+  background-color: white;
+  font-size: 24px;
+  border: 0px;
+  border-bottom: 2px solid #000000;
+  border-radius: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  text-align-last: center;
+}
+
+#xSelector {
+  background-color: white;
+  text-align-last: center;
+  border: 1px solid #CCCCCC;
+  border-radius: 0px;
+  text-align-last: center;
+  // width: 190px;
+  height: 25px;
+  margin-left: 10px;
+}
+#ySelector {
+  background-color: white;
+  text-align-last: center;
+  // width: 130px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+select {
+  text-align: center;
+}

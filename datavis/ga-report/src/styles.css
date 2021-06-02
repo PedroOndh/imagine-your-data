@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: OpenSans;
+    src: url('./assets/OpenSans-Regular.ttf');
+}
+
+body {
+  font-family: OpenSans;
+}
