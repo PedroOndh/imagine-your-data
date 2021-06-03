@@ -10,7 +10,7 @@ typology: Other
 author: alvarod@empathy.co
 
 ---
-<iyd-iframe src="https://www.imagineyourdata.com/datavis/iyd-clickvsconv-daily/" desktop-height="350px" tablet-height="" mobile-height="" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iyd-iframe>
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/clickvsconv-daily/" desktop-height="350px" tablet-height="" mobile-height="" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iyd-iframe>
 
 Understanding users' behaviour of an online store through their searches is essential, especially during sale periods, when we are more active. This analysis allows to **improve** the results shown and to anticipate to the needs of the users in each moment.
 

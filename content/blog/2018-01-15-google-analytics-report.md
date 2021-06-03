@@ -7,7 +7,7 @@ tags: [Viz,Search,analytics data,data,data viz, Search Engine,search result,Data
 category: Data Visualizations
 typology: Other
 ---
-<iyd-iframe src="https://www.imagineyourdata.com/datavis/ga-html-report-template/" desktop-height="32vw" tablet-height="300px" mobile-height="60vw" framebimg-order="1"></iyd-iframe>
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/ga-report/" desktop-height="32vw" tablet-height="300px" mobile-height="60vw" framebimg-order="1"></iyd-iframe>
 
 At [Empathy.co](https://www.empathy.co/ "Empathy.co"), we have been working towards building reports from **Google Analytics data** of our costumers. In particular, we and our customers are interested how well search performs on their website and how it affects the costumer’s behaviour. To understand this, we are looking at the total amount of visits during a given time period for a specific market and device types. These visits are broken down by whether search was used or not during the visit. We are also investigating how well the conversion rate performs on visits where search was used, in comparison to the visits where search was not used.
 

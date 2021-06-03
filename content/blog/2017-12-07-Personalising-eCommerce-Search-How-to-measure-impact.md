@@ -9,7 +9,7 @@ typology: Bars
 seo_keywords: blackfriday, Black Friday data viz, Black Friday eCommerce Data, Data Viz of Black Friday
 ---
 
-<iyd-iframe src="https://www.imagineyourdata.com/datavis/iyd-contextualise-queries/" desktop-height="620px" tablet-height="950px" mobile-height="620px" framebimg-order="1"></iyd-iframe>
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/contextualise-queries/" desktop-height="620px" tablet-height="950px" mobile-height="620px" framebimg-order="1"></iyd-iframe>
 
 
 User queries are per definition an articulation of \*\*demand\*\*, and this demand might or might not respond to previous interactions, purchases, categories etc.
