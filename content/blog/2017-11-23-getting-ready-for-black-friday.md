@@ -9,7 +9,7 @@ typology: Bubbles
 description: null
 seo_keywords: blackfriday, Black Friday data viz, Black Friday eCommerce Data, Data Viz of Black Friday
 ---
-<iyd-iframe src="https://www.imagineyourdata.com/datavis/iyd-blackfriday-360/" desktop-height="720px" tablet-height="460px" mobile-height="300px" framebimg-order="1"></iyd-iframe>
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/blackfriday-360/" desktop-height="720px" tablet-height="460px" mobile-height="300px" framebimg-order="1"></iyd-iframe>
 
 If you talk to anyone who works for an eCommerce company and ask "Hey, how is your week going?", you will soon realize that this is not a week like any other: this is **Black Friday week**. This event has become very popular in Europe over recent years, and in a certain way establishes the beginning of the Winter season for most online stores and companies.
 

@@ -11,7 +11,7 @@ author: alvarod@empathy.co
 
 ---
 
-<iyd-iframe src="https://www.imagineyourdata.com/datavis/iyd-countries-deskvsmob-newvsrec/" desktop-height="505px" tablet-height="540px" mobile-height="" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iyd-iframe>
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/countries-deskvsmob-newvsrec/" desktop-height="505px" tablet-height="540px" mobile-height="" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iyd-iframe>
 
 
 A large number of online shops and services work across several countries and continents, offering different products to their customers and, in some cases, using even different web pages and online sales platforms. This fact presents the need and opportunity to analyse and **compare the behaviour of Search in each country, looking for the strengths and weaknesses of each one of them** with the aim of improving the way of presenting the products to our users.
