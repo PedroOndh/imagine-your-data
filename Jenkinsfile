@@ -112,7 +112,7 @@ pipeline {
 def deployWebsite(String environment) {
     withAWS(role: 'Jenkins', roleAccount: globalVariables.AWSAccountIDs('websites')) {
         sh "aws s3 cp dist/index.html s3://${BUCKETS[environment]} --acl public-read --cache-control no-store"
-        sh "aws s3 sync dist s3://${BUCKETS[environment]} --acl public-read --sse AES256 --delete --cache-control ${CACHE[environment]}"
+        sh "aws s3 sync dist s3://${BUCKETS[environment]} --acl public-read --sse AES256 --delete --cache-control ${CACHE[environment]} --exclude datavis/*"
         cfInvalidate(distribution: CLOUDFRONT_ID[environment], paths:["/*"])
     }
     jiraSendDeploymentInfo environmentId: environment, environmentName: environment, environmentType: environment, site: 'searchbroker.atlassian.net'
