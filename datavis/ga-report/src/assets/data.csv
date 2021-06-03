@@ -1,9 +1,0 @@
-,device_type,search_type,transactions,visits,conversion_rate,visits_yoy,conversion_rate_yoy
-1,All,without,597174,11514052,4.779770273,93,-39
-5,Mobile,without,260317,2571142,8.12456722,-60,36
-2,Desktop,without,260971,2955983,5.34219162,30,25
-0,All,with,1094895,7468254,13.66065562,17,-38
-4,Mobile,with,421548,2989378,14.10152881,72,-28
-3,Tablet,without,75886,5986927,1.2675284,-87,-99
-0,Desktop,with,346091,1700160,15.35637822,95,-82
-1,Tablet,with,327256,2778716,11.77723812,-42,-63
