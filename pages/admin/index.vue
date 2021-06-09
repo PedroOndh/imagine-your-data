@@ -46,6 +46,11 @@ if (process.client) {
   }
 }
 export default {
+  mounted() {
+    if (window.location.href.indexOf('dev.') <= 0) {
+      return this.$nuxt.error({ statusCode: 404, message: '' })
+    }
+  },
   head() {
     return {
       link: [
