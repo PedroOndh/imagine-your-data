@@ -3,7 +3,7 @@
     <PageHeader />
     <nuxt class="page__content" />
     <PageFooter />
-    <DeployButton v-if="$nuxt.context.env.dev" />
+    <DeployButton v-if="devEnv" />
   </div>
 </template>
 
@@ -14,7 +14,15 @@ import PageFooter from '~/components/common/footer/PageFooter'
 
 export default {
   components: { PageHeader, PageFooter, DeployButton },
-  layout: 'default'
+  layout: 'default',
+  data() {
+    return {
+      devEnv: false
+    }
+  },
+  mounted() {
+    this.devEnv = window.location.href.indexOf('dev.') > 0
+  }
 }
 </script>
 

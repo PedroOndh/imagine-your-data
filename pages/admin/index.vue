@@ -41,7 +41,6 @@ aside a {
 <script>
 if (process.client) {
   if (
-    process.env.NODE_ENV === 'development' ||
     window.location.href.indexOf('dev.') > 0
   ) {
     // eslint-disable-next-line
