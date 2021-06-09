@@ -10,7 +10,7 @@ category: Data Visualizations
 author: alvarod@empathy.co
 ---
 
-<iyd-iframe src="https://www.imagineyourdata.com/datavis/iyd-contextualise-numterms/" desktop-height="565px" tablet-height="" mobile-height="" framebimg-order="1"></iyd-iframe>
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/contextualise-numterms/" desktop-height="565px" tablet-height="" mobile-height="" framebimg-order="1"></iyd-iframe>
 
 
 In the previous post we introduced the concept of **User Context** and its importance when analysing, identifying and applying **previous User affinities**.

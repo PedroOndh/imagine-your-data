@@ -48,21 +48,6 @@ pipeline {
                         sh 'npm run generate'
                     }
                 }
-                stage('Build Datavis 3d-scatter') {
-                    agent {
-                        docker {
-                            image 'node:8'
-                            reuseNode true
-                        }
-                    }
-                    steps {
-                        sh 'mkdir -p dist/datavis/3d-scatter'
-                        sh 'cd datavis/3d-scatter'
-                        sh 'npm ci'
-                        sh 'npm run build'
-                        sh 'cp dist/* ../../dist/datavis/3d-scatter'
-                    }
-                }
             }
             post {
                 always {
@@ -127,7 +112,7 @@ pipeline {
 def deployWebsite(String environment) {
     withAWS(role: 'Jenkins', roleAccount: globalVariables.AWSAccountIDs('websites')) {
         sh "aws s3 cp dist/index.html s3://${BUCKETS[environment]} --acl public-read --cache-control no-store"
-        sh "aws s3 sync dist s3://${BUCKETS[environment]} --acl public-read --sse AES256 --delete --cache-control ${CACHE[environment]}"
+        sh "aws s3 sync dist s3://${BUCKETS[environment]} --acl public-read --sse AES256 --delete --cache-control ${CACHE[environment]} --exclude datavis/*"
         cfInvalidate(distribution: CLOUDFRONT_ID[environment], paths:["/*"])
     }
     jiraSendDeploymentInfo environmentId: environment, environmentName: environment, environmentType: environment, site: 'searchbroker.atlassian.net'

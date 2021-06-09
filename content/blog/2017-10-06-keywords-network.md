@@ -10,7 +10,7 @@ typology: Relations
 author: davidm@empathy.co
 
 ---
-<iyd-iframe src="https://www.imagineyourdata.com/datavis/cbn-diagram-uk/" desktop-height="700px" tablet-height="" mobile-height="" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iyd-iframe>
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/diagram-pullbear/" desktop-height="700px" tablet-height="" mobile-height="" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iyd-iframe>
 
 <blockquote>Please mouse-over a keyword to highlight relations</blockquote>
 

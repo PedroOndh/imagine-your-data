@@ -12,7 +12,7 @@ author: alvarod@empathy.co
 
 ---
 
-<iyd-iframe src="https://www.imagineyourdata.com/datavis/iyd-nextqueries/" desktop-height="505px" tablet-height="" mobile-height="" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iyd-iframe>
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/nextqueries/" desktop-height="505px" tablet-height="" mobile-height="" framebimg-order="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iyd-iframe>
 
 > You can play with the queries and its relations by mouse-overing and clicking on them.
 

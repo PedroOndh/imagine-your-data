@@ -9,7 +9,7 @@ typology: Bubbles
 author: clemensa@empathy.co
 
 ---
-<iyd-iframe src="https://www.imagineyourdata.com/datavis/scatter-3D/" desktop-height="765px" tablet-height="" mobile-height="" framebimg-order="1"></iyd-iframe>
+<iyd-iframe src="https://www.imagineyourdata.com/datavis/3d-scatter/" desktop-height="765px" tablet-height="" mobile-height="" framebimg-order="1"></iyd-iframe>
 
 In this visualisation, we are comparing three variables across our dataset of searched keywords on a fashion retailing website during autumn:
 
