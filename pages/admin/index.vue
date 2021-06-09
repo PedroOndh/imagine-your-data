@@ -40,8 +40,10 @@ aside a {
 
 <script>
 if (process.client) {
-  // eslint-disable-next-line
-  import('~/static/admin/adminConfig')
+  if (window.location.href.indexOf('dev.') > 0) {
+    // eslint-disable-next-line
+    import('~/static/admin/adminConfig')
+  }
 }
 export default {
   head() {
