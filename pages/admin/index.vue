@@ -39,6 +39,10 @@ aside a {
 </style>
 
 <script>
+if (process.client) {
+  // eslint-disable-next-line
+  import('~/static/admin/adminConfig')
+}
 export default {
   head() {
     return {
@@ -49,14 +53,6 @@ export default {
             'https://assets.empathybroker.com/resources/fonts/empathy-icons/style.css'
         }
       ]
-    }
-  },
-  mounted() {
-    if (this.process.client) {
-      if (window.location.href.indexOf('dev.') > 0) {
-        // eslint-disable-next-line
-        import('~/static/admin/adminConfig')
-      }
     }
   }
 }
