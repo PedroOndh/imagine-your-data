@@ -40,14 +40,20 @@ aside a {
 
 <script>
 if (process.client) {
-  if (window.location.href.includes('dev.')) {
+  if (
+    process.env.NODE_ENV === 'development' ||
+    window.location.href.includes('dev.')
+  ) {
     // eslint-disable-next-line
     import('~/static/admin/adminConfig')
   }
 }
 export default {
   mounted() {
-    if (!window.location.href.includes('dev.')) {
+    if (
+      !window.location.href.includes('dev.') &&
+      process.env.NODE_ENV !== 'development'
+    ) {
       return this.$nuxt.error({ statusCode: 404, message: '' })
     }
   },
