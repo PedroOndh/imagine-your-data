@@ -2,11 +2,18 @@
 title: Breathing data in a literal sense
 date: 2021-06-14T13:56:11.894Z
 image: /cms_media/lungs_g.gif
+social_image: /cms_media/lungs_g.gif
 author: jorgem@empathy.co
 category: Data Visualizations
 ---
-There are several ways in which a data visualization project can come to life. Features and motion dynamics from living organisms have served as a source of inspiration for the arts, including architecture and industrial design. Shells, spider webs or skeletons found in nature have helped create singular structures that are robust and functional and close to what we identify at a glance as life.\
+![Origins Lungs](/cms_media/lungs_g.gif "Origins Lungs")
+
+There are several ways in which a data visualization project can come to life. Features and motion dynamics from living organisms have served as a source of inspiration for the arts, including architecture and industrial design. Shells, spider webs or skeletons found in nature have helped create singular structures that are robust and functional and close to what we identify at a glance as life.
+
+\
 In the data visualization domain, this is achieved by drawing shapes that may remind us of these structural forms that sculpt living creatures. In fact, graphic design has already inspired us with layouts in which organs were simplified into basic shapes, such as these examples from **Paul Tebbott** and **Studio8Design:**
+
+![Paul Tebbott](/cms_media/f0f33e5d69fb07448169e3d88bbeecf3.jpg "Paul Tebbott")
 
 Case in point: Here’s a simple exercise of interpolation, mimicking the motion we might observe with lungs or a heart. We start with a dataviz based on the density of traffic of queries along different paths, depending on the path we choose departing from a search tool, as the one shown in the figure:
 
